@@ -1,0 +1,36 @@
+stages:
+  - build
+
+variables:
+  CONTAINER_IMAGE: $REGISTRY_URL/cvproai:$CI_COMMIT_SHORT_SHA
+  CONTAINER_IMAGE_LATEST: $REGISTRY_URL/cvproai:latest
+
+build-docker:
+  stage: build
+  extends: .docker
+  script:
+    - docker build -f Dockerfile.prod -t $CONTAINER_IMAGE .
+  except:
+    refs:
+      - main
+
+push-docker:
+  stage: build
+  extends: .docker
+  before_script:
+    - docker login $REGISTRY_URL -u $REGISTRY_USER -p $REGISTRY_TOKEN
+  script:
+    - docker build -f Dockerfile.prod -t $CONTAINER_IMAGE -t $CONTAINER_IMAGE_LATEST .
+    - docker push $CONTAINER_IMAGE
+    - docker push $CONTAINER_IMAGE_LATEST
+  only:
+    refs:
+      - main
+
+
+.docker:
+  image: docker:stable
+  services:
+    - docker:dind
+  variables:
+    DOCKER_TLS_CERTDIR: ""

@@ -1,0 +1,43 @@
+La consultante s'engage depuis bientôt 10 ans sur l'accompagnement client et sa satisfaction. Son domaine d'intervention s'étend dans les phases de la compréhension et le recueil des besoins métier jusqu'à la phase de déploiement de la solution et la qualité de ses livrables.
+
+L'expérience de ses précédentes missions dans le secteur de l'automobile, la digitalisation marketing et l'expérience utilisateur, lui permet de garantir des résultats au travers d'une méthodologie de travail.
+
+Elle crée des règles de gouvernance, capitalise les données (rapprochement, normalisation, maj), suit les qualifications et les registres de données.
+
+Elle définit les stratégies d'architecture SI, optimise les flux de données, schématise et cartographie, urbanise le SI.
+
+Elle recueille les besoins, cadre et restitue les besoins, anime des ateliers métiers, gère les plannings, capitalise les connaissances projets, construit des cahiers de recette et valide les livrables.
+
+Elle comprend les enjeux et les objectifs liés à la promesse client, améliore et met en qualité la donnée clients.
+
+Elle conduit des projets Agile (Scrum, Kanban), pilote des projets complexes et transverses, conduit des études, s'aligne aux exigences DSI, gère et coordonne des équipes.
+
+Elle gère le backlog (JIRA), pilote une dev team, rédige des US/Tests d'acceptation et des spécifications fonctionnelles, anime et arbitre des ateliers techniques, développe web (HTML, CSS, PHP, SQL).
+
+Elle crée des processus méthodologiques, gère des cycles de développement et des sprints, anime des routines Agiles (sprint planning, review, rétrospective), harmonise le cadre de travail.
+
+Elle rédige des guides utilisateurs, assure des formations.
+
+En 2023, elle suivra une formation de Scrum Master et PSPO.
+
+De 2012 à 2015, elle a obtenu un diplôme d'ingénieur en Génie logiciel.
+
+De 2009 à 2012, elle a obtenu une licence en Administration des réseaux et services.
+
+Elle parle couramment l'anglais et le français, et l'arabe est sa langue maternelle.
+
+Elle travaille actuellement en tant que Product Manager - Digital chez L'Oréal - Métier Digital à Levallois. Elle accompagne les métiers du digital pour le suivi et la mise en place des projets Mass Notification, Badge virtuel et la migration de l'outil de gestion des droits d'accès. Elle apporte son expertise en conseil IT, planification, management, agilité, DATA et validation qualité. Elle a notamment mis en production l'outil Mass Notification dans les campus de L'Oréal France, mis en place la nouvelle version du badge virtuel dans l'application Smart Campus, rédigé des spécifications fonctionnelles et de la documentation pour chaque projet, coordonné toutes les parties prenantes et animé des comités de projet/pilotage.
+
+Elle a également travaillé en tant que Product Owner/Scrum Master - Digital Factory chez RATP - DSI à Paris. Elle a été sollicitée pour transformer des besoins métier en livrables, améliorer la gestion des données et s'assurer de la bonne qualité du produit DataMist. Elle a apporté son expertise en conseil IT, Product owner, agilité, DATA et Jira. Elle a notamment mis en production les nouvelles lignes de métro dans l'outil DataMist, priorisé le backlog avec des US clairement rédigées, réalisé des maquettes des interfaces IHM, préparé les supports des COPIL/COPROJ, documenté le projet sur Confluence et assuré la planification et l'animation des cérémonies Scrum.
+
+Elle a également travaillé en tant que Product Owner chez Enedis - DSI MECAFLEX à Courbevoie. Elle a été sollicitée pour maintenir les modules de calcul des mécanismes de capacité, transformer des besoins métier en livrables, améliorer la gestion des données et s'assurer de l'acceptation des résultats par RTE. Elle a apporté son expertise en conseil IT, Product owner, agilité et DATA. Elle a notamment mis en production les nouvelles règles de gestion sur les 3 applications, lancé les tirs de calcul des mécanismes de capacité, réalisé des maquettes des interfaces IHM, publié les puissances de référence à RTE, publié les niveaux des capacités certifiés à RTE et publié les contrôles des capacités certifiées à RTE.
+
+Elle a également travaillé en tant que Product Owner chez Ramsay Santé - Marketing à Pont Cardinet. Elle a été sollicitée pour garantir la qualité de la nouvelle version du portail client et améliorer l'expérience utilisateur. Elle a apporté son expertise en conseil IT, Product owner, agilité, web, marketing et expérience utilisateur. Elle a notamment maintenu le bon fonctionnement du portail patient, mis en place la nouvelle version du portail Ramsay Santé, intégré des fonctionnalités d'upsell et de downsell, intégré un questionnaire de satisfaction digital, mis en production la refonte du parcours patient, réalisé des maquettes de la partie IHM de la santé mentale et formé les professionnels de la santé au portail.
+
+Elle a également travaillé en tant que Product Owner chez PSA Groupe - DSI Buy-Back/Opel Vauxhall à Poissy. Elle a été sollicitée pour développer des modules intégrés dans le moteur de gestion des véhicules SAMARA et améliorer la gestion de ses données. Elle a apporté son expertise en conseil IT, Product owner, agilité et DATA. Elle a notamment intégré les données des factures Opel Vauxhall dans l'outil de gestion des véhicules SAMARA, développé les IHM des factures Opel Vauxhall dans SAMARA, amélioré la qualité des données, mis en place de nouveaux KPI pour le calcul Buy-back et développé les IHM Buy-Back dans SAMARA.
+
+Elle a également travaillé en tant que Business Analyst chez France Télévision - DRH à Balard. Elle a été chargée de la gestion de la partie Déclarative du progiciel Pléiades NG, de la personnalisation de la version utilisée par le client et de la validation et de l'envoi mensuel de la déclaration sociale nominative aux organismes concernés. Elle a apporté son expertise en conseil IT, Déclaration sociale nominative DSN, Pléiades NG et DATA. Elle a notamment intégré les données de la déclaration sociale nominative dans la version Pléiades NG, généré la déclaration sociale nominative définitive validée sur l'outil DSN-Val, réalisé un bilan des résultats de la déclaration et mis à jour les IHM sur l'application PleiadesNG dans le module espace/extension DSN.
+
+Elle a également travaillé en tant qu'AMOA chez Sopra Steria - R&D/Qualification à Bruxelles/Paris/Tunis. Elle a été rattachée aux équipes Pléiades Belgique, Pléiades Tunis et Pléiades Paris, et a accompagné l'équipe dans la mise en place du module de la déclaration sociale nominative des clients français et la DmFA pour le client belge. Elle a apporté son expertise en conseil IT, agilité, Déclaration sociale nominative DSN, Pléiades NG et DATA. Elle a notamment intégré les données de la déclaration sociale nominative dans la version Pléiades NG, généré la déclaration sociale nominative définitive validée sur l'outil DSN-Val, réalisé un bilan des résultats de la déclaration, mis à jour les IHM sur l'application PleiadesNG dans le module espace/extension DSN, intégré le module DmFA pour la déclaration belge, réalisé des cahiers de recette et coordonné entre l'équipe Qualif Tunis et l'équipe Qualif Paris.
+
+Elle a également travaillé en tant que Microsoft BI chez Aditus Technologies - DRH à Tunis. Elle a mis en place une solution Business Intelligence qui collecte les données depuis MS Dynamics NAV et d'autres sources, et offre l'affichage du dashboard dans la plateforme finale Power BI. Elle a apporté son expertise en conseil IT, BI, Reporting et DATA. Elle a notamment installé l'ERP Microsoft Dynamics Nav, mis en place une solution BI qui gère les données de la direction des ressources humaines, mis en place des KPI de la solution et réalisé des reporting et affichage des dashboards des modules Absences, Projets, Opportunités et Ventes sous Power BI desktop et mobile.

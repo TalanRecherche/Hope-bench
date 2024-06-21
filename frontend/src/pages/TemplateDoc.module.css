@@ -1,0 +1,25 @@
+.ForLoopBody {
+	margin-left: 1rem;
+	margin-bottom: 0;
+}
+
+.MissionBody {
+	margin-bottom: 2rem;
+}
+.MissionBody + hr + .MissionBody {
+	margin-top: 2rem;
+}
+
+.MissionListing {
+	margin-top: 1rem;
+}
+
+.MissionDescription {
+	max-width: 30rem;
+}
+
+
+.DefinitionRow {
+	--bs-table-color-type: var(--bs-table-striped-color);
+	--bs-table-bg-type: var(--bs-table-striped-bg);
+}

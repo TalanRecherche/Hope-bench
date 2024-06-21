@@ -1,0 +1,450 @@
+CONSULTANTE 
+
+ 
+
+  
+
+Ca fait bientôt 10 ans que m’engage sur l’accompagnement client et sa satisfaction. Mon domaine d’intervention s’étend dans les phases de la compréhension et le recueil des besoins métier jusqu’à la phase de déploiement de la solution et la qualité de ses livrables.
+
+L’expérience de mes précédentes missions dans le secteur de l’automobile, la digitalisation makreting et l’expérience utilisateur, me permettent de garantir des résultats au travers une méthodologie de travailler           .
+
+                                                         
+
+COMPETENCES 
+
+ 
+
+ 
+
+
+
+----media/image2.png--------media/image2.png--------media/image2.png--------media/image2.png--------media/image2.png--------media/image2.png----Data & RGPD  
+
+Création de règles de gouvernances, capitalisation des données (rapprochement, normalisation, maj), suivi des qualifications et registres data 
+
+ 
+
+----media/image2.png--------media/image2.png--------media/image3.png--------media/image2.png--------media/image2.png--------media/image2.png----Conseil IT 
+
+Définir les stratégies d’architecture SI, optimisation des
+
+flux data, schématisation & cartographie, urbanisation SI 
+
+ 
+
+----media/image1.png--------media/image2.png--------media/image2.png--------media/image2.png--------media/image2.png--------media/image4.png----AMOA 
+
+Recueil des besoins, cadrage et restitution des 
+
+besoins, animation d’ateliers métiers, gestion des
+
+ plannings, capitalisation des connaissances 
+
+projets, Construction de cahiers de recette et validation
+
+ des livrables  
+
+
+
+ 
+
+----media/image2.png--------media/image2.png--------media/image2.png--------media/image2.png--------media/image3.png--------media/image5.png----Relation client 
+
+Compréhension des enjeux et des objectifs liés à la promesse client, amélioration et mise en qualité de la donnée clients
+
+
+
+
+
+
+
+----media/image2.png--------media/image2.png--------media/image2.png--------media/image2.png--------media/image3.png--------media/image2.png----Pilotage projet  
+
+Conduite de projet Agile (Scrum, Kanban), pilotage de projets complexes et transverses, conduite d’études, alignement aux exigences DSI, gestion et coordination d’équipes 
+
+ 
+
+----media/image3.png--------media/image3.png--------media/image2.png--------media/image2.png--------media/image2.png--------media/image2.png----MOE 
+
+Gestion de backlog (JIRA), pilotage d’une dev team, rédaction d’US/Tests d’acceptation et spécifications fonctionnelles, animation et arbitrage d’ateliers technique, développement web (HTML, CSS, PHP, SQL)
+
+ 
+
+----media/image2.png--------media/image3.png--------media/image2.png--------media/image2.png--------media/image3.png--------media/image2.png----Méthodologie et agilité 
+
+Création de processus méthodologiques, gestion de cycles de développement et sprint, animation des routines Agiles (sprint planning, review, rétrospective), harmonisation du cadre de travail 
+
+
+
+----media/image6.png----Conduite du changement 
+
+Rédaction de guide utilisateur, Formation 
+
+ 
+
+
+
+
+
+FORMATION 
+
+ 
+
+2023 : Formation Scrum Master et PSPO
+
+2012 - 2015 : Diplôme d’ingénieur, Génie logiciel
+
+2009 - 2012 : Licence, Administration des réseaux et services
+
+ 
+
+LANGUES 
+
+ 
+
+--	Anglais : Courant
+
+--	Français : Bilingue
+
+--	Arabe : Langue maternelle 
+
+
+
+
+
+
+
+
+
+
+
+	EXPERIENCES PROFESSIONNELLES 	
+
+ 
+
+L’Oréal – Métier Digital
+
+Product Manager – Digital
+
+Janvier 2024 – Aujourd’hui, Levallois 
+
+ 
+
+De côté des métiers du digital, je les accompagner pour le suivi et la mise en places des projets Mass Notification, Badge virtuel et la migration de l’outil de gestion des droits d’accès
+
+
+
+--	Expertises apportées : Conseil IT, Planification, Management, agilité, DATA, Validation qualité 
+
+ 
+
+ 
+
+--	Résultats :     
+
+--	Mise en production de l’outil Mass Notification dans les campus l’Oréal France
+
+--	Mise en place de la nouvelle version du badge virtuel dans l’application Smart Campus
+
+--	Spécifications fonctionnelles et documentation pour chaque projet ( CR des réunions, planning, cahier de recette, plan de préparation de test du projet Mass Notification)
+
+--	Coordination entre toutes les parties prenantes de chaque projet
+
+--	Animation des Comités de projet / de pilotage
+
+
+
+
+
+		
+
+
+
+RATP – DSI
+
+Product owner / Scrum Master – Digital Factory
+
+Mai 2023 – Décembre, Paris 
+
+ 
+
+Pour mieux gérer les incidents de ses lignes de métro, la Digital Factory m’a sollicitée pour intervenir au sein de son équipe afin de transformer des besoins métier en livrables, d'améliorer la gestion des données et de s’assurer de la bonne qualité de son produit DataMist.
+
+ 
+
+--	Expertises apportées : Conseil IT, Product owner, agilité, DATA, Jira
+
+ 
+
+ 
+
+--	Résultats Product Owner:     
+
+--	Mise en production des nouvelles lignes de métro dans l’outil DataMist
+
+--	Backlog priorisé avec des US clairement rédigées 
+
+--	Maquettes des interfaces IHM pour les lignes à intégrer 
+
+--	Préparation des supports des COPIL / COPROJ avec le suivi budgétaire et leur animation
+
+--	Documentation du projet sur confluence ( CR, planning, ..)
+
+
+
+
+
+
+
+
+
+
+
+--	Résultats Scrum Master :  
+
+--	Planification et animation des cérémonies Scrum (Daily, Sprint Review, Sprint Rétrospectives)
+
+--	Préparation des supports des cérémonies
+
+--	Veille sur le bon respect de l’agilité
+
+
+
+
+
+		
+
+
+
+Enedis – DSI
+
+Product owner – DSI MECAFLEX
+
+Janvier 2023 –Mai 2023, Courbevoie 
+
+ 
+
+Afin de maintenir les modules de calcul des mécanismes de capacité, la DSI m’a sollicitée pour intervenir dans l'équipe MECAPA afin de transformer des besoins métier en livrables, d'améliorer la gestion des données et de s’assurer de l’acceptation des résultats par RTE.
+
+ 
+
+--	Expertises apportées : Conseil IT, Product owner, agilité, DATA 
+
+ 
+
+ 
+
+--	Résultats :     
+
+--	Mise en production des nouvelles règles de gestion sur les 3 applications
+
+--	Lancement des tirs de calcul des mécanismes de capacité
+
+--	Maquettes des interfaces IHM des nouvelles versions des 3 applications
+
+--	Publication des puissances de référence ( Obligation) à RTE
+
+--	Publication des niveaux des capacités certifiés ( Certification) à RTE
+
+--	Publication des contrôles des capacités certifiées (Contrôle) à RTE
+
+
+
+		
+
+		Ramsay Santé – Marketing 
+
+Product owner – Makreking, digitalisation et expérience user
+
+Octobre 2019 – JUIN 2022, Pont cardinet 
+
+ 
+
+Afin de renforcer son équipe marketing et digitalisation, Ramsay Santé a fait appel à moi pour garantir la qualité de la nouvelle version du portail client et améliorer l’expérience utilisateur.
+
+ 
+
+--	Expertises apportées : Conseil IT, Product owner, agilité, web, marketing, Expérience user 
+
+ 
+
+ 
+
+--	Résultats :     
+
+--	Maintenir le bon fonctionnement du portail patient
+
+--	La nouvelle version du portail Ramsay Santé offrant la connexion FranceConnect et respectant 
+
+--	Intégration des fonctionnalités de l’upsell et du downsell sur le portail
+
+--	Intégration du questionnaire de satisfaction digital
+
+--	Mise en production de la refonte du parcours patient
+
+--	Maquettes de la patrie IHM de la santé mentale 
+
+--	Formation du portail aux professionnels de la santé
+
+
+
+
+
+
+
+PSA Groupe – DSI
+
+Product owner – DSI Buy-Back / Opel Vauxhall
+
+Janvier 2019 – Août 2021, Poissy 
+
+ 
+
+En tant que Product Owner au sein des deux équipes Buy-Back et OpelVauxwell, je suis intervenue pour le développement des modules intégrés dans le moteur des gestion des véhicules SAMARA ainsi que l’amélioration de la gestion de ses données.
+
+ 
+
+--	Expertises apportées : Conseil IT, Product owner, agilité, DATA 
+
+ 
+
+ 
+
+--	Résultats :     
+
+--	Intégration des données des factures OpelVauxwell dans l’outil de gestion des véhicules SAMARA 
+
+--	Développement des IHM des factures OpelVauxwell dans SAMARA
+
+--	Amélioration de la Data Quality (merge de doublons, traitements d’orphelins, hiérarchisation et harmonisation de la donnée, ...) 
+
+--	Mise en place des nouveaux KPI’s pour le calcul Buy-back
+
+--	Développement des IHM Buy-Back dans SAMARA
+
+
+
+
+
+		
+
+France Television – DRH
+
+Business Analyst – Direction des Ressources Humaines
+
+Juin 2018 – Decembre 2018, Balard 
+
+ 
+
+Ayant déjà une expérience sur le progiciel Pléiades NG, France Télévision m’a confié la tâche de gestion de la partie Déclarative. J’ai assuré la personnalisation de la version utilisée par le client. Aussi, je me suis chargée de la validation et de l’envoi mensuel de la déclaration sociale nominative aux organismes concernés.
+
+ 
+
+--	Expertises apportées : Conseil IT, Déclaration sociale nominative DSN , Pléiades NG, DATA 
+
+ 
+
+ 
+
+--	Résultats :     
+
+--	Intégration des données de la déclaration sociale nominative dans la version Pléiades NG
+
+--	Génération de la déclaration sociale nominative définitive validée sur l’outil DSN-Val 
+
+--	Bilan des résultats de la déclaration
+
+--	Mise à jour des IHM sur l'application PleiadesNG dans le module espace/extension DSN
+
+
+
+
+
+
+
+
+
+		
+
+Sopra Steria – R&D/ Qualification
+
+AMOA – R&D / Qualification
+
+Juillet 2016 – Avril 2018, Bruxelles / Paris/ Tunis
+
+ 
+
+Après une formation sur l’outil Pléiades NG de sopra, j’étais rattachée consécutivement aux trois équipes : Pléiades Belgique, Pléiades Tunis et Pléiades Paris. Mon rôle était d’accompagner l’équipe dans la mise en place du module de la déclaration sociale nominative des clients français et la DmFA pour le client Belge. Je suis intervenue dans la transformation des besoins métier jusqu’à la génération de la déclaration à envoyer aux organismes.
+
+
+
+ 
+
+--	Expertises apportées : Conseil IT, agilité, Déclaration sociale nominative DSN, Pléiades NG, DATA 
+
+ 
+
+ 
+
+--	Résultats :     
+
+--	Intégration des données de la déclaration sociale nominative dans la version Pléiades NG
+
+--	Génération de la déclaration sociale nominative définitive validée sur l’outil DSN-Val 
+
+--	Bilan des résultats de la déclaration
+
+--	Mise à jour des IHM sur l'application PleiadesNG dans le module espace/extension DSN
+
+--	Intégration du module DmFA pour la déclaration Belge
+
+--	Cahiers de recette à chaque compagne
+
+--	Liste des évolutions valides à la fin de chaque compagne
+
+--	Spécifications fonctionnelles des projets DSN et Prélèvement à la source 
+
+--	Coordination entre l’équipe Qualif Tunis et l’équipe Qualif Paris 
+
+
+
+
+
+		
+
+Aditus Technologies – DRH
+
+Microsoft BI – DRH
+
+Juin 2015 – Juin 2016, Tunis
+
+ 
+
+Au sein de la DSI, je me suis chargée de la mise en place d’une solution Business Intelligence, qui collecte les données utiles depuis MS Dynamics NAV précédemment installé et d’autres sources tels que des fichiers plats. La solution offre aussi l’affichage du dashboard dans la plateforme finale Power BI.   
+
+
+
+ 
+
+--	Expertises apportées : Conseil IT, BI, Reporting, DATA 
+
+ 
+
+ 
+
+--	Résultats :     
+
+--	Installation de l’ERP Microsoft Dynamics Nav
+
+--	Mise en place d’une solution BI qui gère les données de la direction des ressources humaines pour les modules : Absences, Projets, Opportunités, Ventes
+
+--	Mise en place des KPI’s de la solution
+
+--	Reporting et affichage des dashboards  des modules Absences, Projets, Opportunités, Vente sous Power BI desktop et mobile
+
+
+
+
+
+
+

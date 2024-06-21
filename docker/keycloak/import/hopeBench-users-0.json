@@ -1,0 +1,72 @@
+{
+  "realm" : "hopeBench",
+  "users" : [ {
+    "id" : "31f0e17b-31ad-49cf-8242-90a1286ab5c9",
+    "createdTimestamp" : 1702309433510,
+    "username" : "admin",
+    "enabled" : true,
+    "totp" : false,
+    "emailVerified" : false,
+    "firstName" : "Admin",
+    "lastName" : "ISTRATEUR",
+    "email" : "admin@talan.com",
+    "credentials" : [ {
+      "id" : "4722c1ea-56ad-4819-80a7-b78becab0b2b",
+      "type" : "password",
+      "userLabel" : "My password",
+      "createdDate" : 1702309499138,
+      "secretData" : "{\"value\":\"PuYETkXKRQh4C+CDj60wwekOA6otU+qRYW6cKTWyjyo=\",\"salt\":\"MiY6jX2TjUVYL2LxzqQ+3Q==\",\"additionalParameters\":{}}",
+      "credentialData" : "{\"hashIterations\":27500,\"algorithm\":\"pbkdf2-sha256\",\"additionalParameters\":{}}"
+    } ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-hopeBench" ],
+    "clientRoles" : {
+      "hopeBench-front" : [ "manager", "template_manager" ]
+    },
+    "notBefore" : 0,
+    "groups" : [ ]
+  }, {
+    "id" : "ca29d6e3-99f9-4502-8050-f4a08a66d397",
+    "createdTimestamp" : 1702542930262,
+    "username" : "manager",
+    "enabled" : true,
+    "totp" : false,
+    "emailVerified" : false,
+    "firstName" : "Super",
+    "lastName" : "MANAGER",
+    "email" : "manager@talan.com",
+    "credentials" : [ ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-hopeBench" ],
+    "clientRoles" : {
+      "hopeBench-front" : [ "manager" ]
+    },
+    "notBefore" : 0,
+    "groups" : [ ]
+  }, {
+    "id" : "97d8fc4d-8521-4394-8e2e-a921d2eeed30",
+    "createdTimestamp" : 1700498567822,
+    "username" : "test",
+    "enabled" : true,
+    "totp" : false,
+    "emailVerified" : false,
+    "firstName" : "Test",
+    "lastName" : "UNIT",
+    "email" : "test@talan.com",
+    "credentials" : [ {
+      "id" : "c3f34840-201f-4c61-8eaa-262300219ded",
+      "type" : "password",
+      "userLabel" : "My password",
+      "createdDate" : 1700498579377,
+      "secretData" : "{\"value\":\"qx+hX+FfiuSqxm1ptR2EdjfsPZZ6aWhED0qWbZCzBME=\",\"salt\":\"xFkVkSNAGgcMcCpAdlp/Vw==\",\"additionalParameters\":{}}",
+      "credentialData" : "{\"hashIterations\":27500,\"algorithm\":\"pbkdf2-sha256\",\"additionalParameters\":{}}"
+    } ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-hopeBench" ],
+    "notBefore" : 0,
+    "groups" : [ ]
+  } ]
+}

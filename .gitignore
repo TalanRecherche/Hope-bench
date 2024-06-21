@@ -1,0 +1,15 @@
+.env
+__pycache__
+.DS_Store
+backend/templates_cv/output/*
+backend/tmp
+backend/src/front/*
+ressources/*
+.idea
+venv
+
+# docker volumes, exclude/include rules to keep only one file
+docker/*
+!docker/keycloak
+docker/keycloak/*
+!docker/keycloak/import
