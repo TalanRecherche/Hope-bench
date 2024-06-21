@@ -2,8 +2,8 @@ stages:
   - build
 
 variables:
-  CONTAINER_IMAGE: $REGISTRY_URL/cvproai:$CI_COMMIT_SHORT_SHA
-  CONTAINER_IMAGE_LATEST: $REGISTRY_URL/cvproai:latest
+  CONTAINER_IMAGE: $REGISTRY_URL/hope_bench:$CI_COMMIT_SHORT_SHA
+  CONTAINER_IMAGE_LATEST: $REGISTRY_URL/hope_bench:latest
 
 build-docker:
   stage: build
