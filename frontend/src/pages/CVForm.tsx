@@ -10,6 +10,7 @@ import CustomFieldArray from "../components/formik/CustomFieldArray";
 import CustomField from "../components/formik/CustomField";
 import FieldArrayError from "../components/formik/FieldArrayError";
 import InputTransport from "../components/formik/InputTransport";
+import InputComputer from "../components/formik/InputComputer";
 import Loader from "../components/Loader";
 import MissionCard from "../components/MissionCard";
 import MissionFormDrawer from "../components/MissionFormDrawer";
@@ -156,6 +157,11 @@ function CVForm() {
     }
 
     const customerList = ["placeholder"] // TODO: Find list of clients (maybe through db request)
+    const storageProviderList = ["placeholder"] // TODO: Find list of providers
+    const storageRegionList = ["placeholder"] // TODO: Find list of regions
+    const computeProviderList = ["placeholder"] // TODO: Find list of providers
+    const computeRegionList = ["placeholder"] // TODO: Find list of regions
+    const computeDeviceList = ["placeholder"] // TODO: Find list of devices
 
     if (cv === undefined) {
         return <Loader/>
@@ -238,6 +244,108 @@ function CVForm() {
                                     />
                                 </CardBlocWithButton>
 
+                                <CardBlocWithButton label="Numérique - Informations générales" commModel={cv.comm_general} cv={cv} author={author} >
+                                    <Form.Group controlId="numberOfEmailsWithAttachments">
+                                        <Form.Label>Nombre de couriel avec Pièce jointe</Form.Label>
+                                        <CustomField name="numberOfEmailsWithAttachments" type="number"/>
+                                    </Form.Group>
+                                    <Form.Group controlId="numberOfEmailsWithoutAttachments">
+                                        <Form.Label>Nombre de couriel sans Pièce jointe</Form.Label>
+                                        <CustomField name="numberOfEmailsWithoutAttachments" type="number"/>
+                                    </Form.Group>
+                                    <Form.Group controlId="hoursOfVisioconference">
+                                        <Form.Label>Nombre d'heure de visioconférence</Form.Label>
+                                        <CustomField name="hoursOfVisioconference" type="number"/>
+                                    </Form.Group>
+                                    <Form.Group controlId="visioWithCamera">
+                                        <Form.Label>Caméra on/off</Form.Label>
+                                        <CustomField name="visioWithCamera" type="boolean"/> //TODO make proper boolean
+                                    </Form.Group>
+                                </CardBlocWithButton>
+
+                                <CardBlocWithButton label="Numérique - Machines" commModel={cv.comm_digital} cv={cv} author={author}>
+                                    <CustomFieldArray<Computers>
+                                        name="computers"
+                                        values={values.computers}
+                                        newValueBuilder={() => ({name: '', year: new Date().getFullYear()})}
+                                        render={({name, index}) =>
+                                            <InputComputer
+                                                namespace={name}
+                                                displayLabel={index === 0}/>
+                                        }
+                                    />
+                                </CardBlocWithButton>
+
+                                <CardBlocWithButton label="Numérique - Téléphone" commModel={cv.comm_digital} cv={cv} author={author}>
+                                    <CustomFieldArray<Phones>
+                                        name="phones"
+                                        values={values.computers}
+                                        newValueBuilder={() => ({name: '', year: new Date().getFullYear()})}
+                                        render={({name, index}) =>
+                                            <InputPhone
+                                                namespace={name}
+                                                displayLabel={index === 0}/>
+                                        }
+                                    />
+                                </CardBlocWithButton>
+
+                                <CardBlocWithButton label="Numérique - Stockage des données" commModel={cv.comm_general} cv={cv} author={author} >
+                                    <Form.Group controlId="terabytesOfDataToStore">
+                                        <Form.Label>Quantité de données</Form.Label>
+                                        <CustomField name="terabytesOfDataToStore" type="number"/>
+                                    </Form.Group>
+                                    <Form.Group controlId="storageLifetime">
+                                        <Form.Label>Period de stokage (en mois)</Form.Label>
+                                        <CustomField name="storageLifetime" type="number"/>
+                                    </Form.Group>
+                                    <Form.Group controlId="numberOfBackups">
+                                        <Form.Label>Nombre de sauvegarde redondante</Form.Label>
+                                        <CustomField name="numberOfBackups" type="number"/>
+                                    </Form.Group>
+                                    <Form.Group controlId="storageProvider">
+                                        <CustomSelectField
+                                            label="Provider"
+                                            name="storageProvider"
+                                            options={storageProviderList}
+                                        />
+                                    </Form.Group>
+                                    <Form.Group controlId="storageRegion">
+                                        <CustomSelectField
+                                            label="Region"
+                                            name="storageRegion"
+                                            options={storageRegionList}
+                                        />
+                                    </Form.Group>
+                                </CardBlocWithButton>
+
+                                <CardBlocWithButton label="Numérique - Calcul" commModel={cv.comm_general} cv={cv} author={author} >
+                                    <Form.Group controlId="hoursOfComputation">
+                                        <Form.Label>Heure de calcul</Form.Label>
+                                        <CustomField name="hoursOfComputation" type="number"/>
+                                    </Form.Group>
+                                    <Form.Group controlId="computeProvider">
+                                        <CustomSelectField
+                                            label="Provider"
+                                            name="computeProvider"
+                                            options={computeProviderList}
+                                        />
+                                    </Form.Group>
+                                    <Form.Group controlId="computeRegion">
+                                        <CustomSelectField
+                                            label="Region"
+                                            name="computeRegion"
+                                            options={computeRegionList}
+                                        />
+                                    </Form.Group>
+                                    <Form.Group controlId="computeDevice">
+                                        <CustomSelectField
+                                            label="Type de calculateur"
+                                            name="computeDevice"
+                                            options={computeDeviceList}
+                                        />
+                                    </Form.Group>
+                                </CardBlocWithButton>
+
                                 <Button variant="primary" onClick={submitIfValid}>Sauvegarder les info propal</Button>
                             </Stack></Form>
                         </>
@@ -247,6 +355,6 @@ function CVForm() {
 
         </div>
     )
-}
+}//TODO: link regions to provider
 
 export default CVForm
