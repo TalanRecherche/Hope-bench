@@ -163,6 +163,8 @@ function CVForm() {
     const computeRegionList = ["placeholder"] // TODO: Find list of regions
     const computeDeviceList = ["placeholder"] // TODO: Find list of devices
 
+    const boolList = ["true", "false"] // TODO: Make more elegant
+
     if (cv === undefined) {
         return <Loader/>
     }
@@ -342,6 +344,20 @@ function CVForm() {
                                             label="Type de calculateur"
                                             name="computeDevice"
                                             options={computeDeviceList}
+                                        />
+                                    </Form.Group>
+                                </CardBlocWithButton>
+
+                                <CardBlocWithButton label="Bureau" commModel={cv.comm_general} cv={cv} author={author} >
+                                    <Form.Group controlId="numberOfPagePrints">
+                                        <Form.Label>Nombre de pages imprimer en moyenne par mois</Form.Label>
+                                        <CustomField name="numberOfPagePrints" type="number"/>
+                                    </Form.Group>
+                                    <Form.Group controlId="doubleSided">
+                                        <CustomSelectField
+                                            label="Recto - Verso"
+                                            name="doubleSided"
+                                            options={boolList}
                                         />
                                     </Form.Group>
                                 </CardBlocWithButton>
