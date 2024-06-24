@@ -19,7 +19,7 @@ import MissionFormDrawer from "../components/MissionFormDrawer";
 import {ApiContext} from "../contexts/ApiContext";
 import {AuthContext} from "../contexts/AuthContext";
 import {scrollToFirstError} from "../model/form.utils";
-import {BaseModelWithComments, Certification, CVData, cvDataSchema, Education, Language, Skill} from "../model/models";
+import {BaseModelWithComments, propalData, propalDataSchema} from "../model/models";
 import {FieldProps} from "formik/dist/Field";
 import CommentDrawer from "../components/CommentDrawer.tsx";
 import FormErrorNotification from "./FormErrorNotification.tsx";
@@ -30,7 +30,7 @@ const generateEmptyBaseModelWithComments = (): BaseModelWithComments => {
     };
 };
 
-const emptyData: CVData = {
+const emptyData: propalData = {
     firstname: '',
     lastname: '',
     poste: '',
@@ -66,7 +66,7 @@ const CardBloc = ({label, children}: PropsWithChildren<{ label: string }>) => (
     </Card>
 )
 
-const CardBlocWithButton = ({label, cv, commModel, children, author}: PropsWithChildren<{ label: string, cv: CVData, commModel: BaseModelWithComments, author: string }>) => (
+const CardBlocWithButton = ({label, cv, commModel, children, author}: PropsWithChildren<{ label: string, cv: propalData, commModel: BaseModelWithComments, author: string }>) => (
     <Card>
         <Card.Header className="d-flex justify-content-between align-items-center fs-5">
             {label}
@@ -78,7 +78,7 @@ const CardBlocWithButton = ({label, cv, commModel, children, author}: PropsWithC
     </Card>
 )
 
-function createCommentDrawer(commModel:BaseModelWithComments, cv:CVData, modifyPossible: boolean, author: string) {
+function createCommentDrawer(commModel:BaseModelWithComments, cv:propalData, modifyPossible: boolean, author: string) {
     return ((commModel != undefined && commModel.comments != undefined && commModel.comments.length > 0) ? <CommentDrawer originalCommentModel={commModel} isOnManagerView={false} cv={cv} modifyPossible={modifyPossible} author={author}>
         {({toggleDrawer}) =>
                     <Button variant="secondary" size="sm" onClick={toggleDrawer}>Voir tous les commentaires</Button>
@@ -88,7 +88,7 @@ function createCommentDrawer(commModel:BaseModelWithComments, cv:CVData, modifyP
 
 
 function CVForm() {
-    const [cv, setCv] = useState<CVData>()
+    const [cv, setCv] = useState<propalData>()
     const {cvId} = useParams();
     const {user} = useContext(AuthContext)
     const {updateCv, createCv, getCv} = useContext(ApiContext)
@@ -147,7 +147,7 @@ function CVForm() {
      *
      * @param cvData
      */
-    const onSubmit = async (cvData: CVData) => {
+    const onSubmit = async (cvData: propalData) => {
         // console.warn(cvData)
         if (cvData.id) {
             return updateCv(cvData)
@@ -167,9 +167,9 @@ function CVForm() {
      * on log et on scroll vers l'input en erreur si existant
      */
     const handleSubmitError = (
-        errors: FormikErrors<CVData>,
-        values: CVData,
-        setFieldTouched: FormikProps<CVData>['setFieldTouched']
+        errors: FormikErrors<propalData>,
+        values: propalData,
+        setFieldTouched: FormikProps<propalData>['setFieldTouched']
     ) => (e: SyntheticEvent) => {
         e.preventDefault();
         console.warn(errors);
@@ -181,20 +181,16 @@ function CVForm() {
         }
     }
 
-    
-
-
-
-    const originalFormatOptions = ["docx", "pptx", "pdf diapo", "pdf text"]
+    const customerList = ["placeholder"] // TODO: Find list of clients (maybe through db request)
 
     if (cv === undefined) {
         return <Loader/>
     }
     return (
         <div className="container">
-            <Formik<CVData>
+            <Formik<propalData>
                 onSubmit={onSubmit}
-                validationSchema={toFormikValidationSchema(cvDataSchema)}
+                validationSchema={toFormikValidationSchema(propalDataSchema)}
                 initialValues={cv}
             >
                 
@@ -204,7 +200,7 @@ function CVForm() {
                         <>
                             <FormErrorNotification/>
                             <Row className="justify-content-between">
-                                <Col xs="auto"><h2>Créer son CV</h2></Col>
+                                <Col xs="auto"><h2>Labéler sa propal</h2></Col>
                                 {/* <Col xs="auto"><Stack gap={3} direction="horizontal">
                                     <ImportButton onSuccess={parsedCv => handleImport(parsedCv, values, setValues)} firstname={cv.firstname} lastname={cv.lastname}/>
                                     {previousCv ?
@@ -214,151 +210,43 @@ function CVForm() {
                             </Row>
                             <Form noValidate><Stack gap={4}>
                                 <CardBlocWithButton label="Informations générales" commModel={cv.comm_general} cv={cv} author={author} >
-                                    <Form.Group controlId="firstname">
-                                        <Form.Label>Prénom</Form.Label>
-                                        <CustomField name="firstname" required/>
+                                    <Form.Group controlId="mission_name">
+                                        <Form.Label>Nom de la mission</Form.Label>
+                                        <CustomField name="mission_name"/>
                                     </Form.Group>
-                                    <Form.Group controlId="lastname">
-                                        <Form.Label>Nom</Form.Label>
-                                        <CustomField name="lastname" required/>
+                                    <Form.Group controlId="customer">
+                                        <CustomSelectField
+                                            label="Client"
+                                            name="customer"
+                                            options={customerList}
+                                        />
                                     </Form.Group>
-                                    <Form.Group controlId="poste">
-                                        <Form.Label>Poste</Form.Label>
-                                        <CustomField name="poste" required/>
+                                    <Form.Group controlId="missionStart">
+                                        <Form.Label>Date de début</Form.Label>
+                                        <CustomField name="missionStart" type="date"/>
                                     </Form.Group>
-                                    <Form.Group controlId="introduction">
-                                        <Form.Label>Description <span style={{color: 'red'}}>*</span></Form.Label>
-                                        <CustomField name="introduction" as={TextareaAutosize} required/>
+                                    <Form.Group controlId="missionEnd">
+                                        <Form.Label>Date de fin</Form.Label>
+                                        <CustomField name="missionEnd" type="date"/>
                                     </Form.Group>
-                                    <Form.Group controlId="label">
-                                        <Form.Label>Etiquette pour ce CV</Form.Label>
-                                        <CustomField name="label" required/>
+                                    <Form.Group controlId="talanLocation">
+                                        <Form.Label>Localisation Talan</Form.Label>
+                                        <CustomField name="talanLocation"/>
                                     </Form.Group>
-                                        <Form.Group controlId="labelsAnnotation">
-                                    <Form.Label>Labels Annotation</Form.Label>
-                                    <div>
-                                        {Object.keys(cv.labelsAnnotation).map((key) => (
-                                            <div key={key} className="mb-3">
-                                                <Field type="checkbox" name={`labelsAnnotation.${key}`}>
-                                                    {({ field }: {field : any}) => (
-                                                        <Form.Check 
-                                                            type="checkbox"
-                                                            label={key}
-                                                            {...field}
-                                                            checked={field.value}
-                                                        />
-                                                    )}
-                                                </Field>
-                                            </div>
-                                        ))}
-                                    </div>
+                                    <Form.Group controlId="customerLocation">
+                                        <Form.Label>Localisation Client</Form.Label>
+                                        <CustomField name="customerLocation"/>
                                     </Form.Group>
-                                    <CustomSelectField
-                                        label="Format du fichier original"
-                                        name="originalFormat"
-                                        options={originalFormatOptions}
-                                        isRequired={true}
-                                    />
+                                    <Form.Group controlId="numberWorkers">
+                                        <Form.Label>Nombre de collaborateurs</Form.Label>
+                                        <CustomField name="numberWorkers" type="number"/>
+                                    </Form.Group>
+                                    <Form.Group controlId="missionLength">
+                                        <Form.Label>Durée de la mission (en mois)</Form.Label>
+                                        <CustomField name="missionLength" type="number"/>
+                                    </Form.Group>
                                 </CardBlocWithButton>
-                                <CardBlocWithButton label="Diplômes" commModel={cv.comm_educations} cv={cv} author={author}>
-                                    <CustomFieldArray<Education>
-                                        name="educations"
-                                        values={values.educations}
-                                        newValueBuilder={() => ({name: '', year: new Date().getFullYear()})}
-                                        render={({name, index}) =>
-                                            <InputEducation
-                                                namespace={name}
-                                                displayLabel={index === 0}/>
-                                        }
-                                    />
-                                </CardBlocWithButton>
-                                <CardBlocWithButton label="Certifications/Formations" commModel={cv.comm_certifications} cv={cv} author={author}>
-                                    <CustomFieldArray<Certification>
-                                        name="certifications"
-                                        values={values.certifications}
-                                        newValueBuilder={() => ({name: '', date: ''})}
-                                        render={({name, index}) =>
-                                            <InputCertification
-                                                namespace={name}
-                                                displayLabel={index === 0}/>
-                                        }
-                                    />
-                                </CardBlocWithButton>
-                                <CardBlocWithButton label="Langues" commModel={cv.comm_languages} cv={cv} author={author}>
-                                    <CustomFieldArray<Language>
-                                        name="languages"
-                                        values={values.languages}
-                                        newValueBuilder={() => ({name: '', level: ''})}
-                                        render={({name, index}) =>
-                                            <InputLanguage
-                                                namespace={name}
-                                                displayLabel={index === 0}/>
-                                        }
-                                    />
-                                </CardBlocWithButton>
-
-                                <CardBlocWithButton label="Compétences" commModel={cv.comm_skills} cv={cv} author={author}>
-                                    <CustomFieldArray<Skill>
-                                        name="skills"
-                                        values={values.skills}
-                                        newValueBuilder={() => ({domain: '', skills: []})}
-                                        render={({name, index}) =>
-                                            <InputSkillsByDomain
-                                                namespace={name}
-                                                displayLabel={index === 0}/>
-                                        }
-                                    />
-                                </CardBlocWithButton>
-
-                                <CardBloc label="Missions">
-                                    <FieldArray
-                                        name="missions"
-                                        render={arrayHelpers => (<Stack gap={3}>
-                                            {values.missions != undefined ? values.missions.map((mission, index) => (
-                                                <React.Fragment key={index}>
-                                                    <MissionFormDrawer
-                                                        onSave={m => arrayHelpers.replace(index, m)}
-                                                        initialValues={mission}>
-                                                        {({toggleDrawer}) =>
-                                                            <MissionCard mission={mission}
-                                                                         onEdit={toggleDrawer}
-                                                                         onDelete={() => arrayHelpers.remove(index)}
-                                                                         cv={cv}
-                                                                         author={author}
-                                                                        //  commentDrawer={createCommentDrawer(mission, cv, true)
-                                                            >
-                                                                <Field name={"missions." + index}>
-                                                                    {({meta}: FieldProps) => meta.error != null ? (
-                                                                        typeof meta.error === 'string'
-                                                                            // meta.error can be an object
-                                                                            // display error on array, not subfields
-                                                                            // d-block to force display
-                                                                            ? <div
-                                                                                className="d-block invalid-feedback">{meta.error}</div>
-                                                                            : <div
-                                                                                className="d-block invalid-feedback">Erreur
-                                                                                : mission non valide, veuillez vérifier le
-                                                                                contenu</div>
-                                                                    ) : null}
-                                                                </Field>
-                                                            </MissionCard>
-                                                        }
-                                                    </MissionFormDrawer>
-                                                </React.Fragment>
-                                            )) : null}
-                                            <FieldArrayError name="missions"/>
-                                            <div>
-                                                <MissionFormDrawer onSave={m => arrayHelpers.push(m)}>
-                                                    {({toggleDrawer}) =>
-                                                        <Button variant="secondary" size="sm" onClick={toggleDrawer}>Ajouter
-                                                            une mission</Button>
-                                                    }
-                                                </MissionFormDrawer>
-                                            </div>
-                                        </Stack>)}
-                                    />
-                                </CardBloc>
-                                <Button variant="primary" onClick={submitIfValid}>Sauvegarder le CV</Button>
+                                <Button variant="primary" onClick={submitIfValid}>Sauvegarder les info propal</Button>
                             </Stack></Form>
                         </>
                     );
