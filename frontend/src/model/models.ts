@@ -17,7 +17,9 @@ export const baseModelWithCommentsSchema = z.object({
 });
 
 export const commentDictSchema = z.object({
-	comm_general: baseModelWithCommentsSchema
+	comm_general: baseModelWithCommentsSchema,
+	comm_transport: baseModelWithCommentsSchema,
+	comm_digital: baseModelWithCommentsSchema,
 });
 
 export const propalDataSchema = commentDictSchema.extend({

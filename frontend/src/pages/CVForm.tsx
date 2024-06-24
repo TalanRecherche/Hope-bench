@@ -9,10 +9,7 @@ import {toFormikValidationSchema} from "zod-formik-adapter";
 import CustomFieldArray from "../components/formik/CustomFieldArray";
 import CustomField from "../components/formik/CustomField";
 import FieldArrayError from "../components/formik/FieldArrayError";
-import InputCertification from "../components/formik/InputCertification";
-import InputEducation from "../components/formik/InputEducation";
-import InputLanguage from "../components/formik/InputLanguage";
-import InputSkillsByDomain from "../components/formik/InputSkillsByDomain";
+import InputTransport from "../components/formik/InputTransport";
 import Loader from "../components/Loader";
 import MissionCard from "../components/MissionCard";
 import MissionFormDrawer from "../components/MissionFormDrawer";
@@ -31,32 +28,9 @@ const generateEmptyBaseModelWithComments = (): BaseModelWithComments => {
 };
 
 const emptyData: propalData = {
-    firstname: '',
-    lastname: '',
-    poste: '',
-    introduction: '',
-    missions: [],
-    languages: [],
-    educations: [],
-    certifications: [],
-    skills: [],
-    comm_languages: generateEmptyBaseModelWithComments(),
-    comm_educations: generateEmptyBaseModelWithComments(),
-    comm_certifications: generateEmptyBaseModelWithComments(),
-    comm_skills: generateEmptyBaseModelWithComments(),
-    comm_general: generateEmptyBaseModelWithComments(), 
-    label: "",
-    status: 0,
-    primary_cv: false, 
-    labelsAnnotation: {
-        bulletForLanguageLevels: false,
-        noSkillDomains: false,
-        noCertifications: false,
-        anonymized: false,
-        noIntroduction: false,
-        englishCV: false
-    },
-    originalFormat: ""
+    comm_transport: generateEmptyBaseModelWithComments(),
+    comm_general: generateEmptyBaseModelWithComments(),
+    status: 0
 }
 
 const CardBloc = ({label, children}: PropsWithChildren<{ label: string }>) => (
@@ -245,7 +219,25 @@ function CVForm() {
                                         <Form.Label>Durée de la mission (en mois)</Form.Label>
                                         <CustomField name="missionLength" type="number"/>
                                     </Form.Group>
+                                    <Form.Group controlId="numberOfMeetings">
+                                        <Form.Label>Nombre de rendez-vous en présentiel</Form.Label>
+                                        <CustomField name="numberOfMeetings" type="number"/>
+                                    </Form.Group>
                                 </CardBlocWithButton>
+
+                                <CardBlocWithButton label="Transport" commModel={cv.comm_transport} cv={cv} author={author}>
+                                    <CustomFieldArray<Transport>
+                                        name="transport"
+                                        values={values.transport}
+                                        newValueBuilder={() => ({name: '', year: new Date().getFullYear()})}
+                                        render={({name, index}) =>
+                                            <InputTransport
+                                                namespace={name}
+                                                displayLabel={index === 0}/>
+                                        }
+                                    />
+                                </CardBlocWithButton>
+
                                 <Button variant="primary" onClick={submitIfValid}>Sauvegarder les info propal</Button>
                             </Stack></Form>
                         </>
