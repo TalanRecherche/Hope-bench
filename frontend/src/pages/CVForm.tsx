@@ -11,6 +11,7 @@ import CustomField from "../components/formik/CustomField";
 import FieldArrayError from "../components/formik/FieldArrayError";
 import InputTransport from "../components/formik/InputTransport";
 import InputComputer from "../components/formik/InputComputer";
+import InputPhone from "../components/formik/InputPhone";
 import Loader from "../components/Loader";
 import MissionCard from "../components/MissionCard";
 import MissionFormDrawer from "../components/MissionFormDrawer";
@@ -281,7 +282,7 @@ function CVForm() {
                                 <CardBlocWithButton label="Numérique - Téléphone" commModel={cv.comm_digital} cv={cv} author={author}>
                                     <CustomFieldArray<Phones>
                                         name="phones"
-                                        values={values.computers}
+                                        values={values.phones}
                                         newValueBuilder={() => ({name: '', year: new Date().getFullYear()})}
                                         render={({name, index}) =>
                                             <InputPhone

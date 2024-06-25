@@ -30,4 +30,4 @@ const InputPhone = ({namespace, displayLabel = false}: Props) => {
 	</InlineForm>;
 }
 
-export default InputComputer
+export default InputPhone
