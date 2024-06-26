@@ -32,7 +32,7 @@ services:
       PGDATA: /data/postgres
       POSTGRES_DB: hopeBench
     volumes:
-      - ./docker/postgres:/data/postgres
+      - postgres_data:/data/postgres
     ports:
       - "5432:5432"
   keycloak:
@@ -46,5 +46,5 @@ services:
     volumes:
       - ./docker/keycloak:/opt/keycloak/data
 
-
-
+volumes:
+  postgres_data:
