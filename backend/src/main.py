@@ -9,7 +9,7 @@ from fastapi.staticfiles import StaticFiles
 from starlette.types import Scope
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
-from .api import template_api, cv_api, public_api, reviewer_api, users_api
+from .api import public_api, reviewer_api, users_api
 from .api.auth import get_auth
 from .containers import Container
 
@@ -37,8 +37,6 @@ app.add_middleware(
 )
 
 api_router = APIRouter(default_response_class=JSONResponse, dependencies=[Depends(get_auth)])
-api_router.include_router(cv_api.router)
-api_router.include_router(template_api.router)
 api_router.include_router(users_api.router)
 api_router.include_router(reviewer_api.router)
 
