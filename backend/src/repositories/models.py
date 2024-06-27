@@ -56,10 +56,8 @@ class UserDb(Base):
     id_users = Column(String, primary_key=True, nullable=False)
     firstname = Column(String, nullable=False)
     lastname = Column(String, nullable=False)
-    mail = Column(String, nullable=False)
     firstname_manager = Column(String)
     lastname_manager = Column(String)
-    mail_manager = Column(String)
 
 
 class ReviewerDb(Base):

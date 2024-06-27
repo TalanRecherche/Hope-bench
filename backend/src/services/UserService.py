@@ -14,9 +14,6 @@ class UserService:
 
     def find_underlings(self, user_id) -> [User]:
         return self.user_repository.find_underlings(user_id)
-    
-    def find_underlings_mail(self, mail) -> [User]:
-        return self.user_repository.find_underlings_mail(mail)
 
     def find_reviewed_and_underlings_id(self, userId: str, reviewer_service: ReviewerService) -> List[str]:
         return self.user_repository.find_reviewed_and_underlings_id(userId, reviewer_service)
