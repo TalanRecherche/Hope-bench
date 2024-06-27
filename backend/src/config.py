@@ -28,26 +28,6 @@ class AuthConfiguration:
         self.token_url = getConfig("KEYCLOAK_TOKEN_URL")
         self.client_front_id = getConfig("KEYCLOAK_CLIENT_FRONT_ID")
 
-
-class OpenAIConfiguration:
-    # constructor
-    def __init__(self):
-        self.api_version = getConfig("OPENAI_API_VERSION")
-        self.api_key = getConfig("OPENAI_API_KEY")
-        self.model = getConfig("OPENAI_MODEL")
-        self.endpoint = getConfig("OPENAI_ENDPOINT",
-                                  default=f'{getConfig("OPENAI_API_BASE")}openai/deployments/{self.model}/chat/completions?api-version={self.api_version}')
-
-
-def buildOpenAIConfiguration():
-    try:
-        return OpenAIConfiguration()
-    except Exception as e:
-        logger.error(f"Error while building OpenAIConfiguration : {e}")
-        return None
-
-
 class Configuration:
     database_url = getConfig("DATABASE_URL")
     auth = AuthConfiguration()
-    openai = buildOpenAIConfiguration()
