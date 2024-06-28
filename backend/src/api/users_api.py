@@ -1,5 +1,4 @@
 from ..services.ReviewerService import ReviewerService
-from fastapi import APIRouter, Request
 from dependency_injector.wiring import inject, Provide
 from fastapi import APIRouter, Depends, Request
 from ..containers import Container
