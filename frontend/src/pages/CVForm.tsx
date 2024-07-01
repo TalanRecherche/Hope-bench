@@ -18,7 +18,7 @@ import MissionFormDrawer from "../components/MissionFormDrawer";
 import {ApiContext} from "../contexts/ApiContext";
 import {AuthContext} from "../contexts/AuthContext";
 import {scrollToFirstError} from "../model/form.utils";
-import {BaseModelWithComments, propalData, propalDataSchema} from "../model/models";
+import {BaseModelWithComments, BusinessPropositionData, BusinessPropositionDataSchema} from "../model/models";
 import {FieldProps} from "formik/dist/Field";
 import CommentDrawer from "../components/CommentDrawer.tsx";
 import FormErrorNotification from "./FormErrorNotification.tsx";
@@ -29,10 +29,7 @@ const generateEmptyBaseModelWithComments = (): BaseModelWithComments => {
     };
 };
 
-const emptyData: propalData = {
-    comm_transport: generateEmptyBaseModelWithComments(),
-    comm_general: generateEmptyBaseModelWithComments(),
-    status: 0
+const emptyData: BusinessPropositionData = {
 }
 
 const CardBloc = ({label, children}: PropsWithChildren<{ label: string }>) => (
@@ -64,19 +61,17 @@ function createCommentDrawer(commModel:BaseModelWithComments, cv:propalData, mod
 
 
 function CVForm() {
-    const [cv, setCv] = useState<propalData>()
+    const [cv, setCv] = useState<BusinessPropositionData>()
     const {cvId} = useParams();
     const {user} = useContext(AuthContext)
-    const {updateCv, createCv, getCv} = useContext(ApiContext)
+    const {createBusinessProposition, readBusinessProposition, updateBusinessProposition, deleteTemplate} = useContext(ApiContext)
     const navigate = useNavigate();
     const author: string = ""
 
     useEffect(() => {
         if (cvId === 'create') {
             setCv({
-                ...emptyData,
-                firstname: user.firstname || '',
-                lastname: user.lastname || '',
+                ...emptyData
             })
         } else if (cvId) {
             getCv(cvId).then(setCv)
@@ -121,15 +116,15 @@ function CVForm() {
      * Fonction d'envoi du formulaire à l'api
      * À ce moment, les données ont été validées par Formik
      *
-     * @param cvData
+     * @param business_proposition
      */
-    const onSubmit = async (cvData: propalData) => {
+    const onSubmit = async (business_proposition: BusinessPropositionData) => {
         // console.warn(cvData)
-        if (cvData.id) {
-            return updateCv(cvData)
+        if (business_proposition.id) {
+            return updateBusinessProposition(business_proposition)
         }
         let id = uuid()
-        return createCv({...cvData, id: id}).then(() => {
+        return createBusinessProposition({...business_proposition}).then(() => {
             navigate("/cvs/" + id);
             navigate("/my-cvs/")
         })/*.catch(error => {
@@ -144,8 +139,8 @@ function CVForm() {
      */
     const handleSubmitError = (
         errors: FormikErrors<propalData>,
-        values: propalData,
-        setFieldTouched: FormikProps<propalData>['setFieldTouched']
+        values: BusinessPropositionData,
+        setFieldTouched: FormikProps<BusinessPropositionData>['setFieldTouched']
     ) => (e: SyntheticEvent) => {
         e.preventDefault();
         console.warn(errors);
@@ -171,9 +166,9 @@ function CVForm() {
     }
     return (
         <div className="container">
-            <Formik<propalData>
+            <Formik<BusinessPropositionData>
                 onSubmit={onSubmit}
-                validationSchema={toFormikValidationSchema(propalDataSchema)}
+                validationSchema={toFormikValidationSchema(BusinessPropositionDataSchema)}
                 initialValues={cv}
             >
                 
@@ -192,7 +187,7 @@ function CVForm() {
                                 </Stack></Col> */}
                             </Row>
                             <Form noValidate><Stack gap={4}>
-                                <CardBlocWithButton label="Informations générales" commModel={cv.comm_general} cv={cv} author={author} >
+                                <CardBlocWithButton label="Informations générales" cv={cv} author={author} >
                                     <Form.Group controlId="mission_name">
                                         <Form.Label>Nom de la mission</Form.Label>
                                         <CustomField name="mission_name"/>
@@ -266,7 +261,7 @@ function CVForm() {
                                     </Form.Group>
                                 </CardBlocWithButton>
 
-                                <CardBlocWithButton label="Numérique - Machines" commModel={cv.comm_digital} cv={cv} author={author}>
+                                <CardBlocWithButton label="Numérique - Machines" cv={cv} author={author}>
                                     <CustomFieldArray<Computers>
                                         name="computers"
                                         values={values.computers}
@@ -279,7 +274,7 @@ function CVForm() {
                                     />
                                 </CardBlocWithButton>
 
-                                <CardBlocWithButton label="Numérique - Téléphone" commModel={cv.comm_digital} cv={cv} author={author}>
+                                <CardBlocWithButton label="Numérique - Téléphone" cv={cv} author={author}>
                                     <CustomFieldArray<Phones>
                                         name="phones"
                                         values={values.phones}
@@ -292,7 +287,7 @@ function CVForm() {
                                     />
                                 </CardBlocWithButton>
 
-                                <CardBlocWithButton label="Numérique - Stockage des données" commModel={cv.comm_general} cv={cv} author={author} >
+                                <CardBlocWithButton label="Numérique - Stockage des données" cv={cv} author={author} >
                                     <Form.Group controlId="terabytesOfDataToStore">
                                         <Form.Label>Quantité de données</Form.Label>
                                         <CustomField name="terabytesOfDataToStore" type="number"/>
@@ -321,7 +316,7 @@ function CVForm() {
                                     </Form.Group>
                                 </CardBlocWithButton>
 
-                                <CardBlocWithButton label="Numérique - Calcul" commModel={cv.comm_general} cv={cv} author={author} >
+                                <CardBlocWithButton label="Numérique - Calcul" cv={cv} author={author} >
                                     <Form.Group controlId="hoursOfComputation">
                                         <Form.Label>Heure de calcul</Form.Label>
                                         <CustomField name="hoursOfComputation" type="number"/>
@@ -349,7 +344,7 @@ function CVForm() {
                                     </Form.Group>
                                 </CardBlocWithButton>
 
-                                <CardBlocWithButton label="Bureau" commModel={cv.comm_general} cv={cv} author={author} >
+                                <CardBlocWithButton label="Bureau" cv={cv} author={author} >
                                     <Form.Group controlId="numberOfPagePrints">
                                         <Form.Label>Nombre de pages imprimer en moyenne par mois</Form.Label>
                                         <CustomField name="numberOfPagePrints" type="number"/>

@@ -16,16 +16,9 @@ export const baseModelWithCommentsSchema = z.object({
 	comments: z.array(commentsSchema)
 });
 
-export const commentDictSchema = z.object({
-	comm_general: baseModelWithCommentsSchema,
-	comm_transport: baseModelWithCommentsSchema,
-	comm_digital: baseModelWithCommentsSchema,
-});
-
-export const propalDataSchema = commentDictSchema.extend({
+export const BusinessPropositionDataSchema = z.object({
 	id: notEmptyString.optional(),
-	status: z.number(),
-	label: notEmptyString,
+	mission_name: notEmptyString.optional(),
 	id_user: notEmptyString.optional(),
 });
 
@@ -57,9 +50,7 @@ export const searchOptionsSchema = z.object({
 	pageSize: z.number().optional()
 })
 
-export type TemplateForm = z.infer<typeof templateFormSchema>;
-
-export type propalData = z.infer<typeof propalDataSchema>;
+export type BusinessPropositionData = z.infer<typeof BusinessPropositionDataSchema>;
 export type User = z.infer<typeof userSchema>;
 export type BaseModelWithComments = z.infer<typeof baseModelWithCommentsSchema>;
 export type Comment = z.infer<typeof commentsSchema>;

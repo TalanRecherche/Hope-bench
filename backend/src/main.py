@@ -3,14 +3,12 @@ import os
 from dotenv import load_dotenv
 from fastapi import FastAPI, APIRouter, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.params import Depends
 from fastapi.responses import JSONResponse, Response
 from fastapi.staticfiles import StaticFiles
-from starlette.types import Scope
 from starlette.exceptions import HTTPException as StarletteHTTPException
+from starlette.types import Scope
 
 from .api import public_api, reviewer_api, users_api, business_proposition_api
-from .api.auth import get_auth
 from .containers import Container
 
 load_dotenv()
@@ -21,6 +19,7 @@ origins = [
     "http://localhost:8000",
     "http://localhost:8080",
 ]
+
 
 container = Container()
 db = container.db()

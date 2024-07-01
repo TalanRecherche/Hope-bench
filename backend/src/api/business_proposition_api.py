@@ -1,3 +1,5 @@
+import logging
+
 from fastapi import APIRouter, Depends, Request
 from dependency_injector.wiring import inject, Provide
 from ..containers import Container
