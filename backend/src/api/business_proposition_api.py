@@ -29,13 +29,15 @@ async def create(request: Request,
                  business_proposition: BusinessProposition,
                  business_proposition_service: BusinessPropositionService = Depends(
                      Provide[Container.business_proposition_service])) -> BusinessProposition:
-    return business_proposition_service.create(business_proposition)
+    user: User = request.state.user
+    return business_proposition_service.create(business_proposition, user.id)
 
 @router.put("/{business_proposition_id}")
 @inject
 async def update(request: Request,
                  business_proposition: BusinessProposition,
                  business_proposition_service: BusinessPropositionService = Depends(Provide[Container.business_proposition_service])):
+    user: User = request.state.user
     return business_proposition_service.update(business_proposition)
 
 @router.delete("/{business_proposition_id}")
@@ -45,5 +47,6 @@ async def delete_by_id(
         business_proposition_id: str,
         business_proposition_service: BusinessPropositionService = Depends(Provide[Container.business_proposition_service]),
 ):
+    user: User = request.state.user
     return business_proposition_service.delete(business_proposition_id)
 

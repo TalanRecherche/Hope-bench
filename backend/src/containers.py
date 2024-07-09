@@ -1,5 +1,6 @@
 import logging
 
+from .repositories.UserBusinessPropositionTableRepository import UserBusinessPropositionTableRepository
 from .repositories.BusinessPropositionRepository import BusinessPropositionRepository
 from .repositories.ReviewersRepository import ReviewerRepository
 from dependency_injector import containers, providers
@@ -26,6 +27,8 @@ class Container(containers.DeclarativeContainer):
     user_repository = providers.Factory(UserRepository, session_factory=db.provided.session)
     reviewer_repository = providers.Factory(ReviewerRepository, session_factory=db.provided.session)
     business_proposition_repository = providers.Factory(BusinessPropositionRepository, session_factory=db.provided.session)
+    user_business_proposition_table_repository = providers.Factory(UserBusinessPropositionTableRepository, session_factory=db.provided.session)
+
 
     user_service = providers.Factory(
         UserService,
@@ -39,5 +42,6 @@ class Container(containers.DeclarativeContainer):
 
     business_proposition_service = providers.Factory(
         BusinessPropositionService,
-        business_proposition_repository=business_proposition_repository
+        business_proposition_repository=business_proposition_repository,
+        user_business_proposition_table_repository=user_business_proposition_table_repository
     )

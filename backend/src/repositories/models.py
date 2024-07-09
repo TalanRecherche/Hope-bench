@@ -51,3 +51,8 @@ class BusinessPropositionDB(Base):
     compute_device = Column(String)
     pages_printed_per_month = Column(Integer)
     print_double_sided = Column(Boolean)
+
+class UserBusinessPropositionTableDB(Base):
+    __tablename__ = "user_business_propositions"
+    id_business_proposition = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4, nullable=False)
+    id_user = Column(String, primary_key=True, nullable=False)

@@ -48,7 +48,7 @@ async def get_auth(request: Request, token: str = Security(oauth2_scheme)) -> Us
         user = User(
             kc_user.get('sub'),
             [Roles(role) for role in str_roles],
-            " ", " ", None, None, None, None
+            " ", " ", None, None
         )
         request.state.user = user
         return user
