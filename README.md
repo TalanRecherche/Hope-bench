@@ -23,7 +23,7 @@ Ce projet contient une API pour la saisie de données pour le projet Hope IA
 
 ### Frontend
 
-Pour accéder à l'application, ouvrez votre navigateur et rendez-vous à l'adresse : 
+Pour accéder à l'application, veuillez ouvrir votre navigateur et rendez-vous à l'adresse : 
 ```
 http://localhost:8080
 ```
