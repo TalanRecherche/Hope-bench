@@ -45,6 +45,3 @@ services:
     command: start-dev --import-realm
     volumes:
       - ./docker/keycloak:/opt/keycloak/data
-
-volumes:
-  postgres_data:
