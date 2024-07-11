@@ -31,4 +31,12 @@ COPY entrypoint.sh /entrypoint.sh
 RUN chmod 755 /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
+ENV DATABASE_URL=$DATABASE_URL2
+
+ENV KEYCLOAK_AUTHORIZATION_URL="http://20.19.81.10:8080/realms/hope-bench/protocol/openid-connect/auth"
+ENV KEYCLOAK_CLIENT_FRONT_ID="hope-bench-front"
+ENV KEYCLOAK_REALM="hope-bench"
+ENV KEYCLOAK_SERVER_URL="https://kccv.azurewebsites.net/"
+ENV KEYCLOAK_TOKEN_URL="https://kccv.azurewebsites.net/realms/hope-bench/protocol/openid-connect/token"
+
 CMD ["uvicorn", "src.main:app", "--proxy-headers", "--host", "0.0.0.0", "--port", "8000"]
