@@ -1,6 +1,6 @@
 # API pour la création de curriculum vitae
 
-Ce projet contient une API pour la saisie de données pour le projet Hope IA
+Le projet contient une API pour la saisie de données pour le projet Hope IA
 
 ## Prérequis
 
