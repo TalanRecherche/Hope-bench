@@ -12,25 +12,25 @@ interface Props {
 
 const InputTransport = ({namespace, displayLabel = false}: Props) => {
 	const names = {
-		mode: buildName<Transport>(namespace, 'mode'),
-		numberOfJourneys: buildName<Transport>(namespace, 'numberOfJourneys'),
-		averageDistance: buildName<Transport>(namespace, 'averageDistance'),
+		transport_mode: buildName<Transport>(namespace, 'transport_mode'),
+		average_journeys_per_month: buildName<Transport>(namespace, 'average_journeys_per_month'),
+		transport_distance: buildName<Transport>(namespace, 'transport_distance'),
 	}
 
     const modeList = ["metro", "vélo", "TGV", "Avion"] // TODO Find exhaustive list of transport modes
 
 	return <InlineForm>
-		<Form.Group controlId={names.mode}>
+		<Form.Group controlId={names.transport_mode}>
 			{displayLabel ? <Form.Label>Mode</Form.Label> : null}
-			<CustomSelectField name={names.mode} options={modeList}/>
+			<CustomSelectField name={names.transport_mode} options={modeList}/>
 		</Form.Group>
-		<Form.Group controlId={names.numberOfJourneys}>
+		<Form.Group controlId={names.average_journeys_per_month}>
 			{displayLabel ? <Form.Label>Nombre de voyage par mois</Form.Label> : null}
-			<CustomField name={names.numberOfJourneys} type="number"/>
+			<CustomField name={names.average_journeys_per_month} type="number"/>
 		</Form.Group>
-		<Form.Group controlId={names.averageDistance}>
+		<Form.Group controlId={names.transport_distance}>
 			{displayLabel ? <Form.Label>Distance moyenne par mois</Form.Label> : null}
-			<CustomField name={names.averageDistance} type="number"/>
+			<CustomField name={names.transport_distance} type="number"/>
 		</Form.Group>
 	</InlineForm>;
 }

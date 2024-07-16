@@ -13,7 +13,8 @@ interface Props {
 const InputComputer = ({namespace, displayLabel = false}: Props) => {
 	const names = {
 		model: buildName<Computer>(namespace, 'model'),
-		numberOfComputers: buildName<Computer>(namespace, 'numberOfComputers'),
+		number_provided: buildName<Computer>(namespace, 'number_provided'),
+		provided_by_talan: buildName<Computer>(namespace, 'provided_by_talan'),
 	}
 
     const computerModelList = ["placeHolder"] // TODO: Find exhaustive list of computers
@@ -23,10 +24,16 @@ const InputComputer = ({namespace, displayLabel = false}: Props) => {
 			{displayLabel ? <Form.Label>Model</Form.Label> : null}
 			<CustomSelectField name={names.model} options={computerModelList}/>
 		</Form.Group>
-		<Form.Group controlId={names.numberOfComputers}>
+		<Form.Group controlId={names.number_provided}>
 			{displayLabel ? <Form.Label>Nombre de machine</Form.Label> : null}
-			<CustomField name={names.numberOfComputers} type="number"/>
+			<CustomField name={names.number_provided} type="number"/>
 		</Form.Group>
+		<Form.Group controlId={names.provided_by_talan}>
+          {displayLabel ? <Form.Label>Provided by Talan</Form.Label> : null}
+          <div>
+            <Field type="checkbox" name={names.provided_by_talan} />
+          </div>
+        </Form.Group>
 	</InlineForm>;
 }
 

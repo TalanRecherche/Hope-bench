@@ -1,25 +1,25 @@
 from datetime import datetime
 from typing import List, Optional
 
-from pydantic import BaseModel
+from pydantic import BaseModel, validator
 
 
 class Transport(BaseModel):
-    transport_mode: str
-    transport_distance: float
-    average_journeys_per_month: float
+    transport_mode: Optional[str]
+    transport_distance: Optional[float]
+    average_journeys_per_month: Optional[float]
 
 
 class Computer(BaseModel):
-    model: str
-    number_provided: int
-    provided_by_talan: bool
+    model: Optional[str]
+    number_provided: Optional[int]
+    provided_by_talan: Optional[bool]
 
 
 class Phones(BaseModel):
-    model: str
-    number_provided: int
-    provided_by_talan: bool
+    model: Optional[str]
+    number_provided: Optional[int]
+    provided_by_talan: Optional[bool]
 
 
 class BusinessProposition(BaseModel):
@@ -51,3 +51,13 @@ class BusinessProposition(BaseModel):
     compute_device: Optional[str] = None
     pages_printed_per_month: Optional[int] = None
     print_double_sided: Optional[bool] = None
+
+    @validator('start_date', 'end_date', pre=True, allow_reuse=True)
+    def parse_date(cls, value):
+        if value is None:
+            return None
+        if type(value) == str:
+            try:
+                return datetime.strptime(value, "%Y-%m-%d")
+            except ValueError:
+                raise ValueError(f"Date {value} is not in the correct format YYYY-MM-DD")

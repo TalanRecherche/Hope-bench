@@ -20,4 +20,4 @@ class UserService:
     
     def get_full_name(self, user_id) -> str:
         user = self.user_repository.find(user_id)
-        return user.first_name + " " + user.last_name
+        return user.firstname + " " + user.lastname

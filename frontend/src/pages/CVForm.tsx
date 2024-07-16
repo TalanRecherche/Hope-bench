@@ -195,44 +195,44 @@ function CVForm() {
                                     <Form.Group controlId="customer">
                                         <CustomSelectField
                                             label="Client"
-                                            name="customer"
+                                            name="client"
                                             options={customerList}
                                         />
                                     </Form.Group>
                                     <Form.Group controlId="missionStart">
                                         <Form.Label>Date de début</Form.Label>
-                                        <CustomField name="missionStart" type="date"/>
+                                        <CustomField name="start_date" type="date"/>
                                     </Form.Group>
                                     <Form.Group controlId="missionEnd">
                                         <Form.Label>Date de fin</Form.Label>
-                                        <CustomField name="missionEnd" type="date"/>
+                                        <CustomField name="end_date" type="date"/>
                                     </Form.Group>
                                     <Form.Group controlId="talanLocation">
                                         <Form.Label>Localisation Talan</Form.Label>
-                                        <CustomField name="talanLocation"/>
+                                        <CustomField name="localisation_talan"/>
                                     </Form.Group>
                                     <Form.Group controlId="customerLocation">
                                         <Form.Label>Localisation Client</Form.Label>
-                                        <CustomField name="customerLocation"/>
+                                        <CustomField name="localisation_client"/>
                                     </Form.Group>
                                     <Form.Group controlId="numberWorkers">
                                         <Form.Label>Nombre de collaborateurs</Form.Label>
-                                        <CustomField name="numberWorkers" type="number"/>
+                                        <CustomField name="number_of_workers" type="number"/>
                                     </Form.Group>
                                     <Form.Group controlId="missionLength">
                                         <Form.Label>Durée de la mission (en mois)</Form.Label>
-                                        <CustomField name="missionLength" type="number"/>
+                                        <CustomField name="mission_length_in_month" type="number"/>
                                     </Form.Group>
                                     <Form.Group controlId="numberOfMeetings">
                                         <Form.Label>Nombre de rendez-vous en présentiel</Form.Label>
-                                        <CustomField name="numberOfMeetings" type="number"/>
+                                        <CustomField name="number_of_in_person_meetings_per_week" type="number"/>
                                     </Form.Group>
                                 </CardBlocWithButton>
 
-                                <CardBlocWithButton label="Transport" commModel={cv.comm_transport} cv={cv} author={author}>
+                                <CardBlocWithButton label="Transport" cv={cv} author={author}>
                                     <CustomFieldArray<Transport>
-                                        name="transport"
-                                        values={values.transport}
+                                        name="transports"
+                                        values={values.transports}
                                         newValueBuilder={() => ({name: '', year: new Date().getFullYear()})}
                                         render={({name, index}) =>
                                             <InputTransport
@@ -245,19 +245,19 @@ function CVForm() {
                                 <CardBlocWithButton label="Numérique - Informations générales" commModel={cv.comm_general} cv={cv} author={author} >
                                     <Form.Group controlId="numberOfEmailsWithAttachments">
                                         <Form.Label>Nombre de couriel avec Pièce jointe</Form.Label>
-                                        <CustomField name="numberOfEmailsWithAttachments" type="number"/>
+                                        <CustomField name="number_of_emails_with_attachments_per_week" type="number"/>
                                     </Form.Group>
                                     <Form.Group controlId="numberOfEmailsWithoutAttachments">
                                         <Form.Label>Nombre de couriel sans Pièce jointe</Form.Label>
-                                        <CustomField name="numberOfEmailsWithoutAttachments" type="number"/>
+                                        <CustomField name="number_of_emails_without_attachments_per_week" type="number"/>
                                     </Form.Group>
                                     <Form.Group controlId="hoursOfVisioconference">
                                         <Form.Label>Nombre d'heure de visioconférence</Form.Label>
-                                        <CustomField name="hoursOfVisioconference" type="number"/>
+                                        <CustomField name="hours_of_visioconference_per_week" type="number"/>
                                     </Form.Group>
                                     <Form.Group controlId="visioWithCamera">
                                         <Form.Label>Caméra on/off</Form.Label>
-                                        <CustomField name="visioWithCamera" type="boolean"/> //TODO make proper boolean
+                                        <CustomField name="camera_on" type="boolean"/> //TODO make proper boolean
                                     </Form.Group>
                                 </CardBlocWithButton>
 
@@ -290,27 +290,27 @@ function CVForm() {
                                 <CardBlocWithButton label="Numérique - Stockage des données" cv={cv} author={author} >
                                     <Form.Group controlId="terabytesOfDataToStore">
                                         <Form.Label>Quantité de données</Form.Label>
-                                        <CustomField name="terabytesOfDataToStore" type="number"/>
+                                        <CustomField name="storage_amount_in_terabytes" type="number"/>
                                     </Form.Group>
                                     <Form.Group controlId="storageLifetime">
                                         <Form.Label>Period de stokage (en mois)</Form.Label>
-                                        <CustomField name="storageLifetime" type="number"/>
+                                        <CustomField name="storage_length_in_month" type="number"/>
                                     </Form.Group>
                                     <Form.Group controlId="numberOfBackups">
                                         <Form.Label>Nombre de sauvegarde redondante</Form.Label>
-                                        <CustomField name="numberOfBackups" type="number"/>
+                                        <CustomField name="number_of_backups" type="number"/>
                                     </Form.Group>
                                     <Form.Group controlId="storageProvider">
                                         <CustomSelectField
                                             label="Provider"
-                                            name="storageProvider"
+                                            name="storage_provider"
                                             options={storageProviderList}
                                         />
                                     </Form.Group>
                                     <Form.Group controlId="storageRegion">
                                         <CustomSelectField
                                             label="Region"
-                                            name="storageRegion"
+                                            name="storage_location"
                                             options={storageRegionList}
                                         />
                                     </Form.Group>
@@ -319,26 +319,26 @@ function CVForm() {
                                 <CardBlocWithButton label="Numérique - Calcul" cv={cv} author={author} >
                                     <Form.Group controlId="hoursOfComputation">
                                         <Form.Label>Heure de calcul</Form.Label>
-                                        <CustomField name="hoursOfComputation" type="number"/>
+                                        <CustomField name="compute_time" type="number"/>
                                     </Form.Group>
                                     <Form.Group controlId="computeProvider">
                                         <CustomSelectField
                                             label="Provider"
-                                            name="computeProvider"
+                                            name="compute_provider"
                                             options={computeProviderList}
                                         />
                                     </Form.Group>
                                     <Form.Group controlId="computeRegion">
                                         <CustomSelectField
                                             label="Region"
-                                            name="computeRegion"
+                                            name="compute_location"
                                             options={computeRegionList}
                                         />
                                     </Form.Group>
                                     <Form.Group controlId="computeDevice">
                                         <CustomSelectField
                                             label="Type de calculateur"
-                                            name="computeDevice"
+                                            name="compute_device"
                                             options={computeDeviceList}
                                         />
                                     </Form.Group>
@@ -347,12 +347,12 @@ function CVForm() {
                                 <CardBlocWithButton label="Bureau" cv={cv} author={author} >
                                     <Form.Group controlId="numberOfPagePrints">
                                         <Form.Label>Nombre de pages imprimer en moyenne par mois</Form.Label>
-                                        <CustomField name="numberOfPagePrints" type="number"/>
+                                        <CustomField name="pages_printed_per_month" type="number"/>
                                     </Form.Group>
                                     <Form.Group controlId="doubleSided">
                                         <CustomSelectField
                                             label="Recto - Verso"
-                                            name="doubleSided"
+                                            name="print_double_sided"
                                             options={boolList}
                                         />
                                     </Form.Group>
