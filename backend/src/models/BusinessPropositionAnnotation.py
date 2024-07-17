@@ -22,8 +22,9 @@ class Phones(BaseModel):
     provided_by_talan: Optional[bool]
 
 
-class BusinessProposition(BaseModel):
-    id_business_proposition: Optional[str] = None
+class BusinessPropositionAnnotation(BaseModel):
+    id_business_proposition_annotation: Optional[str] = None
+    id_business_proposition_file: str
     mission_name: Optional[str] = None
     client: Optional[str] = None
     start_date:  Optional[datetime] = None

@@ -1,4 +1,3 @@
-from ..services.ReviewerService import ReviewerService
 from .models import UserDb
 from ..models.User import User
 from typing import Callable, List
@@ -37,8 +36,3 @@ class UserRepository:
             first_name_manager=user_db.firstname_manager,
             last_name_manager=user_db.lastname_manager,
         )
-    
-    def find_reviewed_and_underlings_id(self, userId: str, reviewer_service: ReviewerService) -> List[str]:
-        list_reviewees_id = [ x.id_user for x in reviewer_service.find_ids_reviewed_by_id(userId)]
-    
-        return list_reviewees_id

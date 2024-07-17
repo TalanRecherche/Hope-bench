@@ -41,7 +41,6 @@ app.add_middleware(
 
 api_router = APIRouter(default_response_class=JSONResponse, dependencies=[Depends(get_auth)])
 api_router.include_router(users_api.router)
-api_router.include_router(reviewer_api.router)
 api_router.include_router(business_proposition_api.router)
 
 app.include_router(public_api.router)

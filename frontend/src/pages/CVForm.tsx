@@ -123,14 +123,13 @@ function CVForm() {
         if (business_proposition.id) {
             return updateBusinessProposition(business_proposition)
         }
-        let id = uuid()
+        business_proposition.id_business_proposition_file = "eb75922c-48dd-40d4-a2b3-34bb083dd153" // placeholder
         return createBusinessProposition({...business_proposition}).then(() => {
-            navigate("/cvs/" + id);
-            navigate("/my-cvs/")
-        })/*.catch(error => {
-            // Handle error if createCv fails
-            console.error("Error occurred while creating CV in CVForm.onSubmit : ", error);
-        });*/
+            return createBusinessProposition({...business_proposition}).then((response: { id: any; }) => {
+                const { id } = response; // Extract the id from the response
+                navigate("/cvs/" + id);
+            })
+        })
     }
 
     /**

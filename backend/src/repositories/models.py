@@ -1,10 +1,11 @@
 import uuid
 from sqlalchemy.dialects.postgresql import UUID
-from sqlalchemy import Column, String, LargeBinary, ARRAY, Boolean, DateTime, func, Integer
+from sqlalchemy import Column, String, LargeBinary, ARRAY, Boolean, DateTime, func, Integer, ForeignKey
 from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
+
 
 class UserDb(Base):
     __tablename__ = 'users'
@@ -15,15 +16,21 @@ class UserDb(Base):
     lastname_manager = Column(String)
 
 
-class ReviewerDb(Base):
-    __tablename__ = 'reviewers'
-    id_user = Column(String, primary_key=True, nullable=False)
-    id_reviewer = Column(String, nullable=False)
-    updated_at = Column(DateTime, nullable=False, server_default=func.now(), onupdate=func.now())
+class BusinessPropositionAnnotationDB(Base):
+    __tablename__ = "business_proposition_annotations"
+    id_business_proposition_annotation = Column(
+        UUID(as_uuid=True),
+        primary_key=True,
+        default=uuid.uuid4,
+        nullable=False
+    )
 
-class BusinessPropositionDB(Base):
-    __tablename__ = "business_propositions"
-    id_business_proposition = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4, nullable=False)
+    id_business_proposition_file = Column(
+        UUID(as_uuid=True),
+        ForeignKey('business_proposition_files.id_business_proposition_file'),
+        default=uuid.uuid4,
+        nullable=False
+    )
     mission_name = Column(String)
     client = Column(String)
     start_date = Column(DateTime)
@@ -52,7 +59,30 @@ class BusinessPropositionDB(Base):
     pages_printed_per_month = Column(Integer)
     print_double_sided = Column(Boolean)
 
-class UserBusinessPropositionTableDB(Base):
-    __tablename__ = "user_business_propositions"
-    id_business_proposition = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4, nullable=False)
-    id_user = Column(String, primary_key=True, nullable=False)
+
+class AnnotationAffectationDB(Base):
+    __tablename__ = "AnnotationAffectationTable"
+    id_business_proposition_annotation = Column(
+        UUID(as_uuid=True),
+        ForeignKey('business_proposition_annotations.id_business_proposition_annotation'),
+        primary_key=True,
+        default=uuid.uuid4,
+        nullable=False
+    )
+
+    id_user = Column(
+        String,
+        ForeignKey('users.id_users'),
+        primary_key=True,
+        nullable=False
+    )
+
+
+class BusinessPropositionFileDB(Base):
+    __tablename__ = "business_proposition_files"
+    id_business_proposition_file = Column(UUID(as_uuid=True), primary_key=True, nullable=False)
+    file_name = Column(String, nullable=False)
+    format = Column(String, nullable=False)
+    confidential = Column(Boolean, nullable=False)
+    added_at = Column(DateTime, nullable=False, server_default=func.now())
+    file = Column(LargeBinary, nullable=False)  # Not ideal architecture wise but probably fine for now

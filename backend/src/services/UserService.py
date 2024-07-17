@@ -1,6 +1,5 @@
 
 from typing import List
-from ..services import ReviewerService
 from ..repositories.UserRepository import UserRepository
 from ..models.User import User
 
@@ -15,9 +14,8 @@ class UserService:
     def find_underlings(self, user_id) -> [User]:
         return self.user_repository.find_underlings(user_id)
 
-    def find_reviewed_and_underlings_id(self, userId: str, reviewer_service: ReviewerService) -> List[str]:
-        return self.user_repository.find_reviewed_and_underlings_id(userId, reviewer_service)
-    
-    def get_full_name(self, user_id) -> str:
+    def get_full_name(self, user_id) -> str | None:
         user = self.user_repository.find(user_id)
-        return user.firstname + " " + user.lastname
+        if user is None:
+            return None
+        return user.first_name + " " + user.last_name

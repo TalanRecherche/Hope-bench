@@ -3,7 +3,7 @@ import {Store} from "react-notifications-component";
 import {iNotification} from "react-notifications-component/dist/src/typings";
 import {v4 as uuid} from 'uuid';
 import {downloadFileFromResponse} from "../model/file.utils";
-import {BusinessPropositionData, PageResult, SearchOptions, Template, TemplateForm} from "../model/models";
+import {BusinessPropositionData as BusinessPropositionAnnotationData, PageResult, SearchOptions, Template, TemplateForm} from "../model/models";
 import {ApiContextI, TemplatesByType} from "./ApiContext";
 
 
@@ -62,31 +62,31 @@ class Api implements ApiContextI {
         })
     }
 
-    createBusinessProposition = (business_proposition: BusinessPropositionData): Promise<void> => {
+    createBusinessProposition = (business_proposition_annotation: BusinessPropositionAnnotationData): Promise<void> => {
         return notificationWrapper(
-            this.axiosInstance.post(`business_proposition/`, business_proposition), {
-                errorMessage: 'Error: cannot create business proposition',
-                successMessage: 'Business proposition created'
+            this.axiosInstance.post(`business_proposition_annotation/`, business_proposition_annotation), {
+                errorMessage: 'Error: cannot create business proposition annotation',
+                successMessage: 'Business proposition annotated'
             }
         );
     }
 
 
-    readBusinessProposition = (businessPropositionID: string): Promise<[string]> => notificationWrapper(
-        this.axiosInstance.get(`business_proposition/${businessPropositionID}`), {
-            errorMessage: 'Error: cannot access business proposition'
+    readBusinessProposition = (businessPropositionAnnotationID: string): Promise<[string]> => notificationWrapper(
+        this.axiosInstance.get(`business_proposition_annotation/${businessPropositionAnnotationID}`), {
+            errorMessage: 'Error: cannot access business proposition annotation'
         })
 
-    updateBusinessProposition = (business_proposition: BusinessPropositionData): Promise<void> => notificationWrapper(
-        this.axiosInstance.putForm(`business_proposition/${business_proposition.id}`, business_proposition), {
+    updateBusinessProposition = (business_proposition_annotation: BusinessPropositionAnnotationData): Promise<void> => notificationWrapper(
+        this.axiosInstance.putForm(`business_proposition_annotation/${business_proposition_annotation.id}`, business_proposition_annotation), {
             errorMessage: 'Error: cannot update business proposition',
             successMessage: 'Business proposition updated'
         })
 
-    deleteTemplate = (businessPropositionID: string): Promise<void> => notificationWrapper(
-        this.axiosInstance.delete(`business_proposition/${businessPropositionID}`), {
-            errorMessage: 'Error: cannot delete business proposition',
-            successMessage: 'Business proposition deleted'
+    deleteTemplate = (businessPropositionAnnotationID: string): Promise<void> => notificationWrapper(
+        this.axiosInstance.delete(`business_proposition_annotation/${businessPropositionAnnotationID}`), {
+            errorMessage: 'Error: cannot delete business proposition annotation',
+            successMessage: 'Business proposition annotation deleted'
         })
 
     getReviewedAndUnderlings = (userID: string): Promise<[string]> => notificationWrapper(

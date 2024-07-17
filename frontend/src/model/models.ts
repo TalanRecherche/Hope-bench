@@ -17,7 +17,8 @@ export const baseModelWithCommentsSchema = z.object({
 });
 
 export const BusinessPropositionDataSchema = z.object({
-	id: notEmptyString.optional(),
+	id_business_proposition_annotation: notEmptyString.optional(),
+	id_business_proposition_file: notEmptyString.optional(),
 	mission_name: notEmptyString.optional(),
 	id_user: notEmptyString.optional(),
 });
