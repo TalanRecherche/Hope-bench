@@ -12,7 +12,7 @@ interface Props {
     originalCommentModel: BaseModelWithComments
     isOnManagerView: boolean
     modifyPossible: boolean
-    cv: CVData
+    businessPropositionAnnotation: CVData
     author: string
 }
 
@@ -24,7 +24,7 @@ interface RenderProp {
 
  * @constructor
  */
-const CommentDrawer = ({children, isOnManagerView, modifyPossible, originalCommentModel, cv, author}: Props) => {
+const CommentDrawer = ({children, isOnManagerView, modifyPossible, originalCommentModel, businessPropositionAnnotation: cv, author}: Props) => {
 	const [visible, setVisible] = useState<boolean>(false);
     const [modifiedCommentList, setModifiedCommentList] = useState<boolean>(false);
 	const [backup, setBackup] = useState<BaseModelWithComments>({comments: []});

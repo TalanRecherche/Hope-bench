@@ -56,7 +56,7 @@ const MissionCard = ({mission, onEdit, onDelete, children, cv, author}: PropsWit
                             {onDelete ? <Button size="sm"
                                                 variant="icon-danger"
                                                 onClick={handleDelete}><i className="bi bi-x-lg"></i></Button> : null}
-                            {mission.comments.length > 0 ? <CommentDrawer originalCommentModel={mission} isOnManagerView={false} cv={cv} modifyPossible={true} author={author}>
+                            {mission.comments.length > 0 ? <CommentDrawer originalCommentModel={mission} isOnManagerView={false} businessPropositionAnnotation={cv} modifyPossible={true} author={author}>
                                                                 {({toggleDrawer}) =>
                                                                         <Button variant="secondary" size="sm" onClick={toggleDrawer}>Voir tous les commentaires</Button>
                                                                     }

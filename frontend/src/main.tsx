@@ -9,7 +9,7 @@ import {ApiProvider} from "./contexts/ApiContext";
 import {AuthContext, AuthProvider} from "./contexts/AuthContext";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import './index.scss'
-import CVForm from "./pages/CVForm";
+import BusinessPropositionAnnotationForm from "./pages/BusinessPropositionAnnotationForm.tsx";
 import MyCvList from "./pages/MyCvList.tsx";
 import TemplateDoc from "./pages/TemplateDoc";
 import TemplateList from "./pages/TemplateList";
@@ -55,8 +55,7 @@ const RouterContext = () => {
         children: [
             {index: true, element: <Navigate to="/my-cvs" replace/>},
             ...managerRoutes,
-            {path: "my-cvs", element: <MyCvList />},
-            {path: "cvs/:cvId", element: <CVForm/>},
+            {path: "business-proposition-annotation/:businessPropositionAnnotationId", element: <BusinessPropositionAnnotationForm/>},
             ...templateManagerRoutes,
             {path: "*", element: <Navigate to="/my-cvs" replace/>},
         ],
