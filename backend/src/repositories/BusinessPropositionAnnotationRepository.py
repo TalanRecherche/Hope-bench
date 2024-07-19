@@ -1,8 +1,7 @@
-import logging
 from contextlib import AbstractContextManager
 from typing import Callable
+
 from sqlalchemy.orm import Session
-from sqlalchemy import select
 
 from .models import BusinessPropositionAnnotationDB
 from ..models.BusinessPropositionAnnotation import BusinessPropositionAnnotation
