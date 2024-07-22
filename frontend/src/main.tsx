@@ -10,12 +10,8 @@ import {AuthContext, AuthProvider} from "./contexts/AuthContext";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import './index.scss'
 import BusinessPropositionAnnotationForm from "./pages/BusinessPropositionAnnotationForm.tsx";
-import MyCvList from "./pages/MyCvList.tsx";
-import TemplateDoc from "./pages/TemplateDoc";
-import TemplateList from "./pages/TemplateList";
-import CvSearch from "./pages/CvSearch.tsx";
-import {ApiContext} from "./contexts/ApiContext.tsx";
 import DashBoard from "./pages/DashBoard";
+import {ApiContext} from "./contexts/ApiContext.tsx";
 const RouterContext = () => {
     const {user} = useContext(AuthContext)
 
@@ -40,13 +36,7 @@ const RouterContext = () => {
         }
     }, [user]);
 
-    const managerRoutes = user.roles.includes('manager') ? [
-        {path: "cvs", element: <CvSearch author={author}/>}
-    ] : []
-    const templateManagerRoutes = user.roles.includes('template_manager') ? [
-        {path: "templates", element: <TemplateList/>},
-        {path: "templates-doc", element: <TemplateDoc/>},
-    ] : []
+    const managerRoutes = user.roles.includes('manager') ? [] : []
 
 
     const router = createBrowserRouter([{

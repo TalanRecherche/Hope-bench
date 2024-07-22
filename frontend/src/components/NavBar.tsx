@@ -8,20 +8,11 @@ function NavBar() {
 	return (
 		<Navbar expand="lg" className="bg-primary mb-5">
 			<Container>
-				<Navbar.Brand as={Link} to="/">CV Pro AI</Navbar.Brand>
+				<Navbar.Brand as={Link} to="/">Hope Benchmark</Navbar.Brand>
 				<Navbar.Toggle aria-controls="basic-navbar-nav"/>
 				<Navbar.Collapse id="basic-navbar-nav">
 					<Nav className="me-auto">
-						<Nav.Link as={Link} to="/my-cvs">Mes Cvs</Nav.Link>
-						{user.roles.includes('manager')
-							? <Nav.Link as={Link} to="/cvs">Recherche</Nav.Link>
-							: null}
-						{user.roles.includes('template_manager')
-							? <Nav.Link as={Link} to="/templates">Templates</Nav.Link>
-							: null}
-						{user.roles.includes('template_manager')
-							? <Nav.Link as={Link} to="/templates-doc">Documentation</Nav.Link>
-							: null}
+						<Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>
 					</Nav>
 					<Navbar.Text>
 						{user.firstname} {user.lastname}
