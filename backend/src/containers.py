@@ -20,7 +20,7 @@ logger = logging.getLogger(__name__)
 
 class Container(containers.DeclarativeContainer):
     # includes all modules with @inject annotations
-    wiring_config = containers.WiringConfiguration(modules=[".api.users_api", ".api.business_proposition_api"])
+    wiring_config = containers.WiringConfiguration(modules=[".api.users_api", ".api.business_proposition_api", ".api.business_proposition_file_api"])
 
     db = providers.Singleton(Database, db_url=Configuration.database_url)
 

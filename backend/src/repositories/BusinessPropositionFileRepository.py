@@ -29,7 +29,7 @@ class BusinessPropositionFileRepository:
             format=business_proposition_file_db.format,
             confidential=business_proposition_file_db.confidential,
             added_at=business_proposition_file_db.added_at,
-            file=business_proposition_file_db.file
+            data=business_proposition_file_db.file
         )
 
     def create(self, business_proposition_file: BusinessPropositionFile) -> BusinessPropositionFile:
@@ -57,3 +57,14 @@ class BusinessPropositionFileRepository:
             if e is not None:
                 db.delete(e)
                 db.commit()
+
+    def find_paginated(self, offset: int, limit: int) -> list[BusinessPropositionFile]:
+        with self.session_factory() as db:
+            query_result = db.query(BusinessPropositionFileDB).offset(offset).limit(limit).all()
+            domain_models = [self._db_to_domain(record) for record in query_result]
+
+            return domain_models
+
+    def count(self) -> int:
+        with self.session_factory() as db:
+            return db.query(BusinessPropositionFileDB).count()

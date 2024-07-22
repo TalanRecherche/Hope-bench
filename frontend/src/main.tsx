@@ -15,7 +15,7 @@ import TemplateDoc from "./pages/TemplateDoc";
 import TemplateList from "./pages/TemplateList";
 import CvSearch from "./pages/CvSearch.tsx";
 import {ApiContext} from "./contexts/ApiContext.tsx";
-
+import DashBoard from "./pages/DashBoard";
 const RouterContext = () => {
     const {user} = useContext(AuthContext)
 
@@ -53,11 +53,10 @@ const RouterContext = () => {
         path: "/",
         element: <App/>,
         children: [
-            {index: true, element: <Navigate to="/my-cvs" replace/>},
+            {index: true, element: <Navigate to="/dashboard" replace/>},
+            {path: "dashboard", element: <DashBoard/>},
             ...managerRoutes,
             {path: "business-proposition-annotation/:businessPropositionAnnotationId", element: <BusinessPropositionAnnotationForm/>},
-            ...templateManagerRoutes,
-            {path: "*", element: <Navigate to="/my-cvs" replace/>},
         ],
     },
     ]);

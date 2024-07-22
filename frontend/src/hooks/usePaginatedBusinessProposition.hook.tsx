@@ -1,24 +1,24 @@
 import {ReactNode, useContext, useEffect, useState} from "react";
 import {ApiContext} from "../contexts/ApiContext.tsx";
-import {BusinessProposition, PageResult, SearchOptions} from "../model/models.ts";
+import {BusinessPropositionData, BusinessPropositionFileData, PageResult, SearchOptions} from "../model/models.ts";
 import {useBoolean} from "usehooks-ts";
 import {PaginationControl} from "react-bootstrap-pagination-control";
 
 interface Result {
     loading: boolean
-    businessPropositionPage: PageResult<BusinessProposition>
+    businessPropositionPage: PageResult<BusinessPropositionFile>
     changePage: (page?: number) => void
     paginator: ReactNode
 }
 
 const usePaginatedBusinessProposition = (selfSearch: boolean, userId?: string, search?: string, limitBusinessPropositionsToAllowedOnes?: boolean, selectedStatusToShow? : {[key: string]: boolean}): Result => {
     const {value: loading, setTrue: setLoading, setFalse: setLoaded} = useBoolean(true)
-    const [businessPropositionPage, _setBusinessPropositionPage] = useState<PageResult<BusinessPropositionData>>({
+    const [businessPropositionFilePage, _setBusinessPropositionPage] = useState<PageResult<BusinessPropositionFileData>>({
         page: 0, pageSize: 0, totalElements: 0, elements: []
     })
-    const {listBusinessPropositions} = useContext(ApiContext)
+    const {readBusinessPropositionFile} = useContext(ApiContext)
         
-    const setBusinessPropositionPage = (p: PageResult<BusinessPropositionData>) => {
+    const setBusinessPropositionPage = (p: PageResult<BusinessPropositionFileData>) => {
         _setBusinessPropositionPage(p)
     }
 
@@ -45,13 +45,6 @@ const usePaginatedBusinessProposition = (selfSearch: boolean, userId?: string, s
         return status
     }
 
-    const searchPage = (options: SearchOptions) => {
-        setLoading()
-        listBusinessPropositions(options).then(setBusinessPropositionPage).then(setLoaded);
-    }
-
-    const initialSearchParams: SearchOptions = {limitToAllowedBusinessProposition: limitBusinessPropositionToAllowedOnes == undefined ? true : limitBusinessPropositionToAllowedOnes,
-        searchString: search == undefined ? "" : search, userId: userId == undefined ? "" : userId, selfSearch: selfSearch}
 
     const [searchParams, setSearchParams] = useState<SearchOptions>(initialSearchParams)
 

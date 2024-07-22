@@ -99,6 +99,16 @@ class Api implements ApiContextI {
             errorMessage: 'Erreur lors de la récupération des données de l\'utilisateur'
         })
 
+    readBusinessPropositionFile = (businessPropositionFileID: string): Promise<[string]> => notificationWrapper(
+        this.axiosInstance.get(`business_proposition_file/${businessPropositionFileID}`), {
+            errorMessage: 'Error: cannot access business proposition file'
+        })
+
+    getBusinessPropositionFile = (currentPage: number, pageSize: number): Promise<PageResult> => notificationWrapper(
+        this.axiosInstance.get(`business_proposition_file/paginated`, {params: {page: currentPage, pageSize}}), {
+            errorMessage: 'Error: cannot access business proposition file'
+        })
+
 }
 
 export default Api

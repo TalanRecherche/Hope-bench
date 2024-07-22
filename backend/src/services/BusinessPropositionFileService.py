@@ -21,3 +21,10 @@ class BusinessPropositionFileService:
 
     def delete(self, business_proposition_file_id: str):
         self.business_proposition_file_repository.delete(business_proposition_file_id)
+
+    def find_paginated(self, offset: int, limit: int) -> list[BusinessPropositionFile] | None:
+        paginated_files = self.business_proposition_file_repository.find_paginated(offset, limit)
+        return paginated_files
+
+    def find_number_of_pages(self, page_size: int) -> int:
+        return self.business_proposition_file_repository.count() // page_size + 1

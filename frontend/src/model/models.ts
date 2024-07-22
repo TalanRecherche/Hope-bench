@@ -23,6 +23,15 @@ export const BusinessPropositionDataSchema = z.object({
 	id_user: notEmptyString.optional(),
 });
 
+export const businessPropositionFileSchema = z.object({
+	id_business_proposition_file: notEmptyString,
+	file_name: notEmptyString,
+	format: notEmptyString,
+	confidential: z.boolean(),
+	added_at: z.date(),
+	file: z.any(),
+});
+
 export const templateFormSchema = z.object({
 	id: notEmptyString.optional(),
 	name: notEmptyString,
@@ -52,6 +61,7 @@ export const searchOptionsSchema = z.object({
 })
 
 export type BusinessPropositionData = z.infer<typeof BusinessPropositionDataSchema>;
+export type BusinessPropositionFileData = z.infer<typeof businessPropositionFileSchema>;
 export type User = z.infer<typeof userSchema>;
 export type BaseModelWithComments = z.infer<typeof baseModelWithCommentsSchema>;
 export type Comment = z.infer<typeof commentsSchema>;
