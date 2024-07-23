@@ -18,7 +18,7 @@ const RouterContext = () => {
     const { getFullNameUser } = useContext(ApiContext);
 
     // Initialize author with a default value
-    const [author, setAuthor] = useState('Loading...'); // or use null or another placeholder
+    const [, setAuthor] = useState('Loading...'); // or use null or another placeholder
 
     useEffect(() => {
         const fetchAuthor = async () => {
