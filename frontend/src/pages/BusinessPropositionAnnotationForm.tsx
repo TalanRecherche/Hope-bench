@@ -1,25 +1,17 @@
-import React, {MouseEventHandler, PropsWithChildren, SyntheticEvent, useContext, useEffect, useState} from "react";
-import {Field, FieldArray, Formik, FormikErrors, useField, FieldHookConfig} from "formik";
-import {FormikProps} from "formik/dist/types";
-import {Button, Card, CardBody, CardHeader, Col, Form, Row, Stack} from "react-bootstrap";
-import {useNavigate, useParams} from "react-router-dom";
-import TextareaAutosize from 'react-textarea-autosize';
-import {v4 as uuid} from 'uuid';
-import {toFormikValidationSchema} from "zod-formik-adapter";
+import React, { MouseEventHandler, PropsWithChildren, SyntheticEvent, useContext, useEffect, useState } from "react";
+import { Formik, FormikErrors, useField, FieldHookConfig } from "formik";
+import { Button, Card, CardBody, CardHeader, Col, Form, Row, Stack } from "react-bootstrap";
+import { useNavigate, useParams } from "react-router-dom";
+import { toFormikValidationSchema } from "zod-formik-adapter";
 import CustomFieldArray from "../components/formik/CustomFieldArray.tsx";
 import CustomField from "../components/formik/CustomField.tsx";
-import FieldArrayError from "../components/formik/FieldArrayError.tsx";
 import InputTransport from "../components/formik/InputTransport.tsx";
 import InputComputer from "../components/formik/InputComputer.tsx";
 import InputPhone from "../components/formik/InputPhone.tsx";
 import Loader from "../components/Loader.tsx";
-import MissionCard from "../components/MissionCard.tsx";
-import MissionFormDrawer from "../components/MissionFormDrawer.tsx";
-import {ApiContext} from "../contexts/ApiContext.tsx";
-import {AuthContext} from "../contexts/AuthContext.tsx";
-import {scrollToFirstError} from "../model/form.utils.ts";
-import {BaseModelWithComments, BusinessPropositionData, BusinessPropositionDataSchema} from "../model/models.ts";
-import CommentDrawer from "../components/CommentDrawer.tsx";
+import { ApiContext } from "../contexts/ApiContext.tsx";
+import { scrollToFirstError } from "../model/form.utils.ts";
+import { BusinessPropositionData, BusinessPropositionDataSchema} from "../model/models.ts";
 import FormErrorNotification from "./FormErrorNotification.tsx";
 
 const emptyData: BusinessPropositionData = {
@@ -32,34 +24,19 @@ const CardBloc = ({label, children}: PropsWithChildren<{ label: string }>) => (
     </Card>
 )
 
-const CardBlocWithButton = ({label, businessPropositionAnnotation, commModel, children, author}: PropsWithChildren<{ label: string, businessPropositionAnnotationData: BusinessPropositionData, commModel: BaseModelWithComments, author: string }>) => (
+const CardBlocWithButton = ({label, children}: PropsWithChildren<{ label: string}>) => (
     <Card>
         <Card.Header className="d-flex justify-content-between align-items-center fs-5">
             {label}
-            {commModel && commModel.comments && commModel.comments.length > 0 ? (
-                createCommentDrawer(commModel, businessPropositionAnnotation, true, author)
-            ) : null}
         </Card.Header>
         <CardBody>{children}</CardBody>
     </Card>
 )
 
-function createCommentDrawer(commModel:BaseModelWithComments, businessPropositionAnnotation: BusinessPropositionData, modifyPossible: boolean, author: string) {
-    return ((commModel != undefined && commModel.comments != undefined && commModel.comments.length > 0) ? <CommentDrawer originalCommentModel={commModel} isOnManagerView={false} businessPropositionAnnotation={businessPropositionAnnotation} modifyPossible={modifyPossible} author={author}>
-        {({toggleDrawer}) =>
-                    <Button variant="secondary" size="sm" onClick={toggleDrawer}>Voir tous les commentaires</Button>
-                }
-    </CommentDrawer> : null)
-}
-
-
-
-
 function BusinessPropositionAnnotationForm() {
     const [businessPropositionAnnotation, updateBusinessPropositionAnnotation] = useState<BusinessPropositionData>()
     const {businessPropositionAnnotationId} = useParams();
-    const {user} = useContext(AuthContext)
-    const {createBusinessProposition, readBusinessProposition, updateBusinessProposition, deleteTemplate} = useContext(ApiContext)
+    const {createBusinessProposition, readBusinessProposition, updateBusinessProposition} = useContext(ApiContext)
     const navigate = useNavigate();
     const author: string = ""
 
@@ -131,10 +108,7 @@ function BusinessPropositionAnnotationForm() {
      * on log et on scroll vers l'input en erreur si existant
      */
     const handleSubmitError = (
-        errors: FormikErrors<BusinessPropositionData>,
-        values: BusinessPropositionData,
-        setFieldTouched: FormikProps<BusinessPropositionData>['setFieldTouched']
-    ) => (e: SyntheticEvent) => {
+    errors: FormikErrors<BusinessPropositionData>, values: BusinessPropositionData, setFieldTouched: (field: string, isTouched?: boolean, shouldValidate?: boolean) => Promise<void | FormikErrors<{ id_business_proposition_annotation?: string | undefined; id_business_proposition_file?: string | undefined; mission_name?: string | undefined; id_user?: string | undefined; }>>) => (e: SyntheticEvent) => {
         e.preventDefault();
         console.warn(errors);
         console.warn(values);
@@ -171,7 +145,7 @@ function BusinessPropositionAnnotationForm() {
                                 {}
                             </Row>
                             <Form noValidate><Stack gap={4}>
-                                <CardBlocWithButton label="Informations générales" businessPropositionAnnotation={businessPropositionAnnotation} author={author} >
+                                <CardBlocWithButton label="Informations générales">
                                     <Form.Group controlId="mission_name">
                                         <Form.Label>Nom de la mission</Form.Label>
                                         <CustomField name="mission_name"/>
@@ -181,6 +155,7 @@ function BusinessPropositionAnnotationForm() {
                                             label="Client"
                                             name="client"
                                             options={customerList}
+                                            isRequired={false}
                                         />
                                     </Form.Group>
                                     <Form.Group controlId="missionStart">
@@ -213,7 +188,7 @@ function BusinessPropositionAnnotationForm() {
                                     </Form.Group>
                                 </CardBlocWithButton>
 
-                                <CardBlocWithButton label="Transport" businessPropositionAnnotation={businessPropositionAnnotation} author={author}>
+                                <CardBlocWithButton label="Transport">
                                     <CustomFieldArray<Transport>
                                         name="transports"
                                         values={values.transports}
@@ -226,7 +201,7 @@ function BusinessPropositionAnnotationForm() {
                                     />
                                 </CardBlocWithButton>
 
-                                <CardBlocWithButton label="Numérique - Informations générales" commModel={businessPropositionAnnotation.comm_general} businessPropositionAnnotation={businessPropositionAnnotation} author={author} >
+                                <CardBlocWithButton label="Numérique - Informations générales">
                                     <Form.Group controlId="numberOfEmailsWithAttachments">
                                         <Form.Label>Nombre de couriel avec Pièce jointe</Form.Label>
                                         <CustomField name="number_of_emails_with_attachments_per_week" type="number"/>
@@ -245,8 +220,8 @@ function BusinessPropositionAnnotationForm() {
                                     </Form.Group>
                                 </CardBlocWithButton>
 
-                                <CardBlocWithButton label="Numérique - Machines" businessPropositionAnnotation={businessPropositionAnnotation} author={author}>
-                                    <CustomFieldArray<Computers>
+                                <CardBlocWithButton label="Numérique - Machines">
+                                    <CustomFieldArray<Computer>
                                         name="computers"
                                         values={values.computers}
                                         newValueBuilder={() => ({name: '', year: new Date().getFullYear()})}
@@ -258,8 +233,8 @@ function BusinessPropositionAnnotationForm() {
                                     />
                                 </CardBlocWithButton>
 
-                                <CardBlocWithButton label="Numérique - Téléphone" businessPropositionAnnotation={businessPropositionAnnotation} author={author}>
-                                    <CustomFieldArray<Phones>
+                                <CardBlocWithButton label="Numérique - Téléphone">
+                                    <CustomFieldArray<Phone>
                                         name="phones"
                                         values={values.phones}
                                         newValueBuilder={() => ({name: '', year: new Date().getFullYear()})}
@@ -271,7 +246,7 @@ function BusinessPropositionAnnotationForm() {
                                     />
                                 </CardBlocWithButton>
 
-                                <CardBlocWithButton label="Numérique - Stockage des données" businessPropositionAnnotation={businessPropositionAnnotation} author={author} >
+                                <CardBlocWithButton label="Numérique - Stockage des données">
                                     <Form.Group controlId="terabytesOfDataToStore">
                                         <Form.Label>Quantité de données</Form.Label>
                                         <CustomField name="storage_amount_in_terabytes" type="number"/>
@@ -289,6 +264,7 @@ function BusinessPropositionAnnotationForm() {
                                             label="Provider"
                                             name="storage_provider"
                                             options={storageProviderList}
+                                            isRequired={false}
                                         />
                                     </Form.Group>
                                     <Form.Group controlId="storageRegion">
@@ -296,11 +272,12 @@ function BusinessPropositionAnnotationForm() {
                                             label="Region"
                                             name="storage_location"
                                             options={storageRegionList}
+                                            isRequired={false}
                                         />
                                     </Form.Group>
                                 </CardBlocWithButton>
 
-                                <CardBlocWithButton label="Numérique - Calcul" businessPropositionAnnotation={businessPropositionAnnotation} author={author} >
+                                <CardBlocWithButton label="Numérique - Calcul">
                                     <Form.Group controlId="hoursOfComputation">
                                         <Form.Label>Heure de calcul</Form.Label>
                                         <CustomField name="compute_time" type="number"/>
@@ -310,6 +287,7 @@ function BusinessPropositionAnnotationForm() {
                                             label="Provider"
                                             name="compute_provider"
                                             options={computeProviderList}
+                                            isRequired={false}
                                         />
                                     </Form.Group>
                                     <Form.Group controlId="computeRegion">
@@ -317,6 +295,7 @@ function BusinessPropositionAnnotationForm() {
                                             label="Region"
                                             name="compute_location"
                                             options={computeRegionList}
+                                            isRequired={false}
                                         />
                                     </Form.Group>
                                     <Form.Group controlId="computeDevice">
@@ -324,11 +303,12 @@ function BusinessPropositionAnnotationForm() {
                                             label="Type de calculateur"
                                             name="compute_device"
                                             options={computeDeviceList}
+                                            isRequired={false}
                                         />
                                     </Form.Group>
                                 </CardBlocWithButton>
 
-                                <CardBlocWithButton label="Bureau" businessPropositionAnnotation={businessPropositionAnnotation} author={author} >
+                                <CardBlocWithButton label="Bureau">
                                     <Form.Group controlId="numberOfPagePrints">
                                         <Form.Label>Nombre de pages imprimer en moyenne par mois</Form.Label>
                                         <CustomField name="pages_printed_per_month" type="number"/>
@@ -338,6 +318,7 @@ function BusinessPropositionAnnotationForm() {
                                             label="Recto - Verso"
                                             name="print_double_sided"
                                             options={boolList}
+                                            isRequired={false}
                                         />
                                     </Form.Group>
                                 </CardBlocWithButton>
