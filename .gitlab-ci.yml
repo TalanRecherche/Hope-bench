@@ -9,7 +9,7 @@ build-docker:
   stage: build
   extends: .docker
   script:
-    - docker build -f Dockerfile.prod -t $CONTAINER_IMAGE .
+    - docker build -f Dockerfile.prod -t test .
   except:
     refs:
       - main
