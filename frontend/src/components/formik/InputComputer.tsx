@@ -4,6 +4,7 @@ import CustomField from "./CustomField";
 import CustomSelectField from "./CustomSelectField";
 import InlineForm from "../InlineForm";
 import {Field, FieldArray, Formik, FormikErrors, useField, FieldHookConfig} from "formik";
+import { Computer } from "../../model/computer"; // Import the 'Computer' type from the appropriate location
 
 interface Props {
 	namespace: string
@@ -17,7 +18,7 @@ const InputComputer = ({namespace, displayLabel = false}: Props) => {
 		provided_by_talan: buildName<Computer>(namespace, 'provided_by_talan'),
 	}
 
-    const computerModelList = ["placeHolder"] // TODO: Find exhaustive list of computers
+	const computerModelList = ["placeHolder"] // TODO: Find exhaustive list of computers
 
 	return <InlineForm>
 		<Form.Group controlId={names.model}>
@@ -29,11 +30,11 @@ const InputComputer = ({namespace, displayLabel = false}: Props) => {
 			<CustomField name={names.number_provided} type="number"/>
 		</Form.Group>
 		<Form.Group controlId={names.provided_by_talan}>
-          {displayLabel ? <Form.Label>Provided by Talan</Form.Label> : null}
-          <div>
-            <Field type="checkbox" name={names.provided_by_talan} />
-          </div>
-        </Form.Group>
+		  {displayLabel ? <Form.Label>Provided by Talan</Form.Label> : null}
+		  <div>
+			<Field type="checkbox" name={names.provided_by_talan} />
+		  </div>
+		</Form.Group>
 	</InlineForm>;
 }
 
