@@ -1,10 +1,7 @@
 #!/bin/sh
 
 # update database
-#alembic merge heads
-
-#alembic revision --autogenerate -m "MIGRATION_NAME"
-alembic upgrade 682c9e0b10af
+alembic upgrade heads
 
 # add config to frontend part
 echo "window.hopeBenchConfig = {
