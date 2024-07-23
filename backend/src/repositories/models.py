@@ -60,11 +60,21 @@ class BusinessPropositionAnnotationDB(Base):
     print_double_sided = Column(Boolean)
 
 
+class BusinessPropositionFileDB(Base):
+    __tablename__ = "business_proposition_files"
+    id_business_proposition_file = Column(UUID(as_uuid=True), primary_key=True, nullable=False)
+    file_name = Column(String, nullable=False)
+    format = Column(String, nullable=False)
+    confidential = Column(Boolean, nullable=False)
+    added_at = Column(DateTime, nullable=False, server_default=func.now())
+    file = Column(LargeBinary, nullable=False)  # Not ideal architecture wise but probably fine for now
+
+
 class AnnotationAffectationDB(Base):
     __tablename__ = "AnnotationAffectationTable"
-    id_business_proposition_annotation = Column(
+    id_business_proposition_file = Column(
         UUID(as_uuid=True),
-        ForeignKey('business_proposition_annotations.id_business_proposition_annotation'),
+        ForeignKey('business_proposition_files.id_business_proposition_file'),
         primary_key=True,
         default=uuid.uuid4,
         nullable=False
@@ -77,12 +87,13 @@ class AnnotationAffectationDB(Base):
         nullable=False
     )
 
+    id_business_proposition_annotation = Column(
+        UUID(as_uuid=True),
+        ForeignKey('business_proposition_annotations.id_business_proposition_annotation'),
+        primary_key=False,
+        default=uuid.uuid4,
+        nullable=True
+    )
+    status = Column(String, nullable=False)
+    last_update = Column(DateTime, nullable=False, server_default=func.now(), onupdate=func.now())
 
-class BusinessPropositionFileDB(Base):
-    __tablename__ = "business_proposition_files"
-    id_business_proposition_file = Column(UUID(as_uuid=True), primary_key=True, nullable=False)
-    file_name = Column(String, nullable=False)
-    format = Column(String, nullable=False)
-    confidential = Column(Boolean, nullable=False)
-    added_at = Column(DateTime, nullable=False, server_default=func.now())
-    file = Column(LargeBinary, nullable=False)  # Not ideal architecture wise but probably fine for now
