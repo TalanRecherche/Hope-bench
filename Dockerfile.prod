@@ -6,7 +6,7 @@ COPY ./frontend /app/
 
 RUN npm install -g npm@10.5.0
 RUN npm ci
-RUN npm run build
+#RUN npm run build
 
 FROM python:3.10-slim-buster
 
