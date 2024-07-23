@@ -1,9 +1,14 @@
-import { Field , useField} from "formik";
-import { FieldProps } from "formik/dist/Field";
-import { Form, FormControlProps } from "react-bootstrap";
+import { useField} from "formik";
+import { Form, FormCheckProps } from "react-bootstrap";
 
 
-const CustomSelectField: React.FC<CustomSelectFieldProps & FieldHookConfig<string>> = ({ label, options, isRequired, ...props }) => {
+export interface Props extends FormCheckProps {
+	name: string
+  options: string[]
+	isRequired?: boolean
+}
+
+const CustomSelectField = ({ label, options, isRequired, ...props }: Props) => {
     const [field, meta] = useField<string>(props);
 
     return (
@@ -14,7 +19,7 @@ const CustomSelectField: React.FC<CustomSelectFieldProps & FieldHookConfig<strin
         </Form.Label>
         <Form.Control as="select" {...field} required={isRequired}>
           <option value="">Select an option</option>
-          {options.map(option => (
+          {options.map((option: string) => (
             <option key={option} value={option}>
               {option}
             </option>

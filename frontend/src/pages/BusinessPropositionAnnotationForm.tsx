@@ -1,6 +1,6 @@
 import React, { MouseEventHandler, PropsWithChildren, SyntheticEvent, useContext, useEffect, useState } from "react";
 import { Formik, FormikErrors, useField, FieldHookConfig } from "formik";
-import { Button, Card, CardBody, CardHeader, Col, Form, Row, Stack } from "react-bootstrap";
+import { Button, Card, CardBody, Col, Form, Row, Stack } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import { toFormikValidationSchema } from "zod-formik-adapter";
 import CustomFieldArray from "../components/formik/CustomFieldArray.tsx";
@@ -11,18 +11,12 @@ import InputPhone from "../components/formik/InputPhone.tsx";
 import Loader from "../components/Loader.tsx";
 import { ApiContext } from "../contexts/ApiContext.tsx";
 import { scrollToFirstError } from "../model/form.utils.ts";
-import { BusinessPropositionData, BusinessPropositionDataSchema} from "../model/models.ts";
+import { BusinessPropositionData, BusinessPropositionDataSchema, Computer, Phone, Transport} from "../model/models.ts";
 import FormErrorNotification from "./FormErrorNotification.tsx";
 
 const emptyData: BusinessPropositionData = {
 }
 
-const CardBloc = ({label, children}: PropsWithChildren<{ label: string }>) => (
-    <Card>
-        <CardHeader className="fs-5"> {label}</CardHeader>
-        <CardBody>{children}</CardBody>
-    </Card>
-)
 
 const CardBlocWithButton = ({label, children}: PropsWithChildren<{ label: string}>) => (
     <Card>
@@ -38,7 +32,6 @@ function BusinessPropositionAnnotationForm() {
     const {businessPropositionAnnotationId} = useParams();
     const {createBusinessProposition, readBusinessProposition, updateBusinessProposition} = useContext(ApiContext)
     const navigate = useNavigate();
-    const author: string = ""
 
     function readBusinessPropositionAnnotation(businessPropositionAnnotationId: any) {
         return readBusinessProposition(businessPropositionAnnotationId);
@@ -50,7 +43,7 @@ function BusinessPropositionAnnotationForm() {
                 ...emptyData
             })
         } else if (businessPropositionAnnotationId) {
-            readBusinessPropositionAnnotation(businessPropositionAnnotationId).then(([value]) => updateBusinessPropositionAnnotation(value))
+            readBusinessPropositionAnnotation(businessPropositionAnnotationId).then((value) => {console.log(value);updateBusinessPropositionAnnotation({...emptyData})})
 
         }
     }, [businessPropositionAnnotationId])
@@ -108,7 +101,7 @@ function BusinessPropositionAnnotationForm() {
      * on log et on scroll vers l'input en erreur si existant
      */
     const handleSubmitError = (
-    errors: FormikErrors<BusinessPropositionData>, values: BusinessPropositionData, setFieldTouched: (field: string, isTouched?: boolean, shouldValidate?: boolean) => Promise<void | FormikErrors<{ id_business_proposition_annotation?: string | undefined; id_business_proposition_file?: string | undefined; mission_name?: string | undefined; id_user?: string | undefined; }>>) => (e: SyntheticEvent) => {
+    errors: FormikErrors<BusinessPropositionData>, values: BusinessPropositionData) => (e: SyntheticEvent) => {
         e.preventDefault();
         console.warn(errors);
         console.warn(values);
@@ -135,8 +128,8 @@ function BusinessPropositionAnnotationForm() {
                 initialValues={businessPropositionAnnotation}
             >
                 
-                {({handleSubmit, values, isValid, errors, setFieldTouched}) => {
-                    const submitIfValid = (isValid ? handleSubmit : handleSubmitError(errors, values, setFieldTouched)) as MouseEventHandler<HTMLButtonElement> 
+                {({handleSubmit, values, isValid, errors}) => {
+                    const submitIfValid = (isValid ? handleSubmit : handleSubmitError(errors, values)) as MouseEventHandler<HTMLButtonElement> 
                     return (
                         <>
                             <FormErrorNotification/>
@@ -192,7 +185,7 @@ function BusinessPropositionAnnotationForm() {
                                     <CustomFieldArray<Transport>
                                         name="transports"
                                         values={values.transports}
-                                        newValueBuilder={() => ({name: '', year: new Date().getFullYear()})}
+                                        newValueBuilder={() => ({transport_mode: '', average_journeys_per_month: 0, transport_distance: 0})}
                                         render={({name, index}) =>
                                             <InputTransport
                                                 namespace={name}
@@ -224,7 +217,7 @@ function BusinessPropositionAnnotationForm() {
                                     <CustomFieldArray<Computer>
                                         name="computers"
                                         values={values.computers}
-                                        newValueBuilder={() => ({name: '', year: new Date().getFullYear()})}
+                                        newValueBuilder={() => ({model: '', number_provided: 0, provided_by_talan: false})}
                                         render={({name, index}) =>
                                             <InputComputer
                                                 namespace={name}
@@ -237,7 +230,7 @@ function BusinessPropositionAnnotationForm() {
                                     <CustomFieldArray<Phone>
                                         name="phones"
                                         values={values.phones}
-                                        newValueBuilder={() => ({name: '', year: new Date().getFullYear()})}
+                                        newValueBuilder={() => ({model: '', number_provided: 0, provided_by_talan: false})}
                                         render={({name, index}) =>
                                             <InputPhone
                                                 namespace={name}

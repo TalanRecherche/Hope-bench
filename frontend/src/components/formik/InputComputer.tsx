@@ -4,7 +4,7 @@ import CustomField from "./CustomField";
 import CustomSelectField from "./CustomSelectField";
 import InlineForm from "../InlineForm";
 import {Field, FieldArray, Formik, FormikErrors, useField, FieldHookConfig} from "formik";
-import { Computer } from "../../model/computer"; // Import the 'Computer' type from the appropriate location
+import {Computer} from "../../model/models";
 
 interface Props {
 	namespace: string

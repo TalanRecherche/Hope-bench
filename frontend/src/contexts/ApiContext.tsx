@@ -1,15 +1,13 @@
 import { createContext, PropsWithChildren, useContext } from "react";
 import { config } from "../config";
-import {CVData, PageResult, SearchOptions, Template, BusinessPropositionFileData} from "../model/models";
+import {PageResult, BusinessPropositionFileData, BusinessPropositionData} from "../model/models";
 import Api from "./api";
 import { AuthContext } from "./AuthContext";
 
-export type TemplatesByType = Record<string, Template[]>
-
 export type ApiContextI = {
-	createBusinessProposition: (business_proposition: BusinessPropositionForm) => Promise<[string]>,
+	createBusinessProposition: (business_proposition: BusinessPropositionData) => Promise<[string]>,
 	readBusinessProposition: (businessPropositionID: string) => Promise<[string]>,
-	updateBusinessProposition: (business_proposition: BusinessPropositionForm) => Promise<void>,
+	updateBusinessProposition: (business_proposition: BusinessPropositionData) => Promise<void>,
 	deleteTemplate: (businessPropositionID: string) => Promise<void>,
 	getReviewedAndUnderlings: (userID: string) => Promise<[string]>,
 	getFullNameUser: (userID: string) => Promise<string>,

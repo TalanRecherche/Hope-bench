@@ -3,7 +3,8 @@ import { buildName } from "../../model/form.utils";
 import CustomField from "./CustomField";
 import CustomSelectField from "./CustomSelectField";
 import InlineForm from "../InlineForm";
-import {Field, FieldArray, Formik, FormikErrors, useField, FieldHookConfig} from "formik";
+import {Field} from "formik";
+import { Phone } from "../../model/models";
 
 interface Props {
 	namespace: string
