@@ -9,20 +9,16 @@ import {ApiProvider} from "./contexts/ApiContext";
 import {AuthContext, AuthProvider} from "./contexts/AuthContext";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import './index.scss'
-import CVForm from "./pages/CVForm";
-import MyCvList from "./pages/MyCvList.tsx";
-import TemplateDoc from "./pages/TemplateDoc";
-import TemplateList from "./pages/TemplateList";
-import CvSearch from "./pages/CvSearch.tsx";
+import BusinessPropositionAnnotationForm from "./pages/BusinessPropositionAnnotationForm.tsx";
+import DashBoard from "./pages/DashBoard";
 import {ApiContext} from "./contexts/ApiContext.tsx";
-
 const RouterContext = () => {
     const {user} = useContext(AuthContext)
 
     const { getFullNameUser } = useContext(ApiContext);
 
     // Initialize author with a default value
-    const [author, setAuthor] = useState('Loading...'); // or use null or another placeholder
+    const [, setAuthor] = useState('Loading...'); // or use null or another placeholder
 
     useEffect(() => {
         const fetchAuthor = async () => {
@@ -40,25 +36,17 @@ const RouterContext = () => {
         }
     }, [user]);
 
-    const managerRoutes = user.roles.includes('manager') ? [
-        {path: "cvs", element: <CvSearch author={author}/>}
-    ] : []
-    const templateManagerRoutes = user.roles.includes('template_manager') ? [
-        {path: "templates", element: <TemplateList/>},
-        {path: "templates-doc", element: <TemplateDoc/>},
-    ] : []
+    const managerRoutes = user.roles.includes('manager') ? [] : []
 
 
     const router = createBrowserRouter([{
         path: "/",
         element: <App/>,
         children: [
-            {index: true, element: <Navigate to="/my-cvs" replace/>},
+            {index: true, element: <Navigate to="/dashboard" replace/>},
+            {path: "dashboard", element: <DashBoard/>},
             ...managerRoutes,
-            {path: "my-cvs", element: <MyCvList />},
-            {path: "cvs/:cvId", element: <CVForm/>},
-            ...templateManagerRoutes,
-            {path: "*", element: <Navigate to="/my-cvs" replace/>},
+            {path: "business-proposition-annotation/:businessPropositionAnnotationId", element: <BusinessPropositionAnnotationForm/>},
         ],
     },
     ]);
