@@ -1,10 +1,9 @@
 from dependency_injector.wiring import inject, Provide
 from fastapi import APIRouter, Depends, Request
 
-from backend.src.containers import Container
-from backend.src.models.AnnotationAffectation import AnnotationAffectation
-from backend.src.models.User import User
-from backend.src.services.AnnotationAffectationService import AnnotationAffectationService
+from ..models.AnnotationAffectation import AnnotationAffectation
+from ..services.AnnotationAffectationService import AnnotationAffectationService
+from ..containers import Container
 
 router = APIRouter(
     prefix="/annotation_affectation",
