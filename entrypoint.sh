@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Debug
+echo "Received arguments: $@"
+
 # update database
 alembic upgrade heads
 
