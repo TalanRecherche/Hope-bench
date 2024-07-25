@@ -15,6 +15,4 @@ EXPOSE 8000
 # Script launched on startup, used to add configuration to frontend part at runtime, not build
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod 755 /entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
-
-CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+ENTRYPOINT ["/entrypoint.sh", "uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
