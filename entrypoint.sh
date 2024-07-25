@@ -1,8 +1,5 @@
 #!/bin/sh
 
-# Debug
-echo "Received arguments: $@"
-
 # update database
 alembic upgrade heads
 
@@ -14,6 +11,3 @@ echo "window.hopeBenchConfig = {
   'BACKEND_BASE_URL': '/api/v1'
 }"  > /app/backend/src/front/env.js
 
-
-# Hand off to the CMD
-exec "$@"
