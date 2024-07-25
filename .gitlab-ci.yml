@@ -20,6 +20,7 @@ push-docker:
   before_script:
     - docker login $REGISTRY_URL -u $REGISTRY_USER -p $REGISTRY_TOKEN
   script:
+    - docker build -f Dockerfile.prod -t $CONTAINER_IMAGE -t $CONTAINER_IMAGE_LATEST .
     - docker push $CONTAINER_IMAGE
     - docker push $CONTAINER_IMAGE_LATEST
   only:
