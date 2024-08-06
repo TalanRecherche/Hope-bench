@@ -25,7 +25,7 @@ def upgrade() -> None:
     op.add_column('AnnotationAffectationTable', sa.Column('last_update', sa.DateTime(), server_default=sa.text('now()'), nullable=False))
     op.alter_column('AnnotationAffectationTable', 'id_business_proposition_annotation',
                existing_type=sa.UUID(),
-               nullable=True)
+               nullable=False)
     op.create_foreign_key(None, 'AnnotationAffectationTable', 'business_proposition_files', ['id_business_proposition_file'], ['id_business_proposition_file'])
     # ### end Alembic commands ###
 
