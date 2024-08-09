@@ -11,6 +11,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import './index.scss'
 import BusinessPropositionAnnotationForm from "./pages/BusinessPropositionAnnotationForm.tsx";
 import DashBoard from "./pages/DashBoard";
+import SimulationForm from "./pages/SimulationForm.tsx";
 import {ApiContext} from "./contexts/ApiContext.tsx";
 const RouterContext = () => {
     const {user} = useContext(AuthContext)
@@ -44,13 +45,16 @@ const RouterContext = () => {
         element: <App/>,
         children: [
             {index: true, element: <Navigate to="/dashboard" replace/>},
-            {path: "dashboard", element: <DashBoard/>},
-            ...managerRoutes,
+            {path: "dashboard", element: <DashBoard/>},            
             {path: "business-proposition-annotation/:businessPropositionAnnotationId", element: <BusinessPropositionAnnotationForm/>},
+            {path: "form", element: <SimulationForm/>},
+            ...managerRoutes,
         ],
     },
     ]);
     return <RouterProvider router={router}/>
+
+    
 }
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
