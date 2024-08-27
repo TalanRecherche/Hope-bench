@@ -1,15 +1,14 @@
 import { useContext } from 'react';
+import { Outlet } from "react-router-dom";
 import { Container } from "react-bootstrap";
-import { AuthContext } from "../contexts/AuthContext";
-import  FormTab  from "../components/formik/FormTab";
-import FormNavBar from "../components/FormNavBar";
+import FormNavBar from "./FormNavBar";
 
 
 function SimulationForm() {
   return (
     <Container>
       <FormNavBar/>
-      <FormTab/>      
+      <Outlet />
     </Container>
   );
 }

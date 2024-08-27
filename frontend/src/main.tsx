@@ -1,20 +1,25 @@
 import * as React from "react";
-import {useContext, useState, useEffect} from "react";
+import { useContext, useState, useEffect } from "react";
 import * as ReactDOM from 'react-dom/client'
-import {ReactNotifications} from 'react-notifications-component'
+import { ReactNotifications } from 'react-notifications-component'
 import 'react-notifications-component/dist/theme.css'
-import {createBrowserRouter, Navigate, RouterProvider} from "react-router-dom";
+import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 import App from "./App";
-import {ApiProvider} from "./contexts/ApiContext";
-import {AuthContext, AuthProvider} from "./contexts/AuthContext";
+import { ApiProvider } from "./contexts/ApiContext";
+import { AuthContext, AuthProvider } from "./contexts/AuthContext";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import './index.scss'
 import BusinessPropositionAnnotationForm from "./pages/BusinessPropositionAnnotationForm.tsx";
 import DashBoard from "./pages/DashBoard";
-import SimulationForm from "./pages/SimulationForm.tsx";
-import {ApiContext} from "./contexts/ApiContext.tsx";
+import SimulationForm from "./pages/Form/SimulationFormBase.tsx";
+import GeneralTab from "./pages/Form/GeneralTab.tsx";
+import MovementTab from "./pages/Form/MovementTab.tsx";
+import DigitalTab from "./pages/Form/DigitalTab.tsx";
+import OfficeTab from "./pages/Form/OfficeTab.tsx";
+
+import { ApiContext } from "./contexts/ApiContext.tsx";
 const RouterContext = () => {
-    const {user} = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
 
     const { getFullNameUser } = useContext(ApiContext);
 
@@ -42,29 +47,36 @@ const RouterContext = () => {
 
     const router = createBrowserRouter([{
         path: "/",
-        element: <App/>,
+        element: <App />,
         children: [
-            {index: true, element: <Navigate to="/dashboard" replace/>},
-            {path: "dashboard", element: <DashBoard/>},            
-            {path: "business-proposition-annotation/:businessPropositionAnnotationId", element: <BusinessPropositionAnnotationForm/>},
-            {path: "form", element: <SimulationForm/>},
-            ...managerRoutes,
+            { index: true, element: <Navigate to="/dashboard" replace /> },
+            { path: "dashboard", element: <DashBoard /> },
+            { path: "business-proposition-annotation/:businessPropositionAnnotationId", element: <BusinessPropositionAnnotationForm /> },
+            {
+                path: "form", element: <SimulationForm />,
+                children: [
+                    { index: true, element: <Navigate to="/form/generalTab" replace /> },
+                    { path: "generalTab", element: <GeneralTab /> },
+                    { path: "movementTab", element: <MovementTab /> },
+                    { path: "digitalTab", element: <DigitalTab /> },
+                    { path: "officeTab", element: <OfficeTab /> },
+                ]
+            },
+            ...managerRoutes
         ],
     },
     ]);
-    return <RouterProvider router={router}/>
-
-    
+    return <RouterProvider router={router} />
 }
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
-        <ReactNotifications/>
+        <ReactNotifications />
         <AuthProvider>
             <ApiProvider>
-                <RouterContext/>
+                <RouterContext />
             </ApiProvider>
         </AuthProvider>
     </React.StrictMode>,
-    
+
 )
