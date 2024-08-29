@@ -20,6 +20,8 @@ echo "window.cvproaiConfig = {
   'BACKEND_BASE_URL': '/api/v1'
 }"  > /app/backend/src/front/env.js
 
+# Debugging: print the command that will be executed
+echo "Executing command: $@"
 
 # Hand off to the CMD
 exec "$@"
