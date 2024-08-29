@@ -1,10 +1,16 @@
 #!/bin/sh
 
-# update database
-alembic merge heads
+# Exit immediately if a command exits with a non-zero status
+set -e
 
-alembic revision --autogenerate -m "MIGRATION_NAME"
-alembic upgrade heads
+# Update the database: merge any divergent heads
+alembic merge heads || true
+
+# Autogenerate a new migration file (if needed)
+alembic revision --autogenerate -m "MIGRATION_NAME" || true
+
+# Apply the latest migrations
+alembic upgrade head
 
 # add config to frontend part
 echo "window.cvproaiConfig = {
