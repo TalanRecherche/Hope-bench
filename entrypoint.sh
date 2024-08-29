@@ -4,13 +4,13 @@
 set -e
 
 # Merge any divergent heads
-alembic merge heads || true
+#alembic merge heads || true
 
 # Check if the database is up to date, apply migrations if necessary
-alembic upgrade head || true
+# alembic upgrade head || true
 
 # Autogenerate a new migration file if there are pending changes (optional, based on your needs)
-alembic revision --autogenerate -m "MIGRATION_NAME" || true
+# alembic revision --autogenerate -m "MIGRATION_NAME" || true
 
 # Apply the new migration
 alembic upgrade head || true
