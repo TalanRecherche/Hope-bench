@@ -22,4 +22,4 @@ echo "window.cvproaiConfig = {
 
 
 # Hand off to the CMD
-exec "$@"
+exec "uvicorn src.main:app --proxy-headers --host 0.0.0.0 --port 8000"
