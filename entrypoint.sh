@@ -20,8 +20,16 @@ echo "window.cvproaiConfig = {
   'BACKEND_BASE_URL': '/api/v1'
 }"  > /app/backend/src/front/env.js
 
-# Debugging: print the command that will be executed
-echo "Executing command: $@"
+# Add runtime configuration to the frontend part (if applicable)
+echo "Configuring frontend..."
+# Your configuration logic here
+
+# Use the default command if no other command is passed
+if [ -z "$@" ]; then
+    echo "No command passed, using default: uvicorn src.main:app --proxy-headers --host 0.0.0.0 --port 8000"
+    set -- uvicorn src.main:app --proxy-headers --host 0.0.0.0 --port 8000
+fi
+
 
 # Hand off to the CMD
 exec "$@"
