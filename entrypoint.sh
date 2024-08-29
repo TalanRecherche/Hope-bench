@@ -1,14 +1,13 @@
 #!/bin/sh
 
-# Debug
-echo "Received arguments: $@"
-echo "Environment variables: $(printenv)"
-
 # update database
+alembic merge heads
+
+alembic revision --autogenerate -m "MIGRATION_NAME"
 alembic upgrade heads
 
 # add config to frontend part
-echo "window.hopeBenchConfig = {
+echo "window.cvproaiConfig = {
   'KEYCLOAK_SERVER_URL': '$KEYCLOAK_SERVER_URL',
   'KEYCLOAK_REALM': '$KEYCLOAK_REALM',
   'KEYCLOAK_CLIENT_ID': '$KEYCLOAK_CLIENT_FRONT_ID',
