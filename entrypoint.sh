@@ -1,8 +1,5 @@
 #!/bin/sh
 
-# Exit immediately if a command exits with a non-zero status
-set -e
-
 # Merge any divergent heads
 #alembic merge heads || true
 
@@ -13,7 +10,7 @@ set -e
 # alembic revision --autogenerate -m "MIGRATION_NAME" || true
 
 # Apply the new migration
-alembic upgrade head || true
+alembic upgrade head
 
 # add config to frontend part
 echo "window.cvproaiConfig = {
