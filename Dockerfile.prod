@@ -24,7 +24,8 @@ COPY ./backend /app/backend
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy built front into backend static folder (which is routed in FastAPI)
-COPY --from=front-builder /app/dist /app/backend/src/front
+COPY --from=front-builder app/dist /app/backend/src/front
+
 
 EXPOSE 8000
 
