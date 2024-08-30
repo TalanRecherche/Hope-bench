@@ -11,6 +11,12 @@ echo "window.cvproaiConfig = {
   'KEYCLOAK_REALM': '$KEYCLOAK_REALM',
   'KEYCLOAK_CLIENT_ID': '$KEYCLOAK_CLIENT_FRONT_ID',
   'BACKEND_BASE_URL': '/api/v1'
+}"
+echo "window.cvproaiConfig = {
+  'KEYCLOAK_SERVER_URL': '$KEYCLOAK_SERVER_URL',
+  'KEYCLOAK_REALM': '$KEYCLOAK_REALM',
+  'KEYCLOAK_CLIENT_ID': '$KEYCLOAK_CLIENT_FRONT_ID',
+  'BACKEND_BASE_URL': '/api/v1'
 }" > /app/backend/src/front/env.js
 
 # Debugging: Check if any command is passed
