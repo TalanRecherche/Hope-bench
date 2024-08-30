@@ -1,8 +1,5 @@
 #!/bin/sh
 
-# Exit immediately if a command exits with a non-zero status
-set -e
-
 # Alembic migrations
 echo "Applying Alembic migrations..."
 alembic upgrade head
