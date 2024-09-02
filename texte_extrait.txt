@@ -1,0 +1,2874 @@
+Se RE ELLE
+Accompagnement PMO-EOLE-EPT 4
+
+Dossier de consultation: 2025RFQ06:8725
+
+LT M r Tata”
+
+né
+1
+OT [= alt
+[3
+
+Confidentiel
+
+    
+
+PRÉAMBULE Tatan'
+
+Consulting
+
+Ce document constitue la proposition technique de Talan Consulting à la sollicitation de SNCF Transilien pour la prestation
+d'accompagnement du pilotage de la mise en exploitation de l'extension du RER E, des projets EOLE, NEXTEO et RERNG.
+
+P our tout contact ou toute demande d'information, votre interlocuteur est M. J ean GRANDEMANGE, directeur au sein du pôle
+Transport & Mobilités de Talan Consulting.
+
+ 
+
+   
+    
+    
+     
+ 
+
+Jean GRANDEMANGE
+Directeur
+Transports et Mobilités
+
+jean.grandemange@ talan.com
++33 6 88 15 23 63
+
+14 rue Pergolèse, 75016
+Paris + France
+01 53 34 05 72
+
+ 
+
+Confidentiel — Proposition technique Accompagnement PMO EOLE EPTA4 3
+
+SOMMAIRE
+
+1. Note de synthèse 05
+2. Planning de réalisation de la mission 06
+3. Méthodologie de réalisation de la mission 08
+4. Dispositif Talan proposé 14
+5. Modalités d’appropriation et de transfert de compétences ....…. 20
+6. Livrables envisagés etindicateurs 24
+PRE 30
+8. Annexes 35
+
+Talan”
+
+Consulting
+
+ 
+
+Confidentiel - Accompagnement PMO EOLE EPTA4
+
+NOTE DE SYNTHÈSE
+
+Notre compréhension du contexte et de vos enjeux
+
+Le RER E circule depuis 1999. Son parcours a été
+complété en deux grandes étapes :
+
++ 2003 : prolongement de sa branche Est (branche
+de Tournan)
+
++ à partir de 2010 : un second projet est lancé pour
+prolonger la branche Ouest jusqu’à Mantes-la-
+Jolie, avec un premier jalon pour Nanterre prévu
+en 2024
+
+De nombreux travaux sur l'infrastructure sont en
+cours pour assurer cette mise en service à l'Ouest
+(création de 3 nouvelles gares, adaptation de lignes
+existantes, creusement d’un tunnel sur la section
+Haussmann/Nanterre, etc.).
+
+L'exploitation
+
+ 
+    
+
+7
+
+Sécuriser la mise en exploitation de la branche Ouest du RER E
+
++ _ Accompagner le pilotage du projet EOLE + _ S’assurer que les rames RER NG seront
+
+Ce prolongement se dote d’une gamme de rame
+nouvelle génération dite « RER NG », qui
+remplacera progressivement l’ancienne flotte.
+
+Ces rames répondent au besoin grandissant des
+voyageurs quant aux nouveaux services qui leur
+sont proposés (climatisation, affluence à la voiture,
+PMR, information voyageurs en temps réel, etc.).
+
+Aussi, les RER NG permettront d'optimiser la
+
+qualité de service (pour le voyageur et l'exploitant)
+en communiquant des données en temps réel.
+
+RER NG
+
+La mission d'accompagnement au pilotage du projet EOLE s'inscrit dans ce contexte et
+
+répond aux enjeux suivants.
+
+Talan'
+
+Consulting
+
+Ces rames communiqueront aussi entre elles via
+un système centralisé nommé « NEXTEO ». Ce
+système, qui sera déployé au sein des centres
+opérationnels de SNCF Réseau, assurera :
+
++ _l’automatisation des rames sur la partie
+centrale du tracé du RER E (Nanterre < Rosa
+Parks)
+
++ _l’optimisation des circulations via une
+régulation s’adaptant en temps réel aux
+perturbations
+
++ l'amélioration de l'information voyageurs
+grâce à la mise à disposition de nouvelles
+données en temps réel
+
+NEXTEO
+
+    
+
+7
+
+Répondre aux enjeux d’IDFM
+
++ _ Mettre en avant l’aspect RSE du projet
+
+{suivi planning / pilotage des risques, gestion homologuées et disponibles d'ici le du Mass transit
+documentaire, etc.) déverminage
++ _ Coordonner les différentes parties *__ Contribuer au déploiement des systèmes EOLE
+
+prenantes du projet (mise en exploitation,
+MOA, NEXTEO,RER NG)
+
+Nos atouts
+
+NEXTEO et ATS+
+
++ Inscrire le RER E dans les problématiques * Devenir la référence sur l’exploitation du
+
+RER E auprès d'IDFM d'ici sa mise en
+concurrence (SA 2028)
+
+Notre dispositif pour vous accompagner
+
+S'inscrire dans une dynamique créée depuis plusieurs mois
+Apporter une expertise du métier ferroviaire
+
+Proposer une méthodologie PMO éprouvée
+
+Répondre de manière adaptée aux enjeux RSE
+
+° A 1 consultante senior disposant de connaissances ferroviaires et de gestion de projet à 100 %
+. e 1 directeur de projet à 1 jour/mois
+PA pro] jour!
+
+Confidentiel — Proposition technique Accompagnement PMO EOLE EPT4 5
+
+ 
+
+Talan'
+
+Consulting
+
+PLANNING DE RÉALISATION DE LA MISSION
+
+(era elle) O
+
+PLANNING DE RÉALISATION DE LA MISSION
+
+PRINCIPAUX
+JALONS
+PROJET
+
+PLANNING
+PRESTATION
+
+ 
+
+  
+   
+ 
+ 
+
+ 
+
+ 
+
+(11/09) Mise en service
+commerciale RER NG
+
+ 
+
+Miselen Exploitation
+Nanterre partielle
+
++ Transmission à IDFM
+Devis n°4
+
+  
+
+Nanterre co
+
+Déverminage phase 2 (RER NG)
+
+ 
+ 
+
+ 
+ 
+
+Mise en Expjoiration
+
+Stabilisation ligne Nanterre
+
+Tatan'
+
+Consulting
+
+  
+
+ 
+
+Transmission à IDFM
+
+plète © Devis n°5
+
+ 
+
+Démarrage : 18/09/2023 TRANCHE FERME
+
+© Réunion de lancement
+
+Phase de montée en crpéene
+Embarquement, présentations, lecture documentaire, préparation des lers pas
+
+ 
+
+Fin : 31/03/2025 TRANCHE OPTIONNELLE
+
+mennabannenemennennnbennnn)
+
+Démarrage : 01/04/2025
+
+EE
+
+   
+
+Phase de
+réversibilité
+
+ 
+
+ 
+
+CADRER
+| Assurer le suivi des plans d'action et le respect des décisions, et organiser la gestion documentaire
+I
+ANTICIPER
+Vérifier, à travers les plannings et les instances de pilotage, le bon traitement des points nécessaires à l'atteinte des objectifs projet
+
+INFORMER
+S'assurer de la bonne diffusion de l'information auprès de l'ensemble des parties prenantes du projet
+
+SECURISER
+Identifier et suivre les risques projet et mettre en place les bonnes pratiques pour l'amélioration continue du projet
+
+ 
+
++ + + + + + + COPIL
+© © & © © © & © COPRO]
+© © © © © © © © © © © © | coTECH
+
+ 
+
+ 
+
+Confidentiel — Proposition technique
+
+ 
+
+Accompagnement PMO EOLE EPTA4 7
+
+Talan'
+
+Consulting
+
+MÉTHODOLOGIE DE RÉALISATION DE LA MISSION
+
+(era elle) 8
+
+ANTICIPER
+
+sie
+
+INFORMER
+
+SECURISER
+
+ei #f 4
+
+LEE
+LES FONDAMENTAUX PMO TALAN POUR VOUS ACCOMPAGNER alan
+
+Consulting
+
+Maîtriser la définition de la cible et des trajectoires
+
+Contrôler le respect des trajectoires à travers des indicateurs qualitatifs et quantitatifs
+Suivre et faire avancer les plans d'actions
+
+Organiser et préparer les différentes instances de suivi et les revues de programme / projets
+Préparer les décisions et arbitrages à prendre lors des instances de pilotage
+
+Cadrer et organiser la gestion documentaire
+
+Piloter l'avancement des chantiers en tenant compte des risques de décalage du planning projet
+Identifier les adhérences majeures avec d’autres projets etles risques en cascade
+
+Préparer des solutions palliatives et« Plans de Trajectoire P erturbée » en cas de risque majeur
+Anticiper les difficultés et les interrogations des utilisateurs
+
+Assurer là remontée d'informations et la descente des décisions
+
+Faire vivre une vision partagée des risques et la porter auprès de l'équipe
+
+Garantir la qualité et la régularité des informations permettant à la direction de piloter
+Fournir les visions consolidées nécessaires aux autres acteurs du projet
+
+Responsabiliser les porteurs de chantier sur la tenue de leurs trajectoires
+
+Monter et animer des task-force transverses de résolution de problèmes
+
+Qualifier et quantifier les risques projet et piloter les plans d'action de mise sous contrôle
+Le cas échéant, redéfinir de manière coordonnée les trajectoires
+
+Animer l'amélioration continue du projet
+
+Cette démarche s’appliquera dans une logique d'amélioration continue tenant compte de la dynamique projet existante.
+
+ 
+
+Confidentiel — Proposition technique
+
+ 
+
+Accompagnement PMO EOLE EPTA4 9
+
+— | | M
+FACTEURS CLÉS DE SUCCÈS Talan:
+Consulting
+
+Pour que l’appui aux équipes Transilien se déroule dans les meilleures conditions, il nous semble indispensable de :
+
+. " L'expertise métier acquise depuis plusieurs années par les consultants Transport & Mobilités de Talan
+Proposer une expertise Consulting au sein du secteur ferroviaire faciliteront l'appui aux équipes Transilien dans la résolution de
+ferroviaire et une sujets complexes.
+méthodologie PMO éprouvée | " S’appuyer sur une méthodologie PMO éprouvée à travers les différentes missions Talan Consulting
+permettra d'anticiper et de cadrer les travaux nécessaires à l'atteinte des objectifs projet.
+
+S’inscrire dans une " Le planning et les échéances de mise en exploitation de l'extension du RER E, des nouvelles rames et du
+dynamique créée depuis nouveau système d'exploitation sont définis et la dynamique projet est lancée depuis plusieurs années.
+plusieurs mois " Les préconisations formulées par Talan Consulting devront donc s'inscrire dans une logique d'amélioration
+continue plutôt qu'en rupture.
+
+" L'importance du nombre de parties prenantes, aussi bien au sein de Transilien que dans les autres entités,
+Mettre en place les avec pour chacune des enjeux différents, va nécessiter une posture et un cadre favorables au bon partage
+conditions d’intervention d'informations. L'utilisation d'outils comme les tableaux de bord projet doit ainsi permettre un dialogue
+dans une organisation projet facilité entre chaque acteur du projet.
+complexe " La présence de Talan Consulting sur des projets connexes (comme RER NG Communicant) sera gage
+d'une meilleure collaboration.
+
+Ces facteurs clés de succès ont guidé la démarche et le dispositif proposés.
+
+ 
+
+Confidentiel — Proposition technique Accompagnement PMO EOLE EPTA4 10
+
+ 
+
+, - - Y
+SYNTHESE DE LA DÉMARCHE PROPOSÉE Talan:
+Consulting
+
+Les travaux à réaliser par le PMO EOLE s’articulent autour de cinq grandes missions :
+
+Construction, pilotage et coordination des Planification et préparation des instances
+plannings de pilotage et des rituels CSS
+
+ 
+
+} } TI en R EN ON documentaire
+ABS RE LED CO HER résolution de sujets complexes
+
+La démarche s'appuie sur une méthodologie PMO éprouvée et construite autour de 4 axes :
+
+*__Cadrer : Assurer le suivi des plans d'action et le respect des décisions
+
+PC: -__Anticiper : Vérifier, à travers les plannings etles instances de pilotage, le bon traitement des points nécessaires à l'atteinte des objectifs projet
+
+*__ Informer : S'assurer de la bonne diffusion de l'information auprès de l'ensemble des parties prenantes du projet
+
+*__ Sécuriser : Identifier et suivre les risques projet et mettre en place les bonnes pratiques pour l'amélioration continue du projet
+
+Cette démarche est déclinée en actions concrètes sur chacune des cinq missions et est renforcée par un engagement RSE au sein du projet EOLE.
+
+ 
+
++. Plannings détaillés du projet + Supports et CR des comités de pilotage, comités techniques et
+NULS + _ Matrice des risques | comités projet |
+NT TND + Tableaux de bord du projet + Synthèse mensuelle d'avancement
+
+*__ Plan de management projet + _ Capitalisation des documents projet
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ES ————————————————— 18,5 mois (tranche ferme) +
+
+ 
+
+La démarche est détaillée dans la suite de la section.
+
+ 
+
+Confidentiel — Proposition technique Accompagnement PMO EOLE EPTA4 11
+
+ 
+
+DÉMARCHE DÉTAILLÉE
+
+OBJECTIFS
+
+%# DÉMARCHE
+
+Talan'
+
+Consulting
+
+ 
+
+Produire une vision claire de l'avancement des
+jalons projet, y compris avec une vision des
+adhérences transverses
+
+Planifier les activités, en alignement avec les attentes
+du projet EOLE et en cohérence avec les jalons
+des projets connexes
+
+Identifier les risques, les priorisations nécessaires, les
+plans d’actions
+
+Gérer de manière proactive les aléas de plannings et
+la cohérence du plan de marche
+
+Favoriser la bonne cohésion et la bonne circulation
+de l'information
+
+() FACTEURS CLES DE SUCCES
+
+ 
+
+ 
+
+Une coordination et coopération maximale avec les
+parties prenantes du projet EOLE
+
+La disponibilité et implication de tous les acteurs
+internes et externes
+
+Une attention particulière au suivi des différents
+risques projet
+
+Confidentiel — Proposition technique
+
+1. Construction, pilotage et
+coordination des plannings
+
+[Cadrer] Consolidation des macro-plannings et des
+plannings détaillés du projet en collaboration avec
+l'ensemble des parties prenantes
+
+[Anticiper] S'assurer de la cohérence des jalons en lien
+avec les ambitions du projet et des informations
+partagées lors des instances de pilotage et des rituels
+[Cadrer] Piloter les actions et leur avancement en
+fonction des échéances définies
+
+3. Pilotage des risques
+
+[Sécuriser] Identification des risques en lien avec chaque
+contributeur de la mission
+
+[Sécuriser] Consolidation des risques identifiés dans une
+matrice des risques
+
+[Informer] Suivi et remontée d'information lors des
+instances projet
+
+[Anticiper] Préparer des solutions palliatives et Plans de
+Sécurisation en cas de risque majeur
+
+2. Planification et préparation des
+instances
+
+[Cadrerl Préparer les instances : synthèse
+d'avancement et implication dans la préparation des
+décisions
+
+[Informer] Diffuser l'information de référence sur les
+jalons, les priorités et les décisions prises
+(notamment à travers les CR d'instances)
+
+[Cadrer] Consolider les supports d'avancement
+
+4. Amélioration continue et appui métier
+
+[Cadrerl Mettre à jour le référentiel de pilotage :
+indicateurs qualitatifs et quantitatifs
+
+[Anticiper] Consolider la vision planning transverse
+et (re)-planifier des chantiers de manière
+coordonnée le cas échéant
+
+[Informer] Organiser des points ad hoc ou task-
+forces mobilisant les acteurs nécessaires à la
+résolution des problèmes
+
+5. Gestion documentaire
+
+"_ [Cadrer] Définir les objectifs de la capitalisation
+= [Cadrerl Sélectionner l'outil de capitalisation en lien avec
+
+l'existant SNCF
+
+" _ [Anticiper] Définir le cycle de vie des documents capitalisés
+" [Sécuriser] Mettre en place et suivre les bonnes pratiques
+
+  
+     
+
+  
+
+Notre posture : le PMO
+CE eu ETES
+RCE TT as
+
+Accompagnement PMO EOLE EPT4 12
+
+M
+EXEMPLES DE LIVRABLES Talan:
+Consulting
+
+Ces exemples sont des livrables mis en place sur d’autres projets aux objectifs similaires en appui de la démarche proposée.
+Des livrables détaillés sont disponibles dans la suite du document.
+
+Supports et CR d’instances CORAN CRI)
+
+ 
+
+   
+   
+
+AMBITION
+
+ 
+
+S'assurerque les ponts ouvers sure sut comptage Energie sont landés et ponés.
+
+a ne Pro amateur de con Gun mans DECOF ER Man pa Fra. ne
+Vatabord- PMU de rander une réunion avec TN Sur pour ar il responsabté dela décdaraton en préocaue est He
+
+A tedécmonal Per rnréunen mes TN Scno MARCHESE | éumon parole
+
+Rec prés de ne ROULLER ol mat de rer ant ane péri duc mec
+
+A Vo D Le Nono able va échanger avec Sana eC212 La srolégi put aussire de ne pas ser a son Jean GRANDEMANGE 05012020
+de rcecue du cons (see ÿ es) carla Gbe est user VIVALDI
+“3 S la son de release ex danse pérmre mas qui y en a pas besoin, arme Jen Mare
+
+Consolidation plannings
+
+ 
+
+ 
+
+rain Co (CANAL
+Train, version 3)
+
+ 
+
+ 
+
+e@ Décalage de a recette dubane IVE au e ace: 0
+ES Les tests sont à planifier 1 semestre remork du périmètre déjà
+rs avec le planning du Groupement) sur CANAL rai 2
+
+ 
+
+Confidentiel — Proposition technique Accompagnement PMO EOLE EPTA4 13
+
+ 
+
+Talan'
+
+Consulting
+
+DISPOSITIF TALAN PROPOSÉ
+
+(era elle) ui
+
+NOTRE EQUIPE TRANSPORT ET MOBILITES
+
+Talan'
+
+Consulting
+
+Notre fort ancrage sectoriel nous permet de capitaliser sur l'expérience acquise auprès des principaux acteurs du secteur et
+d'accompagner nos clients dans leurs projets de transformation, de leur élaboration à leur mise en œuvre.
+
+TRANSPORT & MOBILITÉS - UN SECTEUR PRIORITAIRE DU GROUPE TALAN
+
+15 ANS D’EXPERIENCE
+
+dans le secteur sur des problématiques métier, de
+la planification à la gestion opérationnelle
+
++25 PROJ ETS ET MISSIONS annuels
+
+Avec des références pertinentes face à vos enjeux :
+Pilotage mission RER NG Communicant,
+accompagnement du déploiement d'Hastus sur la
+ligne E, PMO sur les projets Mistral NG et ATS+
+
+ 
+
+INTERVENTIONS POUR LA MAJ ORITÉ
+DES ACTEURS DU SECTEUR
+
+e © © ©
+
+Opérateurs Gestionnaires Autorités Autorités
+de transports d'infrastructure régulatrices organisatrices…
+
+Confidentiel — Proposition technique
+
+ 
+
+so
+Co)
+= 30
+
+EL
+
+50 CONSULTANTS SPÉCIALISTES
+
+du secteur pour accélérer les montées en
+compétence et mutualiser les bonnes pratiques
+bénéficiant d’une animation dédiée (formations,
+partages des projets, veille.)
+
+5 RESPONSABLES de l'activité
++10 MANAGERS
+2 SENIORS ADVISORS
+
+COMPÉTENCES TRANSVERSES
+
+Pilotage de projet / Programmes stratégiques,
+Conduite du changement, intelligence artificielle,
+expertise technologies.
+
+COMPÉTENCES RSE DANS NOTRE PÔLE
+Une communauté de 12 consultants référents
+RSE et numérique responsable
+
+Accompagnement PMO EOLE EPTA4 15
+
+ 
+
+NOS ATOUTS POUR VOUS ACCOMPAGNER
+
+Talan'
+
+Consulting
+
+Nos compétences à la fois métier et méthodologiques, acquises depuis plusieurs années à travers nos références clients et
+nos travaux de capitalisation, nous permettent de vous proposer un accompagnement adapté à vos enjeux.
+
+Notre expertise sectorielle
+ferroviaire
+
+Depuis 15 ans, nous accompagnons nos
+clients ferroviaires dans leurs
+transformations Métier et SI, et plus
+particulièrement dans le déploiement de
+solutions de gestion de production et
+planification : FRET SNCF, Transilien,
+TGV, TER, Thalys, Eurostar, PME
+Ferroviaires européennes.
+
+Nos consultants expérimentés disposent
+d'une double expertise des Métiers du
+ferroviaire et des projets de
+transformation.
+
+Notre expertise de la méthodologie
+PMO
+
+La « PMO Académie » est une
+communauté d'environ 20 consultants
+qui partagent et capitalisent leurs
+expériences sur les projets PMO des
+différents secteurs métier sur lesquels
+Talan Consulting intervient (en respectant
+la confidentialité de chaque projet qui reste
+indépendant).
+
+Cette communauté, déployée au sein de
+plusieurs missions Talan Consulting,
+permettra au consultant positionné de
+s’appuyer sur un pôle d'expertise au
+sein du cabinet.
+
+Notre engagement RSE
+
+Talan Consulting a développé depuis
+plusieurs années un pôle d’expertise sur
+les sujets RSE et numérique
+responsable.
+
+Cet engagement s'organise autour de 3
+piliers (éthique professionnelle, bien-être
+au travail et inscription dans une démarche
+de développement durable), et s'appuie sur
+une équipe dédiée de 12 consultants qui
+porte ces enjeux auprès de nos clients.
+
+Cet engagement a notamment permis à
+Talan Consulting d'être certifié “Gold”
+Ecovadis, une des références dans
+l'évaluation et la notation de la stratégie
+RSE.
+
+La démarche et les compétences proposées par Talan Consulting s’appuient sur la capitalisation et l’organisation
+
+de 2 communautés : l’équipe Transport & Mobilités et la « PMO Académie ». Ces deux équipes s’accompagnent d’un engagement
+
+sur la RSE et le numérique responsable qui font partie de l’identité du cabinet.
+
+Confidentiel — Proposition technique
+
+Accompagnement PMO EOLE EPT4 16
+
+a M
+DISPOSITIF PROPOSÉ Talan:
+Consulting
+
+Compte tenu des activités à mener et des enjeux pour Transilien, nous proposons le profil d'une consultante senior
+expérimentée, disposant d’une connaissance de l’environnement SNCF, sur des problématiques de gestion de projet
+notamment. Ce profil serait complété par un directeur de mission qui interviendrait en appui.
+
+Rôle + PMO EOLE : La PMO aura à charge de s’assurer du * Directeur de mission, avec une solide connaissance de
+bon traitement de tous les sujets nécessaires à l'environnement Transilien et une expertise métier
+l'atteinte des objectifs, en coordination avec tous les ferroviaire :
+projets. Ses missions dans le détail sont: * En appui du PMO sur la gestion de la relation client
+
++ Construction, pilotage et coordination des plannings + En appui du PMO pour la résolution de sujets métier
+
+e Amélioration continue | . | complexes
+
++ Planification et préparation des instances de pilotage
+
++ Suivi des risques projet
+
++ Gestion documentaire
+
+* Appui équipe projet
+Compétences * Gestion de projet * Analyse de risque + Cadrage etgestion + Assistance à Direction de projet
+
+clés + Expérience projetau sein + Suivi de plannings projet de projet + Solide connaissance de
+de la SNCF + Management l’environnement Transilien
+
+Intervention + Sept. 2023 — Mars 2025 (lot ferme) : 100% - Intervention en appui du PMO (tranche ferme) : 1 jour /
+
+* Avril — Juillet 2025 (lot optionnel) : 100% mois
+
+ 
+
+Confidentiel — Proposition technique Accompagnement PMO EOLE EPTA4 17
+
+ 
+
+JGR - DIRECTEUR (14 ANNÉES D'EXPÉRIENCE)
+
+Talan'
+
+Consulting
+
+JGR estintervenu sur une douzaine de missions depuis l'étude d'opportunité jusqu'au déploiement de Systèmes d’Informations ferroviaires. Ses expériences, au sein
+du Gestionnaire d'Infrastructure et dans plusieurs Entreprises Ferroviaires, lui ont apporté une bonne culture dans le domaine de l'exploitation ferroviaire ainsi qu'une
+bonne approche du pilotage de toutes les phases d'un projet. Au contact des Directions des entreprises, ses expériences lui ont apporté une très bonne
+compréhension des enjeux du secteur Transport ainsi que des leviers de transformation adaptés au contexte actuel de l'ouverture à la concurrence.
+
+Formations
+
+“Ingénieur de l'Ecole Nationale Supérieure en Génie
+des Systèmes et de l'Innovation (2009)
+
+"_ APICS Basics of Supply Management (2013)
+Compétences
+" Compétences fonctionnelles et techniques
+
+AMOA
+
+Assistance à
+Direction de projet
+
+Cadrage et Gestion de Projet
+Management
+
+" Compétences métier
+
+Transports Supply Chain
+
+" Langues:
+Angjlais : eee
+
+Espagnol: ©
+
+Principaux clients
+
+. SNCF Voyageurs (Transilien, Intercités, Fret,
+
+Thalys)
+. SNCF Réseau
+. GEFCO
+Confidentiel — Proposition technique
+
+Expériences pertinentes
+Missions dans le secteur Ferroviaire
+
+EUROSTAR Family - Chargé d'étude
+“Benchmark et priorisation du SI Opérations dans le cadre de la fusion de Thalys et Eurostar afin d'établir une cible et des
+préconisations de trajectoire de transformation
+
+SNCF TRANSILIEN : Assistance à Direction de projet
+Pilotage de la mise en oeuvre des fonctions communicantes du RER NG (fonctions IV, Géolocalisation, Comptage
+Voyageurs, Vidéobord, Aide au Dépannage...) : animation des Métiers et des lignes D etE, suivi du périmètre, du planning,
+du budget et des risques
+
+“Pilotage de la migration de la flotte matériel Transilien de la plateforme technique Canal Train vers TrainConnect : animation
+des Métiers, suivi du périmètre, du planning, du budget et des risques
+
+SNCF TRANSILIEN, VOYAGES et TER - Assistance à Direction de Projet
+“Identification et animation d'une méthodologie de travail commune entre les projets APS afin de délivrer ensemble le
+périmètre Ordonnancement Agents de Conduite et Sédentaires
+
+SNCF TRANSILIEN — Assistance à Direction de Projet
+= Pilotage contractuel liant SNCF Transilien et le Groupement Editeur (GIRO) / Intégrateur
+
+SNCF RESEAU : Assistance à Direction de Projet
+"Production du note de cadrage pour le CODIR DGOP afin de justifier le lancement de l'extension ART-MONI (mise en
+oeuvre de l'APS SoftRail de Binary System, initialement prévu pour l'unique périmètre Infrarail)
+
+SNCF TRANSILIEN : AMOA et Assistance à Direction de Projet
+2018-2019 - Accompagnement du Directeur de P rojet pour le pilotage du projet (mise en oeuvre de la méthodologie projet
+et de l'organisation, suivi du planning, des risques et du budget)
+
+" 2017 - Pilotage de la phase achat pour le choix d'un APS (Advanced Planning and Scheduling system)
+
+= Fin 2016 - Préparation de la phase Achat NET : définition du périmètre et rédaction du cahier des charges pour la gestion
+de l'offre, le roulement matériel et les roulements de service des agents agents de conduite
+
+Juillet 2022 —
+Décembre 2022
+
+Janvier 2020 -En
+cours
+
+Juin 2020 -En
+cours
+
+Janvier 2020 -En
+cours
+
+Février 2020
+
+Septembre 2016 —
+Décembre 2019
+
+Accompagnement PMO EOLE EPT4 18
+
+ 
+
+PFI - CONSULTANTE SENIOR (8 ANNÉES D'EXPÉRIENCE)
+
+Tatan'
+
+Consulting
+
+PFI est une consultante senior qui accompagne les organisations dans leur transformation. Elle intervient depuis plus de 8 ans dans différents secteurs et s'est
+spécialisée dans l'accompagnement au changement et le pilotage de projet.
+
+Formations
+
+. Master Marketing - ESCP Europe
+. Sciences Po Bordeaux
+
+Compétences
+
+=" Compétences fonctionnelles et techniques
+Conduite du ao
+changement Management d'équipe
+
+Gestion de projet Intelligence collective
+
+" Compétences métier
+
+Secteur public Transports
+" Langues:
+Angjlais : CLLLI]
+
+ 
+
+Espagnol: eee
+Italien : ee
+
+Principaux clients
+
+ 
+
+. Generali
+. Bouygues Immobilier
+. SNCF
+
+Confidentiel — Proposition technique
+
+Expériences pertinentes
+
+Missions pertinentes
+
+GENERALI - En charge du pilotage du projet et de la conduite du changement -— programme de Juin - Novembre
+déploiement de l’agilité à l’échelle 2022
+“Pilotage de programme : préparation des instances de gouvernance, suivi du plan d'actions et des indicateurs de
+
+performance.
+“Définition de parcours d'accompagnement destinés aux populations cibles d’entités pilote : sensibilisation, communication,
+
+formation, accompagnement des squads, animation de communautés managériales…
+“Conception et animation d'interventions et de supports de communication visant à promouvoir l’agilité à l'échelle au sien des
+
+entités pilotes : réalisation de vidéo interviews, de livrets animés explicatifs, d’une newsletter, mise en place et animation
+
+d'une Obeya room...
+
+BOUYGUES IMMOBILIER -— en charge de l’animation du projet — simplification de l'outil de SRM (Supplier Février — Juin 2022
+
+Relationship Management) du service Achats
+
+“ Diagnostic : cartographie des acteurs, audit des pratiques achats au sein des Directions régionales, diagnostic de la
+mobilisation des acteurs, conduite d'entretiens et conception d’une synthèse et de préconisations.
+
+“Benchmark des outils de SRM et préconisation en faveur d’une solution
+
+“ _Facilitation d'ateliers de recueil du besoin auprès des utilisateurs de l'outil, suivi et priorisation de la backlog de solutions en
+réponse aux besoins
+
+SNCF VOYAGEURS - Création de la Direction des Opérations Paris Normandie Octobre — Août
+Pilotage de projet : préparation des instances de gouvernance, suivi du plan d'actions et des indicateurs de performance. 2021
+“ Mise en place d'outils de mesure de la satisfaction utilisateurs et de la performance : conception du cahier des charges,
+sourcing, coordination avec les partenaires et suivi de leur prestation
+“ Elaboration de la stratégie de déploiement auprès des populations-cibles : définition de scénarios de déploiement de l'outil
+et élaboration de supports de décision, définition de la stratégie de formation et d'accompagnement et du support des
+utilisateurs.
+“Elaboration de la stratégie de communication à destination des parties prenantes (ambassadeurs, utilisateurs, managers
+d'utilisateurs et top managers des structures impactées, Codir, partenaires RH et RS) et participation à la conception de
+supports
+
+Accompagnement PMO EOLE EPT4 19
+
+Talan'
+
+Consulting
+
+MODALITÉS D’APPROPRIATION ET DE TRANSFERT DE COMPÉTENCES
+AUX ÉQUIPES SNCF
+
+(era elle) 20
+
+MODALITÉS D'APPROPRIATION ET DE TRANSFERT DE COMPÉTENCES AUX ÉQUIPES SNCF a an
+ONSUITINY
+
+L'’appropriation et le transfert de compétences s'initialisent dès le début de la prestation. Ils seront suivis pendant la
+prestation et se finaliseront par une phase de réversibilité.
+
+Documenter les connaissances projet
+
+Les documents produits tout au long de la prestation constituent les supports privilégiés de la capitalisation des
+
+connaissances. Ils ont l'avantage de participer au transfert de compétences en étant parallèlement utiles à la vie
+
+courante du projet.
+
+ap Centraliser les connaissances
+
+Men Les outils de gestion de projet (Sharepoint, Confluence, outils de production de planning...) permettent de centraliser, et
+partager (et contrôler si nécessaire) l'accès aux informations.
+
+Point de suivi de la documentation bimestriel
+
+Le suivi permet de vérifier la qualité et la complétude de la documentation mais aussi d'ajuster l’organisation des outils
+
+de gestion de projet si nécessaire.
+
+ 
+
+Démarche
+
+Phase réversibilité sur 6 semaines
+: Un suivi particulier de la phase de réversibilité est effectué afin de concilier les besoins de transfert de
+HAULES connaissances et d'accompagnement avec les besoins opérationnels courants.
+
+Ce suivise fait via une comitologie et des indicateurs partagés au début de la phase de réversibilité.
+Le détail du dispositif mis en œuvre et le planning de cette phase sont détaillés dans les 2 slides suivantes.
+
+ete
+
+ 
+
+  
+
+Confidentiel — Proposition technique Accompagnement PMO EOLE EPTA4 21
+
+MODALITÉS D'APPROPRIATION ET DE TRANSFERT DE COMPÉTENCES AUX ÉQUIPES SNCF : Talan”
+PHASE DE RÉVERSIBILITÉ (1/2) Consulting
+
+Le dispositif mis en œuvre a pour objectif de former les nouvelles équipes aux connaissances spécifiques
+nécessaires au bon déroulement de la suite du projet.
+
+Le calendrier est établi et validé par TALAN Consulting en accord avec SNCF Transilien et les équipes. Le calendrier du
+transfert de connaissances précise les dates de sessions et les contenus de chaque session en tenant compte des priorités
+de transfert de connaissances fixées par SNCF Transilien.
+
+Afin d'assurer une réversibilité sans le moindre figeage d'activité, nous mettons à disposition une méthodologie éprouvée
+garante d’une transition fluide déclinée en 4 étapes :
+
+ 
+
+    
+
+ 
+ 
+
+Suivre le cursus de formation Apprendre en appliquant
+
+s22£e
+
+s pee
+
+    
+       
+    
+   
+ 
+
+LU CT
+
+e Marche en double
+connaissances
+
+ 
+
+Apprendre en regardant
+12e
+
+Confidentiel — Proposition technique Accompagnement PMO EOLE EPTA4 22
+
+Appliquer sous contrôle
+
+ 
+
+ 
+
+ 
+
+MODALITÉS D'APPROPRIATION ET DE TRANSFERT DE COMPÉTENCES AUX ÉQUIPES SNCF : Talan”
+PHASE DE RÉVERSIBILITÉ (2/2) Consulting
+
+Exemple de planning de réversibilité à valider avec les équipes Transilien :
+
+6 semaines
+
+s1 s2 s3 sa s5 56
+
+Formalisation du rôle et Collecte et formalisation
+des responsabilités
+
+- Listing et priorisation des | - Construction d’un répertoire des documents utiles | n * Guide du répertoire
+i . : : . | + Synthèse de la méthode de
+| sujets par criticité : _. Etat des lieux exhaustif des actions en cours ! travail
+| Initier le planning de __- Récapitulatif de l'utilisation {des outils projet
+
+! , | ee | " . | - Bilan de la prestation et des
+transfert et le plan de | _- Préparation des différentes formations de passation | activités en cours
+
+| montée en charge
+|. Identification des
+intervenants clés et des
+
+ 
+
+| référents
+: FA: Synthèse des | Formation |
+| responsabilités etdes + Formation sur les outils du projet
+interventions réalisées - Formation au répertoire de documents
+. Plan de montée en charge + Partage de l' état des lieux exhaustif des actions en cours
+du/des collaborateur(s) | l l
+repreneur(s) des activités | hr
+de rssouceTaen | | Marche en double Marche sou$ contrôle |
+Consulting sortante ! Prise en charge de l'activité quotidienne en Réalisation dés activités
+| | | double par les entrants | confiées sous; contrôle
++ Prise en main des moyens techniques par
+| les entrants À Bilan du transfert de
++ Bilan quantitatif et qualit à demander I compétences
+| aux équipes |
+
+ 
+
+Confidentiel — Proposition technique Accompagnement PMO EOLE EPTA4 23
+
+ 
+
+Talan'
+
+Consulting
+
+LIVRABLES ENVISAGÉS POUR LA MISSION ET INDICATEURS
+
+(era elle) 27
+
+M
+LIVRABLES ET INDICATEURS ASSOCIÉS Talan
+Consulting
+
+Un pilotage efficace permet d'accélérer les projets, de fluidifier leur mise en œuvre et de responsabiliser les acteurs dans la durée. || est donc essentiel de
+mettre en place un processus de suivi de chaque mission et des indicateurs de mesure pour gagner en efficacité. Pour les différentes missions, nous
+définirons les livrables suivants :
+
+Missions Livrables Indicateurs clés
+
++ Planning (global et détaillé), les jalons et livrables associés Respect des échéanciers
+
+Construction, Les plannings d’adhérence entre les différents projets (EOLE, NEXTEO, Taux d'avancement observé à chaque période vs le taux
+pilotage et RERNG, etc) de
+“Se .  & La ann attendu (planifié)
+coordination des + La mise en place d'outils de suivi opérationnels 4 à
+: : ° o * Durée des tâches
+plannings + Devis Eole n°4 &n°5
+
++ _ Météo (vert/orange/rouge où soleil/nuage/orage)
+
+ 
+
++ Suivi des chantiers
+
+Respect des engagements pris lors des différentes
+instances
+
+Planification et
+
+préparation des *_ Préparation et aide à l'animation des instances projet (COPIL, COPROJ,
+
+points sponsor: Logistique, support d'animation, comptes rendu)
+
+ 
+
+ 
+
+ans + Relevés d'informations, décisions et actions des instances (RIDA) ° Ed la free ES J'en avance / dans les
+P 9 Rapport Flash mensuel
+rituels
+Pilotage des *_ Elaboration et suivi de la matrice des risques du projet *_ Evaluation des risques : Impact qualifié et quantifié en >
+ris ie du projet + Suivi du plan d'actions associé termes de: portée, coût et délai. Probabilité (échelle faible / SharePoint
+q pro] + Notes de synthèse moyenne / forte)
+
+naar ui Management visuel de l'équipe + _ Utilisation effective des connaissances : Mesure du nb et
+
+S APP Tableau de bord fréquence d'application des connaissances transférées
+dans la résolution : . ec : er nee A
+de sujets Bonnes pratiques de management de projet + _ Qualité des préconisations d'améliorations pour rendre les
+complexes *_ Appui à la résolution de sujets complexes process plus efficaces et cohérents
+
+. ï ï A ï : Â il Planner
+Gestion * Mise en œuvre d’un processus de capitalisation des connaissances Satisfaction des equipes : Retours des équipes sur la sis
+: LE . . gestion documentaire dans le cadre du projet (via des
+
+documentaire *_ Cadrage et organisation de la gestion documentaire
+
+verbatims)
+
+Confidentiel - Proposition technique Accompagnement PMO EOLE EPT4 25
+
+ 
+
+M
+LES OUTILS ENVISAGÉS DANS LE CADRE DE LA PRESTATION Talan
+ONSUITINY
+
+Outil d'analyse en temps réel de la performance, l'outil Power BI est une suite logicielle d'analyse développée par Microsoft. Elle permet d’avoir en temps réel :
++ _ Une vue consolidée du projet et du statut des actions
+
++ _ Une mise à jour dynamique des indicateurs avec un affichage visuel (courbes, histogramme, etc)
+
++ _ Un suivi dynamique des phases projet et des jalons
+
++ _ Une synthèse des dernières réalisations, des prochaines étapes et des décisions clés
+
+Des sessions pourront être organisées pour permettre aux différents acteurs d’être à l’aise avec l’utilisation de l’outil dans le cadre du projet.
+
+ 
+
+Gestion de l'avancement Gestion du plan d'actions Gestion du planning
+et des risques
+
+   
+
+Exemples de tableaux de bord actualisés automatiquement
+
+La variété des objectifs et la diversité des travaux rendent la capitalisation des compétences et des réalisations cruciale pour le succès du pilotage de la mission.
+Nous veillerons avec chaque responsable de chantier à ce que les documents clés du projet soient stockés dans un outil référentiel documentaire et à la bonne
+D communication de ces documents vers les communautés de travail. Nous stockerons ainsi dans le Sharepoint :
+SharePoint * Les livrables clés, les rapports ou tout autre document porteur d’information essentielle
+Les supports de comités de pilotage et de réunions de travail
++ Les comptes rendus de réunions afin de faciliter le partage de documents
+
+Microsoft P lanner est un outil de gestion des tâches et de collaboration comprise dans la suite Office 365. Elle permettra dans le cadre du projet de :
+*_ Organiser et suivre les différentes tâches
+Planner + __ Attribuer des responsabilités aux membres de l’équipe, définir les dates d'échéance et suivre l'avancement global du projet
+
+ 
+
+Confidentiel — Proposition technique Accompagnement PMO EOLE EPTA4 26
+
+ 
+
+EXEMPLES DE LIVRABLES : VISION SYNTHÉTIQUE D’AVANCEMENT
+
+Le tableau de bord synthétise les informations quantitatives et
+qualitatives d'avancement du programme, notamment la tendance
+générale etles prochaines actions majeures et points de vigilance.
+
+    
+
+Le project funnel offre une synthèse visuelle d'un ensemble de projets.
+
+Réceptiondu | Qualification | Conception Réalisation
+CU) CE
+
+PASZ Kéoutem
+come
+
+sujet
+NB évol MSI xéouters
+Mama
+
+(es |)
+:
+ca
+=
+FT
+
+ 
+
+ 
+
+ 
+
+ 
+
+  
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Confidentiel — Proposition technique
+
+ 
+
+Talan'
+
+Consulting
+
+La fiche météo est produite par le responsable de chantier et partagée
+avec le pilotage. Elle donne les informations clef sur un chantier.
+
+du chantier:
+
+{Accompagnement projet
+
+  
+
+livrables pus
+
+ 
+
+Activités de l'attaché commercial et
+dimensionnement
+
+Dossier d'organisation cible
+
+30/06/2020 100%
+
+   
+
+Activités 3046 > sept
+
+17/07/2020
+30/6: sept
+1/83 sept
+
+ 
+
+Le Macro-Planning permettant de suivre l'avancement général des
+travaux, les adhérences entre les différents projets et chantiers et
+permet d’avoir une représentation visuelle du reste à faire et des
+principaux jalons.
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+  
+
+Accompagnement PMO EOLE EPTA4 27
+
+Talan'
+EXEMPLES DE LIVRABLES : SUIVI ET MISE SOUS CONTRÔLE DES RISQUES a an
+ONSUITINY
+
+Les ateliers « Pré-mortem » permettent de se projeter dans le futur La note de synthèse d'éclairage permet de partager un sujet lors des
+dans un contexte d'échec du projet pour déterminer les risques du instances de pilotage et de décision.
+projet et mettre en place un plan d'action pour les éviter.
+
+    
+ 
+
+Potentiel d'évolution des 124 AC
+
+CENTREÆST | 2
+10 m
+Meor 16
+MIDAT 15
+
+NORDEST | 23
+
+ouesT 2
+
+- à
+|
+à
+à
+4
+|
+
+voa 24
+
+ 
+
+  
+
+ 
+
+ 
+
+La note d’arbitrage met en évidence les scénarios de choix offerts aux Le tableau de bord de suivi des risques présente une synthèse de la
+instances de décision. qualification de leurs impacts, de leur niveau de probabilité, de la
+
+tendance observée et des actions de mise sous contrôle en cours ou à
+Mode de suppression de la fonction d'AC venir.
+
+TRAJECTOIRE DE DECOMMISSIONNEMENT DE GOF
+RISQUES LIES AUX CATALOGUES ET SERVICES ET À LEUR CONSOMMATION
+Suppression de la fonction d'AC dés
+
+PONTS eS
+
+CET
+
+ 
+
+ 
+
+Avantages
+
+ 
+
+Deere
+CET
+
+ 
+
+ 
+
+ 
+
+   
+
+temporaire de Ia fonction d'AC sans dats Ils annoncée pourles AC non dligbles à là
+pour raisons géographiques rejoindre le Serice Clients sur te où au sein d'une équipe
+
+ 
+
+pr
+fonction d'AICO
+managée à distanc
+
+  
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Confidentiel — Proposition technique
+
+ 
+
+Accompagnement PMO EOLE EPTA4 28
+
+EXEMPLES DE LIVRABLES : AMÉLIORATION CONTINUE
+
+Le management visuel permet d’aligner les équipes sur Les supports de comité donnent de la visibilité sur
+les objectifs à atteindre et d’en vigiler l'avancement. l'avancement du projet
+
+LE MEETING DU LUNDI
+
+esse
+suivi GLosat ou Procramme- 18/07/22 2222
+
+D -=- e-
+
+ 
+
+ 
+
+Talan'
+
+Consulting
+
+Confidentiel — Proposition technique Accompagnement PMO EOLE EPTA4 29
+
+Talan'
+
+Consulting
+
+(era elle) co
+
+NOS ENGAGEMENTS RSE EN COHÉRENCE AVEC NOTRE RAISON D’ÊTRE Tatan'
+
+Consulting
+« Nous croyons que seule une pratique humaniste de la technologie fera du nouvel âge numérique une ère de progrès pour tous. »
+
+Aperçu de nos 3 piliers et engagements :
+
+Business Integrity TON Sustainable Business
+
+Être exemplaire dans la conduite des affaires et garantir le Cultiver un environnement de travail épanouissant et Transformer nos pratiques et nos offres pour répondre aux
+respect des règles d'éthique professionnelle sur toute notre _ inclusif, pour nos collaborateurs, afin de leur permettre de enjeux du développement durable.
+
+ 
+
+chaîne de valeur.
+
+Y_ Renforcer la transparence sur les résultats extra-financiers du
+Groupe Talan et mettre en place une gouvernance RSE
+
+*__ Assurer l'application exemplaire de la politique de gestion des
+risques éthiques et communiquer sur ce sujet
+
+Y__ Garantir un environnement de travail éthique
+
+*_ Assurer la continuité de l'activité via la cybersécurité et garantir
+une gestion exemplaire des données personnelles
+
+se développer et de répondre aux besoins de nos clients.
+
+Y_ Favoriser l'inclusion des collaborateurs en situation de handicap, la
+mixité professionnelle et la diversité des profils recrutés
+
+*_ Faciliter l'accès à la formation et l'évolution professionnelle des
+collaborateurs
+
+Ÿ_ Promouvoir une culture de l'initiative et valoriser l'innovation
+collaborative
+
+*_ Assurer un environnement de travail sain et sûr pour nos
+collaborateurs
+
+*_ Accompagner nos collaborateurs dans leurs événements de vie
+(maladie, décès, aidant, parentalité) et faciliter leur quotidien
+
+Y_ Suivre et améliorer la satisfaction de nos clients
+
+Quelques actions et reconnaissances sur les 3 dernières années :
+
+2020 2020
+
+Accompagnement Projet humanitaire au Prix du DRH Green de 3ème place du 1 Médaille d’or EcoVadis
+
+d'associations par le Sénégal Lightforce L'ANDRH grâce à classement « Great 1 Surles performances
+mécénat de MonE mpreinteC arbone by Place to Work » 1 RSE
+compétences Talan N------------
+
+Confidentiel — Proposition technique
+
+2021 2022 2022
+
+Intégrer la RSE au plan stratégique et au projet d'entreprise en
+cohérence avec la raison d’être
+
+Mettre en œuvre une démarche d'Achats Responsables
+
+Définir une trajectoire de réduction de l'empreinte carbone du
+Groupe Talan et sensibiliser les collaborateurs aux enjeux
+afférents, en particulier à la sobriété numérique
+
+Développer des offres et des propositions de valeur autour du
+développement durable pour accompagner nos clients dans
+l'atteinte de leurs objectifs RSE
+
+Permettre à nos collaborateurs de s'engager en faveur de
+l'inclusion numérique
+
+Permettre aux femmes d'être plus présentes dans les métiers du
+numérique
+
+Renforcer le rôle de Talan en région
+
+2022-23 2023
+
+Participation de Talan
+
+| Simulateur empreinte
+! au Challenge EcoCode
+1
+
+carbone des missions
+Talan
+
+Accompagnement PMO EOLE EPT4 31
+
+NOS PARTENAIRES ET CERTIFICATIONS RSE
+
+Talan'
+
+Consulting
+
+Talan estinvesti sur les sujets RSE et numérique responsable. Désireux de prendre part à la réflexion autour de ces sujets et de pouvoir se
+former constamment, le Groupe est aussi bien partenaire qu’adhérent dans des associations actives sur le sujet.
+
+ 
+
+NT
+
+Planet Tech'Care est la
+première initiative
+rassemblant un réseau de
+partenaires, ayant pour
+ambition d'accompagner les
+entreprises souhaitant intégrer
+le numérique dans leur
+trajectoire
+environnementale.
+
+L'Institut du Numérique Responsable
+est un think tank autour du numérique
+responsable. Les 3 champs de réflexion
+de l'INR sont : la réduction de l'empreinte
+numérique, la capacité du numérique à
+réduire l'empreinte, la création d'innovation
+numérique responsable pour favoriser l'e-
+inclusion de toutes et tous.
+
+ 
+
+*% Global Compact
+
+Réseau France
+
+ 
+
+Global Compact est une
+initiative des Nations
+
+Unies visant à inciter les
+entreprises du monde entier à
+adopter une attitude
+socialement responsable.
+
+ 
+
+ 
+
+7 CONVENTION
+C 22 DES ENTREPRISES
+RURALE
+
+AU CÔTÉ DE 40 SOCIÉTÉS DU CONSEIL ET AVEC LE
+SOUTIEN DU SYNTEC CONSEIL, TALAN CONSULTING EST
+ENGAGÉE DANS LA CEC
+
+Un parcours de 5 sessions (de mars à octobre 2023) pour définir la feuille de route des sociétés de Conseil sur les
+
+enjeux environnementaux et identifier les leviers de démultiplication.
+
+Des séances ponctuées d'interventions d’experts et de séquences d'intelligence collective.
+Un Livre Vert co-construit et livré par les participants à l'issue du parcours pour démultiplier l'impact et
+
+encourager la bascule systémique.
+
+Confidentiel — Proposition technique
+
+ 
+
+ 
+
+ecoyadis
+
+Ecovadis est une des
+références mondiales dans
+l'évaluation et la notation de la
+stratégie RSE.
+
+ 
+
+Great Place To Work® est
+la référence mondiale en
+matière d'expérience
+collaborateur.
+
+ 
+
+NOS CERTIFICATIONS
+
+- NOVEMBRE 2022-
+
+2022
+
+ecovaais
+
+Sustainability
+Rating
+
+ 
+
+CE
+Workplaces
+
+CA
+
+EL:
+
+Workplaces
+
+ 
+
+Accompagnement PMO EOLE EPTA4 32
+
+ 
+
+ 
+
+TALAN CONSULTING ACCOMPAGNE SES COLLABORATEURS SUR LES SUJETS RSE
+
+MT
+
+60 Référents RSE
+
+Y Travailler sur la
+transformation des offres
+RSE (starter kitRSE, offre
+Assurance, etc.)
+
+* Guide du Consultant
+Responsable
+
+ 
+
+LE GUIDE DU CONSULTANT
+RESPONSABLE
+
++ J'ééagte da bonnes pratiques dans mon travad quotidien pour parie à la progresser
+Talan sur es 17 Objecs dv Développement Durable de ONU. »
+
+@OBJECTIFSO5ü
+
+   
+
+ 
+
+Confidentiel — Proposition technique
+
+CP
+
+5 Formations
+certifiantes
+
+Y Acculturation et
+transmission au sein de
+leurs pôles
+
+LA FRESQUE
+DU CL'MAT
+
+Fr
+La Fresque Ÿ
+du Numérique
+
+ARE
+
+©
+
+\BCG
+
+ 
+
+| C
+Veille & Communication
+RSE
+
+* Veille sectorielle des enjeux et
+sujets liés à la RSE etau
+numérique responsable
+
+* Rédaction de notes de
+conjoncture et d'articles
+sectoriels en lien avec la RSE et
+le numérique responsable
+
+Talan'
+
+Consulting
+
+Ecoconception
+
+Y Conception responsable de
+services numériques
+
+Y Interrogation sur les usages
+et besoins afin de proposer
+des services efficaces et
+durables
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+Accompagnement PMO EOLE EPT4 33
+
+NOTRE APPROCHE RSE POUR VOTRE MISSION
+
+TT) TT
+
+Favoriser la promotion de la diversité / de l'équité et
+
+l'égalité professionnelle
+
+Talan'
+
+Consulting
+
+STATE TOUTES
+
+Transformer nos pratiques pour répondre aux enjeux du
+
+CAT En er LOS
+
+ 
+
+ 
+
+ 
+
+ 
+
+Promouvoir une culture de l'initiative et valoriser
+l'innovation collaborative
+
+- Faire participer tous les acteurs du projet à
+l'amélioration de l’organisation et des pratiques de
+pilotage (animation de la réflexion collective)
+
+Cultiver un environnement de travail
+épanouissant et inclusif
+
+-_ Utiliser un langage et des visuels non genrés et
+diversifiés, évitant les stéréotypes de genre,
+d’origine ou sur le handicap et l’âge
+
++ Produire des livrables accessibles selon les
+besoins (polices lisibles, couleurs
+contrastées, ….)
+
+Confidentiel — Proposition technique
+
+ 
+
+Contribuer à l’acculturation et à la sensibilisation
+sur les enjeux de la RSE
+
+* Animation de « La Fresque du Climat » pour
+l'équipe projet (1 demi-journée, en option sur
+demande)
+
+*_ Partage hebdomadaire d'informations / bonnes
+pratiques en lien avec le développement durable
+
+Evaluation et prise en compte de l’impact
+environnemental de la mission
+
++ Outil HOPE (interne Talan) pour mesurer
+l'empreinte carbone du dispositif du projet
+
++ Limiter l'empreinte carbone des collaborateurs et
+des événements du projet (télétravail, outils de
+communication et de partage de documents, lieux
+de séminaires accessibles en transports en
+commun,.…)
+
+Accompagnement PMO EOLE EPTA4 34
+
+Talan'
+
+Consulting
+
+ANNEXES
+
+PRÉSENTATION TALAN CONSULTING ET RÉFÉRENCES
+
+(era elle) 35
+
+ 
+
+— 5e
+TALAN CONSULTING EST LE CABINET DE CONSEIL EN MANAGEMENT DU GROUPE Talan
+TALAN Consulting
+
+NOS ATOUTS
+
+Notre approche du conseil est résolument pragmatique et sur mesure : pas d'offre préfabriquée mais nos expériences et expertises
+adaptées à vos problématiques. Nous vous écoutons avant de penser à des solutions.
+
+La complémentarité entre nos expertises métiers et transverses, et les synergies réalisées avec le savoir faire du Groupe Talan nous
+permet d'accompagner les transformations et l'innovation à 360° pour nos clients : métier, managériale, méthodologique et technologique.
+
+3 CHIFFRES CLES NOS OFFRES ET TYPES DE LR AN
+PRESTATION ei Où
+
+PA ]t D ASSURANCE FINANCE ENERGIE
+(en]lE tort
+
+QUES * ca
+PEOPLE & CULTURE ! # j
+ME de CA ARS .
+Fe ,
+INTELLIGENCE, DATA & i © :
+e il ORGANISATION 77 À
+MEL RDS ,
+d'âge RSE FACTORY î # :
+
+ 
+
+Confidentiel — Proposition technique Accompagnement PMO EOLE EPTA4 36
+
+ACCOMPAGNER NOS CLIENTS DANS LEURS TRANSFORMATIONS
+
+MISSIONS
+Eclairer la route des dirigeants
+
+,
+
+Optimiser le quotidien
+
+Soutenir les grands projets ou
+programmes
+
+ 
+
+Confidentiel — Proposition technique
+
+ 
+
+CAPACITÉS D’INTERVENTION
+
+Analyse stratégique d'offres
+
+Schémas directeurs Métiers et Systèmes d’information
+Audit des organisations
+
+Stratégie digitale, Business Case
+
+implémentation de nouvelles organisations
+
+Refontes des processus métiers et déploiement
+Amélioration des opérations
+
+Structuration et mise en service d’un contrôle de gestion
+Mise en place de gouvernance et d'indicateurs de pilotage
+
+Accompagnement au lancement de nouveaux concepts
+Aide au pilotage et à la conduite du changement
+
+Appui opérationnel sur projet : PMO, déploiement
+Interventions « SWAT » sur projet / derisking
+
+Talan'
+
+Consulting
+
+ILS NOUS FONT CONFIANCE
+
+AIRFRANCEZ  [ŒR
+À BANQUE
+crrroën PALATINE _Æ4
+Heppner Je
+Eve: e
+es {(}inemia KEQOUS
+€
++*-epr THALYS
+Neuflize OBC
+ABN AMRO
+FM>Loasnc
+% UBS HERMÉS
+ue PARIS
+
+©
+Bouygues [2
+Immobilier E.Leclerc @
+
+SU BNP PARIBAS
+
+Accompagnement PMO EOLE EPTA4 37
+
+NOS RÉFÉRENCES er
+Consulting
+
+Connaissances
+
+CLIENT PROJET
+ferroviaires
+
+= EÆ RER NG -— Pilotage de la mise en œuvre des fonctions communicantes
+
+Pilotage du portefeuille de projets du service Train Communicant
+
+Pilotage de 3 projets de mise en œuvre d'outils de gestion de l'offre (SNCF Voyageurs, TER, Ÿ
+aus Transilien)
+
+ 
+
+Cadrage et pilotage du programme de Modernisation de la GOC (Programme GOC 2.0) YŸ
+
+Développement des interfaces SI du projet ATS + Ÿ
+R ES SEAU
+
+M Pilotage et Conception des différentes applications d'OSMOSE WA WA
+
+BPCE Pilotage de la migration de la Banque Palatine vers le SI des Banques Populaires
+
+ 
+
+> TeDF Pilotage de portefeuille de projets SI
+
+s
+OO ETF Accompagnement à la définition de la stratégie RSE Ÿ
+
+Talan” Réalisation du Bilan Carbone de Talan Groupe en 2021 et 2022, stratégie RSE
+
+Consulting
+
+Tata” Sensibilisation fresque du numérique
+
+ 
+
+ 
+
+SNCF TRANSILIEN -— RER NG
+
+Oransilien ES
+
+Pilotage de la mise en œuvre des fonctions communicantes
+
+Contexte
+
+ 
+
+Dans le cadre de l'acquisition des nouvelles rames RER Nouvelle
+Génération qui circuleront en régime commercial sur les lignes D etE en
+2022, SNCF Transilien doit faire évoluer son SI afin d'échanger des
+données entre la rame et le sol.
+
+18 fonctions sont à mettre en œuvre. Elles sont regroupées
+fonctionnellement ainsi : Informations Voyageurs (avec Serpent de
+charge, schéma de quai,..), Géolocalisation, Comptage Voyageurs,
+Vidéo-bord, Surveillance Enregistrement Cabine, Réveil Train,
+Maintenance (avec Télédiagnostic Matériel, Maintenance prédictive),
+Appui au dépannage, (avec Pôle Appui Conduite et Guide de
+Dépannage Informatisé), ATESS, Comptage Energie et Surveillance de
+l’Infrastructure.
+
+SNCT Transilien a sollicité Talan pour piloter la mise en œuvre de ces
+fonctions.
+
+=
+“Tr Méthodologie et apports Talan Consulting
+
+ 
+
+Mise en place d'une comitologie pour la Direction du Matériel (porteur
+du marché RER NG), 9 Directions Métier (dont l'IV), 4 DSI et 2
+Directions de Ligne SNCF (lignes DetE)
+
+Forte coordination des acteurs du projet référent dans l'entreprise.
+
+Confidentiel — Proposition technique
+
+gi Objectifs
+
+Obtenir les expressions de besoins des Directions Métier
+
++ Vérifier la contractualisation du besoin avec le porteur du marché RER NG et
+
+traiter les sujets contractuels le cas échéant
+Suivre l'avancement de la fonction durant sa conception, sa réalisation et ses
+tests
+
+Etablir la stratégie de tests « en dynamique » sur les lignes D etE
+Etablir le budget du projet et assurer sont suivi
+
+Gains clients et résultats
+
+Planning et budget sous contrôle
+Partenaires (Porteur du marché RER NG, Directions Métier, DSI et lignes)
+
+MO RE UE
+
+ 
+
+ 
+
+ 
+
+1 manager Depuis février 2020
+
+ 
+
+ 
+
+ 
+
+Accompagnement PMO EOLE EPTA4 39
+
+TER _- Train Communicant Cr
+
+Pilotage du portefeuille de projets du service Train Communicant
+
+Contexte gi Objectifs
+
+ 
+
+Afin de disposer d’une vision consolidée de l’ensemble des services de
+du train communicants , la Direction TER a lancé en juillet 2021 le
+
+Disposer d’une vision unifiée des démarches impactant les services de train
+programme de Services Train Communicant.
+
+communicant
+
++ Fédérer l'ensemble des acteurs autour d’un programme global
+Ce programme vise à proposer et commercialiser des offres de services + Garantir la maîtrise et le respect des délais, du budget et de la qualité
+de bout en bout intégrant l'ensemble des parties prenantes (Métier, DSI, - Aider à la pise de décision
+Solet Bord).
+
+Ces offres doivent s'inscrire dans un catalogue de services performants,
+
+innovants et répondant aux besoins des clients et AO.
+
+Talan Consulting accompagne la DSI TER dans le cadre d’une mission
+
+d'assistance au pilotage des projets de service :
+Systèmes d’information Voyageurs Gains clients et résultats
+Comptage et Géolocalisation
+
+- Video Protection
+Internet à bord AE Te EI Re a Me UE CEST) ere CETTE)
+
+, . . + Coordination de l'ensemble des démarches
+Méthodologie et apports Talan Consulting
+
+- Apport méthodologique dans la gestion des projets
+
+Mise en place et alimentation des outils de pilotage (planning, suivi
+des risques, suivi des actions, suivi des écarts de périmètre, ..)
+Préparation et animation des comités de suivi, de projet et de
+pilotage du programme
+
+Suivi des projets sur la base du tryptique Coût / Qualité / Délai 1 manager
+Mise en place et suivi du processus du suivi budgétaire des projets
+
+ 
+
+. Suivi et Communication : Une vue à 360 à tout moment
+
+ 
+
+9 mois (en cours)
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Confidentiel — Proposition technique Accompagnement PMO EOLE EPTA4 40
+
+SNCF VOYAGEURS - PROGRES/NET/OSCAR ES
+
+Pilotage de 3 projets de mise en œuvre d'outils de gestion de l’offre (APS)
+
+Contexte gi Objectifs
+
+Depuis 2018, la SNCF décidé d'améliorer sa performance opérationnelle Fournir une vision globale de l'avancement du projet
+en choisissant un outil de type APS pour la planification de ses Maintenir une cohérence dans l'intervention des différents acteurs du projet
+ressources. Créer un collectif en coordonnant les différents chantiers, en facilitant la
+
+collaboration entre acteurs de l’équipe projet et des partenaires
+Successivement Transilien, SNCF Voyages et TER ont lancé une + Aider à la prise de décision
+démarche visant à intégrer l'APS dans l'écosystème SNCF tout en
+améliorant l'organisation et les processus de planification.
+
+ 
+
+ 
+
+AU regard de l'ampleur des programmes (plus de 50 intervenants chez
+
+Transilien) et de leur durée : 3 à 5 ans, un enjeu fort de pilotage est Gains clients et résultats
+
+identifié sur lequel Talan Consulting est mandaté. TOY
+
+Talan Consulting réalise le pilotage général et l'appui au pilotage auprès D } un _—.
+
+des responsables de chantier. - Définition des rôles et responsabilités des équipes (acteurs
+
+principalement basés à Paris et Montréal) participant aux différents
+
+Catane to UE MEET Ie SIA CAE Are (0e 1e 1 Ce (Selle) [See Sa
+= Méthodologie et apports Talan Consulting organisation, déploiement outil)
+
+ 
+
+. Mise en place des instances décisionnelles et d'informations
+rythmant le projet
+
+- Vision globale et macro du planning et de l'avancement du projet
+
+- Pilotage contractuel : mise en place d'un processus et d'un outil de
+gestion des écarts de périmètre
+
+Mise en place de la gouvernance et de l'organisation projet et reprise
+
+dans le Plan d'Assurance Qualité
+
+Mise en place des outils de pilotage (planning, suivi des risques, suivi
+
+de charge, suivi des actions, suivi des écarts de périmètre, ..)
+
+Animation des comités opérationnels et des comités contractuels
+
+Animation du collectif des responsables de chantier Chez Transilien : 5 personnes
+
+Coordination entre les différents projets APS de la SNCF Chez TER : 3 personnes Depuis 2018
+Chez Voyages : 1 personne
+
+ 
+
+Confidentiel — Proposition technique
+
+ 
+
+Accompagnement PMO EOLE EPTA4 41
+
+ 
+
+SNCF RÉSEAU - GOC 2.0 svcr]
+
+Cadrage et pilotage du programme de Modernisation de la GOC Fésrav
+
+Contexte gi Objectifs
+
+L'exploitation des circulations ferroviaires, assurée par la direction du
+métier Circulation, est en pleine mutation pour répondre aux enjeux
+
+d'évolution des trafics et d’exigence dans la performance de l’utilisation
+du réseau
+
+ 
+
+Définir l’organisation et les chantiers métiers et SI, déclinés en feuilles de
+route, pour lancer le programme dans le respect de ses objectifs
+
+Embarquer les partenaires internes (métiers, DSI, ...) et externes (entreprises
+ferroviaires, gestionnaire de gares...)
+
+Cadrer les processus
+
+Pour y faire face, la direction du métier Circulation lance un programme Sélectionner un industriel fournisseur du progiciel
+
+ambitieux de modernisation autour de deux projets étroitement liés : l’un
+métier (NGOC), l’autre SI (GOC 2.0).
+
+Gains clients et résultats
+
+==
+“r Méthodologie et apports Talan Consulting
+
+Cadrage des chantiers du programmes, décliné en feuilles de
+Pilotage et coordination transverse : suivi actions / planning / livrables LUE
+
+| risques, définition comitologie, instances de gouvernance des LLC A COLOR CCI a LICE
+
+projets, appui à la cohérence, appui méthodologique, construction + Consultation réalisée dans les délais
+des feuilles de route des lots.
+
+Intégration des partenaires (entre prises ferroviaires) dans la
+démarche
+
+ 
+
+Appui aux lots : appui au pilotage, préparation et animation d'ateliers,
+production de notes de synthèse, appui opérationnel.
+
+ 
+
+Communication et conduite du changement : appui aux actions de
+communication internes et externes, organisation et animation de 2 managers 1 an (2020-2021
+
+2 . 6 lants an ( )
+séminaires, production de newsletters, supports. consulän
+
+ 
+
+ 
+
+ 
+
+ 
+
+Confidentiel — Proposition technique Accompagnement PMO EOLE EPTA4 42
+
+ 
+
+SNCF RÉSEAU - ATS+
+
+Développement des interfaces SI du projet ATS+ RÉSEAU
+
+Contexte
+
+Les systèmes de contrôle-commande de la signalisation ferroviaire
+permettent de gérer les itinéraires commandés et participent donc de
+façon prépondérante aux performances des circulations ferroviaires :
+régularité, sécurité, réactivité. Mistral NG est la nouvelle génération de
+Mistral (Modules Informatiques de Signalisation, de TRansmission et
+d'ALarmes) qui sera déployée dans le cadre de la Commande
+Centralisée du Réseau sur l'ensemble du RFN. Cet outil est complété en
+
+Ile-de-France par ATS+ (Automatic Train Supervision), système de
+contrôle-commande en zone dense.
+
+==
+“r Méthodologie et apports Talan Consulting
+
+Pilotage et coordination multi-acteurs et multi-projets : garantir une
+cohérence et une vision d'ensemble des programmes, alignement
+des acteurs, coordonner des chantiers sur les 3 produits CK NG
+(Mistral NG et 2 ATS +)
+
+Gestion des interfaces CK NG / SI Gl et EF : concevoir des
+interfaces, présenter aux industriels, relire les spécifications en lien
+avec les fonctions internes des CK
+
+Contribution à la recette et l'intégration des interfaces : assurer le lien
+entre la conception et l'intégration, apporter un regard critique et un
+appui méthodologique, suivre les chantiers
+
+Appui sur les chantiers transverses : faciliter et animer les échanges,
+produire des analyses fonctionnelles/de la documentation
+
+Confidentiel — Proposition technique
+
+gi Objectifs
+
+La mission consiste à apporter une assistance à la section SF44 pour le
+pilotage du projet et la conception des interfaces fonctionnelles des deux
+systèmes de contrôle-commande avec les SIGIetEF :
+
+Pilotage, coordination et suivi des parties prenantes en lien avec le projet
+(industriel, MOE, MOA, DSI...)
+
+Production des documents d’'interfaces avec les DSIGletEF
+Explication auprès des industriels et relecture des spécifications
+
+-_ Appui sur chantiers transverses (recette, mode dégradé, SSI...)
+
+Production d'analyses techniques, fonctionnelles ou contractuelles
+
+Gains clients et résultats
+
+Identification de problématiques transverses Sl/métier
+Problématique des référentiels SNCF Réseau
+PER Talt aol Reel ane 0] UIs
+
+Renforcement des liens avec les équipes DSI des projets en
+
+ae tes
+Meilleure communication de la feuille de route
+Amélioration du pilotage et de la coordination avec DSI
+
+ 
+
+ 
+
+ 
+
+3 consultants 2 ans (2020-2022)
+
+ 
+
+ 
+
+ 
+
+Accompagnement PMO EOLE EPTA4 43
+
+ 
+
+SNCF MATÉRIEL - OSMOSE
+
+Pilotage et Conception des différentes applications d'OSMOSE
+
+Contexte
+
+OSMOSE (Optimisation et Standardisation des Méthodes, des
+Organisations et des systèmes en Etablissement) est un système
+d'information interfacé avec plusieurs SI, (PPO, SI-ESSIEUX, SMT,
+Cohérence, SISPO, PANAM) via Orchestral, qui permet la gestion des
+matériels roulants, de la maintenance et des plannings et accessible par:
+
+Ingénierie de maintenance, Direction, supervision technique de flotte et
+Technicentre.
+
+Lancée en 2008 puis rentrée en mode Maintenance depuis 2017, le
+programme Osmose à pour but de couvrir l'ensemble des besoins de
+maintenance pour 520 sites réalisateurs et à peu près 14000 Matériels
+Roulants (Locomotives, Automoteurs, Voitures).
+
+8 Méthodologie et apports Talan Consulting
+
+Cadrage du besoin métier
+Rédaction des expressions de besoin
+-_ Animation du comité de suivi fonctionnel et COPRO]
+Préparation et animation d'atelier de conception générale et détaillée
+
++ _ Conception de cahiers de recette et exécution de tests
+Pilotage des risques
+
+Pilotage du CDS MOE
+
+Confidentiel — Proposition technique
+
+M
+gi Objectifs
+
+La mission consiste à apporter une assistance à la section SF44 pour le
+
+pilotage du projet et la conception des interfaces fonctionnelles des deux
+systèmes de contrôle-commande avec les SIGIetEF :
+
+Pilotage, coordination et suivi des parties prenantes en lien avec le projet
+(industriel, MOE, MOA, DSI...)
+
+Production des documents d’'interfaces avec les DSIGletEF
+Explication auprès des industriels et relecture des spécifications
+
+-_ Appui sur chantiers transverses (recette, mode dégradé, SSI...)
+
+Production d'analyses techniques, fonctionnelles ou contractuelles
+
+Gains clients et résultats
+
+Formaliser les processus métier en fonctionnalités applicatives (base
+documentaire)
+
+Assurer le pilotage des différentes parties prenantes
+
+Lever les risques de planning
+
+Délivrer les nouvelles fonctionnalités des différentes applications en permettant
+COLE Eee EE RE ON ECTS
+
+ 
+
+ 
+
+ 
+
+2 AMOA Seniors / 3 AMOA Depuis 2020
+Confirmés
+
+ 
+
+ 
+
+ 
+
+Accompagnement PMO EOLE EPTA4 44
+
+GROUPE
+GROUPE BPCE ) BPCE
+
+Pilotage de la migration de la Banque Palatine vers le Si des Banques Populaires  PAXINE 7
+
+ 
+
+Contexte
+
+ 
+
+La Banque Palatine, filiale du Groupe BPCE a faitle choix de migrer son
+SI (cœur progiciel SAB) vers la plateforme « Equinoxe » des Banques
+Populaires combinée à des composants SI Natixis et BPCE SA.
+
+Des gains sont attendus d’une part d’un point de vue fonctionnel
+(apports de la plateforme Equinoxe et des applications de Natixis ou
+BPCE SA) et d'autre part sur la mutualisation des coûts informatiques
+avec les Banques Populaires.
+
+C’est un projet stratégique d'envergure de part sa complexité
+(spécificités métier de la Banque Palatine, changements
+organisationnels induits) et le nombre de collaborateurs mobilisés.
+
+8 Méthodologie et apports Talan Consulting
+
+ 
+
+Le pilotage opérationnel s'appuie sur la maîtrise de la méthodologie
+de fusion/migration SI éprouvée au sein du groupe BPCE et plus
+largement d'établissements bancaires et d'assurance.
+
+Concrètement il s'appuie sur :
+
+Des « points météo » réguliers (bimensuels) permettant de suivre
+l'avancement des travaux et d'identifier de manière la plus proactive
+possible les actions de correction de trajectoire.
+
+Des « task forces » ad’hoc pour mettre sous contrôle les risques
+émergents, en mobilisant les groupes de travail concernés
+
+Un reporting synthétique d'avancement des travaux et des risques
+Une participation aux instances de gouvernance du projet de
+migration (instances internes à la Banque et instances avec les
+partenaires du Groupe BPCE)
+
+Confidentiel — Proposition technique
+
+gi Objectifs
+
+Réussir la migration au budget et au planning grâce à un pilotage rigoureux et
+proactif
+
+Faire respecter le principe d'adopter sans adapter le standard « Equinoxe »
+tout en ménageant les exceptions validées en avant-projet concernant des
+spécificités métier différenciantes.
+
+Piloter le projet tant sur ses aspects techniques (fiabilisation et migration des
+données, ..), fonctionnels (paramétrages applicatifs, comptables et des
+moteurs de facturation) organisationnels et humains (appropriation du SI cible
+par ses futurs utilisateurs).
+
+Gains clients et résultats
+
+Vision transverse de l'avancement (et de la cohérence entre groupes de
+travail)
+
+QE ER VIE A ECS tete ER ue RETRO
+haut niveau et s'appuyant sur une vision détaillée rigoureuse remontée en
+
+Re NE EE TR ENTER
+
+Sécurisation du risque délai par un suivi rapproché des trajectoires
+d'avancement de chacun des groupes de travail (et des adhérences entre
+elles) dès les phases de cadrage de chaque chantier.
+
+ 
+
+ 
+
+ 
+
+1 directeur
+directeu : 2 ans
+1 manager sénior
+
+ 
+
+ 
+
+ 
+
+Accompagnement PMO EOLE EPTA4 45
+
+EDF enr
+Pilotage de portefeuille de projets SI
+Contexte ä Objectifs
+
+ 
+
+ 
+
++ _La direction des systèmes énergétiques insulaires (SEI) assure le Préparer et animer les instances de pilotage du portefeuille
+
+service public de l'électricité dans les zones non interconnectées (ZNI) + Assurer le suivi budgétaire des projets SI
+
+à un réseau continental : DOM-TOM, Corse etiles du Ponant . Assurer la cohérence du suivi budgétaire entre les métiers et la maîtrise
++ La Délégation SI&T d'EDF-SEI assure le pilotage transverse des d'œuvre S|
+
+projets SI, la consolidation budgétaire, les risques, ainsi que les -_ Améliorer l'utilisation des outils et assurer la conduite du changement
+
+relations avec les maîtrises d'oeuvre internes (DSIT) etles
+fournisseurs en appui de maîtrise d'ouvrage.
+
++ La DSIT etla délégation SI&T de SE] réajustent plusieurs fois par an
+la trajectoire applicative afin de se réorienter sur les besoins
+prioritaires et limiter les goulots d’étranglement.
+
+ca, Gains clients et résultats
+“Tr Méthodologie et apports Talan Consulting
+
+ 
+
+Pilotage optimisé du portefeuille de projet SI
+Optimisation du suivi budgétaire des projets
+
+Mise en œuvre d'une gouvernance du portefeuille de projet SI et
+animation de la comitologie associée : TT Mn ï :
+Benchmark sur la gouvernance, le suivi budgétaire et priorisation des CETTE Loan par us EU E el LARGES demandes
+besoins métiers des portefeuille projets - Acculturation des équipes au mode projet et au suivi budgétaire
+Méthodologie de priorisation des besoins basée sur la valeur métier DATE LAS eE- TOR LETTRE So TEEN EE EST TT ET
+Proposition des KPI de suivi et élaboration de tableau de bord
+Optimisation des outils de gestion des demandes JIRA / Confluence
+Sensibilisation des chefs de projets et référents SI à la gestion de 1 manager 2 ans
+projet et au suivi budgétaire associé (consommé, réalisé, estimation 1 consultant
+
+d'atterrissage)
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Confidentiel — Proposition technique Accompagnement PMO EOLE EPTA4 46
+
+ETF © ETF
+Accompagnement à la définition de la stratégie RSE
+
+Contexte gi Objectifs
+
+Filiale française de VINCI Construction en France, l'Entreprise du
+Transport Ferroviaire est un acteur du développement, de la réalisation
+et de la maintenance d'infrastructures ferroviaires. Face à la demande
+
+ 
+
+Sensibiliser puis engager les directions concernées dans une démarche de
+réduction de l'impact environnemental et de progression sociale continue.
+
+Rendre compréhensible le label Engagé RSE et les étapes à franchir pour
+croissante de la part de ses parties prenantes pour s'engager dans une
+
+obtenir une certification de niveau supérieur.
+démarche RSE, ETF a souhaité être accompagnée pour structurer sa -_ Définir une vision et créer une feuille de route qui structure la démarche.
+stratégie RSE globale.
+
+Gains clients et résultats
+= Méthodologie et apports Talan Consulting
+
+d I de la missi Prise de conscience du niveau de maturité RSE (via diagnostic Engagé
+Ca rage et ancement e la mission | SE
+
+Diagnostic de maturité RSE vis-à-vis du label Engagé RSE : : N : .—.
+
+Phase de sensibilisation aux impacts sociaux et environnementaux CR ER CCR CCR RO CON LU EC ECS
+Rédaction des feuilles de route (FDR) pour répondre aux enjeux parties prenantes internes et corrélée aux attentes des parties prenantes
+
+ACER
+
+Renforcement des relations avec les parties prenantes.
+Meilleure représentativité de l'entreprise auprès des acteurs locaux.
+
+ 
+
+ 
+
+1 Partner
+
+1 expertRSE 1 an (2022-2023)
+1 consultant senior RSE
+
+ 
+
+ 
+
+ 
+
+ 
+
+Confidentiel — Proposition technique
+
+ 
+
+Accompagnement PMO EOLE EPTA4 47
+
+ 
+
+Talan Consulting
+
+Réalisation du Bilan Carbone de Talan Groupe en 2021 et 2022, stratégie RSE
+
+Contexte
+
+Dans le cadre de sa stratégie RSE et de la définition de sa raison d'être,
+Talan s’est engagé dans le calcul de son empreinte carbone et
+l'élaboration d'une trajectoire de réduction de ses émissions de gaz à
+effet de serre.
+
+Après la réalisation d’un premier bilan carbone BEGES en 2020 pour le
+territoire français, Talan a choisi la plateforme PlanA pour réaliser le
+calcul de son Bilan Carbone, réalisé par deux consultants en interne
+formés à la méthodologie de l’Association du Bilan Carbone pour 2021
+sur l'ensemble du périmètre géographique de Talan pour un périmètre
+de 8 pays et plus de 3000 collaborateurs.
+
+= Méthodologie et apports Talan Consulting
+
+Définition des périmètres à étudier : géographique et activités
+
+Prise de contact avec les responsables locaux pour couvrir l'ensemble
+du périmètre
+
+Collecte des données d'activités et consolidation pour le calcul du
+Bilan Carbone
+
+Identification des différents postes d'émissions et élaboration d'une
+trajectoire de réduction
+
+Mise en place d'ateliers pour élaborer un plan d'actions de réduction
+pour les différents postes d'émissions.
+
+Estimation du potentiel de réduction des émissions par le plan
+d'actions
+
+Mise en place du plan d'actions de réduction
+Reporting du Bilan Carbone au format GHG Protocol
+
+Confidentiel — Proposition technique
+
+gi Objectifs
+
+Talan”
+
+Consulting
+
+Identifier les principaux postes d'émissions de GES de Talan
+-_ Avoir une base de référence pour le suivi des émissions
+
+Elaborer une trajectoire de réduction des émissions et un plan d'actions
+
+pertinent et adapté
+
+Engager une démarche au sein de Talan
+
+7
+
+ 
+
+Gains clients et résultats
+
+Calcul du Bilan Carbone Groupe de Talan en 2021 et 2022
+Ciel ER NE ee TES Te
+
+Base de construction pour la stratégie de décarbonation de Talan
+Elaboration du plan d'actions de réduction et de la trajectoire associée
+Engagement des collaborateurs
+
+ 
+
+ 
+
+ 
+
+2 consultants confirmés
+
+ 
+
+6 mois
+
+ 
+
+ 
+
+Accompagnement PMO EOLE EPTA4 48
+
+2%
+Groupe Talan Talan,
+Sensibilisation fresque du numérique
+
+Contexte gi Objectifs
+
+L'empreinte environnementale du Numérique reste souvent méconnue
+
+ 
+
+ 
+
+Sensibiliser nos collaborateurs aux enjeux environnementaux et sociaux du
+
+ou sous-estimée par l’ensemble des utilisateurs. numérique
+
+Faire prendre conscience aux utilisateurs et, qui plus est aux acteurs du - Identifier nos ambassadeurs du Numérique Responsable et former de
+Numérique, ses impacts environnementaux sur l’ensemble du cycle de nouveaux animateurs
+
+vie des usages numériques (fabrication des équipements, usage, fin de Faire prendre conscience des enjeux tout en apportant une vision positive au
+
+vie) est la première étape permettant le passage à l’action. travers du Numérique Responsable (IT for Green)
+
+Dans le cadre de sa stratégie RSE, Talan souhaite que ses Promouvoir les formations sur la conception responsable auprès des
+
+collaborateurs soient sensibilisés aux enjeux du numérique. collaborateurs pour leur permettre de passer à l’action et adapter leurs
+
+méthodes de travail
+
+>
+“r Méthodologie et apports Talan Consulting Gains clients et résultats
+
+ 
+
+Le déroulement de l'atelier ainsi que la méthodologie d'animation sont
+
+réalisés en accord avec les exigences de l'association Fresque du RCE let UE Rolle tee
+Numérique.
+
+30 Fresques du Numérique animées
+Plus de 200 collaborateurs sensibilisés
+
+Le temps consacré à l'animation des fresques est volontairement plus
+long que le temps conseillé (3h30 contre 3h). La fin de la session est
+dédiée à une partie conclusive contextualisée sur les actions menées au
+sein du groupe Talan afin de permettre aux collaborateurs de reprendre
+connaissance de la stratégie RSE et des initiatives internes Numérique
+Responsable dans lesquelles s'inscrire pour aller plus loin et agir.
+
+r
+La Fresque Ÿ
+
+. 9 animateurs pro Juin 2022 —- Mars 2023
+Ju Numérique
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Confidentiel — Proposition technique
+
+ 
+
+Accompagnement PMO EOLE EPTA4 49
+

@@ -3,3 +3,5 @@ backend/venv
 backend/Dockerfile
 frontend/dist
 frontend/node_modules
+/home/sbellart/hope_ia/docker/postgres
+

@@ -10,8 +10,10 @@ RUN npm run build
 
 FROM python:3.10-slim-buster
 
+# Folder must be named backend for Alembic to work
 WORKDIR /app/backend
 
+# Install dependencies needed for psycopg2 and clean up
 RUN apt-get update && \
     apt-get install -y libpq-dev gcc
 
@@ -19,11 +21,14 @@ COPY ./backend /app/backend
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY --from=front-builder /app/dist /app/backend/src/front
+# Copy built front into backend static folder (which is routed in FastAPI)
+COPY --from=front-builder app/dist /app/backend/src/front
 
 EXPOSE 8000
 
+# Script launched on startup, used to add configuration to frontend part at runtime, not build
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod 755 /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
 
-ENTRYPOINT ["/entrypoint.sh", "uvicorn", "src.main:app", "--proxy-headers", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "src.main:app", "--proxy-headers", "--host", "0.0.0.0", "--port", "8000"]
