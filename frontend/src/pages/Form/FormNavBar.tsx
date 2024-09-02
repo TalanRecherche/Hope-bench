@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Link } from "react-router-dom";
+import './SimulationForm.module.css';
 
 function FormNavBar() {
 	return (
@@ -13,9 +14,9 @@ function FormNavBar() {
 			<Container>
 				<Navbar.Toggle aria-controls="basic-navbar-nav"/>
 				<Navbar.Collapse id="basic-navbar-nav">
-					<Nav className="me-auto">
-						<Nav.Link as={Link} to="/form/generalTab">Général</Nav.Link>
-						<Nav.Link as={Link} to="/form/movementTab">Déplacement</Nav.Link>
+					<Nav variant="underline" className="me-auto" >
+						<Nav.Link  className='nav-link' as={Link} to="/form/generalTab">Général</ Nav.Link>
+						<Nav.Link className='nav-link' as={Link} to="/form/movementTab" >Déplacement</Nav.Link>
 						<Nav.Link as={Link} to="/form/digitalTab">Numérique</Nav.Link>
 						<Nav.Link as={Link} to="/form/officeTab">Bureau</Nav.Link>
 					</Nav>

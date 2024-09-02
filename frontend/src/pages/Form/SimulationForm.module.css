@@ -1,0 +1,10 @@
+
+  .underline {
+    color: rgb(34 197 94);
+   }
+   .custom-tab-container .nav-link {
+    margin-bottom: 26px;
+   }
+   .nav-link.active {
+    border-color: green !important;
+   }
