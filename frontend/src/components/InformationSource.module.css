@@ -1,0 +1,12 @@
+.informationField {
+    margin: 20px 0px 0px 30px;
+}
+
+.informationLabel {
+    margin: 0px 0px 0px 30px;
+}
+
+.required:after {
+    content: " *";
+    color: red;
+}
