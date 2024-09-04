@@ -1,4 +1,4 @@
-import FormBoxGeneral from "../../components/FormBoxGeneral";
+import FormBoxGeneral from "../../components/formBox/FormBoxGeneral";
 import FormFileUpload from "../../components/FormFileUpload";
 
 function GeneralTab() {

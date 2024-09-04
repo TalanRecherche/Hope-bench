@@ -14,12 +14,12 @@ function InformationSource<T extends boolean>({ isDefaultInformationSource }: Pr
                 <Form.Check
                     reverse
                     inline
-                    label="J’ai trouvé cette information dans le document Client"
+                    label="J’ai trouvé cette information dans le document"
                     type="switch"
                     id="find-in-document"
                 />
                 <br />
-                <a> À quelle page ? </a><NumericInput min={0} max={2} value={5} size={1} />
+                <span> À quelle page ? </span><NumericInput min={0} max={2} value={5} size={1} />
                 <br />
                 <Form.Check
                     reverse
@@ -42,13 +42,13 @@ function InformationSource<T extends boolean>({ isDefaultInformationSource }: Pr
                     id="find-in-document"
                 />
                 <br />
-                <Form.Check className={styles.informationLabel}
+                <Form.Check className={styles.marginLeft20}
                     inline
                     type="checkbox"
                     label="J’ai déduit ma réponse en lisant le document"
                     id="deduced-from-document"
                 />
-                <Form.Check className={styles.informationLabel}
+                <Form.Check className={styles.marginLeft20}
                     type="checkbox"
                     label="J’ai utilisé mes propres connaissances"
                     id="deduced-from-knowledge"
@@ -64,6 +64,5 @@ function InformationSource<T extends boolean>({ isDefaultInformationSource }: Pr
             </Form>
         );
     }
-
 }
 export default InformationSource

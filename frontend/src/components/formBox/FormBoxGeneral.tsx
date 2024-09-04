@@ -1,7 +1,7 @@
 import Form from 'react-bootstrap/Form';
-import InformationSource from "./InformationSource";
+import InformationSource from "../InformationSource";
 import Card from 'react-bootstrap/Card';
-import styles from './InformationSource.module.css';
+import styles from '../InformationSource.module.css';
 import NumericInput from 'react-numeric-input';
 
 interface Props<T> {
@@ -27,7 +27,7 @@ function FormBoxGeneral<T extends string>({ isDefaultInformationSource = true, i
     }
     else {
         card =
-            <Card.Body>
+            <Card.Body >
                 <Form.Group controlId={options.controlId}>
                     <Form.Label className={styles.required}>{options.name}</Form.Label>
                     <Form.Control
@@ -40,10 +40,10 @@ function FormBoxGeneral<T extends string>({ isDefaultInformationSource = true, i
     }
     return (
         <>
-            <Card className={styles.informationField}>
+            <Card className={styles.marginTopLeft20}>
                 {card}
             </Card>
-            <Card className={styles.informationLabel}>
+            <Card className={styles.marginLeft20}>
                 <Card.Body>
                     <InformationSource isDefaultInformationSource={isDefaultInformationSource} />
                 </Card.Body>

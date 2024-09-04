@@ -1,12 +1,59 @@
-.informationField {
-    margin: 20px 0px 0px 30px;
+.marginTopLeft20 {    
+    margin: 20px 0px 0px 20px;
 }
 
-.informationLabel {
-    margin: 0px 0px 0px 30px;
+.marginLeft20 {    
+    margin: 0px 0px 0px 20px;
+}
+
+.marginBottom20 {    
+  margin: 0px 0px 20px 0px;
+}
+
+.movementFieldLabel {    
+  font-weight: bold ;
 }
 
 .required:after {
     content: " *";
     color: red;
 }
+
+/* FormMeansTransport  */
+.marginRight10 {    
+  margin: 0px 10px 0px 0px;
+}
+
+/* CustomSwitch */
+.switchContainer {
+    display: inline-flex;    
+    width: max-content;
+    height: max-content;
+    float: right;
+    border: 1px solid blue;
+    border-radius: 5px;    
+  }
+  
+  .toggleItem {
+    height: 25px;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  
+  .text {
+    font-size: 14px;
+  }
+  
+  body {
+    margin: 0;
+  }
+
+  .SubText {
+    font-style: italic;
+    font-size: 12px;
+  }
+    
