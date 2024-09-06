@@ -11,30 +11,7 @@ function FormFileUpload() {
                     <Form.Label className={styles.required} > Field title </Form.Label>
                     <Form.Control type="file" size="lg"/>                 
                 </Form.Group>
-            </Card>
-            {/* <Card className={styles.marginTopLeft20}>
-                <Row>
-                    <Col md>
-
-                        <Form.Label className={styles.required} > Field title </Form.Label>
-                        <Card.Body>
-                            <FloatingLabel controlId="uploadFile" label="Upload">
-                                <Form.Control
-                                    as="textarea"
-                                    placeholder="+ Upload"
-                                    style={{ height: '100px' }}
-                                />
-                            </FloatingLabel>
-                        </Card.Body>
-                    </Col>
-                    <Col md>
-                        <FloatingLabel
-                            controlId="floatingSelectGrid"
-                            label="Works with selects"
-                        ></FloatingLabel>
-                    </Col>
-                </Row>
-            </Card> */}
+            </Card>            
         </>
     );
 }

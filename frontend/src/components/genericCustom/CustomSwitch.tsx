@@ -1,9 +1,7 @@
 
-import "./InformationSource.module.css";
-import styles from './InformationSource.module.css';
+import styles from '../InformationSource.module.css';
 
 const CustomSwitch = () => (
-
     <div className={styles.switchContainer}>
         <div
             className={styles.toggleItem}

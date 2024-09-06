@@ -56,4 +56,15 @@
     font-style: italic;
     font-size: 12px;
   }
-    
+   
+  .numericInput { 
+    text-align: center; 
+  }
+
+  .table { 
+    border : 'none !important';
+    align-content: center;
+    width: fit-content;
+  }
+
+  Table {border: none;}
