@@ -1,5 +1,5 @@
 import Form from 'react-bootstrap/Form';
-import InformationSource from "../InformationSource";
+import InformationSource, { InformationSourceTypes } from "../InformationSource";
 import Card from 'react-bootstrap/Card';
 import styles from '../InformationSource.module.css';
 import NumericInput from 'react-numeric-input';
@@ -7,9 +7,8 @@ import CustomTable from '../genericCustom/CustomTable';
 import Button from 'react-bootstrap/Button';
 
 interface Props<T> {
-    isDefaultInformationSource?: boolean,
+    informationSourceType?: InformationSourceTypes,
     options: {
-        controlId: T;
         name: T;
         type: T;
         id: T;
@@ -17,14 +16,14 @@ interface Props<T> {
     }
 }
 
-function FormBoxDigital<T extends string>({ isDefaultInformationSource = true, options }: Props<T>) {
+function FormBoxDigital<T extends string>({ informationSourceType = InformationSourceTypes.default, options }: Props<T>) {
 
     return (
         <>
             <Card>
                 <Card.Body >
                     <Form>
-                        <Form.Group controlId={options.controlId}>
+                        <Form.Group>
                             <Form.Label className={styles.movementFieldLabel}>{options.name}</Form.Label>
                             <div className={styles.required}> Sélectionnez chaque produit ainsi que le nombre de personnes auxquelles il a été distribué. </div>
                             <p className={styles.SubText}> Par exemple, si trois collaborateurs reçoivent un Dell Latitude 5430, sélectionnez le modèle "Dell Latitude 5430" puis rentrez "3" en nombre d'exemplaire, enfin cliquez sur "Ajouter 3 exemplaires".
@@ -57,7 +56,8 @@ function FormBoxDigital<T extends string>({ isDefaultInformationSource = true, o
             </Card>
             <Card className={styles.marginBottom20}>
                 <Card.Body>
-                    <InformationSource isDefaultInformationSource={isDefaultInformationSource} />
+                    <div> {informationSourceType} </div> 
+                    <InformationSource informationSourceType={informationSourceType} />
                 </Card.Body>
             </Card>
         </>

@@ -1,8 +1,11 @@
-
 import styles from '../InformationSource.module.css';
 
-const CustomSwitch = () => (
-    <div className={styles.switchContainer}>
+interface Props {
+    floatingContainer: boolean;
+}
+
+const CustomSwitch = ({floatingContainer = false} : Props) => (
+    <div className={floatingContainer? styles.switchContainerFloat : styles.switchContainer }>
         <div
             className={styles.toggleItem}
             style={{

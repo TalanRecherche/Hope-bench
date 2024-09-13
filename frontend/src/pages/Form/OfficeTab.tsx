@@ -1,5 +1,7 @@
+import FormBoxOffice from "../../components/formBox/FormBoxOffice";
+import { InformationSourceTypes } from "../../components/InformationSource";
 
 const OfficeTab = () => (
-    <h1>ToDo OfficeTab</h1>
+    <FormBoxOffice informationSourceType={InformationSourceTypes.fromCollaborator}></FormBoxOffice>
 )
 export default OfficeTab

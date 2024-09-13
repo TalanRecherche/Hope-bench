@@ -1,15 +1,14 @@
 import Form from 'react-bootstrap/Form';
-import InformationSource from "../InformationSource";
+import InformationSource, { InformationSourceTypes } from "../InformationSource";
 import Card from 'react-bootstrap/Card';
 import styles from '../InformationSource.module.css';
 import NumericInput from 'react-numeric-input';
 import CustomSwitch from '../genericCustom/CustomSwitch';
 
 interface Props<T> {
-    isDefaultInformationSource?: boolean,
+    informationSourceType?: InformationSourceTypes,
     isNumericInput?: boolean,
-    options: {
-        controlId: T;
+    options: {        
         name: T;
         type: T;
         id: T;
@@ -17,15 +16,15 @@ interface Props<T> {
     }
 }
 
-function FormBoxMovement<T extends string>({ isDefaultInformationSource = true, options }: Props<T>) {
+function FormBoxMovement<T extends string>({ informationSourceType = InformationSourceTypes.default, options }: Props<T>) {
 
     return (
         <>
             <Card>
                 <Card.Body >
-                    <Form.Group controlId={options.controlId}>
+                    <Form.Group>
                         <Form.Label className={styles.movementFieldLabel}>{options.name}</Form.Label>
-                        <CustomSwitch></CustomSwitch>
+                        <CustomSwitch floatingContainer={true}></CustomSwitch>
                     </Form.Group>
 
                     <span className={styles.required}> Nombre de fois où le collaborateur se déplace en {options.name} </span>
@@ -33,7 +32,7 @@ function FormBoxMovement<T extends string>({ isDefaultInformationSource = true, 
                     </span>
                     <br />
 
-                    <Form.Group controlId={options.controlId}>
+                    <Form.Group>
                         <Form.Label className={styles.required}>Moyenne de km par déplacement en {options.name}</Form.Label>
                         <Form.Control
                             type={options.type}
@@ -45,7 +44,7 @@ function FormBoxMovement<T extends string>({ isDefaultInformationSource = true, 
             </Card>
             <Card className={styles.marginBottom20}>
                 <Card.Body>
-                    <InformationSource isDefaultInformationSource={isDefaultInformationSource} />
+                    <InformationSource informationSourceType={informationSourceType} />
                 </Card.Body>
             </Card>
         </>

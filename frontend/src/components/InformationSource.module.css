@@ -1,9 +1,16 @@
+
 .marginTopLeft20 {    
     margin: 20px 0px 0px 20px;
 }
 
 .marginLeft20 {    
     margin: 0px 0px 0px 20px;
+}
+.marginLeftRight20 {    
+  margin: 0px 20px 0px 20px;
+}
+.marginTopLeftRight20 {    
+  margin: 20px 20px 0px 20px;
 }
 
 .marginBottom20 {    
@@ -29,10 +36,18 @@
     display: inline-flex;    
     width: max-content;
     height: max-content;
-    float: right;
     border: 1px solid blue;
     border-radius: 5px;    
   }
+
+.switchContainerFloat { 
+  display: inline-flex;    
+    width: max-content;
+    height: max-content;
+    border: 1px solid blue;
+    border-radius: 5px;    
+    float: right;
+}
   
   .toggleItem {
     height: 25px;

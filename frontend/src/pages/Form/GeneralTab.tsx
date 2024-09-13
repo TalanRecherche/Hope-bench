@@ -1,14 +1,15 @@
 import FormBoxGeneral from "../../components/formBox/FormBoxGeneral";
 import FormFileUpload from "../../components/FormFileUpload";
+import { InformationSourceTypes } from "../../components/InformationSource";
 
 function GeneralTab() {
     return (
-        <>
+        <>       
             <FormBoxGeneral                
                 options={{ controlId: 'missionName', name: 'Titre de la mission', type: 'text', id: 'inputTitle', placeholder: 'Description' }} />
 
             <FormBoxGeneral
-                isDefaultInformationSource={false}
+                informationSourceType={InformationSourceTypes.fromDeduction}
                 options={{ controlId: 'clientName', name: 'Nom du client', type: 'text', id: 'inputClientName', placeholder: 'lorem Ipsum' }} />
 
             <FormBoxGeneral

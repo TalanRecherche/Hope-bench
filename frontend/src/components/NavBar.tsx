@@ -12,8 +12,8 @@ function NavBar() {
 				<Navbar.Toggle aria-controls="basic-navbar-nav"/>
 				<Navbar.Collapse id="basic-navbar-nav">
 					<Nav className="me-auto">
-						<Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>
-						<Nav.Link as={Link} to="/form">Form</Nav.Link>
+						<Nav.Link as={Link} to="/dashboard">Tableau de bord</Nav.Link>
+						<Nav.Link as={Link} to="/form">Formulaire</Nav.Link>
 					</Nav>
 					<Navbar.Text>
 						{user.firstname} {user.lastname}

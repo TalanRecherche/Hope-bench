@@ -1,11 +1,11 @@
 import Form from 'react-bootstrap/Form';
-import InformationSource from "../InformationSource";
+import InformationSource, { InformationSourceTypes } from "../InformationSource";
 import Card from 'react-bootstrap/Card';
 import styles from '../InformationSource.module.css';
 import NumericInput from 'react-numeric-input';
 
 interface Props<T> {
-    isDefaultInformationSource?: boolean,
+    informationSourceType?: InformationSourceTypes,
     isNumericInput?: boolean,
     options: {
         controlId: T;
@@ -16,7 +16,7 @@ interface Props<T> {
     }
 }
 
-function FormBoxGeneral<T extends string>({ isDefaultInformationSource = true, isNumericInput = false, options }: Props<T>) {
+function FormBoxGeneral<T extends string>({ informationSourceType = InformationSourceTypes.default, isNumericInput = false, options }: Props<T>) {
 
     let card;
     if (isNumericInput) {
@@ -40,12 +40,12 @@ function FormBoxGeneral<T extends string>({ isDefaultInformationSource = true, i
     }
     return (
         <>
-            <Card className={styles.marginTopLeft20}>
+            <Card className={styles.marginTopLeftRight20}>
                 {card}
             </Card>
-            <Card className={styles.marginLeft20}>
-                <Card.Body>
-                    <InformationSource isDefaultInformationSource={isDefaultInformationSource} />
+            <Card className={styles.marginLeftRight20}>
+                <Card.Body>                     
+                    <InformationSource informationSourceType= { informationSourceType } />
                 </Card.Body>
             </Card>
         </>

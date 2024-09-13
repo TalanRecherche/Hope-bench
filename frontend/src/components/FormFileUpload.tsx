@@ -6,7 +6,7 @@ function FormFileUpload() {
 
     return (
         <>
-            <Card className={styles.marginTopLeft20}>
+            <Card className={styles.marginTopLeftRight20}>
                 <Form.Group controlId="formFileLg" className="mb-6" >
                     <Form.Label className={styles.required} > Field title </Form.Label>
                     <Form.Control type="file" size="lg"/>                 
