@@ -21,7 +21,7 @@ function GeneralTab() {
         return sourceData;
     }
 
-    const [generalData, setGeneralData] = React.useState<GeneralDataType>({
+    const [generalData] = React.useState<GeneralDataType>({
         missionTitle: {
             id: "inputTitle",
             informationSource: initializeInformationSource()

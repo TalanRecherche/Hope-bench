@@ -26,7 +26,7 @@ function FormBase() {
         console.log("outlet Data =", data);
     }
 
-    const formSubmit = (event : any) => {        
+    const formSubmit = () => {        
         console.log("formSubmit = ", data);
     }
 
