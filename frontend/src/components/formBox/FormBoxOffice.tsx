@@ -5,8 +5,23 @@ import NumericInput from 'react-numeric-input';
 import CustomSwitch from '../genericCustom/CustomSwitch';
 import Button from 'react-bootstrap/Button';
 import InformationSource, { InformationSourceTypes } from '../InformationSource';
+import { InformationSourceData } from '../../model/generalDataModel';
 
-function FormBoxOffice({ informationSourceType = InformationSourceTypes.default }) {
+interface Props<T> {
+    informationSourceType?: InformationSourceTypes,
+    options: {
+        informationSourceData?: InformationSourceData;
+    },    
+    setValues?:any
+}
+
+function FormBoxOffice<T extends string>({ informationSourceType = InformationSourceTypes.default, options, setValues }: Props<T>) {
+
+    const setSourceData = (sourceData : any) => {
+        options.informationSourceData = sourceData;
+        setValues(options);
+    }
+
     return (
         <>
             <div className={styles.baseContainer}>
@@ -35,7 +50,8 @@ function FormBoxOffice({ informationSourceType = InformationSourceTypes.default 
                 </Card >
                 <Card className={styles.marginLeftRight20}>
                     <Card.Body>
-                        <InformationSource informationSourceType={informationSourceType} />
+                        <InformationSource informationSourceType={informationSourceType} 
+                    setSourceValues={setSourceData}/>
                     </Card.Body>
                 </Card>
             </div>

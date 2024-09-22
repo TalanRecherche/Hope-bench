@@ -34,6 +34,10 @@ function DigitalTab() {
         });
     };
 
+    const handleSourceDataReceive = () => {
+        console.log(handleSourceDataReceive);
+    };
+
     return (
         <Row>
             <Col xs={3}>
@@ -42,6 +46,7 @@ function DigitalTab() {
             <Col xs={8} style={{ margin: '20px 0px 0px 0px' }}>
                 {x?.filter(c => c.checked).sort((a, b) => a.order - b.order).map((item) => (
                     <FormBoxDigital
+                        setValues={handleSourceDataReceive}
                         informationSourceType={InformationSourceTypes.fromDeduction}
                         options={{ name: item.name, type: 'text', id: item.id, placeholder: 'Description' }} />
                 ))}

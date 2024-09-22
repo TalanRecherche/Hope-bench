@@ -5,6 +5,7 @@ import styles from '../InformationSource.module.css';
 import NumericInput from 'react-numeric-input';
 import CustomTable from '../genericCustom/CustomTable';
 import Button from 'react-bootstrap/Button';
+import { InformationSourceData } from '../../model/generalDataModel';
 
 interface Props<T> {
     informationSourceType?: InformationSourceTypes,
@@ -13,10 +14,17 @@ interface Props<T> {
         type: T;
         id: T;
         placeholder: T;
-    }
+        informationSourceData?: InformationSourceData;
+    },    
+    setValues?:any
 }
 
-function FormBoxDigital<T extends string>({ informationSourceType = InformationSourceTypes.default, options }: Props<T>) {
+function FormBoxDigital<T extends string>({ informationSourceType = InformationSourceTypes.default, options, setValues }: Props<T>) {
+    
+    const setSourceData = (sourceData : any) => {
+        options.informationSourceData = sourceData;
+        setValues(options);
+    }
 
     return (
         <>
@@ -57,7 +65,8 @@ function FormBoxDigital<T extends string>({ informationSourceType = InformationS
             <Card className={styles.marginBottom20}>
                 <Card.Body>
                     <div> {informationSourceType} </div> 
-                    <InformationSource informationSourceType={informationSourceType} />
+                    <InformationSource informationSourceType={informationSourceType} 
+                    setSourceValues={setSourceData}/>
                 </Card.Body>
             </Card>
         </>

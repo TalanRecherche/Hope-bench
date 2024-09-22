@@ -4,6 +4,7 @@ import Card from 'react-bootstrap/Card';
 import styles from '../InformationSource.module.css';
 import NumericInput from 'react-numeric-input';
 import CustomSwitch from '../genericCustom/CustomSwitch';
+import { InformationSourceData } from '../../model/generalDataModel';
 
 interface Props<T> {
     informationSourceType?: InformationSourceTypes,
@@ -13,11 +14,18 @@ interface Props<T> {
         type: T;
         id: T;
         placeholder: T;
-    }
+        informationSourceData?: InformationSourceData;
+    },    
+    setValues?:any
 }
 
-function FormBoxMovement<T extends string>({ informationSourceType = InformationSourceTypes.default, options }: Props<T>) {
+function FormBoxMovement<T extends string>({ informationSourceType = InformationSourceTypes.default, options, setValues }: Props<T>) {
 
+    const setSourceData = (sourceData : any) => {
+        options.informationSourceData = sourceData;
+        setValues(options);
+    }
+    
     return (
         <>
             <Card>
@@ -44,7 +52,8 @@ function FormBoxMovement<T extends string>({ informationSourceType = Information
             </Card>
             <Card className={styles.marginBottom20}>
                 <Card.Body>
-                    <InformationSource informationSourceType={informationSourceType} />
+                    <InformationSource informationSourceType={informationSourceType} 
+                    setSourceValues={setSourceData}/>
                 </Card.Body>
             </Card>
         </>

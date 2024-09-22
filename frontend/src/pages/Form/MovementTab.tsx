@@ -35,6 +35,10 @@ function MovementTab() {
         });
     };
 
+    const handleSourceDataReceive = () => {
+        console.log(handleSourceDataReceive);
+    };
+
     return (
         <Row>
             <Col xs={3}>
@@ -43,6 +47,7 @@ function MovementTab() {
             <Col xs={8} style={{ margin: '20px 0px 0px 0px' }}>
                 {x?.filter(c => c.checked).sort((a, b) => a.order - b.order).map((item) => (
                     <FormBoxMovement
+                    setValues={handleSourceDataReceive}
                     informationSourceType={InformationSourceTypes.fromDeduction}
                     options={{ name: item.name, type: 'text', id: item.id, placeholder: 'Description' }} />
                 ))}                

@@ -15,7 +15,7 @@ interface Props<T> {
         id: T;
         placeholder: T;
         value?: T;
-        informationSourceData?: InformationSourceData
+        informationSourceData?: InformationSourceData;
     },    
     setValues?:any
 }
