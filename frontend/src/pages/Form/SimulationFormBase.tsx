@@ -1,16 +1,13 @@
-import { Outlet } from "react-router-dom";
-import { Container } from "react-bootstrap";
-import FormNavBar from "./FormNavBar";
+
 import './SimulationForm.module.css';
+import FormBase from "./FormBase";
 
 
 function SimulationForm() {
   return (
-    <Container>
-      <FormNavBar/>
-      <Outlet />
-    </Container>
+    <>
+      <FormBase />
+    </>
   );
 }
-
 export default SimulationForm;
