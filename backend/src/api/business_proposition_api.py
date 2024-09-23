@@ -1,7 +1,6 @@
-import logging
-
 from fastapi import APIRouter, Depends, Request
 from dependency_injector.wiring import inject, Provide
+
 from ..containers import Container
 from ..models.BusinessPropositionAnnotation import BusinessPropositionAnnotation
 from ..models.User import User
