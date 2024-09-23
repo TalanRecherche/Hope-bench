@@ -35,3 +35,8 @@
   overflow: hidden;
   width: auto;
 }
+
+.center {
+  margin: auto;
+  width: 50%;
+}

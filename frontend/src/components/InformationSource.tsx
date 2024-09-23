@@ -1,9 +1,9 @@
 import Form from 'react-bootstrap/Form';
 import * as NumericInput from "react-numeric-input";
 import styles from './InformationSource.module.css';
-import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
 import { useEffect, useState } from 'react';
+import SourceCustomSwitch from './genericCustom/SourceCustomSwitch';
+import { InformationSourceData } from '../model/generalDataModel';
 
 export enum InformationSourceTypes {
     default = 'default',
@@ -18,8 +18,12 @@ interface Props {
 
 function InformationSource({ informationSourceType, setSourceValues }: Props) {
 
-    const [iSourceData, setISourceData] = useState({});
-
+    const [iSourceData, setISourceData] = useState<InformationSourceData>({});
+    
+    useEffect(() => {
+        setSourceValues(iSourceData);
+    });
+    
     const changeFormData = (e: any) => {
         const { name, checked } = e.target;
 
@@ -27,27 +31,32 @@ function InformationSource({ informationSourceType, setSourceValues }: Props) {
             ...iSourceData,
             [name]: checked
         });
-
     };
 
-    useEffect(() => {
-        setSourceValues(iSourceData);
-    });
+    function handleSwitch(checked: boolean, name: string) {
+        setISourceData({
+            ...iSourceData,
+            [name]: checked
+        });
+    }
 
-    switch (informationSourceType) {
-        case InformationSourceTypes.fromDeduction:
-            return (
-                <Form>
-                    <Form.Check
-                        reverse
-                        name="foundInClientDocument"
-                        inline
-                        label="J’ai trouvé cette information dans le document Client"
-                        type="switch"
-                        id="find-in-document"
-                        onChange={(e) => changeFormData(e)}
-                    />
-                    <br />
+
+    function isChecked(name: string): boolean {
+        console.log(informationSourceType);
+        if (iSourceData && name in iSourceData && iSourceData[name as keyof InformationSourceData]) {
+            return true;
+        }
+        return false;
+    }
+
+    return (
+        <Form>
+            <Form.Group>
+                <Form.Label>J’ai trouvé cette information dans le document</Form.Label>
+                <SourceCustomSwitch sendSwitchValue={(e: any) => handleSwitch(e, "foundInClientDocument",)} floatingContainer={true}></SourceCustomSwitch>
+            </Form.Group>
+            {!isChecked("foundInClientDocument") &&
+                <>
                     <Form.Check className={styles.marginLeft20}
                         inline
                         name="deduceByReadingDocument"
@@ -71,27 +80,39 @@ function InformationSource({ informationSourceType, setSourceValues }: Props) {
                         type="switch"
                         id="reliability-estimate"
                     />
-                </Form>);
-        case InformationSourceTypes.fromCollaborator:
-            return (
-                <Form>
-                    <Form.Check
-                        name="foundInClientDocument"
-                        reverse
+                </>
+            }
+            {isChecked("foundInClientDocument") &&
+                <>
+                    <span> À quelle page ? </span><NumericInput min={0} max={2} value={5} size={1} />
+                    <br />
+                    <Form.Group>
+                        <Form.Label>J’ai enrichi ma saisie par des informations non présentes dans le document</Form.Label>
+                        <SourceCustomSwitch
+                            sendSwitchValue={(e: any) => handleSwitch(e, "enrichedFromDocument",)}
+                            floatingContainer={true}
+                            initialValue={isChecked("enrichedFromDocument")}
+                        ></SourceCustomSwitch>
+                    </Form.Group>
+                </>
+            }
+            {(isChecked("foundInClientDocument") && isChecked("enrichedFromDocument")) &&
+                <>
+                    <Form.Check className={styles.marginLeft20}
                         inline
-                        label="J’ai trouvé cette information dans le document"
-                        type="switch"
-                        id="find-in-document"
+                        name="deduceByReadingDocument"
+                        type="checkbox"
+                        label="J’ai déduit ma réponse en lisant le document"
+                        id="deduced-from-document"
                         onChange={(e) => changeFormData(e)}
                     />
-                    <div>
-                        <span className={styles.required}> Cette information est issue de </span>
-                        <DropdownButton variant="outline-secondary" size="sm" id="dropdown-basic-button" title="Alan Parks">
-                            <Dropdown.Item href="#/action-1">Alan Parks 1</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Alan Parks 2</Dropdown.Item>
-                            <Dropdown.Item href="#/action-3">Alan Parks 3</Dropdown.Item>
-                        </DropdownButton>
-                    </div>
+                    <Form.Check className={styles.marginLeft20}
+                        name="personalKnowlegdeUsed"
+                        type="checkbox"
+                        label="J’ai utilisé mes propres connaissances"
+                        id="deduced-from-knowledge"
+                        onChange={(e) => changeFormData(e)}
+                    />
                     <Form.Check className={styles.required}
                         required
                         reverse
@@ -100,35 +121,9 @@ function InformationSource({ informationSourceType, setSourceValues }: Props) {
                         type="switch"
                         id="reliability-estimate"
                     />
-                </Form>
-            );
-        default:
-            return (
-                <Form>
-                    <div> default case with {informationSourceType} </div>
-                    <Form.Check
-                        reverse
-                        inline
-                        name="foundInClientDocument"
-                        label="J’ai trouvé cette information dans le document"
-                        type="switch"
-                        id="find-in-document"
-                        onChange={(e) => changeFormData(e)}
-                    />
-                    <br />
-                    <span> À quelle page ? </span><NumericInput min={0} max={2} value={5} size={1} />
-                    <br />
-                    <Form.Check
-                        reverse
-                        inline
-                        name="enrichedFromDocument"
-                        type="switch"
-                        label="J’ai enrichi ma saisie par des informations non présentes dans le document"
-                        id="find-out-of-document"
-                        onChange={(e) => changeFormData(e)}
-                    />
-                </Form>
-            );
-    };
-}
+                </>
+            }
+        </Form>
+    );
+};
 export default InformationSource

@@ -1,85 +1,124 @@
-
-.marginTopLeft20 {    
-    margin: 20px 0px 0px 20px;
+.marginTopLeft20 {
+  margin: 20px 0px 0px 20px;
 }
 
-.marginLeft20 {    
-    margin: 0px 0px 0px 20px;
+.marginLeft20 {
+  margin: 0px 0px 0px 20px;
 }
-.marginLeftRight20 {    
+
+.marginLeftRight20 {
   margin: 0px 20px 0px 20px;
 }
-.marginTopLeftRight20 {    
+
+.marginTopLeftRight20 {
   margin: 20px 20px 0px 20px;
 }
 
-.marginBottom20 {    
+.marginBottom20 {
   margin: 0px 0px 20px 0px;
 }
 
-.movementFieldLabel {    
-  font-weight: bold ;
+.movementFieldLabel {
+  font-weight: bold;
 }
 
 .required:after {
-    content: " *";
-    color: red;
+  content: " *";
+  color: red;
 }
 
 /* FormMeansTransport  */
-.marginRight10 {    
+.marginRight10 {
   margin: 0px 10px 0px 0px;
 }
 
 /* CustomSwitch */
 .switchContainer {
-    display: inline-flex;    
-    width: max-content;
-    height: max-content;
-    border: 1px solid blue;
-    border-radius: 5px;    
-  }
-
-.switchContainerFloat { 
-  display: inline-flex;    
-    width: max-content;
-    height: max-content;
-    border: 1px solid blue;
-    border-radius: 5px;    
-    float: right;
+  display: inline-flex;
+  width: max-content;
+  height: max-content;
+  border: 1px solid blue;
+  border-radius: 5px;
 }
-  
-  .toggleItem {
-    height: 25px;
-    width: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8px 12px;
-    cursor: pointer;
-  }
-  
-  .text {
-    font-size: 14px;
-  }
-  
-  body {
-    margin: 0;
-  }
 
-  .SubText {
-    font-style: italic;
-    font-size: 12px;
-  }
-   
-  .numericInput { 
-    text-align: center; 
-  }
+.switchContainerFloat {
+  display: inline-flex;
+  width: max-content;
+  height: max-content;
+  border: 1px solid blue;
+  border-radius: 5px;
+  float: right;
+}
 
-  .table { 
-    border : 'none !important';
-    align-content: center;
-    width: fit-content;
-  }
+.toggleItem {
+  height: 25px;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  cursor: pointer;
+}
 
-  Table {border: none;}
+.sourceToggleItem {
+  height: 25px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.text {
+  font-size: 14px;
+}
+
+body {
+  margin: 0;
+}
+
+.SubText {
+  font-style: italic;
+  font-size: 12px;
+}
+
+.numericInput {
+  text-align: center;
+}
+
+.table {
+  border: 'none !important';
+  align-content: center;
+  width: fit-content;
+}
+
+Table {
+  border: none;
+}
+
+.informationSource {
+  width: 770px;
+  min-height: 120px;
+  height: auto;
+  border-radius: 0px 0px 4px 4px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+  background: rgba(249, 248, 252, 1);
+}
+
+.boxGeneral {
+  width: 770px;  
+  max-height: 370px;
+  padding: 24px 0px 0px 0px;
+  border-radius: 4px 0px 0px 0px;
+  background: rgba(255, 255, 255, 1);
+}
+
+.boxItem {
+  width: 770px;
+  min-height: 77px;
+  border-radius: 0px 4px 0px 0px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+}

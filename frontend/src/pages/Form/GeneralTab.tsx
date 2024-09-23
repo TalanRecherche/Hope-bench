@@ -4,6 +4,7 @@ import { InformationSourceTypes } from "../../components/InformationSource";
 import { useOutletContext } from "react-router-dom";
 import { GeneralDataType, InformationSourceData } from "../../model/generalDataModel.ts";
 import React from "react";
+import styles from './SimulationForm.module.css';
 
 function GeneralTab() {
 
@@ -83,7 +84,7 @@ function GeneralTab() {
         setDatat(initialData);
     };
     return (
-        <>
+        <div className={styles.center}>
             <FormBoxGeneral
                 setValues={handleDataReceive}
                 informationSourceType={InformationSourceTypes.fromDeduction}
@@ -116,7 +117,8 @@ function GeneralTab() {
                 options={{ name: 'Secteur Talan Concerné', type: 'text', id: 'inputSector', placeholder: 'Description' }} />
 
             {/* ToDo - Finalize file upload */}
+            <br />
             <FormFileUpload></FormFileUpload>
-        </>
+        </div>
     );   
 } export default GeneralTab

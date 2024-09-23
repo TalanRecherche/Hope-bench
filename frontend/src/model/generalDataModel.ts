@@ -1,13 +1,24 @@
 /* ToDo - improve Data Receive */
+import { z } from "zod";
 
-export interface InformationSourceData  {
-  foundInClientDocument: boolean
-  deduceByReadingDocument: boolean
-  personalKnowlegdeUsed: boolean
-  enrichedFromDocument: boolean
-  reliabilityRate: number
-  foundOnPage: number
+export type InformationSourceData = {
+  foundInClientDocument?: boolean
+  deduceByReadingDocument?: boolean
+  personalKnowlegdeUsed?: boolean
+  enrichedFromDocument?: boolean
+  reliabilityRate?: number
+  foundOnPage?: number
 }
+export const InformationSourceDataSchema = z.object({
+  foundInClientDocument: z.boolean().optional(),
+  deduceByReadingDocument: z.boolean().optional(),
+  personalKnowlegdeUsed: z.boolean().optional(),
+  enrichedFromDocument: z.boolean().optional(),
+  reliabilityRate: z.number().optional(),
+  foundOnPage: z.number().optional()
+});
+
+export type InformationSourceDataBis = z.infer<typeof InformationSourceDataSchema>;
 
 export interface formBoxData {
     id: string;

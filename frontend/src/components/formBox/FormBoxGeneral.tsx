@@ -16,29 +16,29 @@ interface Props<T> {
         placeholder: T;
         value?: T;
         informationSourceData?: InformationSourceData;
-    },    
-    setValues?:any
+    },
+    setValues?: any
 }
 
 function FormBoxGeneral<T extends string>({ informationSourceType = InformationSourceTypes.default, isNumericInput = false, options, setValues }: Props<T>) {
-    
+
     const setOptionValue = (value: any) => {
         options.value = value;
-        
+
         setValues(options);
     };
 
-    const setSourceData = (sourceData : any) => {
+    const setSourceData = (sourceData: any) => {
         options.informationSourceData = sourceData;
         setValues(options);
     }
 
     let card;
     if (isNumericInput) {
-        card = <Card.Body>
-            <a>{options.name} </a> <NumericInput size={1}  onChange={(value) => setOptionValue(value)} />
-        </Card.Body>;
-
+        card =
+            <Card.Body>
+                <a>{options.name} </a> <NumericInput size={1} onChange={(value) => setOptionValue(value)} />
+            </Card.Body>;
     }
     else {
         card =
@@ -49,26 +49,25 @@ function FormBoxGeneral<T extends string>({ informationSourceType = InformationS
                         type={options.type}
                         id={options.id}
                         placeholder={options.placeholder}
-                        onChange={(e) => setOptionValue(e.target.value)}                  
+                        onChange={(e) => setOptionValue(e.target.value)}
                     />
                 </Form.Group>
             </Card.Body>;
     }
 
     return (
-        <>
-            <Card className={styles.marginTopLeftRight20}>
+        <div className={styles.boxGeneral}>
+            <Card className={styles.boxItem}>
                 {card}
             </Card>
-            <Card className={styles.marginLeftRight20}>
+            <Card className={styles.informationSource}>
                 <Card.Body>
-                    <InformationSource 
-                    informationSourceType = {informationSourceType}
-                    setSourceValues={setSourceData}/>
+                    <InformationSource
+                        informationSourceType={informationSourceType}
+                        setSourceValues={setSourceData} />
                 </Card.Body>
             </Card>
-        </>
+        </div>
     );
 }
-
 export default FormBoxGeneral
