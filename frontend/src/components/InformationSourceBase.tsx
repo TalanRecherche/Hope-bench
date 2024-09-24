@@ -28,13 +28,9 @@ function InformationSourceBase({ informationSourceType, setSourceValues }: Props
             ...iSourceData,
             [name]: checked
         });
-
-
     };
     
     function handleSwitch(checked: boolean, name: string ) {
-        console.log("value = ", checked);
-
         setISourceData({
             ...iSourceData,
             [name]: checked
@@ -62,17 +58,7 @@ function InformationSourceBase({ informationSourceType, setSourceValues }: Props
                     <Form.Group  id="foundInClientDocument">
                         <Form.Label>J’ai trouvé cette information dans le document Client</Form.Label>
                         <SourceCustomSwitch sendSwitchValue={(e : any) => handleSwitch(e, "foundInClientDocument",)} floatingContainer={true}></SourceCustomSwitch>
-                    </Form.Group>
-                    {/* <Form.Check
-                        reverse
-                        name="foundInClientDocument"
-                        inline
-                        label="J’ai trouvé cette information dans le document Client"
-                        type="switch"
-                        id="find-in-document"
-                        onChange={(e) => changeFormData(e)}
-                    />
-                    <br /> */}
+                    </Form.Group>                  
                     <Form.Check className={styles.marginLeft20}
                         inline
                         name="deduceByReadingDocument"

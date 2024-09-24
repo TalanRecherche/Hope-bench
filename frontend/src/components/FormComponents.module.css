@@ -50,6 +50,10 @@
   float: right;
 }
 
+.ratingContainerFloat {  
+  float: right;
+}
+
 .toggleItem {
   height: 25px;
   width: 80px;
@@ -108,7 +112,7 @@ Table {
 }
 
 .boxGeneral {
-  width: 770px;  
+  width: 770px;
   max-height: 370px;
   padding: 24px 0px 0px 0px;
   border-radius: 4px 0px 0px 0px;
@@ -120,5 +124,13 @@ Table {
   min-height: 77px;
   border-radius: 0px 4px 0px 0px;
   border: 1px 0px 0px 0px;
+  opacity: 0px;
+}
+
+.numericInput {
+  margin-left: 551px;
+  text-align: center;
+  font-family: 'Montserrat';
+  float: 'right';
   opacity: 0px;
 }

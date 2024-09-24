@@ -1,9 +1,11 @@
 import Form from 'react-bootstrap/Form';
-import * as NumericInput from "react-numeric-input";
+import NumericInput from "react-numeric-input";
 import styles from './FormComponents.module.css';
 import { useEffect, useState } from 'react';
 import SourceCustomSwitch from './genericCustom/SourceCustomSwitch';
+import CustomStarRating from './genericCustom/CustomStartRating';
 import { InformationSourceData } from '../model/generalDataModel';
+import InputGroup from 'react-bootstrap/InputGroup';
 
 export enum InformationSourceTypes {
     default = 'default',
@@ -16,14 +18,14 @@ interface Props {
     setSourceValues?: any
 }
 
-function InformationSource({ informationSourceType, setSourceValues }: Props) {
+function InformationSource({ setSourceValues }: Props) {
 
     const [iSourceData, setISourceData] = useState<InformationSourceData>({});
-    
+
     useEffect(() => {
         setSourceValues(iSourceData);
     });
-    
+
     const changeFormData = (e: any) => {
         const { name, checked } = e.target;
 
@@ -38,11 +40,17 @@ function InformationSource({ informationSourceType, setSourceValues }: Props) {
             ...iSourceData,
             [name]: checked
         });
-    }
+    };
+
+    function handleNumericInput(value: any, name: string) {
+        setISourceData({
+            ...iSourceData,
+            [name]: value
+        });
+    };
 
 
     function isChecked(name: string): boolean {
-        console.log(informationSourceType);
         if (iSourceData && name in iSourceData && iSourceData[name as keyof InformationSourceData]) {
             return true;
         }
@@ -72,28 +80,25 @@ function InformationSource({ informationSourceType, setSourceValues }: Props) {
                         id="deduced-from-knowledge"
                         onChange={(e) => changeFormData(e)}
                     />
-                    <Form.Check className={styles.required}
-                        required
-                        reverse
-                        inline
-                        label="J’estime la fiabilité de ma réponse sur une échelle de 1 à 5"
-                        type="switch"
-                        id="reliability-estimate"
-                    />
+                    <Form.Group>
+                        <Form.Label className={styles.required} >J’estime la fiabilité de ma réponse sur une échelle de 1 à 5</Form.Label>
+                        <CustomStarRating sendRatingValue={(e: any) => handleSwitch(e, "reliabilityRate")}></CustomStarRating>
+                    </Form.Group>
                 </>
             }
             {isChecked("foundInClientDocument") &&
                 <>
-                    <span> À quelle page ? </span><NumericInput min={0} max={2} value={5} size={1} />
-                    <br />
-                    <Form.Group>
-                        <Form.Label>J’ai enrichi ma saisie par des informations non présentes dans le document</Form.Label>
-                        <SourceCustomSwitch
-                            sendSwitchValue={(e: any) => handleSwitch(e, "enrichedFromDocument",)}
-                            floatingContainer={true}
-                            initialValue={isChecked("enrichedFromDocument")}
-                        ></SourceCustomSwitch>
-                    </Form.Group>
+                    <InputGroup className="mb-1">
+                        <span > À quelle page ? </span>
+                        <NumericInput className={styles.numericInput}
+                            min={0} placeholder='0' size={2} onChange={(e) => handleNumericInput(e, "foundOnPage")} />
+                    </InputGroup>
+                    <Form.Label>J’ai enrichi ma saisie par des informations non présentes dans le document</Form.Label>
+                    <SourceCustomSwitch
+                        sendSwitchValue={(e: any) => handleSwitch(e, "enrichedFromDocument",)}
+                        floatingContainer={true}
+                        initialValue={isChecked("enrichedFromDocument")}
+                    ></SourceCustomSwitch>
                 </>
             }
             {(isChecked("foundInClientDocument") && isChecked("enrichedFromDocument")) &&
@@ -113,14 +118,11 @@ function InformationSource({ informationSourceType, setSourceValues }: Props) {
                         id="deduced-from-knowledge"
                         onChange={(e) => changeFormData(e)}
                     />
-                    <Form.Check className={styles.required}
-                        required
-                        reverse
-                        inline
-                        label="J’estime la fiabilité de ma réponse sur une échelle de 1 à 5"
-                        type="switch"
-                        id="reliability-estimate"
-                    />
+                    <Form.Group>
+                        <Form.Label className={styles.required} >J’estime la fiabilité de ma réponse sur une échelle de 1 à 5</Form.Label>
+                        <CustomStarRating sendRatingValue={(e: any) => handleSwitch(e, "reliabilityRate")}></CustomStarRating>
+                    </Form.Group>
+
                 </>
             }
         </Form>
