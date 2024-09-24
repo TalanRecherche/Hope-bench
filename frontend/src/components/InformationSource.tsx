@@ -1,6 +1,6 @@
 import Form from 'react-bootstrap/Form';
 import * as NumericInput from "react-numeric-input";
-import styles from './InformationSource.module.css';
+import styles from './FormComponents.module.css';
 import { useEffect, useState } from 'react';
 import SourceCustomSwitch from './genericCustom/SourceCustomSwitch';
 import { InformationSourceData } from '../model/generalDataModel';

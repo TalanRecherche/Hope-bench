@@ -1,7 +1,7 @@
 import Form from 'react-bootstrap/Form';
 import InformationSource, { InformationSourceTypes } from "../InformationSource";
 import Card from 'react-bootstrap/Card';
-import styles from '../InformationSource.module.css';
+import styles from '../FormComponents.module.css';
 import NumericInput from 'react-numeric-input';
 import CustomSwitch from '../genericCustom/CustomSwitch';
 import { InformationSourceData } from '../../model/generalDataModel';

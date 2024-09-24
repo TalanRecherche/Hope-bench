@@ -1,6 +1,6 @@
 import Form from 'react-bootstrap/Form';
 import * as NumericInput from "react-numeric-input";
-import styles from './InformationSource.module.css';
+import styles from './FormComponents.module.css';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import { useEffect, useState } from 'react';

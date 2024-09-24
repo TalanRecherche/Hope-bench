@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styles from '../InformationSource.module.css';
+import styles from '../FormComponents.module.css';
 
 interface Props {
     floatingContainer: boolean;
@@ -26,14 +26,14 @@ const SourceCustomSwitch = ({ floatingContainer = false, initialValue = false, s
                 style={!checked ? styleNo : styleYes}
                 onClick={() => handleSwitchClick(false)}
             >
-                <div className={styles.text}>Non</div>
+                <div className={styles.customSwitchText}>Non</div>
             </div>
             <div
                 className={styles.sourceToggleItem}
                 style={!checked ? styleYes : styleNo}
                 onClick={() => handleSwitchClick(true)}
             >
-                <div className={styles.text}>Oui</div>
+                <div className={styles.customSwitchText}>Oui</div>
             </div>
         </div>
     )

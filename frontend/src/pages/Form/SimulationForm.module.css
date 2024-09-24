@@ -1,30 +1,64 @@
-
 .saveButton {
-  background-color: white !important;
-  border-color: #fa6343 !important;
-  color: #fa6343 !important;
-  margin-right: 0.5rem !important;
+  background-color: white;
+  border-color: #FF5925;
+  color: #FF5925;
+  border: 1px solid;
+  margin-right: 0.5rem;
+
+  width: Hug (96px)px;
+  height: Hug (25px)px;
+  padding: 4px 8px 4px 8px;
+  gap: 8px;
+  border-radius: 3px 0px 0px 0px;
+  opacity: 0px;
+  border: 1px solid rgba(255, 89, 37, 1);
 }
 
 .submitButton {
-  background-color: #fa6343 !important;
-  border-color: #fa6343!important;  
-  margin-right: 0.5rem !important;  
+  background-color: #FF5925;
+  border-color: #FF5925;
+  margin-right: 0.5rem;
+
+  width: Hug (93px)px;
+  height: Hug (25px)px;
+  padding: 4px 8px 4px 8px;
+  gap: 8px;
+  border-radius: 3px 0px 0px 0px;
+  opacity: 0px;
 }
 
-.formButtons {  
-  background-color:whitesmoke;  
+.deleteButton {
+  background-color: #FF5925;
+  border-color: #FF5925;
+  width: Hug (26px)px;
+  height: Hug (25px)px;
+  padding: 4px 8px 4px 8px;
+  gap: 8px;
+  border-radius: 3px 0px 0px 0px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+}
+
+.submissionButtonTypography,
+.submitButton,
+.saveButton,
+.deleteButton,
+.formTabButtons{
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17.07px;
+  text-align: left;
+}
+
+.formButtons {
+  background-color: whitesmoke;
   display: table-cell;
-  vertical-align: bottom!important;  
-  
+  vertical-align: bottom !important;
+
 }
 
-.submissionButtons {
-  display: inline-flex!important;
-  margin-left: 50px;
-}
-
-.marginLeftRight10 {    
+.marginLeftRight10 {
   margin: 0px 10px 0px 10px;
 }
 
@@ -39,4 +73,40 @@
 .center {
   margin: auto;
   width: 50%;
+}
+
+.formTabButtons{
+  /* width: 466px; */
+  height: 41px;
+  gap: 0px;
+  opacity: 0px;
+}
+
+.formTabSingleButton:focus{
+  font-weight:bold;
+  border-bottom-color: #FF5925;
+  border-bottom-style:solid;
+  border-bottom-width:0.2em;
+}
+
+.formSubmissionButtons {
+  float: left !important;
+  width: 231px;
+  height: 41px;
+  gap: 8px;
+  opacity: 0px;
+}
+
+.formNav {
+  margin: auto;
+  width: 770px;
+  display: flex;
+  height: 41px;
+  gap: 0px;
+  justify-content: space-between;
+  opacity: 0px;
+}
+
+.navBar {
+  background: rgba(249, 248, 252, 1);
 }

@@ -1,6 +1,6 @@
 import Table from 'react-bootstrap/Table';
 import NumericInput from 'react-numeric-input';
-import styles from '../InformationSource.module.css';
+import styles from '../FormComponents.module.css';
 import Button from 'react-bootstrap/Button';
 
 const itemlist = [

@@ -1,6 +1,6 @@
 
 import { Card,Form } from "react-bootstrap";
-import styles from './InformationSource.module.css';
+import styles from './FormComponents.module.css';
 
 function FormFileUpload() {
 

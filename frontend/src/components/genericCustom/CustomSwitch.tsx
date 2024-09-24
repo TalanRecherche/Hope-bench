@@ -1,4 +1,4 @@
-import styles from '../InformationSource.module.css';
+import styles from '../FormComponents.module.css';
 
 interface Props {
     floatingContainer: boolean;
@@ -14,7 +14,7 @@ const CustomSwitch = ({floatingContainer = false} : Props) => (
             }}
         // onClick={() => handleSwitchClick(SwitchOptions.OPTION1)}
         >
-            <div className={styles.text}>Mensuel</div>
+            <div className={styles.customSwitchText}>Mensuel</div>
         </div>
         <div
             className={styles.toggleItem}
@@ -23,7 +23,7 @@ const CustomSwitch = ({floatingContainer = false} : Props) => (
             }}
         //onClick={() => handleSwitchClick(SwitchOptions.OPTION2)}
         >
-            <div className={styles.text}>Global</div>
+            <div className={styles.customSwitchText}>Global</div>
         </div>
     </div>
 );
