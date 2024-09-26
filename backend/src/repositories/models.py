@@ -97,20 +97,24 @@ class AnnotationAffectationDB(Base):
     status = Column(String, nullable=False)
     last_update = Column(DateTime, nullable=False, server_default=func.now(), onupdate=func.now())
 
+
 class ComputerDB(Base):
     __tablename__ = "computers"
     id_computer = Column(UUID(as_uuid=True), primary_key=True, nullable=False)
     model = Column(String, nullable=False)
+
 
 class PhoneDB(Base):
     __tablename__ = "phones"
     id_phone = Column(UUID(as_uuid=True), primary_key=True, nullable=False)
     model = Column(String, nullable=False)
 
+
 class TransportDB(Base):
     __tablename__ = "transports"
     id_transport = Column(UUID(as_uuid=True), primary_key=True, nullable=False)
     transport_mode = Column(String, nullable=False)
+
 
 class ComputeProviderDB(Base):
     __tablename__ = "compute_providers"
@@ -118,8 +122,15 @@ class ComputeProviderDB(Base):
     name = Column(String, nullable=False)
     region = Column(String, nullable=False)
 
+
 class StorageProviderDB(Base):
     __tablename__ = "storage_providers"
     id_storage_provider = Column(UUID(as_uuid=True), primary_key=True, nullable=False)
     name = Column(String, nullable=False)
     region = Column(String, nullable=False)
+
+
+class GPUDB(Base):
+    __tablename__ = "gpu"
+    id = Column(UUID(as_uuid=True), primary_key=True, nullable=False)
+    name = Column(String, nullable=False)

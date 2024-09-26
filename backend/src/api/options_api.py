@@ -54,3 +54,9 @@ async def get_all_by_name_storage_providers(request: Request,
                                             options_service: OptionsService = Depends(Provide[Container.options_service])):
     return options_service.find_all_by_name_storage_provider(name)
 
+
+@router.get("/gpu")
+@inject
+async def get_all_gpus(request: Request,
+                       options_service: OptionsService = Depends(Provide[Container.options_service])):
+    return options_service.find_all_gpus()

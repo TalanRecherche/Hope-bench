@@ -28,3 +28,6 @@ class StorageProvider(BaseModel):
     region: str
 
 
+class GPU(BaseModel):
+    id: str
+    name: str

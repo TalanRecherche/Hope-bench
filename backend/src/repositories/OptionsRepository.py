@@ -3,8 +3,8 @@ from typing import Callable
 
 from sqlalchemy.orm import Session
 
-from .models import ComputerDB, PhoneDB, TransportDB, ComputeProviderDB, StorageProviderDB
-from ..models.Options import Computer, Phone, Transport, ComputeProvider, StorageProvider
+from .models import ComputerDB, PhoneDB, TransportDB, ComputeProviderDB, StorageProviderDB, GPUDB
+from ..models.Options import Computer, Phone, Transport, ComputeProvider, StorageProvider, GPU
 
 
 class OptionsRepository:
@@ -157,4 +157,30 @@ class OptionsRepository:
             id_storage_provider=storage_provider_db.id_storage_provider,
             name=storage_provider_db.name,
             region=storage_provider_db.region,
+        )
+
+    #GPU
+    def find_gpu(self, gpu_id) -> GPU | None:
+        with self.session_factory() as db:
+            gpu_db = self._find_gpu(db, gpu_id).one_or_none()
+            return self._gpu_db_to_domain(gpu_db)
+
+    def _find_gpu(self, db: Session, gpu_id: str):
+        return db.query(GPUDB).filter(GPUDB.id == gpu_id)
+
+    def find_all_gpus(self) -> [GPU]:
+        with self.session_factory() as db:
+            gpus_db = self._find_all_gpus(db)
+            return [self._gpu_db_to_domain(gpu) for gpu in gpus_db]
+
+    def _find_all_gpus(self, db):
+        return db.query(GPUDB)
+
+    @staticmethod
+    def _gpu_db_to_domain(gpu_db: GPUDB | None) -> GPU | None:
+        if gpu_db is None:
+            return None
+        return GPU(
+            id=gpu_db.id,
+            name=gpu_db.name,
         )

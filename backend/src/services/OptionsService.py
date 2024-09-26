@@ -40,3 +40,9 @@ class OptionsService:
 
     def find_all_by_name_storage_provider(self, name: str) -> [StorageProvider]:
         return self.options_repository.find_all_by_name_storage_providers(name)
+
+    def find_gpu(self, gpu_id) -> GPU | None:
+        return self.options_repository.find_gpu(gpu_id)
+
+    def find_all_gpus(self) -> [GPU]:
+        return self.options_repository.find_all_gpus()
