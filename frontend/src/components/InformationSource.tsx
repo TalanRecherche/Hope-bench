@@ -58,7 +58,7 @@ function InformationSource({ setSourceValues }: Props) {
     }
 
     return (
-        <Form>
+        <Form className={styles.labelSemiBold}>
             <Form.Group>
                 <Form.Label>J’ai trouvé cette information dans le document</Form.Label>
                 <SourceCustomSwitch sendSwitchValue={(e: any) => handleSwitch(e, "foundInClientDocument",)} floatingContainer={true}></SourceCustomSwitch>

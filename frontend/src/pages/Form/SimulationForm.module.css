@@ -43,7 +43,7 @@
 .submitButton,
 .saveButton,
 .deleteButton,
-.formTabButtons{
+.formTabButtons {
   font-family: Montserrat;
   font-size: 14px;
   font-weight: 500;
@@ -61,31 +61,23 @@
   margin: 0px 10px 0px 10px;
 }
 
-.left {
-  margin-left: calc(25% - 10px);
-  height: 40px;
-  margin-top: 4px;
-  overflow: hidden;
-  width: auto;
-}
-
 .center {
   margin: auto;
   width: 50%;
 }
 
-.formTabButtons{
+.formTabButtons {
   /* width: 466px; */
   height: 41px;
   gap: 0px;
   opacity: 0px;
 }
 
-.formTabSingleButton:focus{
-  font-weight:bold;
+.formTabSingleButton:focus {
+  font-weight: bold;
   border-bottom-color: #FF5925;
-  border-bottom-style:solid;
-  border-bottom-width:0.2em;
+  border-bottom-style: solid;
+  border-bottom-width: 0.2em;
 }
 
 .formSubmissionButtons {
@@ -110,3 +102,24 @@
   background: rgba(249, 248, 252, 1);
 }
 
+.generalTab {
+  margin: auto;
+  width: 770px;
+  height: 41px;
+  gap: 0px;
+  justify-content: space-between;
+  opacity: 0px;
+}
+
+.movementTab {
+  display: flex;
+}
+
+.formBoxSection {
+  margin: auto;
+  width: 770px;
+  height: 41px;
+  gap: 0px;
+  justify-content: space-between;
+  opacity: 0px;
+}

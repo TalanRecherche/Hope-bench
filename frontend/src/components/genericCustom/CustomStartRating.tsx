@@ -20,9 +20,8 @@ const CustomStarRating = ({ sendRatingValue }: Props) => {
             {[...Array(5)].map((value, index) => {
                 const ratingValue = index + 1;
                 return (
-                    <label>
-                        <IoMdStar
-                            key={index}
+                    <label key={index}>
+                        <IoMdStar                            
                             className={styles.ratingStar}
                             size={20}
                             color={ratingValue <= (hover || rating) ? "#3d00f2" : "#e7e7e7"}

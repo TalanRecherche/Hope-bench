@@ -1,11 +1,16 @@
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import FormDigitalEquipments from '../../components/FormDigitalEquipments';
 import FormBoxDigital from '../../components/formBox/FormBoxDigital';
 import { InformationSourceTypes } from '../../components/InformationSource';
 import { useState } from 'react';
+import styles from './SimulationForm.module.css';
+import { DigitalBoxData } from '../../model/generalDataModel';
+import { useOutletContext } from 'react-router-dom';
 
 function DigitalTab() {
+
+    const { setDatat } = useOutletContext<{ setDatat: any }>();
+    const [digitalValues] = useState<DigitalBoxData[]>([]);
+
     let initialList: {
         id: string,
         name: string,
@@ -30,27 +35,38 @@ function DigitalTab() {
                     }
                 }
             }
+
             return x;
         });
     };
 
-    const handleSourceDataReceive = () => {
-        console.log(handleSourceDataReceive);
+    const handleSourceDataReceive = (receivedData: any) => {
+
+        var index = digitalValues.findIndex(m => m.optionName == receivedData.optionName);
+        if (index == -1) {
+            digitalValues.push(receivedData);
+        }
+        else {
+            digitalValues.splice(index, 1);
+            digitalValues.push(receivedData);
+        }
+        setDatat(digitalValues);
     };
 
     return (
-        <Row>
-            <Col xs={3}>
+        <div className={styles.movementTab}>
+            <div>
                 <FormDigitalEquipments onDataSend={handleDataReceive}></FormDigitalEquipments>
-            </Col>
-            <Col xs={8} style={{ margin: '20px 0px 0px 0px' }}>
-                {x?.filter(c => c.checked).sort((a, b) => a.order - b.order).map((item) => (
+            </div>
+            <div>
+                {x?.filter(c => c.checked).sort((a, b) => a.order - b.order).map((item, idx) => (
                     <FormBoxDigital
+                        key={idx}
                         setValues={handleSourceDataReceive}
                         informationSourceType={InformationSourceTypes.fromDeduction}
                         options={{ name: item.name, type: 'text', id: item.id, placeholder: 'Description' }} />
                 ))}
-            </Col>
-        </Row>
+            </div>
+        </div>
     );
 } export default DigitalTab

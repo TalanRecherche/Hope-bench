@@ -19,13 +19,13 @@ const FormDigitalEquipments = ({ onDataSend }: Props) => {
         displayList = list.filter( l => data.includes(l.id ));
         onDataSend(displayList);
     };
-
+    
     return (
         <CustomCheckboxList
             onDataSend={handleDataReceive}
             title='Equipement numérique utilisé'
             subTitle='Plusieurs choix sont possibles'
             list={list}></CustomCheckboxList>
-    )
+    )    
 };
 export default FormDigitalEquipments;

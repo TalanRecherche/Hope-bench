@@ -1,5 +1,4 @@
 /* ToDo - improve Data Receive */
-import { z } from "zod";
 
 export type InformationSourceData = {
   foundInClientDocument?: boolean
@@ -9,28 +8,42 @@ export type InformationSourceData = {
   reliabilityRate?: number
   foundOnPage?: number
 }
-export const InformationSourceDataSchema = z.object({
-  foundInClientDocument: z.boolean().optional(),
-  deduceByReadingDocument: z.boolean().optional(),
-  personalKnowlegdeUsed: z.boolean().optional(),
-  enrichedFromDocument: z.boolean().optional(),
-  reliabilityRate: z.number().optional(),
-  foundOnPage: z.number().optional()
-});
 
-export type InformationSourceDataBis = z.infer<typeof InformationSourceDataSchema>;
-
-export interface formBoxData {
-    id: string;
-    value?: string
-    informationSource?: InformationSourceData
+export interface FormBoxData {
+  id: string;
+  value?: string
+  informationSource?: InformationSourceData
 }
 
 export type GeneralDataType = {
-    missionTitle: formBoxData
-    clientName: formBoxData
-    startDate: formBoxData
-    NbCollaborators: formBoxData
-    missionDuration: formBoxData
-    missionSector: formBoxData
+  missionTitle: FormBoxData
+  clientName: FormBoxData
+  startDate: FormBoxData
+  NbCollaborators: FormBoxData
+  missionDuration: FormBoxData
+  missionSector: FormBoxData
 }
+
+export interface movementBoxData {
+  optionName: string;
+  movementFrequency?: string;
+  numberOfMovement?: number;
+  averageKmPerTrip?: number;
+  informationSource?: InformationSourceData
+}
+export type MovementDataType = {
+  movementDataList: movementBoxData[]
+}
+
+export type DigitalItemType = {
+  name?: string
+  count?: number
+}
+export interface DigitalBoxData {
+  optionName: string;
+  itemList?: DigitalItemType[];
+  informationSource?: InformationSourceData;
+}
+// export type DigitalDataType = {
+//   digitalDataList: DigitalBoxData[]
+// }

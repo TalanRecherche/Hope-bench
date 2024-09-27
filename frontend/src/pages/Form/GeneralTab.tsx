@@ -84,7 +84,7 @@ function GeneralTab() {
         setDatat(initialData);
     };
     return (
-        <div className={styles.center}>
+        <div className={styles.generalTab} >
             <FormBoxGeneral
                 setValues={handleDataReceive}
                 informationSourceType={InformationSourceTypes.fromDeduction}

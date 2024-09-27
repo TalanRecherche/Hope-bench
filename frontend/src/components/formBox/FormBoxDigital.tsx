@@ -5,7 +5,10 @@ import styles from '../FormComponents.module.css';
 import NumericInput from 'react-numeric-input';
 import CustomTable from '../genericCustom/CustomTable';
 import Button from 'react-bootstrap/Button';
-import { InformationSourceData } from '../../model/generalDataModel';
+import { DigitalBoxData, DigitalItemType, InformationSourceData } from '../../model/generalDataModel';
+import { useState } from 'react';
+import classNames from 'classnames';
+import DigitalItemDropbox from '../genericCustom/DigitalItemDropbox';
 
 interface Props<T> {
     informationSourceType?: InformationSourceTypes,
@@ -13,62 +16,97 @@ interface Props<T> {
         name: T;
         type: T;
         id: T;
-        placeholder: T;
+        placeholder: T;        
         informationSourceData?: InformationSourceData;
-    },    
-    setValues?:any
+    },
+    digitalData?: DigitalBoxData;
+    setValues?: any
 }
 
-function FormBoxDigital<T extends string>({ informationSourceType = InformationSourceTypes.default, options, setValues }: Props<T>) {
-    
-    const setSourceData = (sourceData : any) => {
-        options.informationSourceData = sourceData;
-        setValues(options);
+function FormBoxDigital<T extends string>({ informationSourceType = InformationSourceTypes.default, options, digitalData, setValues }: Props<T>) {
+
+    const [digitalBoxValues, setDigitalBoxValues] = useState<DigitalBoxData>({
+        optionName: options.name
+    });
+
+    const [itemlist, setItemlist] = useState<DigitalItemType[]>([]);
+
+    const [selectedItem, setSelectedItem] = useState({ value: '', label: '' });
+    const [selectedItemCount, setSelectedItemCount] = useState<number>(0);
+
+    function handleValuesChange(newList: DigitalItemType[]) {
+        setDigitalBoxValues({
+            ...digitalBoxValues,
+            itemList: newList
+        });
+
+        digitalData = digitalBoxValues;
+        setValues(digitalData);
+    }
+
+    const setCount = (value: any) => {
+        setSelectedItemCount(value);
+    };
+
+    const addItem = () => {
+        itemlist.push({ count: selectedItemCount, name: selectedItem.label });
+        setItemlist(itemlist);
+        handleValuesChange(itemlist);
+    }
+
+    const removeItem = (index: any) => {               
+        itemlist.splice(index, 1);
+        handleValuesChange(itemlist);
+    }
+
+    const updateItemCount = (value: number, index: number) => {        
+        if(itemlist[index]) {
+            itemlist[index].count = value;
+        }
+
+        setItemlist(itemlist);
+        handleValuesChange(itemlist);
+    }
+
+    const setSourceData = (sourceData: any) => {
+        digitalBoxValues.informationSource = sourceData;
+        digitalData = digitalBoxValues;
+        setValues(digitalData);
     }
 
     return (
-        <>
-            <Card>
+        <div className={styles.boxDigital}>
+            <Card className={styles.boxItem}>
                 <Card.Body >
                     <Form>
                         <Form.Group>
                             <Form.Label className={styles.movementFieldLabel}>{options.name}</Form.Label>
-                            <div className={styles.required}> Sélectionnez chaque produit ainsi que le nombre de personnes auxquelles il a été distribué. </div>
-                            <p className={styles.SubText}> Par exemple, si trois collaborateurs reçoivent un Dell Latitude 5430, sélectionnez le modèle "Dell Latitude 5430" puis rentrez "3" en nombre d'exemplaire, enfin cliquez sur "Ajouter 3 exemplaires".
+                            <div className={classNames(styles.boxDigitalHeadTitle, styles.required)}> Sélectionnez chaque produit ainsi que le nombre de personnes auxquelles il a été distribué. </div>
+                            <p className={styles.boxDigitalFieldTitle}> Par exemple, si trois collaborateurs reçoivent un Dell Latitude 5430, sélectionnez le modèle "Dell Latitude 5430" puis rentrez "3" en nombre d'exemplaire, enfin cliquez sur "Ajouter 3 exemplaires".
                                 Si des appareils à renseigner sont des ordinateurs Talan ou bien des ordinateurs reconditionnés, sélectionnez l'option appropriée, sinon sélectionnez le modèle approprié ou un modèle équivalent.</p>
-
-                            <Form.Control
-                                style={{ width: '90%', display: 'inline-block' }}
-                                type={options.type}
-                                id={options.id}
-                                placeholder={options.placeholder}
-                            />
-                            <span style={{ float: 'right' }}>
-                                <NumericInput
-                                    style={{ input: { height: 37 } }}
-                                    className={styles.numericInput}
-                                    min={0} max={5} value={3} size={1} />
-                            </span>
-
-                            <br />
+                            <div className={styles.boxDigitalInput}>
+                                <DigitalItemDropbox setSelectedItem={setSelectedItem}></DigitalItemDropbox>
+                                <span style={{ float: 'right' }}><NumericInput style={{ input: { height: 38, textAlign: 'center' } }} min={0} size={1} onChange={(e) => setCount(e)} />
+                                </span>
+                            </div>
                             <br />
                             <div>
-                                <Button variant="outline-primary" size="sm" >Ajouter +</Button>
+                                <Button className={styles.addItem} onClick={addItem}>Ajouter +</Button>
                             </div>
                             <div>
-                                <CustomTable></CustomTable>
+                                <CustomTable tableItems={itemlist} removeItem={removeItem} updateItemCount={updateItemCount}></CustomTable>
                             </div>
                         </Form.Group>
                     </Form>
                 </Card.Body>
             </Card>
-            <Card className={styles.marginBottom20}>
+            <Card className={styles.informationSource}>
                 <Card.Body>
-                    <div> {informationSourceType} </div> 
-                    <InformationSource informationSourceType={informationSourceType} 
-                    setSourceValues={setSourceData}/>
+                    <InformationSource
+                        informationSourceType={informationSourceType}
+                        setSourceValues={setSourceData} />
                 </Card.Body>
             </Card>
-        </>
+        </div>
     )
 } export default FormBoxDigital;

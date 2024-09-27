@@ -50,7 +50,7 @@
   float: right;
 }
 
-.ratingContainerFloat {  
+.ratingContainerFloat {
   float: right;
 }
 
@@ -82,33 +82,97 @@ body {
   margin: 0;
 }
 
-.SubText {
-  font-style: italic;
-  font-size: 12px;
+.tableItem {
+  width: 770px;
+  height: 32px;
+  padding: 0px 24px 0px 24px;
+  gap: 24px;
+  opacity: 0px;
 }
 
-.numericInput {
+.tdItemName {
+  width: 120px;
+  max-width: 120px;
+  height: 24px;
+  padding: 10px 0px 0px 0px;
+  gap: 10px;
+  border-radius: 3px 0px 0px 0px;
+  opacity: 0px;
+  text-align: left;
+}
+
+.tdNumericImput {
+  width: 20px;
+  max-width: 20px;
+  height: 24px;
+  padding: 10px 0px 0px 0px;
+  gap: 10px;
+  border-radius: 3px 0px 0px 0px;
+  opacity: 0px;
+}
+
+.tdNumericImputContent {
   text-align: center;
+  font-family: 'Montserrat';
+  float: 'right';
+  opacity: 0px;
 }
 
-.table {
-  border: 'none !important';
-  align-content: center;
-  width: fit-content;
+.tdDelete {
+  width: 27.44px;
+  height: 24px;
+  padding: 5px 8px 5px 8px;
+  gap: 4px;
+  border-radius: 3px 0px 0px 0px;
+  border: 1px;
+  opacity: 0px;
 }
 
-Table {
-  border: none;
+.tdDeleteButton {
+  border-color: #3D00F2;
+  color: #3D00F2;
+  background-color: aliceblue;
+  text-align: center !important;
+}
+
+.addItem {
+  width: 100px;
+  height: 24px;
+  padding: 4px 8px 4px 8px;
+  gap: 4px;
+  border-radius: 3px 0px 0px 0px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+  margin-top: 15px;
+}
+
+.buttonSecondary,
+.addItem {
+  border-color: #3D00F2;
+  color: #3D00F2;
+  background-color: aliceblue;
+  text-align: center !important;
+}
+
+.textRegular,
+.addItem {
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17.07px;
+  text-align: left;
 }
 
 .informationSource {
   width: 770px;
-  min-height: 120px;
+  min-height: 172px;
   height: auto;
   border-radius: 0px 0px 4px 4px;
   border: 1px 0px 0px 0px;
   opacity: 0px;
   background: rgba(249, 248, 252, 1);
+  padding-top: 24px;
+  gap: 16px;
 }
 
 .boxGeneral {
@@ -117,6 +181,30 @@ Table {
   padding: 24px 0px 0px 0px;
   border-radius: 4px 0px 0px 0px;
   background: rgba(255, 255, 255, 1);
+}
+
+.boxMovement {
+  margin-left: 335.5px;
+  width: 770px;
+  min-height: 370px;
+  padding: 24px 0px 0px 0px;
+  border-radius: 4px 0px 0px 0px;
+  background: rgba(255, 255, 255, 1);
+}
+
+.boxDigital {
+  margin-left: 335.5px;
+  width: 770px;
+  min-height: 370px;
+  padding: 24px 0px 0px 0px;
+  gap: 24px;
+  border-radius: 4px 0px 0px 0px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+  background: rgba(255, 255, 255, 1);
+  top: 42px;
+  left: 366px;
+
 }
 
 .boxItem {
@@ -132,5 +220,87 @@ Table {
   text-align: center;
   font-family: 'Montserrat';
   float: 'right';
+  opacity: 0px;
+}
+
+.checkboxListSection {
+  width: 228px;
+  height: 318px;
+  top: 24px;
+  left: 315px;
+  padding: 16px;
+  border-radius: 4px 0px 0px 0px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+}
+
+.checkboxListFieldTitleSection {
+  width: 196px;
+  height: 36px;
+  gap: 4px;
+}
+
+.checkboxListFieldTitle {
+  width: 196px;
+}
+
+.labelSemiBold,
+.checkboxListFieldTitle,
+.boxDigitalHeadTitle {
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 17.07px;
+  text-align: left;
+  color: #737373;
+}
+
+.checkboxListFieldSubTitle,
+.boxDigitalFieldTitle {
+  font-family: Montserrat;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 14.63px;
+  text-align: left;
+}
+
+.test {
+  width: Fill (722px)px;
+  height: Hug (25px)px;
+  gap: 0px;
+  opacity: 0px;
+
+  justify-content: space-between;
+}
+
+.boxDigitalHeadTitle {
+  width: 659px;
+  height: 34px;
+  gap: 4px;
+  opacity: 0px;
+}
+
+.boxDigitalFieldTitle {
+  width: 659px;
+  height: 60px;
+  gap: 4px;
+  opacity: 0px;
+}
+
+.boxDigitalInput {
+  display: inline-flex;
+  width: 637px;
+  height: 33px;
+  gap: 8px;
+  opacity: 0px;
+}
+
+.boxDigitalDropbox {
+  width: 516px;
+  height: 33px;
+  gap: 10px;
+  border-radius: 4px 0px 0px 0px;
+  border: 1px 0px 0px 0px;
   opacity: 0px;
 }

@@ -4,11 +4,10 @@ import styles from '../FormComponents.module.css';
 interface Props {
     floatingContainer: boolean;
     initialValue?: boolean;
-    sendSwitchValue: any
+    sendSwitchValue: any;
 };
 
 const SourceCustomSwitch = ({ floatingContainer = false, initialValue = false, sendSwitchValue }: Props) => {
-
 
     const styleNo = { "backgroundColor":  '#3d00f2', "color": "white" } as React.CSSProperties;
     const styleYes = { "color": "#3d00f2" } as React.CSSProperties;

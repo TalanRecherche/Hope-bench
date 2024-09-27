@@ -1,11 +1,15 @@
 import FormBoxMovement from "../../components/formBox/FormBoxMovement";
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import FormMeansTransport from '../../components/FormMeansTransport';
 import { InformationSourceTypes } from "../../components/InformationSource";
 import { useState } from "react";
+import styles from './SimulationForm.module.css';
+import { useOutletContext } from "react-router-dom";
+import { movementBoxData } from "../../model/generalDataModel";
 
 function MovementTab() {
+
+    const { setDatat } = useOutletContext<{ setDatat: any }>(); // <-- access context value
+    const [movementValues] = useState<movementBoxData[]>([]);
 
     let displayList: {
         id: string,
@@ -35,23 +39,34 @@ function MovementTab() {
         });
     };
 
-    const handleSourceDataReceive = () => {
-        console.log(handleSourceDataReceive);
+    const handleSourceDataReceive = (receivedData: any) => {
+        
+        var index = movementValues.findIndex(m => m.optionName == receivedData.optionName);
+        if (index == -1) {
+            movementValues.push(receivedData);
+        }
+        else {
+            movementValues.splice(index, 1);
+            movementValues.push(receivedData);
+        }
+        setDatat(movementValues);
     };
 
     return (
-        <Row>
-            <Col xs={3}>
+        <div className={styles.movementTab}>
+            <div>
                 <FormMeansTransport onDataSend={handleDataReceive}></FormMeansTransport>
-            </Col>
-            <Col xs={8} style={{ margin: '20px 0px 0px 0px' }}>
-                {x?.filter(c => c.checked).sort((a, b) => a.order - b.order).map((item) => (
+            </div>
+            <div>
+
+                {x?.filter(c => c.checked).sort((a, b) => a.order - b.order).map((item, idx) => (
                     <FormBoxMovement
-                    setValues={handleSourceDataReceive}
-                    informationSourceType={InformationSourceTypes.fromDeduction}
-                    options={{ name: item.name, type: 'text', id: item.id, placeholder: 'Description' }} />
-                ))}                
-            </Col>
-        </Row>
+                        key={idx}
+                        setBoxValues={handleSourceDataReceive}
+                        informationSourceType={InformationSourceTypes.fromDeduction}
+                        options={{ name: item.name, type: 'text', id: item.id, placeholder: 'Description' }} />
+                ))}
+            </div>
+        </div>
     );
 } export default MovementTab
