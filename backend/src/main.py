@@ -39,7 +39,7 @@ app.add_middleware(
     # allow_origins=["*"],
 )
 
-api_router = APIRouter(default_response_class=JSONResponse, dependencies=[])
+api_router = APIRouter(default_response_class=JSONResponse, dependencies=[Depends(get_auth)])
 api_router.include_router(users_api.router)
 api_router.include_router(business_proposition_api.router)
 api_router.include_router(business_proposition_file_api.router)
@@ -49,7 +49,7 @@ app.include_router(public_api.router)
 app.include_router(api_router, prefix="/api/v1")
 
 # Secure the docs endpoint with OAuth2
-docs_router = APIRouter(dependencies=[])
+docs_router = APIRouter(dependencies=[Depends(get_auth)])
 
 @app.get("/docs", include_in_schema=False)
 async def custom_swagger_ui_html():
