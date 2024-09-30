@@ -11,7 +11,7 @@ from starlette.types import Scope
 import uvicorn
 
 from .api.auth import get_auth, oauth2_scheme
-from .api import public_api, users_api, business_proposition_api, business_proposition_file_api
+from .api import public_api, users_api, business_proposition_api, business_proposition_file_api, options_api
 from .containers import Container
 
 load_dotenv()
@@ -43,6 +43,7 @@ api_router = APIRouter(default_response_class=JSONResponse, dependencies=[Depend
 api_router.include_router(users_api.router)
 api_router.include_router(business_proposition_api.router)
 api_router.include_router(business_proposition_file_api.router)
+api_router.include_router(options_api.router)
 
 app.include_router(public_api.router)
 app.include_router(api_router, prefix="/api/v1")

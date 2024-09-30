@@ -3,6 +3,7 @@ import logging
 from .repositories.AnnotationAffectationRepository import AnnotationAffectationRepository
 from .repositories.BusinessPropositionAnnotationRepository import BusinessPropositionAnnotationRepository
 from .repositories.BusinessPropositionFileRepository import BusinessPropositionFileRepository
+from .repositories.OptionsRepository import OptionsRepository
 from dependency_injector import containers, providers
 from dotenv import load_dotenv
 
@@ -13,6 +14,7 @@ from .services.AnnotationAffectationService import AnnotationAffectationService
 from .services.UserService import UserService
 from .services.BusinessPropositionAnnotationService import BusinessPropositionAnnotationService
 from .services.BusinessPropositionFileService import BusinessPropositionFileService
+from .services.OptionsService import OptionsService
 
 load_dotenv()
 
@@ -26,6 +28,7 @@ class Container(containers.DeclarativeContainer):
         ".api.business_proposition_api",
         ".api.business_proposition_file_api",
         ".api.annotation_affectation_api",
+        ".api.options_api",
     ])
 
     db = providers.Singleton(Database, db_url=Configuration.database_url)
@@ -44,6 +47,10 @@ class Container(containers.DeclarativeContainer):
         session_factory=db.provided.session
     )
 
+    options_repository = providers.Factory(
+        OptionsRepository,
+        session_factory=db.provided.session
+    )
 
     user_service = providers.Factory(
         UserService,
@@ -64,4 +71,9 @@ class Container(containers.DeclarativeContainer):
     annotation_affectation_service = providers.Factory(
         AnnotationAffectationService,
         annotation_affectation_repository=annotation_affectation_repository
+    )
+
+    options_service = providers.Factory(
+        OptionsService,
+        options_repository=options_repository
     )

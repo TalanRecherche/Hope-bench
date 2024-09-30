@@ -4,19 +4,19 @@ from typing import List, Optional
 from pydantic import BaseModel, validator
 
 
-class Transport(BaseModel):
+class BusinessPropositionAnnotationTransport(BaseModel):
     transport_mode: Optional[str]
     transport_distance: Optional[float]
     average_journeys_per_month: Optional[float]
 
 
-class Computer(BaseModel):
+class BusinessPropositionAnnotationComputer(BaseModel):
     model: Optional[str]
     number_provided: Optional[int]
     provided_by_talan: Optional[bool]
 
 
-class Phones(BaseModel):
+class BusinessPropositionAnnotationPhones(BaseModel):
     model: Optional[str]
     number_provided: Optional[int]
     provided_by_talan: Optional[bool]
@@ -34,13 +34,13 @@ class BusinessPropositionAnnotation(BaseModel):
     number_of_workers: Optional[int] = None
     mission_length_in_month: Optional[int] = None
     number_of_in_person_meetings_per_week: Optional[int] = None
-    transports:  Optional[List[Transport]] = None
+    transports:  Optional[List[BusinessPropositionAnnotationTransport]] = None
     number_of_emails_with_attachments_per_week: Optional[int] = None
     number_of_emails_without_attachments_per_week: Optional[int] = None
     hours_of_visioconference_per_week: Optional[int] = None
     camera_on: Optional[bool] = None
-    computers:  Optional[List[Computer]] = None
-    phones:  Optional[List[Phones]] = None
+    computers:  Optional[List[BusinessPropositionAnnotationComputer]] = None
+    phones:  Optional[List[BusinessPropositionAnnotationPhones]] = None
     storage_amount_in_terabytes: Optional[int] = None
     storage_length_in_month: Optional[int] = None
     number_of_backups: Optional[int] = None
