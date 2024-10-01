@@ -5,6 +5,7 @@ import { useState } from 'react';
 import styles from './SimulationForm.module.css';
 import { DigitalBoxData } from '../../model/generalDataModel';
 import { useOutletContext } from 'react-router-dom';
+import FormDefaultBox from '../../components/genericCustom/FormDefaultBox';
 
 function DigitalTab() {
 
@@ -40,7 +41,7 @@ function DigitalTab() {
         });
     };
 
-    const handleSourceDataReceive = (receivedData: any) => {
+    const handleBoxDataReceive = (receivedData: any) => {
 
         var index = digitalValues.findIndex(m => m.optionName == receivedData.optionName);
         if (index == -1) {
@@ -58,11 +59,14 @@ function DigitalTab() {
             <div>
                 <FormDigitalEquipments onDataSend={handleDataReceive}></FormDigitalEquipments>
             </div>
+            {x.length == 0 &&
+                <FormDefaultBox></FormDefaultBox>
+            }
             <div>
                 {x?.filter(c => c.checked).sort((a, b) => a.order - b.order).map((item, idx) => (
                     <FormBoxDigital
                         key={idx}
-                        setValues={handleSourceDataReceive}
+                        setValues={handleBoxDataReceive}
                         informationSourceType={InformationSourceTypes.fromDeduction}
                         options={{ name: item.name, type: 'text', id: item.id, placeholder: 'Description' }} />
                 ))}

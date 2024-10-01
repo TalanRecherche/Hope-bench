@@ -1,36 +1,26 @@
 import { useState } from 'react';
 import styles from '../FormComponents.module.css';
+import { CustomSwitchOptions } from '../../model/generalDataModel';
 
-interface Props {
+interface Props {    
     floatingContainer: boolean;
+    options: CustomSwitchOptions;
     sendSwitchValue: any;
 }
 
-const CustomSwitch = ({ floatingContainer = false, sendSwitchValue}: Props) => {
+const CustomSwitch = ({ floatingContainer = false, options, sendSwitchValue}: Props) => {
 
     const styleActive = { "backgroundColor": '#3d00f2', "color": "white" } as React.CSSProperties;
     const styleNoteActive = { "color": "#3d00f2" } as React.CSSProperties;
-
-    let switchOptions = {
-        option1: {
-            label: 'Mensuel',
-            checked: true
-        },
-        option2: {
-            label: 'Global',
-            checked: false
-        }
-    }
-
     const [checked, setChecked] = useState(true);
 
     function handleSwitchClick(optionLabel: string) {
 
-        if (switchOptions.option2.label == optionLabel) {
-            setChecked(switchOptions.option2.checked);
+        if (options.option2.label == optionLabel) {
+            setChecked(options.option2.checked);
         }
         else {
-            setChecked(switchOptions.option1.checked);
+            setChecked(options.option1.checked);
         }
         sendSwitchValue(optionLabel);
     }
@@ -40,16 +30,16 @@ const CustomSwitch = ({ floatingContainer = false, sendSwitchValue}: Props) => {
             <div
                 className={styles.toggleItem}
                 style={checked ? styleActive : styleNoteActive}
-                onClick={() => handleSwitchClick(switchOptions.option1.label)}
+                onClick={() => handleSwitchClick(options.option1.label)}
             >
-                <div className={styles.customSwitchText}>{switchOptions.option1.label}</div>
+                <div className={styles.customSwitchText}>{options.option1.label}</div>
             </div>
             <div
                 className={styles.toggleItem}
                 style={!checked ? styleActive : styleNoteActive}
-                onClick={() => handleSwitchClick(switchOptions.option2.label)}
+                onClick={() => handleSwitchClick(options.option2.label)}
             >
-                <div className={styles.customSwitchText}>Global</div>
+                <div className={styles.customSwitchText}>{options.option2.label}</div>
             </div>
         </div>
     );

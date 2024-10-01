@@ -115,6 +115,15 @@
   display: flex;
 }
 
+.officeTab {
+  margin: auto;
+  width: 770px;
+  height: 41px;
+  gap: 0px;
+  justify-content: space-between;
+  opacity: 0px;
+}
+
 .formBoxSection {
   margin: auto;
   width: 770px;

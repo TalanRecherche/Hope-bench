@@ -5,7 +5,7 @@ import styles from '../FormComponents.module.css';
 import NumericInput from 'react-numeric-input';
 import CustomTable from '../genericCustom/CustomTable';
 import Button from 'react-bootstrap/Button';
-import { DigitalBoxData, DigitalItemType, InformationSourceData } from '../../model/generalDataModel';
+import { DigitalBoxData, BoxItemType, InformationSourceData } from '../../model/generalDataModel';
 import { useState } from 'react';
 import classNames from 'classnames';
 import DigitalItemDropbox from '../genericCustom/DigitalItemDropbox';
@@ -29,12 +29,12 @@ function FormBoxDigital<T extends string>({ informationSourceType = InformationS
         optionName: options.name
     });
 
-    const [itemlist, setItemlist] = useState<DigitalItemType[]>([]);
+    const [itemlist, setItemlist] = useState<BoxItemType[]>([]);
 
     const [selectedItem, setSelectedItem] = useState({ value: '', label: '' });
     const [selectedItemCount, setSelectedItemCount] = useState<number>(0);
 
-    function handleValuesChange(newList: DigitalItemType[]) {
+    function handleValuesChange(newList: BoxItemType[]) {
         setDigitalBoxValues({
             ...digitalBoxValues,
             itemList: newList

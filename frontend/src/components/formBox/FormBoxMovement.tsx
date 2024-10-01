@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card';
 import styles from '../FormComponents.module.css';
 import NumericInput from 'react-numeric-input';
 import CustomSwitch from '../genericCustom/CustomSwitch';
-import { InformationSourceData, movementBoxData } from '../../model/generalDataModel';
+import { CustomSwitchOptions, InformationSourceData, MovementBoxData } from '../../model/generalDataModel';
 import { useState } from 'react';
 
 interface Props<T> {
@@ -17,21 +17,42 @@ interface Props<T> {
         placeholder: T;
         informationSourceData?: InformationSourceData;
     },
-    movementData?: movementBoxData;
+    movementData?: MovementBoxData;
     setBoxValues?: any
 }
 
 function FormBoxMovement<T extends string>({ informationSourceType = InformationSourceTypes.default, options, movementData, setBoxValues: setValues }: Props<T>) {
 
-    const [movementBoxValues, setMovementBoxValues] = useState<movementBoxData>({
+    const [movementBoxValues, setMovementBoxValues] = useState<MovementBoxData>({
         optionName: options.name
     });
- 
+
+    const switchOptions: CustomSwitchOptions = {
+        option1: {
+            label: 'Mensuel',
+            checked: true
+        },
+        option2: {
+            label: 'Global',
+            checked: false
+        }
+    }
+
+    const movementFrequencyDefault = switchOptions.option1.label;
+
     function handleChange(value: any, name: string) {
+
         setMovementBoxValues({
             ...movementBoxValues,
             [name]: value
         });
+
+        if (!movementBoxValues.movementFrequency) {          
+            setMovementBoxValues({
+                ...movementBoxValues,
+                ["movementFrequency"]: movementFrequencyDefault
+            });  
+        }
 
         movementData = movementBoxValues;
         setValues(movementData);
@@ -49,11 +70,11 @@ function FormBoxMovement<T extends string>({ informationSourceType = Information
                 <Card.Body>
                     <Form.Group>
                         <Form.Label className={styles.movementFieldLabel}>{options.name}</Form.Label>
-                        <CustomSwitch sendSwitchValue={(e: any) => handleChange(e, "movementFrequency",)} floatingContainer={true}></CustomSwitch>
+                        <CustomSwitch options={switchOptions} sendSwitchValue={(e: any) => handleChange(e, "movementFrequency",)} floatingContainer={true}></CustomSwitch>
                     </Form.Group>
 
                     <span className={styles.required}> Nombre de fois où le collaborateur se déplace en {options.name} </span>
-                    <span style={{ float: 'right' }}><NumericInput size={1} onChange={(e) => handleChange(e, "numberOfMovement")} />
+                    <span style={{ float: 'right' }}><NumericInput style={{ input: { textAlign: 'center' } }} min={0} size={1} onChange={(e) => handleChange(e, "numberOfMovement")} />
                     </span>
                     <br />
 

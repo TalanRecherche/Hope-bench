@@ -49,7 +49,6 @@ function InformationSource({ setSourceValues }: Props) {
         });
     };
 
-
     function isChecked(name: string): boolean {
         if (iSourceData && name in iSourceData && iSourceData[name as keyof InformationSourceData]) {
             return true;
@@ -61,7 +60,7 @@ function InformationSource({ setSourceValues }: Props) {
         <Form className={styles.labelSemiBold}>
             <Form.Group>
                 <Form.Label>J’ai trouvé cette information dans le document</Form.Label>
-                <SourceCustomSwitch sendSwitchValue={(e: any) => handleSwitch(e, "foundInClientDocument",)} floatingContainer={true}></SourceCustomSwitch>
+                <SourceCustomSwitch sendSwitchValue={(e: any) => handleSwitch(e, "foundInClientDocument")}></SourceCustomSwitch>
             </Form.Group>
             {!isChecked("foundInClientDocument") &&
                 <>
@@ -88,15 +87,14 @@ function InformationSource({ setSourceValues }: Props) {
             }
             {isChecked("foundInClientDocument") &&
                 <>
-                    <InputGroup className="mb-1">
+                    <InputGroup className={ styles.sourcePageInputs }>
                         <span > À quelle page ? </span>
-                        <NumericInput className={styles.numericInput}
+                        <NumericInput className={styles.numericInput} style={{ input: { height: 24, width: 88 }}}
                             min={0} placeholder='0' size={2} onChange={(e) => handleNumericInput(e, "foundOnPage")} />
                     </InputGroup>
                     <Form.Label>J’ai enrichi ma saisie par des informations non présentes dans le document</Form.Label>
                     <SourceCustomSwitch
                         sendSwitchValue={(e: any) => handleSwitch(e, "enrichedFromDocument",)}
-                        floatingContainer={true}
                         initialValue={isChecked("enrichedFromDocument")}
                     ></SourceCustomSwitch>
                 </>

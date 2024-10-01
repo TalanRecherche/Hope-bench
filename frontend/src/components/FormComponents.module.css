@@ -34,6 +34,7 @@
 
 /* CustomSwitch */
 .switchContainer {
+  margin-left: 10px;
   display: inline-flex;
   width: max-content;
   height: max-content;
@@ -50,13 +51,22 @@
   float: right;
 }
 
+.sourceSwitchContainerFloat {
+  display: inline-flex;
+  width: 88px;
+  height: max-content;
+  border: 1px solid blue;
+  border-radius: 5px;
+  float: right;
+}
+
 .ratingContainerFloat {
   float: right;
 }
 
 .toggleItem {
   height: 25px;
-  width: 80px;
+  width: max-content;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -66,7 +76,7 @@
 
 .sourceToggleItem {
   height: 25px;
-  width: 40px;
+  width: 43px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -76,10 +86,6 @@
 
 .customSwitchText {
   font-size: 14px;
-}
-
-body {
-  margin: 0;
 }
 
 .tableItem {
@@ -92,7 +98,7 @@ body {
 
 .tdItemName {
   width: 120px;
-  max-width: 120px;
+  max-width: max-content;
   height: 24px;
   padding: 10px 0px 0px 0px;
   gap: 10px;
@@ -143,7 +149,7 @@ body {
   border-radius: 3px 0px 0px 0px;
   border: 1px 0px 0px 0px;
   opacity: 0px;
-  margin-top: 15px;
+  margin: 20px 0px 20px 0px;
 }
 
 .buttonSecondary,
@@ -175,6 +181,10 @@ body {
   gap: 16px;
 }
 
+.sourcePageInputs {
+  margin: 15px 0px 15px 0px;
+}
+
 .boxGeneral {
   width: 770px;
   max-height: 370px;
@@ -204,7 +214,19 @@ body {
   background: rgba(255, 255, 255, 1);
   top: 42px;
   left: 366px;
+}
 
+.boxOffice {
+  width: 770px;
+  max-height: 370px;
+  padding: 24px 0px 0px 0px;
+  border-radius: 4px 0px 0px 0px;
+  background: rgba(255, 255, 255, 1);
+}
+
+.boxOfficeInputs {
+  margin-top: 15px;
+  display: inline-flex;
 }
 
 .boxItem {
@@ -216,7 +238,7 @@ body {
 }
 
 .numericInput {
-  margin-left: 551px;
+  margin-left: 557px;
   text-align: center;
   font-family: 'Montserrat';
   float: 'right';
@@ -303,4 +325,41 @@ body {
   border-radius: 4px 0px 0px 0px;
   border: 1px 0px 0px 0px;
   opacity: 0px;
+}
+
+.defaultBox {
+  margin-left: 335.5px;
+  width: 770px;
+  height: 308px;
+  top: 24px;
+  gap: 20px;
+  border-radius: 4px 0px 0px 0px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+}
+
+.defaultBoxText {
+  margin-top: 30px;
+  margin-left: 182px;
+}
+
+.textItalic,
+.defaultBoxText {
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 17.07px;
+  color: #A5A5A5;
+  justify-content: center;
+  align-items: center;
+}
+
+.defaultBoxImg {
+  width: 161px;
+  height: 161px;
+  gap: 0px;
+  opacity: 0px;  
+  margin-top: 40px;
+  margin-left: 304px;
 }

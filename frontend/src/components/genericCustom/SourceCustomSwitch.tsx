@@ -2,12 +2,11 @@ import { useState } from 'react';
 import styles from '../FormComponents.module.css';
 
 interface Props {
-    floatingContainer: boolean;
     initialValue?: boolean;
     sendSwitchValue: any;
 };
 
-const SourceCustomSwitch = ({ floatingContainer = false, initialValue = false, sendSwitchValue }: Props) => {
+const SourceCustomSwitch = ({ initialValue = false, sendSwitchValue }: Props) => {
 
     const styleNo = { "backgroundColor":  '#3d00f2', "color": "white" } as React.CSSProperties;
     const styleYes = { "color": "#3d00f2" } as React.CSSProperties;
@@ -19,7 +18,7 @@ const SourceCustomSwitch = ({ floatingContainer = false, initialValue = false, s
     }
 
     return (
-        <div className={floatingContainer ? styles.switchContainerFloat : styles.switchContainer}>
+        <div className={ styles.sourceSwitchContainerFloat }>
             <div
                 className={styles.sourceToggleItem}
                 style={!checked ? styleNo : styleYes}

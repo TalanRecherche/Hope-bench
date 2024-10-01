@@ -57,7 +57,7 @@ function InformationSourceBase({ informationSourceType, setSourceValues }: Props
                 <Form>
                     <Form.Group  id="foundInClientDocument">
                         <Form.Label>J’ai trouvé cette information dans le document Client</Form.Label>
-                        <SourceCustomSwitch sendSwitchValue={(e : any) => handleSwitch(e, "foundInClientDocument",)} floatingContainer={true}></SourceCustomSwitch>
+                        <SourceCustomSwitch sendSwitchValue={(e : any) => handleSwitch(e, "foundInClientDocument")}></SourceCustomSwitch>
                     </Form.Group>                  
                     <Form.Check className={styles.marginLeft20}
                         inline

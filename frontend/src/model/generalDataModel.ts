@@ -24,7 +24,7 @@ export type GeneralDataType = {
   missionSector: FormBoxData
 }
 
-export interface movementBoxData {
+export interface MovementBoxData {
   optionName: string;
   movementFrequency?: string;
   numberOfMovement?: number;
@@ -32,18 +32,32 @@ export interface movementBoxData {
   informationSource?: InformationSourceData
 }
 export type MovementDataType = {
-  movementDataList: movementBoxData[]
+  movementDataList: MovementBoxData[]
 }
 
-export type DigitalItemType = {
+export type BoxItemType = {
   name?: string
   count?: number
 }
+
 export interface DigitalBoxData {
   optionName: string;
-  itemList?: DigitalItemType[];
+  itemList?: BoxItemType[];
   informationSource?: InformationSourceData;
 }
-// export type DigitalDataType = {
-//   digitalDataList: DigitalBoxData[]
-// }
+
+export interface OfficeBoxData {
+  itemList: BoxItemType[];
+  informationSource?: InformationSourceData;
+}
+
+export type CustomSwitchOptions = {
+  option1: {
+    label: string, 
+    checked: boolean
+  }, 
+  option2: {
+    label: string, 
+    checked: boolean
+  }
+}

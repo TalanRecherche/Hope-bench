@@ -4,12 +4,13 @@ import { InformationSourceTypes } from "../../components/InformationSource";
 import { useState } from "react";
 import styles from './SimulationForm.module.css';
 import { useOutletContext } from "react-router-dom";
-import { movementBoxData } from "../../model/generalDataModel";
+import { MovementBoxData } from "../../model/generalDataModel";
+import FormDefaultBox from "../../components/genericCustom/FormDefaultBox";
 
 function MovementTab() {
 
     const { setDatat } = useOutletContext<{ setDatat: any }>(); // <-- access context value
-    const [movementValues] = useState<movementBoxData[]>([]);
+    const [movementDataValues] = useState<MovementBoxData[]>([]);
 
     let displayList: {
         id: string,
@@ -19,7 +20,7 @@ function MovementTab() {
     }[] = [];
 
     const [x, setX] = useState(displayList);
-    const handleDataReceive = (data: any) => {
+    const handleSelectedListReceive = (data: any) => {
 
         setX(x => {
             if (data[0].checked) {
@@ -39,32 +40,36 @@ function MovementTab() {
         });
     };
 
-    const handleSourceDataReceive = (receivedData: any) => {
-        
-        var index = movementValues.findIndex(m => m.optionName == receivedData.optionName);
+    const handleBoxDataReceive = (receivedData: any) => {
+
+        var index = movementDataValues.findIndex(m => m.optionName == receivedData.optionName);
         if (index == -1) {
-            movementValues.push(receivedData);
+            movementDataValues.push(receivedData);
         }
         else {
-            movementValues.splice(index, 1);
-            movementValues.push(receivedData);
+            movementDataValues.splice(index, 1);
+            movementDataValues.push(receivedData);
         }
-        setDatat(movementValues);
+        setDatat(movementDataValues);
     };
 
     return (
         <div className={styles.movementTab}>
             <div>
-                <FormMeansTransport onDataSend={handleDataReceive}></FormMeansTransport>
+                <FormMeansTransport onDataSend={handleSelectedListReceive}></FormMeansTransport>
             </div>
+            {x.length == 0 &&
+                <FormDefaultBox></FormDefaultBox>
+            }
             <div>
-
                 {x?.filter(c => c.checked).sort((a, b) => a.order - b.order).map((item, idx) => (
-                    <FormBoxMovement
-                        key={idx}
-                        setBoxValues={handleSourceDataReceive}
-                        informationSourceType={InformationSourceTypes.fromDeduction}
-                        options={{ name: item.name, type: 'text', id: item.id, placeholder: 'Description' }} />
+                    <>
+                        <FormBoxMovement
+                            key={idx}
+                            setBoxValues={handleBoxDataReceive}
+                            informationSourceType={InformationSourceTypes.fromDeduction}
+                            options={{ name: item.name, type: 'text', id: item.id, placeholder: 'Description' }} />
+                    </>
                 ))}
             </div>
         </div>
