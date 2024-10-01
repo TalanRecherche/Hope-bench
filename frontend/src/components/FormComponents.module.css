@@ -4,7 +4,7 @@
   font-weight: 700;
   line-height: 24.38px;
   text-align: left;
-  color: #3D00F2;
+  color: #3D00F2 !important;
 }
 
 .navLink {
@@ -153,17 +153,15 @@
 }
 
 .tdDeleteButton {
-  border-color: #3D00F2;
-  color: #3D00F2;
-  background-color: aliceblue;
+  border-color: #3D00F2 !important;
+  color: #3D00F2 !important;
+  background-color: aliceblue !important;
   text-align: center !important;
 }
 
 .addItem {
   width: 100px;
   height: 24px;
-  padding: 4px 8px 4px 8px;
-  gap: 4px;
   border-radius: 3px 0px 0px 0px;
   border: 1px 0px 0px 0px;
   opacity: 0px;
@@ -171,10 +169,10 @@
 }
 
 .buttonSecondary,
-.addItem {
-  border-color: #3D00F2;
-  color: #3D00F2;
-  background-color: aliceblue;
+.addItemButton {
+  border-color: #3D00F2 !important;
+  color: #3D00F2 !important;
+  background-color: aliceblue !important;
   text-align: center !important;
 }
 
@@ -183,8 +181,7 @@
   font-family: Montserrat;
   font-size: 14px;
   font-weight: 500;
-  line-height: 17.07px;
-  text-align: left;
+  line-height: 17.07px;  
 }
 
 .informationSource {

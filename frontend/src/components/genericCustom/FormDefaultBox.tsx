@@ -7,7 +7,7 @@ const FormDefaultBox = () => {
         <Card className={styles.defaultBox} >
             <Card.Body>
                 <Card.Text className={styles.defaultBoxText}>Cocher les cases pour ajouter des informations</Card.Text>
-                <Card.Img className={styles.defaultBoxImg} src={logo}/>
+                <Card.Img src={logo}/>
             </Card.Body>
         </Card>
     )

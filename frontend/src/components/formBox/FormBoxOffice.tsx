@@ -81,7 +81,6 @@ function FormBoxOffice({ informationSourceType = InformationSourceTypes.default,
         <div className={styles.boxOffice}>
             <Card className={styles.boxItem}>
                 <Card.Body >
-                    <Form>
                         <div>
                             <span className={classNames(styles.labelSemiBold, styles.required)}> Copies papier utilisées </span>
                         </div>
@@ -92,13 +91,12 @@ function FormBoxOffice({ informationSourceType = InformationSourceTypes.default,
                             </span>
                             <CustomSwitch options={switchOptions} sendSwitchValue={(e: any) => handleChange(e)} floatingContainer={false}></CustomSwitch>
                         </div>
-                        <div>
-                            <Button className={styles.addItem} onClick={addItem}>Ajouter +</Button>
+                        <div className={styles.addItem}>
+                            <Button className={styles.addItemButton} onClick={addItem}>Ajouter +</Button>
                         </div>
                         <div>
                             <CustomTable tableItems={itemlist} removeItem={removeItem} updateItemCount={updateItemCount}></CustomTable>
                         </div>
-                    </Form>
                 </Card.Body>
             </Card >
             <Card className={styles.informationSource}>

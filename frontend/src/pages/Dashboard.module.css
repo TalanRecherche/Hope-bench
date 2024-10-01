@@ -58,7 +58,6 @@ table {
     border-collapse: collapse;
 }
 
-th,
 td {
     text-align: center;
     color: #6D6D6D !important;
@@ -74,11 +73,12 @@ td:first-child {
     font-weight: 600;
     line-height: 17.07px;
     color: #FF5925 !important;
+    text-align: left;
 }
 
 th {
-    background-color: #FF5925;
-    border-color: #FF5925;
+    background-color: #FF5925 !important;
+    border-color: #FF5925 !important;
     font-family: Avenir;
     font-size: 16px;
     font-weight: 900;

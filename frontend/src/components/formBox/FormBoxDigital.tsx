@@ -78,7 +78,7 @@ function FormBoxDigital<T extends string>({ informationSourceType = InformationS
         <div className={styles.boxDigital}>
             <Card className={styles.boxItem}>
                 <Card.Body >
-                    <Form>
+                    <div>
                         <Form.Group>
                             <Form.Label className={styles.movementFieldLabel}>{options.name}</Form.Label>
                             <div className={classNames(styles.boxDigitalHeadTitle, styles.required)}> Sélectionnez chaque produit ainsi que le nombre de personnes auxquelles il a été distribué. </div>
@@ -90,14 +90,14 @@ function FormBoxDigital<T extends string>({ informationSourceType = InformationS
                                 </span>
                             </div>
                             <br />
-                            <div>
-                                <Button className={styles.addItem} onClick={addItem}>Ajouter +</Button>
+                            <div className={styles.addItem}>
+                                <Button className={styles.addItemButton} onClick={addItem}>Ajouter +</Button>
                             </div>
                             <div>
                                 <CustomTable tableItems={itemlist} removeItem={removeItem} updateItemCount={updateItemCount}></CustomTable>
                             </div>
                         </Form.Group>
-                    </Form>
+                    </div>
                 </Card.Body>
             </Card>
             <Card className={styles.informationSource}>
