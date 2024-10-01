@@ -20,7 +20,7 @@ const CustomStarRating = ({ sendRatingValue }: Props) => {
             {[...Array(5)].map((value, index) => {
                 const ratingValue = index + 1;
                 return (
-                    <label key={index}>
+                    <label key={index} id={value}>
                         <IoMdStar                            
                             className={styles.ratingStar}
                             size={20}

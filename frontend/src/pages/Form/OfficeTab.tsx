@@ -1,14 +1,12 @@
-import { useState } from "react";
 import FormBoxOffice from "../../components/formBox/FormBoxOffice";
 import { InformationSourceTypes } from "../../components/InformationSource";
-import { OfficeBoxData } from "../../model/simulationDataModel";
 import styles from './SimulationForm.module.css';
 import { useOutletContext } from "react-router-dom";
 
 function OfficeTab() {
 
     const { setDatat } = useOutletContext<{ setDatat: any }>();
-    const [officeDataValues] = useState<OfficeBoxData[]>([]);
+    // const [officeDataValues] = useState<OfficeBoxData[]>([]);
 
     const handleBoxDataReceive = (receivedData: any) => {
         
