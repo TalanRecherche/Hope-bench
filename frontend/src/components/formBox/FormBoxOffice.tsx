@@ -1,5 +1,4 @@
 import styles from '../FormComponents.module.css';
-import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
 import NumericInput from 'react-numeric-input';
 import CustomSwitch from '../genericCustom/CustomSwitch';
