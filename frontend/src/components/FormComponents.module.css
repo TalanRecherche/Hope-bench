@@ -1,3 +1,21 @@
+.navBarBrand {
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24.38px;
+  text-align: left;
+  color: #3D00F2;
+}
+
+.navLink {
+  margin-left: 200px;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19.5px;
+  text-align: left;
+}
+
 .marginTopLeft20 {
   margin: 20px 0px 0px 20px;
 }
@@ -359,7 +377,7 @@
   width: 161px;
   height: 161px;
   gap: 0px;
-  opacity: 0px;  
+  opacity: 0px;
   margin-top: 40px;
   margin-left: 304px;
 }

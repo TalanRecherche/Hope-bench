@@ -3,7 +3,7 @@ import InformationSource, { InformationSourceTypes } from "../InformationSource"
 import Card from 'react-bootstrap/Card';
 import styles from '../FormComponents.module.css';
 import NumericInput from 'react-numeric-input';
-import { InformationSourceData } from '../../model/generalDataModel';
+import { InformationSourceData } from '../../model/simulationDataModel';
 
 interface Props<T> {
     informationSourceType?: InformationSourceTypes,

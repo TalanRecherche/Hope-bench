@@ -4,7 +4,7 @@ import styles from './FormComponents.module.css';
 import { useEffect, useState } from 'react';
 import SourceCustomSwitch from './genericCustom/SourceCustomSwitch';
 import CustomStarRating from './genericCustom/CustomStartRating';
-import { InformationSourceData } from '../model/generalDataModel';
+import { InformationSourceData } from '../model/simulationDataModel';
 import InputGroup from 'react-bootstrap/InputGroup';
 
 export enum InformationSourceTypes {

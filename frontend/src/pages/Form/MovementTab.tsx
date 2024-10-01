@@ -4,7 +4,7 @@ import { InformationSourceTypes } from "../../components/InformationSource";
 import { useState } from "react";
 import styles from './SimulationForm.module.css';
 import { useOutletContext } from "react-router-dom";
-import { MovementBoxData } from "../../model/generalDataModel";
+import { MovementBoxData } from "../../model/simulationDataModel";
 import FormDefaultBox from "../../components/genericCustom/FormDefaultBox";
 
 function MovementTab() {

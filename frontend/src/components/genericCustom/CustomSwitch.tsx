@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styles from '../FormComponents.module.css';
-import { CustomSwitchOptions } from '../../model/generalDataModel';
+import { CustomSwitchOptions } from '../../model/simulationDataModel';
 
 interface Props {    
     floatingContainer: boolean;

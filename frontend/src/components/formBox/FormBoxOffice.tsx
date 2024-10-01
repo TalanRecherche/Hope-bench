@@ -5,9 +5,9 @@ import NumericInput from 'react-numeric-input';
 import CustomSwitch from '../genericCustom/CustomSwitch';
 import Button from 'react-bootstrap/Button';
 import InformationSource, { InformationSourceTypes } from '../InformationSource';
-import { BoxItemType, OfficeBoxData } from '../../model/generalDataModel';
+import { BoxItemType, OfficeBoxData } from '../../model/simulationDataModel';
 import classNames from 'classnames';
-import { CustomSwitchOptions } from '../../model/generalDataModel';
+import { CustomSwitchOptions } from '../../model/simulationDataModel';
 import { useState } from 'react';
 import CustomTable from '../genericCustom/CustomTable';
 interface Props {

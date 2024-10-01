@@ -5,7 +5,7 @@ import styles from '../FormComponents.module.css';
 import NumericInput from 'react-numeric-input';
 import CustomTable from '../genericCustom/CustomTable';
 import Button from 'react-bootstrap/Button';
-import { DigitalBoxData, BoxItemType, InformationSourceData } from '../../model/generalDataModel';
+import { DigitalBoxData, BoxItemType, InformationSourceData } from '../../model/simulationDataModel';
 import { useState } from 'react';
 import classNames from 'classnames';
 import DigitalItemDropbox from '../genericCustom/DigitalItemDropbox';

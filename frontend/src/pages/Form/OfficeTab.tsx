@@ -1,7 +1,7 @@
 import { useState } from "react";
 import FormBoxOffice from "../../components/formBox/FormBoxOffice";
 import { InformationSourceTypes } from "../../components/InformationSource";
-import { OfficeBoxData } from "../../model/generalDataModel";
+import { OfficeBoxData } from "../../model/simulationDataModel";
 import styles from './SimulationForm.module.css';
 import { useOutletContext } from "react-router-dom";
 

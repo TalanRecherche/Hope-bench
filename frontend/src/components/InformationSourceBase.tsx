@@ -5,7 +5,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import { useEffect, useState } from 'react';
 import SourceCustomSwitch from './genericCustom/SourceCustomSwitch';
-import { InformationSourceData } from '../model/generalDataModel';
+import { InformationSourceData } from '../model/simulationDataModel';
 
 export enum InformationSourceTypes {
     default = 'default',

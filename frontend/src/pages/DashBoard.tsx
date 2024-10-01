@@ -1,48 +1,61 @@
-import { useContext, useEffect, useState } from 'react';
-import { Container } from "react-bootstrap";
-import { AuthContext } from "../contexts/AuthContext";
-import {ApiContext} from "../contexts/ApiContext";
-import { BusinessPropositionFileData } from "../model/models";
-
+import { Navbar, Table } from "react-bootstrap";
+import Button from 'react-bootstrap/Button';
+import styles from './Dashboard.module.css';
+import { FormListData } from '../model/simulationDataModel';
+import { useNavigate } from "react-router-dom";
+import "./Dashboard.module.css";
 /**
  * Renders the Dashboard page.
  */
 function DashBoard() {
-  const { user } = useContext(AuthContext);
-  const { getBusinessPropositionFile } = useContext(ApiContext);
 
-  const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(0);
-  const [businessPropositionFiles, setBusinessPropositionFiles] = useState<BusinessPropositionFileData[]>([]); // Add this line
+  const formList: FormListData[] = [
+    { name: "MM-14894", format: "PDF", numberOfPages: 20, lastUpdate: new Date(), status: "À Commencer" },
+    { name: "MM-14895", format: "DOCX", numberOfPages: 40, lastUpdate: new Date(), status: "Finalisé" },
+    { name: "MM-14896", format: "PPT", numberOfPages: 30, lastUpdate: new Date(), status: "Commencé" },
+    { name: "MM-14897", format: "PDF", numberOfPages: 50, lastUpdate: new Date(), status: "Commencé" }
+  ];
 
-  useEffect(() => {
-    getBusinessPropositionFile(currentPage, 10)
-      .then((data) => {
-        setBusinessPropositionFiles(data.elements);
-        setTotalPages(data.totalElements);
-      })
-      .catch((error) => console.error("Error:", error));
-  }, [currentPage]);
-
-  const goToNextPage = () => setCurrentPage((prev) => prev + 1);
-  const goToPreviousPage = () => setCurrentPage((prev) => prev - 1);
+  const navigate = useNavigate();
+  const redirect = (link: string) => {
+    navigate(link);
+  };
 
   return (
-    <Container>
-      <h1>Dashboard</h1>
-      <h2>Welcome {user.firstname} {user.lastname}</h2>
-      <h3>Business Proposition to annotate:</h3>
-      <ul>
-        {businessPropositionFiles.map((file) => (
-            <li key={file.id_business_proposition_file}>{file.file_name} {file.format}</li>
-        ))}
-        </ul>
-      <div>
-        <button onClick={goToPreviousPage} disabled={currentPage === 1}>Previous</button>
-        <span> Page {currentPage} of {totalPages} </span>
-        <button onClick={goToNextPage} disabled={currentPage === totalPages}>Next</button>
-      </div>
-    </Container>
+    <>
+      <Navbar bg="#E7E7E7" className={styles.navBar} >
+        <div className={styles.formNav}>
+          <div>
+            <Button variant="underline" className={styles.formNavLabel}>À SOUMETTRE</Button>
+          </div>
+        </div>
+      </Navbar>
+
+      <form>
+        <Table className={styles.table} bordered >
+          <thead >
+            <tr>
+              <th>Nom du projet</th>
+              <th>Format</th>
+              <th>Nbr pages</th>
+              <th>Dernière MAJ</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {formList?.map((item, idx) => (
+              <tr  key={idx}>
+                <td onClick={() => redirect("/form/generalTab")}>{item.name}</td>
+                <td>{item.format}</td>
+                <td>{item.numberOfPages}</td>
+                <td>{item.lastUpdate.toDateString()}</td>
+                <td>{item.status}</td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      </form>
+    </>
   );
 }
 

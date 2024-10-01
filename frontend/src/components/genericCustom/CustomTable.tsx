@@ -2,7 +2,7 @@ import Table from 'react-bootstrap/Table';
 import NumericInput from 'react-numeric-input';
 import styles from '../FormComponents.module.css';
 import Button from 'react-bootstrap/Button';
-import { BoxItemType } from '../../model/generalDataModel';
+import { BoxItemType } from '../../model/simulationDataModel';
 
 interface Props {
     tableItems: BoxItemType[],

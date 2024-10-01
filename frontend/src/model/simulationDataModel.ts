@@ -61,3 +61,11 @@ export type CustomSwitchOptions = {
     checked: boolean
   }
 }
+
+export type FormListData = {
+  name : string; 
+  format: string;
+  numberOfPages: number;
+  lastUpdate: Date;
+  status : string;
+}

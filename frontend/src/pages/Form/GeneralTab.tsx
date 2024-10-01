@@ -2,7 +2,7 @@ import FormBoxGeneral from "../../components/formBox/FormBoxGeneral";
 import FormFileUpload from "../../components/FormFileUpload";
 import { InformationSourceTypes } from "../../components/InformationSource";
 import { useOutletContext } from "react-router-dom";
-import { GeneralDataType, InformationSourceData } from "../../model/generalDataModel.ts";
+import { GeneralDataType, InformationSourceData } from "../../model/simulationDataModel.ts";
 import React from "react";
 import styles from './SimulationForm.module.css';
 

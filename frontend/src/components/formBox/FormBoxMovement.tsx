@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card';
 import styles from '../FormComponents.module.css';
 import NumericInput from 'react-numeric-input';
 import CustomSwitch from '../genericCustom/CustomSwitch';
-import { CustomSwitchOptions, InformationSourceData, MovementBoxData } from '../../model/generalDataModel';
+import { CustomSwitchOptions, InformationSourceData, MovementBoxData } from '../../model/simulationDataModel';
 import { useState } from 'react';
 
 interface Props<T> {

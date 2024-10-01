@@ -3,7 +3,7 @@ import FormBoxDigital from '../../components/formBox/FormBoxDigital';
 import { InformationSourceTypes } from '../../components/InformationSource';
 import { useState } from 'react';
 import styles from './SimulationForm.module.css';
-import { DigitalBoxData } from '../../model/generalDataModel';
+import { DigitalBoxData } from '../../model/simulationDataModel';
 import { useOutletContext } from 'react-router-dom';
 import FormDefaultBox from '../../components/genericCustom/FormDefaultBox';
 
