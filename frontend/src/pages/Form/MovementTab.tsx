@@ -63,13 +63,11 @@ function MovementTab() {
             }
             <div>
                 {x?.filter(c => c.checked).sort((a, b) => a.order - b.order).map((item, idx) => (
-                    <>
-                        <FormBoxMovement
-                            key={idx}
-                            setBoxValues={handleBoxDataReceive}
-                            informationSourceType={InformationSourceTypes.fromDeduction}
-                            options={{ name: item.name, type: 'text', id: item.id, placeholder: 'Description' }} />
-                    </>
+                    <FormBoxMovement
+                        key={idx}
+                        setBoxValues={handleBoxDataReceive}
+                        informationSourceType={InformationSourceTypes.fromDeduction}
+                        options={{ name: item.name, type: 'text', id: item.id, placeholder: 'Description' }} />
                 ))}
             </div>
         </div>

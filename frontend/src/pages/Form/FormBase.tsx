@@ -4,25 +4,24 @@ import { Outlet, useNavigate } from "react-router-dom";
 import './SimulationForm.module.css';
 import styles from './SimulationForm.module.css';
 import React from "react";
-import context from "react-bootstrap/esm/AccordionContext";
 
 function FormBase() {
 
     const navigate = useNavigate();
     const redirect = (link: string) => {
-        console.log("context =", context);
+        // console.log("context =", context);
         navigate(link,);
     };
 
     const save = (data: any) => {
-        console.log("saving");
+        // console.log("saving");
         console.log("save data = ", data);
     };
 
     const [data, setData] = React.useState([]);
     const setDatat = (receivedData: any) => {
         setData(receivedData);
-        console.log("outlet Data =", data);
+        //console.log("outlet Data =", data);
     }
 
     const formSubmit = () => {
