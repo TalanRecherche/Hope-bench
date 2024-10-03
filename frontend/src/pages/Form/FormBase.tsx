@@ -3,13 +3,14 @@ import Button from 'react-bootstrap/Button';
 import { Outlet, useNavigate } from "react-router-dom";
 import './SimulationForm.module.css';
 import styles from './SimulationForm.module.css';
-import React from "react";
+import React, { useState } from "react";
+import classNames from 'classnames';
 
 function FormBase() {
 
     const navigate = useNavigate();
-    const redirect = (link: string) => {
-        // console.log("context =", context);
+    const redirect = (link: string, e: any) => {
+        setCurrentEntry(e.target.id);
         navigate(link,);
     };
 
@@ -28,26 +29,42 @@ function FormBase() {
         console.log("formSubmit = ", data);
     }
 
+    const [currentEntry, setCurrentEntry] = useState('');
+
     return (
         <form onSubmit={formSubmit}>
             <Navbar bg="#E7E7E7" className={styles.navBar} >
                 <div className={styles.formNav}>
                     <div className={styles.formTabButtons}>
-                        <Button variant="underline" className={styles.formTabSingleButton} onClick={() => redirect("/form/generalTab")}>GÉNÉRAL</Button>
-                        <Button variant="underline" className={styles.formTabSingleButton} onClick={() => redirect("/form/movementTab")}>DÉPLACEMENT</Button>
-                        <Button variant="underline" className={styles.formTabSingleButton} onClick={() => redirect("/form/digitalTab")}>NUMÉRIQUE</Button>
-                        <Button variant="underline" className={styles.formTabSingleButton} onClick={() => redirect("/form/officeTab")}>BUREAU</Button>
+                        <Button
+                            id="general" variant="underline"
+                            className={classNames(styles.formTabSingleButton, (currentEntry == "general") ? styles.formTabCurrentEntry : '')}
+                            onClick={(e) => redirect("/form/generalTab", e)}> GÉNÉRAL
+                        </Button>
+                        <Button
+                            id="movement" variant="underline"
+                            className={classNames(styles.formTabSingleButton, (currentEntry == "movement") ? styles.formTabCurrentEntry : '')}
+                            onClick={(e) => redirect("/form/movementTab", e)}> DÉPLACEMENT
+                        </Button>
+                        <Button
+                            id="digital" variant="underline"
+                            className={classNames(styles.formTabSingleButton, (currentEntry == "digital") ? styles.formTabCurrentEntry : '')}
+                            onClick={(e) => redirect("/form/digitalTab", e)}> NUMÉRIQUE
+                        </Button>
+                        <Button id="office" variant="underline"
+                            className={classNames(styles.formTabSingleButton, (currentEntry == "office") ? styles.formTabCurrentEntry : '')}
+                            onClick={(e) => redirect("/form/officeTab", e)}> BUREAU
+                        </Button>
                     </div>
                     <div className={styles.formTabButtons}>
                         <Button className={styles.saveButton} onClick={save} type="button">Enregistrer</Button>
                         <Button className={styles.submitButton} type="submit">Soumettre</Button>
-                        <Button className={styles.deleteButton} onClick={() => redirect("/dashboard")}>X</Button>
+                        <Button className={styles.deleteButton} onClick={() => redirect("/dashboard", "")}>X</Button>
                     </div>
-
                 </div>
             </Navbar>
             <Outlet context={{ setDatat }} />
-        </form>
+        </form >
     )
 }
 export default FormBase;

@@ -73,11 +73,28 @@
   opacity: 0px;
 }
 
-.formTabSingleButton:focus {
-  font-weight: bold;
+.formTabCurrentEntry {  
   border-bottom-color: #FF5925;
   border-bottom-style: solid;
   border-bottom-width: 0.2em;
+  font-weight: 700;
+  font-size: 14px;
+  font-family: Montserrat;
+  line-height: 17.07px;
+  text-align: left;
+}
+
+.formTabSingleButton:hover{
+  font-weight: 700;
+}
+
+.title2Reg ,
+.formTabSingleButton {
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17.07px;
+  text-align: left;
 }
 
 .formSubmissionButtons {
