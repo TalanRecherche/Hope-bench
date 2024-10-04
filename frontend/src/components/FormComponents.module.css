@@ -191,7 +191,7 @@
   border-radius: 0px 0px 4px 4px;
   border: 1px 0px 0px 0px;
   opacity: 0px;
-  background: rgba(249, 248, 252, 1);
+  background-color: rgba(249, 248, 252, 1);
   padding-top: 24px;
   gap: 16px;
 }

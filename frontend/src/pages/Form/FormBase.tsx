@@ -1,38 +1,57 @@
 import { Navbar } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useNavigate, useLocation } from "react-router-dom";
 import './SimulationForm.module.css';
 import styles from './SimulationForm.module.css';
-import React, { useState } from "react";
+import { useState } from "react";
 import classNames from 'classnames';
+import { FormData } from '../../model/simulationDataModel';
 
 function FormBase() {
 
     const navigate = useNavigate();
+    const location = useLocation();
+
+    const [formDataValues, setFormDataValues] = useState<FormData>({ formName: location.state?.formName });
+
     const redirect = (link: string, e: any) => {
         setCurrentEntry(e.target.id);
         navigate(link,);
     };
 
-    const save = (data: any) => {
-        // console.log("saving");
-        console.log("save data = ", data);
+    const save = () => {
+        console.log("saving data = ", formDataValues);
     };
 
-    const [data, setData] = React.useState([]);
-    const setDatat = (receivedData: any) => {
-        setData(receivedData);
-        //console.log("outlet Data =", data);
+    const receiveFormData = (receivedData: any) => {
+        
+        switch (currentEntry) {
+            case "general":
+                formDataValues.generalBoxData = receivedData;
+                setFormDataValues(formDataValues);
+            break;
+            case "movement":
+                formDataValues.movementBoxData = receivedData;
+                setFormDataValues(formDataValues);
+            break;
+            case "digital":
+                formDataValues.digitalBoxData = receivedData;
+                setFormDataValues(formDataValues);
+            break;
+            case "office":
+                formDataValues.officeDatta = receivedData;
+                setFormDataValues(formDataValues);
+            break;
+        };        
     }
 
     const formSubmit = () => {
-        console.log("formSubmit = ", data);
-    }
+        console.log("Submitting = ", formDataValues);    }
 
-    const [currentEntry, setCurrentEntry] = useState('');
+    const [currentEntry, setCurrentEntry] = useState('general');
 
     return (
-        <form onSubmit={formSubmit}>
+        <form>
             <Navbar bg="#E7E7E7" className={styles.navBar} >
                 <div className={styles.formNav}>
                     <div className={styles.formTabButtons}>
@@ -57,14 +76,14 @@ function FormBase() {
                         </Button>
                     </div>
                     <div className={styles.formTabButtons}>
-                        <Button className={styles.saveButton} onClick={save} type="button">Enregistrer</Button>
-                        <Button className={styles.submitButton} type="submit">Soumettre</Button>
-                        <Button className={styles.deleteButton} onClick={() => redirect("/dashboard", "")}>X</Button>
+                        <Button className={styles.saveButton} onClick={save}>Enregistrer</Button>
+                        <Button className={styles.submitButton}  onClick={formSubmit}>Soumettre</Button>
+                        <Button id="goToDashboard" className={styles.deleteButton} onClick={(e) => redirect("/dashboard", e)}>X</Button>
                     </div>
                 </div>
             </Navbar>
-            <Outlet context={{ setDatat }} />
+            <Outlet context={{ setDatat: receiveFormData }} />
         </form >
-    )
+    );    
 }
 export default FormBase;

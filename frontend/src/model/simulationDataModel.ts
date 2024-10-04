@@ -15,7 +15,7 @@ export interface FormBoxData {
   informationSource?: InformationSourceData
 }
 
-export type GeneralDataType = {
+export type GeneralBoxData = {
   missionTitle: FormBoxData
   clientName: FormBoxData
   startDate: FormBoxData
@@ -30,9 +30,6 @@ export interface MovementBoxData {
   numberOfMovement?: number;
   averageKmPerTrip?: number;
   informationSource?: InformationSourceData
-}
-export type MovementDataType = {
-  movementDataList: MovementBoxData[]
 }
 
 export type BoxItemType = {
@@ -49,6 +46,14 @@ export interface DigitalBoxData {
 export interface OfficeBoxData {
   itemList: BoxItemType[];
   informationSource?: InformationSourceData;
+}
+
+export interface FormData {
+  formName: string;
+  generalBoxData?: GeneralBoxData; 
+  movementBoxData?: MovementBoxData;
+  digitalBoxData?: DigitalBoxData;
+  officeDatta?: OfficeBoxData;
 }
 
 export type CustomSwitchOptions = {

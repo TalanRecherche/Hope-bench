@@ -66,7 +66,7 @@ function FormBoxMovement<T extends string>({ informationSourceType = Information
 
     return (
         <div className={styles.boxMovement}>
-            <Card className={styles.boxItem}>
+            <Card style={{ borderRadius: " 4px 4px 0px 0px"}}className={styles.boxItem}>
                 <Card.Body>
                     <Form.Group>
                         <Form.Label className={styles.movementFieldLabel}>{options.name}</Form.Label>
@@ -89,7 +89,7 @@ function FormBoxMovement<T extends string>({ informationSourceType = Information
                     </Form.Group>
                 </Card.Body>
             </Card>
-            <Card className={styles.informationSource}>
+            <Card style={{ borderRadius: " 0px 0px 4px 4px"}} className={styles.informationSource}>
                 <Card.Body>
                     <InformationSource
                         informationSourceType={informationSourceType}

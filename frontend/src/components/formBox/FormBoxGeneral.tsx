@@ -57,10 +57,10 @@ function FormBoxGeneral<T extends string>({ informationSourceType = InformationS
 
     return (
         <div className={styles.boxGeneral}>
-            <Card className={styles.boxItem}>
+            <Card style={{ borderRadius: " 4px 4px 0px 0px"}} className={styles.boxItem}>
                 {card}
             </Card>
-            <Card className={styles.informationSource}>
+            <Card style={{ borderRadius: " 0px 0px 4px 4px"}} className={styles.informationSource}>
                 <Card.Body>
                     <InformationSource
                         informationSourceType={informationSourceType}

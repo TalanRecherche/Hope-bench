@@ -9,6 +9,7 @@ import classNames from 'classnames';
 import { CustomSwitchOptions } from '../../model/simulationDataModel';
 import { useState } from 'react';
 import CustomTable from '../genericCustom/CustomTable';
+
 interface Props {
     informationSourceType?: InformationSourceTypes,
     setValues?: any
@@ -78,7 +79,7 @@ function FormBoxOffice({ informationSourceType = InformationSourceTypes.default,
 
     return (
         <div className={styles.boxOffice}>
-            <Card className={styles.boxItem}>
+            <Card style={{ borderRadius: " 4px 4px 0px 0px"}} className={styles.boxItem}>
                 <Card.Body >
                         <div>
                             <span className={classNames(styles.labelSemiBold, styles.required)}> Copies papier utilisées </span>
@@ -98,7 +99,7 @@ function FormBoxOffice({ informationSourceType = InformationSourceTypes.default,
                         </div>
                 </Card.Body>
             </Card >
-            <Card className={styles.informationSource}>
+            <Card style={{ borderRadius: " 0px 0px 4px 4px"}} className={styles.informationSource}>
                 <Card.Body>
                     <InformationSource
                         informationSourceType={informationSourceType}

@@ -17,8 +17,12 @@ function DashBoard() {
   ];
 
   const navigate = useNavigate();
-  const redirect = (link: string) => {
-    navigate(link);
+  const redirect = (link: string, e: any) => {
+    navigate(link, {
+      state: {
+        formName: e.target.id
+      }
+    });
   };
 
   return (
@@ -45,7 +49,7 @@ function DashBoard() {
           <tbody>
             {formList?.map((item, idx) => (
               <tr  key={idx}>
-                <td onClick={() => redirect("/form/generalTab")}>{item.name}</td>
+                <td id= {item.name} onClick={(e) => redirect("/form/generalTab",e)}>{item.name}</td>
                 <td>{item.format}</td>
                 <td>{item.numberOfPages}</td>
                 <td>{item.lastUpdate.toDateString()}</td>
