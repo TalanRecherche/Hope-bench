@@ -3,13 +3,17 @@ import FormBoxDigital from '../../components/formBox/FormBoxDigital';
 import { InformationSourceTypes } from '../../components/InformationSource';
 import { useState } from 'react';
 import styles from './SimulationForm.module.css';
-import { DigitalBoxData } from '../../model/simulationDataModel';
+import { DigitalBoxData, FormStatus } from '../../model/simulationDataModel';
 import { useOutletContext } from 'react-router-dom';
 import FormDefaultBox from '../../components/genericCustom/FormDefaultBox';
+import classNames from 'classnames';
+import { useLocation } from "react-router-dom";
 
 function DigitalTab() {
 
     const { setDatat } = useOutletContext<{ setDatat: any }>();
+    const location = useLocation();
+    const formStatus = location.state?.status;
     const [digitalValues] = useState<DigitalBoxData[]>([]);
 
     let initialList: {
@@ -55,7 +59,7 @@ function DigitalTab() {
     };
 
     return (
-        <div className={styles.movementTab}>
+        <div className={classNames(styles.movementTab, (formStatus == FormStatus.submitted) ? styles.formTabDisabled : '')}>
             <div>
                 <FormDigitalEquipments onDataSend={handleDataReceive}></FormDigitalEquipments>
             </div>

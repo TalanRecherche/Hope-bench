@@ -2,13 +2,17 @@ import FormBoxGeneral from "../../components/formBox/FormBoxGeneral";
 import FormFileUpload from "../../components/FormFileUpload";
 import { InformationSourceTypes } from "../../components/InformationSource";
 import { useOutletContext } from "react-router-dom";
-import { GeneralBoxData, InformationSourceData } from "../../model/simulationDataModel.ts";
+import { FormStatus, GeneralBoxData, InformationSourceData } from "../../model/simulationDataModel.ts";
 import React from "react";
 import styles from './SimulationForm.module.css';
+import classNames from 'classnames';
+import { useLocation } from "react-router-dom";
 
 function GeneralTab() {
 
     const { setDatat } = useOutletContext<{ setDatat: any }>(); // <-- access context value
+    const location = useLocation();
+    const formStatus = location.state?.status;
 
     const initializeInformationSource = () => {
         const sourceData: InformationSourceData = {
@@ -51,7 +55,7 @@ function GeneralTab() {
 
     /* ToDo - handle Data Receive to be improved*/
     const handleDataReceive = (receivedData: any) => {
-        // console.log("data =", receivedData);
+        //console.log("data =", formStatus);
 
         let initialData = generalData;
 
@@ -84,7 +88,7 @@ function GeneralTab() {
         setDatat(initialData);
     };
     return (
-        <div className={styles.generalTab} >
+        <div className={classNames(styles.generalTab, (formStatus == FormStatus.submitted) ? styles.formTabDisabled : '')}>
             <FormBoxGeneral
                 setValues={handleDataReceive}
                 informationSourceType={InformationSourceTypes.fromDeduction}

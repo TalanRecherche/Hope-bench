@@ -177,11 +177,14 @@
 }
 
 .textRegular,
-.addItem {
+.addItem,
+.modalNext,
+.modalText,
+.modalPrevious {
   font-family: Montserrat;
   font-size: 14px;
   font-weight: 500;
-  line-height: 17.07px;  
+  line-height: 17.07px;
 }
 
 .informationSource {
@@ -377,4 +380,60 @@
   opacity: 0px;
   margin-top: 40px;
   margin-left: 304px;
+}
+
+
+/* Modal */
+
+.modalTitle {
+  width: 127px;
+  height: 24px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24.38px;
+  text-align: left;
+}
+
+.modalText {
+  text-align: left;
+}
+
+.modalButtons {
+  width: 168px;
+  height: 25px;
+  gap: 8px;
+  opacity: 0px;
+}
+
+.modalNext {
+  width: 70px;
+  height: 25px;
+  padding: 4px 8px 4px 8px;
+  text-align: center !important;
+  border-radius: 3px;
+  background: rgba(255, 89, 37, 1);
+  border-color: rgba(255, 89, 37, 1);
+  color: rgba(255, 255, 255, 1);
+}
+
+.modalPrevious {
+  width: 70px;
+  height: 25px;
+  padding: 4px 8px 4px 8px;
+  text-align: center !important;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 1);
+  border-color: rgba(255, 89, 37, 1);
+  color: rgba(255, 89, 37, 1);
+}
+
+.modalPageNumber {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19.5px;
+  color: rgba(255, 89, 37, 1);
 }

@@ -50,10 +50,11 @@ export interface OfficeBoxData {
 
 export interface FormData {
   formName: string;
+  formStatus?: FormStatus;
   generalBoxData?: GeneralBoxData; 
   movementBoxData?: MovementBoxData;
   digitalBoxData?: DigitalBoxData;
-  officeDatta?: OfficeBoxData;
+  officeData?: OfficeBoxData;
 }
 
 export type CustomSwitchOptions = {
@@ -73,4 +74,10 @@ export type FormListData = {
   numberOfPages: number;
   lastUpdate: Date;
   status : string;
+}
+
+export enum FormStatus {
+  toStart = 'À commencer',
+  started = 'En cours',
+  submitted = 'Soumis'
 }

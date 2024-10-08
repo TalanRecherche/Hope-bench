@@ -5,18 +5,22 @@ import './SimulationForm.module.css';
 import styles from './SimulationForm.module.css';
 import { useState } from "react";
 import classNames from 'classnames';
-import { FormData } from '../../model/simulationDataModel';
+import { FormData, FormStatus } from '../../model/simulationDataModel';
 
 function FormBase() {
 
     const navigate = useNavigate();
     const location = useLocation();
 
-    const [formDataValues, setFormDataValues] = useState<FormData>({ formName: location.state?.formName });
+    const [formDataValues, setFormDataValues] = useState<FormData>({ formName: location.state?.formName , formStatus : location.state?.status});
 
     const redirect = (link: string, e: any) => {
         setCurrentEntry(e.target.id);
-        navigate(link,);
+        navigate(link, {
+            state: {
+                status: formDataValues.formStatus
+              }
+        });
     };
 
     const save = () => {
@@ -39,7 +43,7 @@ function FormBase() {
                 setFormDataValues(formDataValues);
             break;
             case "office":
-                formDataValues.officeDatta = receivedData;
+                formDataValues.officeData = receivedData;
                 setFormDataValues(formDataValues);
             break;
         };        
@@ -76,8 +80,8 @@ function FormBase() {
                         </Button>
                     </div>
                     <div className={styles.formTabButtons}>
-                        <Button className={styles.saveButton} onClick={save}>Enregistrer</Button>
-                        <Button className={styles.submitButton}  onClick={formSubmit}>Soumettre</Button>
+                        <Button className={classNames(styles.saveButton, (formDataValues.formStatus == FormStatus.submitted) ? styles.formTabDisabled : '')} onClick={save}>Enregistrer</Button>
+                        <Button className={classNames(styles.submitButton, (formDataValues.formStatus == FormStatus.submitted) ? styles.formTabDisabled : '')} onClick={formSubmit}>Soumettre</Button>
                         <Button id="goToDashboard" className={styles.deleteButton} onClick={(e) => redirect("/dashboard", e)}>X</Button>
                     </div>
                 </div>

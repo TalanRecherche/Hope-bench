@@ -4,12 +4,16 @@ import { InformationSourceTypes } from "../../components/InformationSource";
 import { useState } from "react";
 import styles from './SimulationForm.module.css';
 import { useOutletContext } from "react-router-dom";
-import { MovementBoxData } from "../../model/simulationDataModel";
+import { FormStatus, MovementBoxData } from "../../model/simulationDataModel";
 import FormDefaultBox from "../../components/genericCustom/FormDefaultBox";
+import classNames from 'classnames';
+import { useLocation } from "react-router-dom";
 
 function MovementTab() {
 
     const { setDatat } = useOutletContext<{ setDatat: any }>(); // <-- access context value
+    const location = useLocation();
+    const formStatus = location.state?.status;
     const [movementDataValues] = useState<MovementBoxData[]>([]);
 
     let displayList: {
@@ -54,7 +58,7 @@ function MovementTab() {
     };
 
     return (
-        <div className={styles.movementTab}>
+        <div className={classNames(styles.movementTab, (formStatus == FormStatus.submitted) ? styles.formTabDisabled : '')}>
             <div>
                 <FormMeansTransport onDataSend={handleSelectedListReceive}></FormMeansTransport>
             </div>

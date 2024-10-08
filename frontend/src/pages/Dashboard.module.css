@@ -86,3 +86,15 @@ th {
     text-align: center;
     color: white !important;
 }
+
+.formTabCurrentEntry {  
+    border-bottom-color: #FF5925;
+    background-color: white;
+    border-bottom-style: solid;
+    border-bottom-width: 0.2em;
+    font-weight: 700;
+    font-size: 14px;
+    font-family: Montserrat;
+    line-height: 17.07px;
+    text-align: left;
+  }
