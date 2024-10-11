@@ -1,6 +1,5 @@
 import FormDigitalEquipments from '../../components/FormDigitalEquipments';
 import FormBoxDigital from '../../components/formBox/FormBoxDigital';
-import { InformationSourceTypes } from '../../components/InformationSource';
 import { useState } from 'react';
 import styles from './SimulationForm.module.css';
 import { DigitalBoxData, FormStatus } from '../../model/simulationDataModel';
@@ -71,7 +70,6 @@ function DigitalTab() {
                     <FormBoxDigital
                         key={idx}
                         setValues={handleBoxDataReceive}
-                        informationSourceType={InformationSourceTypes.fromDeduction}
                         options={{ name: item.name, type: 'text', id: item.id, placeholder: 'Description' }} />
                 ))}
             </div>

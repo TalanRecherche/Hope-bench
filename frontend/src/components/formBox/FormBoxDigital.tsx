@@ -1,5 +1,4 @@
 import Form from 'react-bootstrap/Form';
-import InformationSource, { InformationSourceTypes } from "../InformationSource";
 import Card from 'react-bootstrap/Card';
 import styles from '../FormComponents.module.css';
 import NumericInput from 'react-numeric-input';
@@ -9,9 +8,9 @@ import { DigitalBoxData, BoxItemType, InformationSourceData } from '../../model/
 import { useState } from 'react';
 import classNames from 'classnames';
 import DigitalItemDropbox from '../genericCustom/DigitalItemDropbox';
+import InformationSource from '../InformationSource';
 
 interface Props<T> {
-    informationSourceType?: InformationSourceTypes,
     options: {
         name: T;
         type: T;
@@ -23,7 +22,7 @@ interface Props<T> {
     setValues?: any
 }
 
-function FormBoxDigital<T extends string>({ informationSourceType = InformationSourceTypes.default, options, digitalData, setValues }: Props<T>) {
+function FormBoxDigital<T extends string>({ options, digitalData, setValues }: Props<T>) {
 
     const [digitalBoxValues, setDigitalBoxValues] = useState<DigitalBoxData>({
         optionName: options.name
@@ -103,7 +102,6 @@ function FormBoxDigital<T extends string>({ informationSourceType = InformationS
             <Card style={{ borderRadius: " 0px 0px 4px 4px"}} className={styles.informationSource}>
                 <Card.Body>
                     <InformationSource
-                        informationSourceType={informationSourceType}
                         setSourceValues={setSourceData} />
                 </Card.Body>
             </Card>

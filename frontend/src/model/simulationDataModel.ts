@@ -1,12 +1,14 @@
 /* ToDo - improve Data Receive */
 
+
 export type InformationSourceData = {
-  foundInClientDocument?: boolean
-  deduceByReadingDocument?: boolean
-  personalKnowlegdeUsed?: boolean
-  enrichedFromDocument?: boolean
+  informationOrigin?: InformationSourceType
   reliabilityRate?: number
-  foundOnPage?: number
+  foundOnPage?: number  
+  isInformationEnriched?: string
+  enrichedBasedOnTheDocument?: boolean
+  enrichedFromKnowledge?:boolean
+  enrichedReliabilityRate?: number
 }
 
 export interface FormBoxData {
@@ -19,7 +21,7 @@ export type GeneralBoxData = {
   missionTitle: FormBoxData
   clientName: FormBoxData
   startDate: FormBoxData
-  NbCollaborators: FormBoxData
+  nbCollaborators: FormBoxData
   missionDuration: FormBoxData
   missionSector: FormBoxData
 }
@@ -80,4 +82,9 @@ export enum FormStatus {
   toStart = 'À commencer',
   started = 'En cours',
   submitted = 'Soumis'
+}
+
+export enum InformationSourceType {
+  fromDocument = "foundInDocument",
+  fromKnowledge = "deducedFromknowledge"
 }

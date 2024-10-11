@@ -1,5 +1,4 @@
 import FormBoxOffice from "../../components/formBox/FormBoxOffice";
-import { InformationSourceTypes } from "../../components/InformationSource";
 import { FormStatus } from "../../model/simulationDataModel";
 import styles from './SimulationForm.module.css';
 import { useOutletContext } from "react-router-dom";
@@ -28,7 +27,7 @@ function OfficeTab() {
 
     return (
         <div className={classNames(styles.officeTab, (formStatus == FormStatus.submitted) ? styles.formTabDisabled : '')} >
-            <FormBoxOffice setValues={handleBoxDataReceive} informationSourceType={InformationSourceTypes.fromCollaborator}></FormBoxOffice>
+            <FormBoxOffice setValues={handleBoxDataReceive}></FormBoxOffice>
         </div>
     );
 }

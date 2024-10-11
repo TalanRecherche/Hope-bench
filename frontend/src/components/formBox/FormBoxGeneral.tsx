@@ -1,12 +1,13 @@
 import Form from 'react-bootstrap/Form';
-import InformationSource, { InformationSourceTypes } from "../InformationSource";
+import InformationSource from "../InformationSource";
 import Card from 'react-bootstrap/Card';
 import styles from '../FormComponents.module.css';
 import NumericInput from 'react-numeric-input';
 import { InformationSourceData } from '../../model/simulationDataModel';
+import InformationSourceBase from '../InformationSourceBase';
+import { useState } from 'react';
 
 interface Props<T> {
-    informationSourceType?: InformationSourceTypes,
     isNumericInput?: boolean,
     options: {
         controlId?: T;
@@ -20,11 +21,12 @@ interface Props<T> {
     setValues?: any
 }
 
-function FormBoxGeneral<T extends string>({ informationSourceType = InformationSourceTypes.default, isNumericInput = false, options, setValues }: Props<T>) {
+function FormBoxGeneral<T extends string>({ isNumericInput = false, options, setValues }: Props<T>) {
+
+    const [informationSourceBase, setInformationSourceBase] = useState(false);
 
     const setOptionValue = (value: any) => {
         options.value = value;
-
         setValues(options);
     };
 
@@ -51,22 +53,23 @@ function FormBoxGeneral<T extends string>({ informationSourceType = InformationS
                         placeholder={options.placeholder}
                         onChange={(e) => setOptionValue(e.target.value)}
                     />
+                    <InformationSourceBase setSourceBaseValue={setInformationSourceBase}></InformationSourceBase>
                 </Form.Group>
             </Card.Body>;
     }
 
     return (
         <div className={styles.boxGeneral}>
-            <Card style={{ borderRadius: " 4px 4px 0px 0px"}} className={styles.boxItem}>
+            <Card style={{ borderRadius: " 4px 4px 0px 0px" }} className={styles.boxItem}>
                 {card}
             </Card>
-            <Card style={{ borderRadius: " 0px 0px 4px 4px"}} className={styles.informationSource}>
+            { (!informationSourceBase && options.value) && <Card style={{ borderRadius: " 0px 0px 4px 4px" }} className={styles.informationSource}>
                 <Card.Body>
                     <InformationSource
-                        informationSourceType={informationSourceType}
                         setSourceValues={setSourceData} />
                 </Card.Body>
             </Card>
+            }
         </div>
     );
 }

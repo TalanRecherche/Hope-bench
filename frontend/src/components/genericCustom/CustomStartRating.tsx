@@ -16,7 +16,7 @@ const CustomStarRating = ({ sendRatingValue }: Props) => {
     }
 
     return (
-        <div className={styles.ratingContainerFloat}>
+        <>
             {[...Array(5)].map((value, index) => {
                 const ratingValue = index + 1;
                 return (
@@ -32,7 +32,7 @@ const CustomStarRating = ({ sendRatingValue }: Props) => {
                     </label>
                 );
             })}
-        </div>
+        </>
     )
 }
 export default CustomStarRating;

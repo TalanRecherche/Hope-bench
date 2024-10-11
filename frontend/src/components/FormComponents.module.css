@@ -78,10 +78,6 @@
   float: right;
 }
 
-.ratingContainerFloat {
-  float: right;
-}
-
 .toggleItem {
   height: 25px;
   width: max-content;
@@ -200,12 +196,12 @@
 }
 
 .sourcePageInputs {
-  margin: 15px 0px 15px 0px;
+  margin: 15px 50px 15px 0px;
 }
 
 .boxGeneral {
   width: 770px;
-  max-height: 370px;
+  max-height: 662px;
   padding: 24px 0px 0px 0px;
   border-radius: 4px 0px 0px 0px;
   background: rgba(255, 255, 255, 1);
@@ -255,11 +251,9 @@
   opacity: 0px;
 }
 
-.numericInput {
-  margin-left: 557px;
+.onPageNumericeInput {
   text-align: center;
   font-family: 'Montserrat';
-  float: 'right';
   opacity: 0px;
 }
 
@@ -436,4 +430,20 @@
   font-weight: 700;
   line-height: 19.5px;
   color: rgba(255, 89, 37, 1);
+}
+
+.informationSourceBase {
+  width: 722px;
+  height: 34px;
+  gap: 8px;
+  opacity: 0px;
+  margin-top: 25px;
+}
+
+.iconLabel {
+  margin-right: 5px;
+}
+
+.marginTop15 {
+  margin: 15px 0px 0px 0px;
 }

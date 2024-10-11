@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card';
 import NumericInput from 'react-numeric-input';
 import CustomSwitch from '../genericCustom/CustomSwitch';
 import Button from 'react-bootstrap/Button';
-import InformationSource, { InformationSourceTypes } from '../InformationSource';
+import InformationSource from '../InformationSource';
 import { BoxItemType, OfficeBoxData } from '../../model/simulationDataModel';
 import classNames from 'classnames';
 import { CustomSwitchOptions } from '../../model/simulationDataModel';
@@ -11,11 +11,10 @@ import { useState } from 'react';
 import CustomTable from '../genericCustom/CustomTable';
 
 interface Props {
-    informationSourceType?: InformationSourceTypes,
     setValues?: any
 }
 
-function FormBoxOffice({ informationSourceType = InformationSourceTypes.default, setValues }: Props) {
+function FormBoxOffice({ setValues }: Props) {
 
     const [officeBoxValues, setOfficeBoxValues] = useState<OfficeBoxData>({ itemList: [] });
     const [itemlist, setItemlist] = useState<BoxItemType[]>([]);
@@ -102,7 +101,6 @@ function FormBoxOffice({ informationSourceType = InformationSourceTypes.default,
             <Card style={{ borderRadius: " 0px 0px 4px 4px"}} className={styles.informationSource}>
                 <Card.Body>
                     <InformationSource
-                        informationSourceType={informationSourceType}
                         setSourceValues={setSourceData} />
                 </Card.Body>
             </Card>

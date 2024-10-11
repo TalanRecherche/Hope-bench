@@ -1,6 +1,5 @@
 import FormBoxMovement from "../../components/formBox/FormBoxMovement";
 import FormMeansTransport from '../../components/FormMeansTransport';
-import { InformationSourceTypes } from "../../components/InformationSource";
 import { useState } from "react";
 import styles from './SimulationForm.module.css';
 import { useOutletContext } from "react-router-dom";
@@ -70,7 +69,6 @@ function MovementTab() {
                     <FormBoxMovement
                         key={idx}
                         setBoxValues={handleBoxDataReceive}
-                        informationSourceType={InformationSourceTypes.fromDeduction}
                         options={{ name: item.name, type: 'text', id: item.id, placeholder: 'Description' }} />
                 ))}
             </div>
