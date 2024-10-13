@@ -24,10 +24,29 @@ interface Props<T> {
 function FormBoxGeneral<T extends string>({ isNumericInput = false, options, setValues }: Props<T>) {
 
     const [informationSourceBase, setInformationSourceBase] = useState(false);
+    const [displayInformationSource, setDisplayInformationSource] = useState<any>(false);
 
     const setOptionValue = (value: any) => {
+
+        if (typeof value === 'number') {
+            setDisplayInformationSource(value > 0);
+        }
+        else if (Date.parse(value)) {
+            setDisplayInformationSource(value != "");
+        }
+        else if (value == "")
+            setDisplayInformationSource(false);
+
         options.value = value;
         setValues(options);
+    };
+
+    const handleKeyPress = (e: any) => {
+        if (e.code === "Enter" || e.code === "Space") {
+            {
+                setDisplayInformationSource(true);
+            }
+        }
     };
 
     const setSourceData = (sourceData: any) => {
@@ -39,7 +58,11 @@ function FormBoxGeneral<T extends string>({ isNumericInput = false, options, set
     if (isNumericInput) {
         card =
             <Card.Body>
-                <a>{options.name} </a> <NumericInput size={1} onChange={(value) => setOptionValue(value)} />
+                <a>{options.name} </a>
+                <div>
+                    <NumericInput min={0} size={1} onChange={(value) => setOptionValue(value)} />
+                </div>
+                <InformationSourceBase setSourceBaseValue={setInformationSourceBase}></InformationSourceBase>
             </Card.Body>;
     }
     else {
@@ -52,6 +75,7 @@ function FormBoxGeneral<T extends string>({ isNumericInput = false, options, set
                         id={options.id}
                         placeholder={options.placeholder}
                         onChange={(e) => setOptionValue(e.target.value)}
+                        onKeyPress={handleKeyPress}
                     />
                     <InformationSourceBase setSourceBaseValue={setInformationSourceBase}></InformationSourceBase>
                 </Form.Group>
@@ -63,12 +87,13 @@ function FormBoxGeneral<T extends string>({ isNumericInput = false, options, set
             <Card style={{ borderRadius: " 4px 4px 0px 0px" }} className={styles.boxItem}>
                 {card}
             </Card>
-            { (!informationSourceBase && options.value) && <Card style={{ borderRadius: " 0px 0px 4px 4px" }} className={styles.informationSource}>
-                <Card.Body>
-                    <InformationSource
-                        setSourceValues={setSourceData} />
-                </Card.Body>
-            </Card>
+            {((!informationSourceBase) && displayInformationSource) &&
+                <Card style={{ borderRadius: " 0px 0px 4px 4px" }} className={styles.informationSource}>
+                    <Card.Body>
+                        <InformationSource
+                            setSourceValues={setSourceData} />
+                    </Card.Body>
+                </Card>
             }
         </div>
     );

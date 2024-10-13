@@ -62,14 +62,14 @@ function InformationSource({ setSourceValues }: Props) {
                 <Form.Label> L’information que j’ai saisi : </Form.Label>
             </Form.Group>
             <Form.Check
-                name="sourceOrigin"
+                name="informationOrigin"
                 type="radio"
                 label="est entièrement ou partiellement présente dans le document."
                 id="foundInDocument"
                 onChange={(e) => radioChangeFormData(e)}
             />
             <Form.Check
-                name="sourceOrigin"
+                name="informationOrigin"
                 type="radio"
                 label="n’est pas présente dans le document, j’ai fait appel à mes propres connaissances, celle de mes collaborateurs ou d’autres sources pour répondre."
                 id="deducedFromknowledge"
@@ -90,7 +90,13 @@ function InformationSource({ setSourceValues }: Props) {
                         <img src={iconLabel} className={styles.iconLabel} />
                         <Form.Label>À quelle page ?</Form.Label>
                         <div>
-                            <NumericInput className={styles.onPageNumericeInput} style={{ input: { height: 24, width: 88 } }}
+                            <NumericInput className={styles.onPageNumericeInput}
+                                style={{
+                                    input: {
+                                        height: 24, width: 60
+
+                                    }
+                                }}
                                 min={0} placeholder='0' size={2} onChange={(e) => handleNumericInput(e, "foundOnPage")} />
                         </div>
                     </Form.Group >
@@ -112,36 +118,37 @@ function InformationSource({ setSourceValues }: Props) {
                         id="true"
                         onChange={(e) => radioChangeFormData(e)}
                     />
-                </>
-            }
-            {iSourceData.isInformationEnriched === "true" &&
-                <>
-                    <Form.Group className={classNames(styles.marginTop15, styles.labelSemiBold)}>
-                        <img src={iconLabel} className={styles.iconLabel} />
-                        <Form.Label> Préciser : </Form.Label>
-                    </Form.Group>
 
-                    <Form.Check
-                        inline
-                        name="enrichedBasedOnTheDocument"
-                        type="checkbox"
-                        label="En faisant une déduction qui s’appuie sur la lecture du document."
-                        id="deducedFromDocument"
-                        onChange={(e) => changeFormData(e)}
-                    />
-                    <Form.Check
-                        name="enrichedFromKnowledge"
-                        type="checkbox"
-                        label="En faisant appel à mes propres connaissances, celle de mes collaborateurs ou d’autres sources."
-                        id="deducedFromknowledge"
-                        onChange={(e) => changeFormData(e)}
-                    />
-                    <Form.Group className={classNames(styles.marginTop15, styles.labelSemiBold)}>
-                        <img src={iconLabel} className={styles.iconLabel} />
-                        <Form.Label className={styles.required}> J’estime la fiabilité de ma réponse sur une échelle de 1 à 5</Form.Label>
-                        <CustomStarRating sendRatingValue={(e: any) => handleSwitch(e, "enrichedReliabilityRate")}></CustomStarRating>
-                    </Form.Group>
+                    {iSourceData.isInformationEnriched === "true" &&
+                        <>
+                            <Form.Group className={classNames(styles.marginTop15, styles.labelSemiBold)}>
+                                <img src={iconLabel} className={styles.iconLabel} />
+                                <Form.Label> Préciser : </Form.Label>
+                            </Form.Group>
 
+                            <Form.Check
+                                inline
+                                name="enrichedBasedOnTheDocument"
+                                type="checkbox"
+                                label="En faisant une déduction qui s’appuie sur la lecture du document."
+                                id="deducedFromDocument"
+                                onChange={(e) => changeFormData(e)}
+                            />
+                            <Form.Check
+                                name="enrichedFromKnowledge"
+                                type="checkbox"
+                                label="En faisant appel à mes propres connaissances, celle de mes collaborateurs ou d’autres sources."
+                                id="deducedFromknowledge"
+                                onChange={(e) => changeFormData(e)}
+                            />
+                            <Form.Group className={classNames(styles.marginTop15, styles.labelSemiBold)}>
+                                <img src={iconLabel} className={styles.iconLabel} />
+                                <Form.Label className={styles.required}> J’estime la fiabilité de ma réponse sur une échelle de 1 à 5</Form.Label>
+                                <CustomStarRating sendRatingValue={(e: any) => handleSwitch(e, "enrichedReliabilityRate")}></CustomStarRating>
+                            </Form.Group>
+
+                        </>
+                    }
                 </>
             }
         </>
