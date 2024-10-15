@@ -185,14 +185,14 @@
 
 .informationSource {
   width: 770px;
-  min-height: 172px;
-  height: auto;
+  min-height: 188px;
+  height: fit-content;
   border-radius: 0px 0px 4px 4px;
   border: 1px 0px 0px 0px;
   opacity: 0px;
   background-color: rgba(249, 248, 252, 1);
   padding-top: 24px;
-  gap: 16px;
+  gap: 8px;
 }
 
 .sourcePageInputs {
@@ -208,7 +208,6 @@
 }
 
 .boxMovement {
-  margin-left: 335.5px;
   width: 770px;
   min-height: 370px;
   padding: 24px 0px 0px 0px;
@@ -217,7 +216,6 @@
 }
 
 .boxDigital {
-  margin-left: 335.5px;
   width: 770px;
   min-height: 370px;
   padding: 24px 0px 0px 0px;
@@ -258,29 +256,36 @@
 }
 
 .checkboxListSection {
-  width: 228px;
-  height: 318px;
-  top: 24px;
-  left: 315px;
-  padding: 16px;
-  border-radius: 4px 0px 0px 0px;
-  border: 1px 0px 0px 0px;
+  width: 771px;
+  min-height: 180px;
+  top: 48px;
+  padding: 24px 10px 0px 10px;
+  gap: 8px;
+  margin-bottom: 48px;
+}
+
+.checkboxListItemSection {
+  width: 751px;
+  min-height: 63px;
   opacity: 0px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.checkboxListItem {
+  width: 229px;
+  height: fit-content;
 }
 
 .checkboxListFieldTitleSection {
-  width: 196px;
+  width: 427px;
   height: 36px;
-  gap: 4px;
-}
-
-.checkboxListFieldTitle {
-  width: 196px;
+  opacity: 0px;
 }
 
 .labelSemiBold,
 .checkboxListFieldTitle,
-.boxDigitalHeadTitle {
+.boxDigitalHeadTitle .selectedListFieldTitle {
   font-family: Montserrat;
   font-size: 14px;
   font-weight: 600;
@@ -297,15 +302,6 @@
   font-weight: 400;
   line-height: 14.63px;
   text-align: left;
-}
-
-.test {
-  width: Fill (722px)px;
-  height: Hug (25px)px;
-  gap: 0px;
-  opacity: 0px;
-
-  justify-content: space-between;
 }
 
 .boxDigitalHeadTitle {
@@ -340,11 +336,11 @@
 }
 
 .defaultBox {
-  margin-left: 335.5px;
   width: 770px;
-  height: 308px;
+  height: 190px;
+  max-height: 190px;
   top: 24px;
-  gap: 20px;
+  gap: 24px;
   border-radius: 4px 0px 0px 0px;
   border: 1px 0px 0px 0px;
   opacity: 0px;
@@ -446,4 +442,29 @@
 
 .marginTop15 {
   margin: 15px 0px 0px 0px;
+}
+
+.SelectedListSection {
+  position: sticky !important;
+  width: 228px;
+  height: 114px;
+  max-height: fit-content;
+  top: 24px;
+  padding: 16px;
+  border-radius: 4px 0px 0px 0px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+}
+
+.selectedListFieldTitle,
+.selectedListItemLabel {
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 17.07px;
+  text-align: left;
+}
+
+.selectedListItemLabel {
+  color: #3D00F2 !important;
 }

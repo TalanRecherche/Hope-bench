@@ -2,7 +2,7 @@
 
 
 export type InformationSourceData = {
-  informationOrigin?: InformationSourceType
+  informationOrigin?: InformationOriginType
   reliabilityRate?: number
   foundOnPage?: number  
   isInformationEnriched?: string
@@ -31,7 +31,7 @@ export interface MovementBoxData {
   movementFrequency?: string;
   numberOfMovement?: number;
   averageKmPerTrip?: number;
-  informationSource?: InformationSourceData
+  informationSource?: InformationSourceData;
 }
 
 export type BoxItemType = {
@@ -84,7 +84,13 @@ export enum FormStatus {
   submitted = 'Soumis'
 }
 
-export enum InformationSourceType {
+export enum InformationOriginType {
   fromDocument = "foundInDocument",
   fromKnowledge = "deducedFromknowledge"
+}
+
+export enum InformationType {
+  needed = "needed",
+  noNeeded = "noNeeded",
+  unableToIdentify = "unableToIdentify"
 }

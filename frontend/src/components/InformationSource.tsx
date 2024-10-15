@@ -3,7 +3,7 @@ import NumericInput from "react-numeric-input";
 import styles from './FormComponents.module.css';
 import { useEffect, useState } from 'react';
 import CustomStarRating from './genericCustom/CustomStartRating';
-import { InformationSourceData, InformationSourceType } from '../model/simulationDataModel';
+import { InformationSourceData, InformationOriginType } from '../model/simulationDataModel';
 import iconLabel from "../assets/label.svg";
 import classNames from 'classnames';
 
@@ -51,7 +51,7 @@ function InformationSource({ setSourceValues }: Props) {
         });
     };
 
-    function isSourceType(type: InformationSourceType): boolean {
+    function isSourceType(type: InformationOriginType): boolean {
         return iSourceData.informationOrigin == type;
     }
 
@@ -75,7 +75,7 @@ function InformationSource({ setSourceValues }: Props) {
                 id="deducedFromknowledge"
                 onChange={(e) => radioChangeFormData(e)}
             />
-            {isSourceType(InformationSourceType.fromKnowledge) &&
+            {isSourceType(InformationOriginType.fromKnowledge) &&
                 <>
                     <Form.Group className={styles.marginTop15}>
                         <img src={iconLabel} className={styles.iconLabel} />
@@ -84,7 +84,7 @@ function InformationSource({ setSourceValues }: Props) {
                     </Form.Group>
                 </>
             }
-            {isSourceType(InformationSourceType.fromDocument) &&
+            {isSourceType(InformationOriginType.fromDocument) &&
                 <>
                     <Form.Group className={classNames(styles.sourcePageInputs, styles.labelSemiBold)}>
                         <img src={iconLabel} className={styles.iconLabel} />

@@ -38,22 +38,24 @@ const CustomCheckboxList = ({ title, subTitle, list, onDataSend }: Props) => {
         return newList;
     }
     return (
-        <Card className={styles.checkboxListSection}>            
-                <div className={styles.checkboxListFieldTitleSection} >
-                    <div className={classNames(styles.checkboxListFieldTitle, styles.required)}> {title}</div>
-                    <div className={styles.checkboxListFieldSubTitle}> {subTitle}</div>
-                </div>
-                {list?.map((item,idx) => (
-                    <div className={styles.labelSemiBold} key={idx}>
-                        <Form.Check
-                            inline
-                            label={item.name}
-                            type="checkbox"
-                            id={item.id}
-                            onChange={handleChange}
-                        />
-                    </div>
+        <Card className={styles.checkboxListSection}>
+            <div className={styles.checkboxListFieldTitleSection} >
+                <div className={classNames(styles.checkboxListFieldTitle, styles.required)}> {title}</div>
+                <div className={styles.checkboxListFieldSubTitle}> {subTitle}</div>
+            </div>
+            <div className={classNames(styles.labelSemiBold, styles.checkboxListItemSection)} >
+                {list?.map((item, idx) => (
+                    <Form.Check
+                        className={styles.checkboxListItem}
+                        key={idx}
+                        inline
+                        label={item.name}
+                        type="checkbox"
+                        id={item.id}
+                        onChange={handleChange}
+                    />
                 ))}
+            </div>
 
         </Card>
     )

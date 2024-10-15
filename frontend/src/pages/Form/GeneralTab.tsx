@@ -15,10 +15,6 @@ function GeneralTab() {
 
     const initializeInformationSource = () => {
         const sourceData: InformationSourceData = {
-            foundInClientDocument: false,
-            deduceByReadingDocument: false,
-            personalKnowlegdeUsed: false,
-            enrichedFromDocument: false,
             reliabilityRate: 0,
             foundOnPage: 0
         }

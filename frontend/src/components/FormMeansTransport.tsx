@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import BoxSelectedList from './genericCustom/BoxSelectedList';
 import CustomCheckboxList from './genericCustom/CustomCheckboxList';
 
 const list = [
@@ -20,15 +22,15 @@ interface Props {
 const FormMeansTransport = ({ onDataSend }: Props) => {
     let displayList: any = [];
     const handleDataReceive = (data: any) => {
-        
-        displayList = list.filter( l => data.includes(l.id ));
+        displayList = list.filter(l => data.includes(l.id));
+        console.log("selectedList", displayList);
         onDataSend(displayList);
     };
 
     return (
         <CustomCheckboxList
             onDataSend={handleDataReceive}
-            title='Moyen de transport proposés'
+            title='Sélectionner les moyens de transport prévu ou à supposer'
             subTitle='Plusieurs choix sont possibles'
             list={list}></CustomCheckboxList>
     );

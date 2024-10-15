@@ -65,7 +65,7 @@ function FormBoxMovement<T extends string>({ options, movementData, setBoxValues
 
     return (
         <div className={styles.boxMovement}>
-            <Card style={{ borderRadius: " 4px 4px 0px 0px"}}className={styles.boxItem}>
+            <Card style={{ borderRadius: " 4px 4px 0px 0px"}} className={styles.boxItem}>
                 <Card.Body>
                     <Form.Group>
                         <Form.Label className={styles.movementFieldLabel}>{options.name}</Form.Label>
