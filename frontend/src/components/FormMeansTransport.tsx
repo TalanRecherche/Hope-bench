@@ -1,5 +1,3 @@
-import { useState } from 'react';
-import BoxSelectedList from './genericCustom/BoxSelectedList';
 import CustomCheckboxList from './genericCustom/CustomCheckboxList';
 
 const list = [
