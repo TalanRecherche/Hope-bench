@@ -1,11 +1,12 @@
 import Select from 'react-select';
 import styles from '../FormComponents.module.css';
+import { useState } from 'react';
 
 interface Props {
     setSelectedItem: any
 }
 
-function DigitalItemDropbox({setSelectedItem}: Props) {
+function DigitalItemDropbox({ setSelectedItem }: Props) {
 
     //ToDo :  options to get from backend
     const options = [
@@ -20,8 +21,9 @@ function DigitalItemDropbox({setSelectedItem}: Props) {
             <Select
                 placeholder='Description'
                 isSearchable={true}
+                isClearable={true}
                 options={options}
-                onChange = {value => setSelectedItem(value)}
+                onChange={value => setSelectedItem(value)}
             />
         </div>
     );

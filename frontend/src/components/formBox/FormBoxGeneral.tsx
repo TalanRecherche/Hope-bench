@@ -23,6 +23,7 @@ interface Props<T> {
 
 function FormBoxGeneral<T extends string>({ isNumericInput = false, options, setValues }: Props<T>) {
 
+    const informationSourceBaseLabel = "L’information n’est pas dans le document, je n’ai pas les connaissances ni accès à des sources d’information externes pour répondre."
     const [informationSourceBase, setInformationSourceBase] = useState(false);
     const [displayInformationSource, setDisplayInformationSource] = useState<any>(false);
 
@@ -62,7 +63,7 @@ function FormBoxGeneral<T extends string>({ isNumericInput = false, options, set
                 <div>
                     <NumericInput min={0} size={1} onChange={(value) => setOptionValue(value)} />
                 </div>
-                <InformationSourceBase setSourceBaseValue={setInformationSourceBase}></InformationSourceBase>
+                <InformationSourceBase label={informationSourceBaseLabel} setSourceBaseValue={setInformationSourceBase}></InformationSourceBase>
             </Card.Body>;
     }
     else {
@@ -77,7 +78,7 @@ function FormBoxGeneral<T extends string>({ isNumericInput = false, options, set
                         onChange={(e) => setOptionValue(e.target.value)}
                         onKeyPress={handleKeyPress}
                     />
-                    <InformationSourceBase setSourceBaseValue={setInformationSourceBase}></InformationSourceBase>
+                    <InformationSourceBase label={informationSourceBaseLabel} setSourceBaseValue={setInformationSourceBase}></InformationSourceBase>
                 </Form.Group>
             </Card.Body>;
     }

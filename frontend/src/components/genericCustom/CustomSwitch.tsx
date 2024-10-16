@@ -11,7 +11,7 @@ interface Props {
 const CustomSwitch = ({ floatingContainer = false, options, sendSwitchValue}: Props) => {
 
     const styleActive = { "backgroundColor": '#3d00f2', "color": "white" } as React.CSSProperties;
-    const styleNoteActive = { "color": "#3d00f2" } as React.CSSProperties;
+    const styleNoteActive = { "color": "#A5A5A5" } as React.CSSProperties;
     const [checked, setChecked] = useState(true);
 
     function handleSwitchClick(optionLabel: string) {

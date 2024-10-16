@@ -23,7 +23,6 @@ const FormMeansTransport = ({ onDataSend }: Props) => {
     let displayList: any = [];
     const handleDataReceive = (data: any) => {
         displayList = list.filter(l => data.includes(l.id));
-        console.log("selectedList", displayList);
         onDataSend(displayList);
     };
 

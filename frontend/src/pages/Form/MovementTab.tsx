@@ -4,7 +4,7 @@ import { useState } from "react";
 import styles from './SimulationForm.module.css';
 import { useOutletContext } from "react-router-dom";
 import { FormStatus, MovementBoxData, InformationType } from "../../model/simulationDataModel";
-import MovementTabStartingBox from "../../components/genericCustom/MovementTabStartingBox";
+import MovementTabStartingBox from "../../components/MovementTabStartingBox";
 import classNames from 'classnames';
 import { useLocation } from "react-router-dom";
 import BoxSelectedList from "../../components/genericCustom/BoxSelectedList";

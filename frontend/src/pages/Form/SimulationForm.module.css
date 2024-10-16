@@ -1,3 +1,4 @@
+
 .saveButton {
   background-color: white;
   border-color: #FF5925;
@@ -72,7 +73,7 @@
   opacity: 0px;
 }
 
-.formTabCurrentEntry {  
+.formTabCurrentEntry {
   border-bottom-color: #FF5925;
   border-bottom-style: solid;
   border-bottom-width: 0.2em;
@@ -83,11 +84,11 @@
   text-align: left;
 }
 
-.formTabSingleButton:hover{
+.formTabSingleButton:hover {
   font-weight: 700;
 }
 
-.title2Reg ,
+.title2Reg,
 .formTabSingleButton {
   font-family: Montserrat;
   font-size: 14px;

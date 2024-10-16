@@ -1,3 +1,14 @@
+.navBarText {
+  
+  height: 22px;
+  margin-left: 453px;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19.5px;
+  text-align: left;
+}
+
 .navBarBrand {
   font-family: Montserrat;
   font-size: 20px;
@@ -37,6 +48,11 @@
 }
 
 .movementFieldLabel {
+  padding: 15px 0 0 15px;
+}
+
+.TextBold,
+.movementFieldLabel {
   font-weight: bold;
 }
 
@@ -56,7 +72,7 @@
   display: inline-flex;
   width: max-content;
   height: max-content;
-  border: 1px solid blue;
+  border: 1px solid #A5A5A5;
   border-radius: 5px;
 }
 
@@ -195,6 +211,18 @@
   gap: 8px;
 }
 
+.informationSourceBis {
+  width: 747px;
+  min-height: 188px;
+  height: fit-content;
+  border-radius: 0px 0px 4px 4px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+  background-color: rgba(249, 248, 252, 1);
+  padding-top: 24px;
+  gap: 8px;
+}
+
 .sourcePageInputs {
   margin: 15px 50px 15px 0px;
 }
@@ -229,6 +257,7 @@
 }
 
 .boxOffice {
+  margin-top: 24px;
   width: 770px;
   max-height: 370px;
   padding: 24px 0px 0px 0px;
@@ -295,13 +324,24 @@
 }
 
 .checkboxListFieldSubTitle,
-.boxDigitalFieldTitle {
+.boxDigitalFieldTitle,
+.boxSubTitle,
+.textRequired {
   font-family: Montserrat;
   font-size: 12px;
   font-style: italic;
   font-weight: 400;
   line-height: 14.63px;
   text-align: left;
+}
+
+.textRequired {
+  color: red;
+  padding-top: 10px;
+}
+
+.boxSubTitle {
+  color: #737373;
 }
 
 .boxDigitalHeadTitle {

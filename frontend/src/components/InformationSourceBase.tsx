@@ -2,13 +2,11 @@ import Form from 'react-bootstrap/Form';
 import styles from './FormComponents.module.css';
 
 interface Props {
+    label: string;
     setSourceBaseValue?: any
 }
 
-function InformationSourceBase({ setSourceBaseValue }: Props) {
-
-    const label = "L’information n’est pas dans le document, je n’ai pas les connaissances ni accès à des sources d’information externes pour répondre."
-
+function InformationSourceBase({ label, setSourceBaseValue }: Props) {
     const changeFormData = (e: any) => {
         const { checked } = e.target;
         setSourceBaseValue(checked);
@@ -18,10 +16,10 @@ function InformationSourceBase({ setSourceBaseValue }: Props) {
         <Form.Check
          className={ styles.informationSourceBase }
             inline
-            name="informationNotInTheDocument"
+            name="informationSourceBase"
             type="checkbox"
             label={label}
-            id="deduced-from-document"
+            id="informationSourceBase"
             onChange={(e) => changeFormData(e)}
         />
     );

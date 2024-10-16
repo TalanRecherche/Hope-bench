@@ -12,14 +12,14 @@ function FormBase() {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const [formDataValues, setFormDataValues] = useState<FormData>({ formName: location.state?.formName , formStatus : location.state?.status});
+    const [formDataValues, setFormDataValues] = useState<FormData>({ formName: location.state?.formName, formStatus: location.state?.status });
 
     const redirect = (link: string, e: any) => {
         setCurrentEntry(e.target.id);
         navigate(link, {
             state: {
                 status: formDataValues.formStatus
-              }
+            }
         });
     };
 
@@ -28,31 +28,40 @@ function FormBase() {
     };
 
     const receiveFormData = (receivedData: any) => {
-        
+
         switch (currentEntry) {
             case "general":
                 formDataValues.generalBoxData = receivedData;
                 setFormDataValues(formDataValues);
-            break;
+                break;
             case "movement":
                 formDataValues.movementBoxData = receivedData;
                 setFormDataValues(formDataValues);
-            break;
+                break;
             case "digital":
                 formDataValues.digitalBoxData = receivedData;
                 setFormDataValues(formDataValues);
-            break;
+                break;
             case "office":
                 formDataValues.officeData = receivedData;
                 setFormDataValues(formDataValues);
-            break;
-        };        
+                break;
+        };
     }
 
     const formSubmit = () => {
-        console.log("Submitting = ", formDataValues);    }
+        console.log("Submitting = ", formDataValues);
+    }
 
-    const [currentEntry, setCurrentEntry] = useState('general');
+    const getInitialEntry = () => {
+        let pathNameSplited = location.pathname.split("/");
+        if (pathNameSplited.length > 0) {
+            return pathNameSplited[2];
+        }
+        return "generalTab";
+    }
+
+    const [currentEntry, setCurrentEntry] = useState(getInitialEntry());
 
     return (
         <form>
@@ -60,22 +69,22 @@ function FormBase() {
                 <div className={styles.formNav}>
                     <div className={styles.formTabButtons}>
                         <Button
-                            id="general" variant="underline"
-                            className={classNames(styles.formTabSingleButton, (currentEntry == "general") ? styles.formTabCurrentEntry : '')}
+                            id="generalTab" variant="underline"
+                            className={classNames(styles.formTabSingleButton, (currentEntry == "generalTab") ? styles.formTabCurrentEntry : '')}
                             onClick={(e) => redirect("/form/generalTab", e)}> GÉNÉRAL
                         </Button>
                         <Button
-                            id="movement" variant="underline"
-                            className={classNames(styles.formTabSingleButton, (currentEntry == "movement") ? styles.formTabCurrentEntry : '')}
+                            id="movementTab" variant="underline"
+                            className={classNames(styles.formTabSingleButton, (currentEntry == "movementTab") ? styles.formTabCurrentEntry : '')}
                             onClick={(e) => redirect("/form/movementTab", e)}> DÉPLACEMENT
                         </Button>
                         <Button
-                            id="digital" variant="underline"
-                            className={classNames(styles.formTabSingleButton, (currentEntry == "digital") ? styles.formTabCurrentEntry : '')}
+                            id="digitalTab" variant="underline"
+                            className={classNames(styles.formTabSingleButton, (currentEntry == "digitalTab") ? styles.formTabCurrentEntry : '')}
                             onClick={(e) => redirect("/form/digitalTab", e)}> NUMÉRIQUE
                         </Button>
-                        <Button id="office" variant="underline"
-                            className={classNames(styles.formTabSingleButton, (currentEntry == "office") ? styles.formTabCurrentEntry : '')}
+                        <Button id="officeTab" variant="underline"
+                            className={classNames(styles.formTabSingleButton, (currentEntry == "officeTab") ? styles.formTabCurrentEntry : '')}
                             onClick={(e) => redirect("/form/officeTab", e)}> BUREAU
                         </Button>
                     </div>
@@ -88,6 +97,6 @@ function FormBase() {
             </Navbar>
             <Outlet context={{ setDatat: receiveFormData }} />
         </form >
-    );    
+    );
 }
 export default FormBase;

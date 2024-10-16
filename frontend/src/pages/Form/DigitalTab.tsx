@@ -6,7 +6,7 @@ import { DigitalBoxData, FormStatus, InformationType } from '../../model/simulat
 import { useOutletContext } from 'react-router-dom';
 import classNames from 'classnames';
 import { useLocation } from "react-router-dom";
-import DigitalTabStartingBox from '../../components/genericCustom/DigitalTabStartingBox';
+import DigitalTabStartingBox from '../../components/DigitalTabStartingBox';
 import BoxSelectedList from '../../components/genericCustom/BoxSelectedList';
 
 function DigitalTab() {

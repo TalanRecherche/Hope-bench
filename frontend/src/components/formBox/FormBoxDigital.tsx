@@ -15,7 +15,7 @@ interface Props<T> {
         name: T;
         type: T;
         id: T;
-        placeholder: T;        
+        placeholder: T;
         informationSourceData?: InformationSourceData;
     },
     digitalData?: DigitalBoxData;
@@ -32,6 +32,7 @@ function FormBoxDigital<T extends string>({ options, digitalData, setValues }: P
 
     const [selectedItem, setSelectedItem] = useState({ value: '', label: '' });
     const [selectedItemCount, setSelectedItemCount] = useState<number>(0);
+    const [selectedItemRequired, setSelectedItemRequired] = useState(false);
 
     function handleValuesChange(newList: BoxItemType[]) {
         setDigitalBoxValues({
@@ -48,18 +49,22 @@ function FormBoxDigital<T extends string>({ options, digitalData, setValues }: P
     };
 
     const addItem = () => {
-        itemlist.push({ count: selectedItemCount, name: selectedItem.label });
-        setItemlist(itemlist);
-        handleValuesChange(itemlist);
+        if (selectedItem.label != "") {
+            itemlist.push({ count: selectedItemCount, name: selectedItem.label });
+            setItemlist(itemlist);
+            handleValuesChange(itemlist);
+        }
+
+        setSelectedItemRequired(selectedItem.label == "");
     }
 
-    const removeItem = (index: any) => {               
+    const removeItem = (index: any) => {
         itemlist.splice(index, 1);
         handleValuesChange(itemlist);
     }
 
-    const updateItemCount = (value: number, index: number) => {        
-        if(itemlist[index]) {
+    const updateItemCount = (value: number, index: number) => {
+        if (itemlist[index]) {
             itemlist[index].count = value;
         }
 
@@ -75,11 +80,11 @@ function FormBoxDigital<T extends string>({ options, digitalData, setValues }: P
 
     return (
         <div className={styles.boxDigital}>
-            <Card style={{ borderRadius: "4px 4px 0px 0px"}} className={styles.boxItem}>
+            <Card style={{ borderRadius: "4px 4px 0px 0px" }} className={styles.boxItem}>
                 <Card.Body >
                     <div>
                         <Form.Group>
-                            <Form.Label className={styles.movementFieldLabel}>{options.name}</Form.Label>
+                            <Form.Label className={styles.TextBold}>{options.name}</Form.Label>
                             <div className={classNames(styles.boxDigitalHeadTitle, styles.required)}> Sélectionnez chaque produit ainsi que le nombre de personnes auxquelles il a été distribué. </div>
                             <p className={styles.boxDigitalFieldTitle}> Par exemple, si trois collaborateurs reçoivent un Dell Latitude 5430, sélectionnez le modèle "Dell Latitude 5430" puis rentrez "3" en nombre d'exemplaire, enfin cliquez sur "Ajouter 3 exemplaires".
                                 Si des appareils à renseigner sont des ordinateurs Talan ou bien des ordinateurs reconditionnés, sélectionnez l'option appropriée, sinon sélectionnez le modèle approprié ou un modèle équivalent.</p>
@@ -88,7 +93,9 @@ function FormBoxDigital<T extends string>({ options, digitalData, setValues }: P
                                 <span style={{ float: 'right' }}><NumericInput style={{ input: { height: 38, textAlign: 'center' } }} min={0} size={1} onChange={(e) => setCount(e)} />
                                 </span>
                             </div>
-                            <br />
+                            {selectedItemRequired &&
+                                <div className={styles.textRequired} > Vous devez Selectionner un produit pour ajouter un équipement.</div>
+                            }
                             <div className={styles.addItem}>
                                 <Button className={styles.addItemButton} onClick={addItem}>Ajouter +</Button>
                             </div>
@@ -99,12 +106,14 @@ function FormBoxDigital<T extends string>({ options, digitalData, setValues }: P
                     </div>
                 </Card.Body>
             </Card>
-            <Card style={{ borderRadius: " 0px 0px 4px 4px"}} className={styles.informationSource}>
-                <Card.Body>
-                    <InformationSource
-                        setSourceValues={setSourceData} />
-                </Card.Body>
-            </Card>
+            {itemlist.length > 0 &&
+                <Card style={{ borderRadius: " 0px 0px 4px 4px" }} className={styles.informationSource}>
+                    <Card.Body>
+                        <InformationSource
+                            setSourceValues={setSourceData} />
+                    </Card.Body>
+                </Card>
+            }
         </div>
     )
 } export default FormBoxDigital;
