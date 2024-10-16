@@ -1,6 +1,5 @@
 import Select from 'react-select';
 import styles from '../FormComponents.module.css';
-import { useState } from 'react';
 
 interface Props {
     setSelectedItem: any
