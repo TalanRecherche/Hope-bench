@@ -1,12 +1,14 @@
 /* ToDo - improve Data Receive */
 
+
 export type InformationSourceData = {
-  foundInClientDocument?: boolean
-  deduceByReadingDocument?: boolean
-  personalKnowlegdeUsed?: boolean
-  enrichedFromDocument?: boolean
+  informationOrigin?: InformationOriginType
   reliabilityRate?: number
-  foundOnPage?: number
+  foundOnPage?: number  
+  isInformationEnriched?: string
+  enrichedBasedOnTheDocument?: boolean
+  enrichedFromKnowledge?:boolean
+  enrichedReliabilityRate?: number
 }
 
 export interface FormBoxData {
@@ -15,11 +17,11 @@ export interface FormBoxData {
   informationSource?: InformationSourceData
 }
 
-export type GeneralDataType = {
+export type GeneralBoxData = {
   missionTitle: FormBoxData
   clientName: FormBoxData
   startDate: FormBoxData
-  NbCollaborators: FormBoxData
+  nbCollaborators: FormBoxData
   missionDuration: FormBoxData
   missionSector: FormBoxData
 }
@@ -29,10 +31,7 @@ export interface MovementBoxData {
   movementFrequency?: string;
   numberOfMovement?: number;
   averageKmPerTrip?: number;
-  informationSource?: InformationSourceData
-}
-export type MovementDataType = {
-  movementDataList: MovementBoxData[]
+  informationSource?: InformationSourceData;
 }
 
 export type BoxItemType = {
@@ -49,6 +48,15 @@ export interface DigitalBoxData {
 export interface OfficeBoxData {
   itemList: BoxItemType[];
   informationSource?: InformationSourceData;
+}
+
+export interface FormData {
+  formName: string;
+  formStatus?: FormStatus;
+  generalBoxData?: GeneralBoxData; 
+  movementBoxData?: MovementBoxData;
+  digitalBoxData?: DigitalBoxData;
+  officeData?: OfficeBoxData;
 }
 
 export type CustomSwitchOptions = {
@@ -68,4 +76,21 @@ export type FormListData = {
   numberOfPages: number;
   lastUpdate: Date;
   status : string;
+}
+
+export enum FormStatus {
+  toStart = 'À commencer',
+  started = 'En cours',
+  submitted = 'Soumis'
+}
+
+export enum InformationOriginType {
+  fromDocument = "foundInDocument",
+  fromKnowledge = "deducedFromknowledge"
+}
+
+export enum InformationType {
+  needed = "needed",
+  noNeeded = "noNeeded",
+  unableToIdentify = "unableToIdentify"
 }

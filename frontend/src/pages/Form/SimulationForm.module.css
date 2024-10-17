@@ -1,10 +1,10 @@
+
 .saveButton {
   background-color: white;
   border-color: #FF5925;
   color: #FF5925;
   border: 1px solid;
   margin-right: 0.5rem;
-
   width: Hug (96px)px;
   height: Hug (25px)px;
   padding: 4px 8px 4px 8px;
@@ -73,11 +73,28 @@
   opacity: 0px;
 }
 
-.formTabSingleButton:focus {
-  font-weight: bold;
+.formTabCurrentEntry {
   border-bottom-color: #FF5925;
   border-bottom-style: solid;
   border-bottom-width: 0.2em;
+  font-weight: 700;
+  font-size: 14px;
+  font-family: Montserrat;
+  line-height: 17.07px;
+  text-align: left;
+}
+
+.formTabSingleButton:hover {
+  font-weight: 700;
+}
+
+.title2Reg,
+.formTabSingleButton {
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17.07px;
+  text-align: left;
 }
 
 .formSubmissionButtons {
@@ -112,7 +129,16 @@
 }
 
 .movementTab {
-  display: flex;
+  margin: auto;
+  width: 770px;
+  height: 41px;
+  gap: 0px;
+  justify-content: space-between;
+  opacity: 0px;
+}
+
+.movementTab2 {
+  margin-left: 90px;
 }
 
 .officeTab {
@@ -131,4 +157,14 @@
   gap: 0px;
   justify-content: space-between;
   opacity: 0px;
+}
+
+.formTabDisabled {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.movementTabSelectedListSection {
+  margin-top: 24px;
+  margin-left: 250px;
 }

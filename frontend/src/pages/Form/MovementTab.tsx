@@ -1,16 +1,21 @@
 import FormBoxMovement from "../../components/formBox/FormBoxMovement";
 import FormMeansTransport from '../../components/FormMeansTransport';
-import { InformationSourceTypes } from "../../components/InformationSource";
 import { useState } from "react";
 import styles from './SimulationForm.module.css';
 import { useOutletContext } from "react-router-dom";
-import { MovementBoxData } from "../../model/simulationDataModel";
-import FormDefaultBox from "../../components/genericCustom/FormDefaultBox";
+import { FormStatus, MovementBoxData, InformationType } from "../../model/simulationDataModel";
+import MovementTabStartingBox from "../../components/MovementTabStartingBox";
+import classNames from 'classnames';
+import { useLocation } from "react-router-dom";
+import BoxSelectedList from "../../components/genericCustom/BoxSelectedList";
 
 function MovementTab() {
 
     const { setDatat } = useOutletContext<{ setDatat: any }>(); // <-- access context value
+    const location = useLocation();
+    const formStatus = location.state?.status;
     const [movementDataValues] = useState<MovementBoxData[]>([]);
+    const [movementInformationBase, setMovementInformationBase] = useState();
 
     let displayList: {
         id: string,
@@ -53,22 +58,43 @@ function MovementTab() {
         setDatat(movementDataValues);
     };
 
+    const handleDefaultValues = (receivedValue: any) => {
+        if (receivedValue != InformationType.needed)
+            setX(displayList);
+        setMovementInformationBase(receivedValue);
+    };
+
+    const isItemChecked = () => {
+        return x?.filter(c => c.checked).length != 0;
+    }
+
     return (
-        <div className={styles.movementTab}>
-            <div>
-                <FormMeansTransport onDataSend={handleSelectedListReceive}></FormMeansTransport>
-            </div>
-            {x.length == 0 &&
-                <FormDefaultBox></FormDefaultBox>
+        <div style={{ display: "flex" }}>
+            {isItemChecked() &&
+                <div className={styles.movementTabSelectedListSection}>
+                    <BoxSelectedList
+                        title="Moyen(s) de transport utilisé(s)"
+                        list={x?.filter(c => c.checked).sort((a, b) => a.order - b.order)} />
+                </div>
             }
-            <div>
-                {x?.filter(c => c.checked).sort((a, b) => a.order - b.order).map((item, idx) => (
-                    <FormBoxMovement
-                        key={idx}
-                        setBoxValues={handleBoxDataReceive}
-                        informationSourceType={InformationSourceTypes.fromDeduction}
-                        options={{ name: item.name, type: 'text', id: item.id, placeholder: 'Description' }} />
-                ))}
+
+            <div className={classNames(isItemChecked() ? styles.movementTab2 : styles.movementTab, (formStatus == FormStatus.submitted) ? styles.formTabDisabled : '')}>
+
+                <MovementTabStartingBox sendMovementDefaultInformation={handleDefaultValues}></MovementTabStartingBox>
+
+                {movementInformationBase == InformationType.needed &&
+                    <>
+                        <FormMeansTransport onDataSend={handleSelectedListReceive}></FormMeansTransport>
+
+                        {x?.filter(c => c.checked).sort((a, b) => a.order - b.order).map((item, idx) => (
+                            <FormBoxMovement
+                                key={idx}
+                                setBoxValues={handleBoxDataReceive}
+                                options={{ name: item.name, type: 'text', id: item.id, placeholder: 'Description' }} />
+                        ))}
+                    </>
+                }
+
             </div>
         </div>
     );

@@ -1,16 +1,22 @@
 import FormDigitalEquipments from '../../components/FormDigitalEquipments';
 import FormBoxDigital from '../../components/formBox/FormBoxDigital';
-import { InformationSourceTypes } from '../../components/InformationSource';
 import { useState } from 'react';
 import styles from './SimulationForm.module.css';
-import { DigitalBoxData } from '../../model/simulationDataModel';
+import { DigitalBoxData, FormStatus, InformationType } from '../../model/simulationDataModel';
 import { useOutletContext } from 'react-router-dom';
-import FormDefaultBox from '../../components/genericCustom/FormDefaultBox';
+import classNames from 'classnames';
+import { useLocation } from "react-router-dom";
+import DigitalTabStartingBox from '../../components/DigitalTabStartingBox';
+import BoxSelectedList from '../../components/genericCustom/BoxSelectedList';
 
 function DigitalTab() {
 
     const { setDatat } = useOutletContext<{ setDatat: any }>();
+    const location = useLocation();
+    const formStatus = location.state?.status;
     const [digitalValues] = useState<DigitalBoxData[]>([]);
+    const [digitalInformationBase, setDigitalInformationBase] = useState();
+
 
     let initialList: {
         id: string,
@@ -54,22 +60,42 @@ function DigitalTab() {
         setDatat(digitalValues);
     };
 
+    const handleDefaultValues = (receivedValue: any) => {
+        if (receivedValue != InformationType.needed)
+            setX(initialList);
+        setDigitalInformationBase(receivedValue);
+    };
+
+    const isItemChecked = () => {
+        return x?.filter(c => c.checked).length != 0;
+    }
+
     return (
-        <div className={styles.movementTab}>
-            <div>
-                <FormDigitalEquipments onDataSend={handleDataReceive}></FormDigitalEquipments>
-            </div>
-            {x.length == 0 &&
-                <FormDefaultBox></FormDefaultBox>
+        <div style={{ display: "flex" }}>
+            {isItemChecked() &&
+                <div className={styles.movementTabSelectedListSection}>
+                    <BoxSelectedList
+                        title="Equipements numérique(s) utilisé(s)"
+                        list={x?.filter(c => c.checked).sort((a, b) => a.order - b.order)} />
+                </div>
             }
-            <div>
-                {x?.filter(c => c.checked).sort((a, b) => a.order - b.order).map((item, idx) => (
-                    <FormBoxDigital
-                        key={idx}
-                        setValues={handleBoxDataReceive}
-                        informationSourceType={InformationSourceTypes.fromDeduction}
-                        options={{ name: item.name, type: 'text', id: item.id, placeholder: 'Description' }} />
-                ))}
+
+            <div className={classNames(isItemChecked() ? styles.movementTab2 : styles.movementTab, (formStatus == FormStatus.submitted) ? styles.formTabDisabled : '')}>
+                <DigitalTabStartingBox sendDigitalDefaultInformation={handleDefaultValues}></DigitalTabStartingBox>
+
+                {digitalInformationBase == InformationType.needed &&
+                    <>
+                        <FormDigitalEquipments onDataSend={handleDataReceive}></FormDigitalEquipments>
+
+                        {x?.filter(c => c.checked).sort((a, b) => a.order - b.order).map((item, idx) => (
+                            <FormBoxDigital
+                                key={idx}
+                                setValues={handleBoxDataReceive}
+                                options={{ name: item.name, type: 'text', id: item.id, placeholder: 'Description' }} />
+                        ))}
+
+                    </>
+                }
             </div>
         </div>
     );

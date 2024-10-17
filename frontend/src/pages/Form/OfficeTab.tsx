@@ -1,15 +1,23 @@
 import FormBoxOffice from "../../components/formBox/FormBoxOffice";
-import { InformationSourceTypes } from "../../components/InformationSource";
+import { FormStatus, InformationType } from "../../model/simulationDataModel";
 import styles from './SimulationForm.module.css';
 import { useOutletContext } from "react-router-dom";
+import classNames from 'classnames';
+import { useLocation } from "react-router-dom";
+import OfficeTabStartingBox from "../../components/OfficeTabStartingBox";
+import { useState } from "react";
 
 function OfficeTab() {
 
     const { setDatat } = useOutletContext<{ setDatat: any }>();
+    const location = useLocation();
+    const formStatus = location.state?.status;
+    const [officeInformationBase, setOfficeInformationBase] = useState();
+    
     // const [officeDataValues] = useState<OfficeBoxData[]>([]);
 
     const handleBoxDataReceive = (receivedData: any) => {
-        
+
         // var index = movementValues.findIndex(m => m.optionName == receivedData.optionName);
         // if (index == -1) {
         //     movementValues.push(receivedData);
@@ -21,9 +29,17 @@ function OfficeTab() {
         setDatat(receivedData);
     };
 
+    const handleDefaultValues = (receivedValue: any) => {
+        setOfficeInformationBase(receivedValue);
+    };
+
     return (
-        <div className={styles.officeTab} >
-            <FormBoxOffice setValues={handleBoxDataReceive} informationSourceType={InformationSourceTypes.fromCollaborator}></FormBoxOffice>
+        <div className={classNames(styles.officeTab, (formStatus == FormStatus.submitted) ? styles.formTabDisabled : '')} >
+            <OfficeTabStartingBox sendDigitalDefaultInformation={handleDefaultValues}></OfficeTabStartingBox>
+
+            {officeInformationBase == InformationType.needed &&
+                <FormBoxOffice setValues={handleBoxDataReceive}></FormBoxOffice>
+            }
         </div>
     );
 }

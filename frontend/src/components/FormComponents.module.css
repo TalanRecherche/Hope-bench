@@ -1,3 +1,14 @@
+.navBarText {
+  
+  height: 22px;
+  margin-left: 453px;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19.5px;
+  text-align: left;
+}
+
 .navBarBrand {
   font-family: Montserrat;
   font-size: 20px;
@@ -37,6 +48,11 @@
 }
 
 .movementFieldLabel {
+  padding: 15px 0 0 15px;
+}
+
+.TextBold,
+.movementFieldLabel {
   font-weight: bold;
 }
 
@@ -56,7 +72,7 @@
   display: inline-flex;
   width: max-content;
   height: max-content;
-  border: 1px solid blue;
+  border: 1px solid #A5A5A5;
   border-radius: 5px;
 }
 
@@ -75,10 +91,6 @@
   height: max-content;
   border: 1px solid blue;
   border-radius: 5px;
-  float: right;
-}
-
-.ratingContainerFloat {
   float: right;
 }
 
@@ -177,39 +189,53 @@
 }
 
 .textRegular,
-.addItem {
+.addItem,
+.modalNext,
+.modalText,
+.modalPrevious {
   font-family: Montserrat;
   font-size: 14px;
   font-weight: 500;
-  line-height: 17.07px;  
+  line-height: 17.07px;
 }
 
 .informationSource {
   width: 770px;
-  min-height: 172px;
-  height: auto;
+  min-height: 188px;
+  height: fit-content;
   border-radius: 0px 0px 4px 4px;
   border: 1px 0px 0px 0px;
   opacity: 0px;
-  background: rgba(249, 248, 252, 1);
+  background-color: rgba(249, 248, 252, 1);
   padding-top: 24px;
-  gap: 16px;
+  gap: 8px;
+}
+
+.informationSourceBis {
+  width: 747px;
+  min-height: 188px;
+  height: fit-content;
+  border-radius: 0px 0px 4px 4px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+  background-color: rgba(249, 248, 252, 1);
+  padding-top: 24px;
+  gap: 8px;
 }
 
 .sourcePageInputs {
-  margin: 15px 0px 15px 0px;
+  margin: 15px 50px 15px 0px;
 }
 
 .boxGeneral {
   width: 770px;
-  max-height: 370px;
+  max-height: 662px;
   padding: 24px 0px 0px 0px;
   border-radius: 4px 0px 0px 0px;
   background: rgba(255, 255, 255, 1);
 }
 
 .boxMovement {
-  margin-left: 335.5px;
   width: 770px;
   min-height: 370px;
   padding: 24px 0px 0px 0px;
@@ -218,7 +244,6 @@
 }
 
 .boxDigital {
-  margin-left: 335.5px;
   width: 770px;
   min-height: 370px;
   padding: 24px 0px 0px 0px;
@@ -232,6 +257,7 @@
 }
 
 .boxOffice {
+  margin-top: 24px;
   width: 770px;
   max-height: 370px;
   padding: 24px 0px 0px 0px;
@@ -252,38 +278,43 @@
   opacity: 0px;
 }
 
-.numericInput {
-  margin-left: 557px;
+.onPageNumericeInput {
   text-align: center;
   font-family: 'Montserrat';
-  float: 'right';
   opacity: 0px;
 }
 
 .checkboxListSection {
-  width: 228px;
-  height: 318px;
-  top: 24px;
-  left: 315px;
-  padding: 16px;
-  border-radius: 4px 0px 0px 0px;
-  border: 1px 0px 0px 0px;
+  width: 771px;
+  min-height: 180px;
+  top: 48px;
+  padding: 24px 10px 0px 10px;
+  gap: 8px;
+  margin-bottom: 48px;
+}
+
+.checkboxListItemSection {
+  width: 751px;
+  min-height: 63px;
   opacity: 0px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.checkboxListItem {
+  width: 229px;
+  height: fit-content;
 }
 
 .checkboxListFieldTitleSection {
-  width: 196px;
+  width: 427px;
   height: 36px;
-  gap: 4px;
-}
-
-.checkboxListFieldTitle {
-  width: 196px;
+  opacity: 0px;
 }
 
 .labelSemiBold,
 .checkboxListFieldTitle,
-.boxDigitalHeadTitle {
+.boxDigitalHeadTitle .selectedListFieldTitle {
   font-family: Montserrat;
   font-size: 14px;
   font-weight: 600;
@@ -293,7 +324,9 @@
 }
 
 .checkboxListFieldSubTitle,
-.boxDigitalFieldTitle {
+.boxDigitalFieldTitle,
+.boxSubTitle,
+.textRequired {
   font-family: Montserrat;
   font-size: 12px;
   font-style: italic;
@@ -302,13 +335,13 @@
   text-align: left;
 }
 
-.test {
-  width: Fill (722px)px;
-  height: Hug (25px)px;
-  gap: 0px;
-  opacity: 0px;
+.textRequired {
+  color: red;
+  padding-top: 10px;
+}
 
-  justify-content: space-between;
+.boxSubTitle {
+  color: #737373;
 }
 
 .boxDigitalHeadTitle {
@@ -343,11 +376,11 @@
 }
 
 .defaultBox {
-  margin-left: 335.5px;
   width: 770px;
-  height: 308px;
+  height: 190px;
+  max-height: 190px;
   top: 24px;
-  gap: 20px;
+  gap: 24px;
   border-radius: 4px 0px 0px 0px;
   border: 1px 0px 0px 0px;
   opacity: 0px;
@@ -377,4 +410,101 @@
   opacity: 0px;
   margin-top: 40px;
   margin-left: 304px;
+}
+
+
+/* Modal */
+
+.modalTitle {
+  width: 127px;
+  height: 24px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24.38px;
+  text-align: left;
+}
+
+.modalText {
+  text-align: left;
+}
+
+.modalButtons {
+  width: 168px;
+  height: 25px;
+  gap: 8px;
+  opacity: 0px;
+}
+
+.modalNext {
+  width: 70px;
+  height: 25px;
+  padding: 4px 8px 4px 8px;
+  text-align: center !important;
+  border-radius: 3px;
+  background: rgba(255, 89, 37, 1);
+  border-color: rgba(255, 89, 37, 1);
+  color: rgba(255, 255, 255, 1);
+}
+
+.modalPrevious {
+  width: 70px;
+  height: 25px;
+  padding: 4px 8px 4px 8px;
+  text-align: center !important;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 1);
+  border-color: rgba(255, 89, 37, 1);
+  color: rgba(255, 89, 37, 1);
+}
+
+.modalPageNumber {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19.5px;
+  color: rgba(255, 89, 37, 1);
+}
+
+.informationSourceBase {
+  width: 722px;
+  height: 34px;
+  gap: 8px;
+  opacity: 0px;
+  margin-top: 25px;
+}
+
+.iconLabel {
+  margin-right: 5px;
+}
+
+.marginTop15 {
+  margin: 15px 0px 0px 0px;
+}
+
+.SelectedListSection {
+  position: sticky !important;
+  width: 228px;
+  height: 114px;
+  max-height: fit-content;
+  top: 24px;
+  padding: 16px;
+  border-radius: 4px 0px 0px 0px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+}
+
+.selectedListFieldTitle,
+.selectedListItemLabel {
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 17.07px;
+  text-align: left;
+}
+
+.selectedListItemLabel {
+  color: #3D00F2 !important;
 }
