@@ -55,23 +55,13 @@ function FormBoxMovement<T extends string>({ options, movementData, setBoxValues
         if (typeof value === 'number') {
             setDisplayInformationSource(value > 0);
         }
-        else if (Date.parse(value)) {
-            setDisplayInformationSource(value != "");
-        }
-        else if (value == "") {
-            setDisplayInformationSource(false);
-            setDisplayAverageInformationSource(false);
-        }
-
-        setMovementBoxValues({
-            ...movementBoxValues,
-            [name]: value
-        });
-
+        else 
+            setDisplayAverageInformationSource(value != "");
+        
         if (!movementBoxValues.movementFrequency) {
             setMovementBoxValues({
                 ...movementBoxValues,
-                ["movementFrequency"]: movementFrequencyDefault
+                [name]: movementFrequencyDefault
             });
         }
 

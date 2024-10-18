@@ -20,7 +20,6 @@ function DigitalItemDropbox({ setSelectedItem }: Props) {
             <Select
                 placeholder='Description'
                 isSearchable={true}
-                isClearable={true}
                 options={options}
                 onChange={value => setSelectedItem(value)}
             />

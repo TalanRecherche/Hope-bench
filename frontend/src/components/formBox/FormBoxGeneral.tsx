@@ -32,11 +32,8 @@ function FormBoxGeneral<T extends string>({ isNumericInput = false, options, set
         if (typeof value === 'number') {
             setDisplayInformationSource(value > 0);
         }
-        else if (Date.parse(value)) {
+        else
             setDisplayInformationSource(value != "");
-        }
-        else if (value == "")
-            setDisplayInformationSource(false);
 
         options.value = value;
         setValues(options);
