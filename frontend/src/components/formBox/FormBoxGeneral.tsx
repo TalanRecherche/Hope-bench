@@ -99,4 +99,4 @@ function FormBoxGeneral<T extends string>({ isNumericInput = false, options, set
         </div>
     );
 }
-export default FormBoxGeneral
+export default FormBoxGeneral;

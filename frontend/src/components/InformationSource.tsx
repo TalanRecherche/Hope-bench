@@ -102,7 +102,7 @@ function InformationSource({ setSourceValues }: Props) {
                     </Form.Group >
                     <Form.Group className={styles.labelSemiBold}>
                         <img src={iconLabel} className={styles.iconLabel} />
-                        <Form.Label> j’ai enrichi ma saisie par des informations non présentes dans le document ? </Form.Label>
+                        <Form.Label> J’ai enrichi ma saisie par des informations non présentes dans le document ? </Form.Label>
                     </Form.Group>
                     <Form.Check
                         name="isInformationEnriched"

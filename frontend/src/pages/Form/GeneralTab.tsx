@@ -50,7 +50,7 @@ function GeneralTab() {
 
     /* ToDo - handle Data Receive to be improved*/
     const handleDataReceive = (receivedData: any) => {
-        //console.log("data =", formStatus);
+        // console.log("data =", formStatus);
 
         let initialData = generalData;
 
