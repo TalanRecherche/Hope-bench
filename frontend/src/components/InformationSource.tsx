@@ -59,7 +59,7 @@ function InformationSource({ setSourceValues }: Props) {
         <>
             <Form.Group className={styles.labelSemiBold}>
                 <img src={iconLabel} className={styles.iconLabel} />
-                <Form.Label> L’information que j’ai saisi : </Form.Label>
+                <Form.Label> L’information que j’ai saisie : </Form.Label>
             </Form.Group>
             <Form.Check
                 name="informationOrigin"

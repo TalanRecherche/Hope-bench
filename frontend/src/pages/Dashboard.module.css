@@ -12,10 +12,13 @@
 
 .formNav {
     /* margin: auto; */
-    width: 770px;
+    /* width: 770px; */
     display: flex;
-    height: 41px;
-    margin-left: 470px;
+    /*ajout pour centrer*/
+     justify-content: center; 
+     width:100%;
+    /*height: 41px;
+    margin-left: 470px; */
     gap: 0px;
     opacity: 0px;
 }
@@ -40,6 +43,20 @@
     background-color: #FF5925;
 }
 
+
+
+  /*ajout pour mettre en évidence zones cliquables: attention pour l'instant td firstchild est prioritaire pour la couleur*/
+td.clickable {
+    cursor: pointer; /* Change le curseur pour indiquer que c'est cliquable */
+    color: #007bff !important; /* Change la couleur du texte */
+    text-decoration: underline; /* Ajoute un soulignement */
+}
+
+.clickable:hover {
+    background-color: rgba(239, 241, 243, 0.1); /* Change l'arrière-plan au survol */
+}
+
+/* 
 .textSemi,
 .tableItemName {
     font-family: Montserrat;
@@ -47,7 +64,7 @@
     font-weight: 600;
     line-height: 17.07px;
     color: #FF5925 !important;
-}
+} */
 
 .table-container {
     margin-top: 20px;
@@ -98,3 +115,4 @@ th {
     line-height: 17.07px;
     text-align: left;
   }
+

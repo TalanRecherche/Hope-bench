@@ -92,16 +92,16 @@ function DashBoard() {
               <th>Format</th>
               <th>Nbr pages</th>
               <th>Dernière MAJ</th>
-              <th>Status</th>
+              <th>Statut</th>
             </tr>
           </thead>
           <tbody>
             {displayList?.map((item, idx) => (
               <tr key={idx}>
-                <td id={item.name} onClick={(e) => redirect("/form/generalTab", e, item.status)}>{item.name}</td>
+                <td id={item.name} className={styles.clickable} onClick={(e) => redirect("/form/generalTab", e, item.status)}>{item.name}</td>
                 <td>{item.format}</td>
                 <td>{item.numberOfPages}</td>
-                <td>{item.lastUpdate.toDateString()}</td>
+                <td>{item.lastUpdate.toLocaleDateString('fr-FR')}</td>
                 <td>{item.status}</td>
               </tr>
             ))}

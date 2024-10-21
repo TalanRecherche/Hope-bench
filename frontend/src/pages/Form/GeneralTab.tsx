@@ -110,8 +110,8 @@ function GeneralTab() {
                 options={{ name: 'Secteur Talan Concerné', type: 'text', id: 'inputSector', placeholder: 'Description' }} />
 
             {/* ToDo - Finalize file upload */}
-            <br />
-            <FormFileUpload></FormFileUpload>
+            {/* <br />
+            <FormFileUpload></FormFileUpload> */}
         </div>
     );   
-} export default GeneralTab
+} export default GeneralTab;
