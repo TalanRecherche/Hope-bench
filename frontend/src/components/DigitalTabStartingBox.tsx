@@ -17,7 +17,7 @@ const DigitalTabStartingBox = ({sendDigitalDefaultInformation: sendInformation} 
         <Card className={styles.defaultBox} >
             <Card.Body>
                 <Form.Group className={styles.labelSemiBold}>
-                    <Form.Label> Cette mission implique des sources de polution </Form.Label>
+                    <Form.Label> Cette mission implique des sources de pollution </Form.Label>
                 </Form.Group>
                 <Form.Check
                     name="equipmentInformation"
