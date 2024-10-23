@@ -1,13 +1,47 @@
+
+
 .navBar {
-    background: rgba(249, 248, 252, 1);
+    background: #F7F5FF;
 }
 
+.selectedButton {
+    border-top:0.1px solid #E7E7E7;
+    border-left:0.1px solid #E7E7E7;
+    border-right:0.1px solid #E7E7E7;
+    border-bottom: 2px solid #FF5925; /* Bordure inférieure orange */
+    font-size:16px;
+    font-weight: 700; /* Gras pour le bouton sélectionné */
+    color: #FF5925; /* Couleur du texte pour le bouton sélectionné */
+    background-color: white;
+    color:#3a3a3a;
+    border-radius: 5px 5px 0 0; 
+    
+}
+
+.unselectedButton {
+    background-color: #ffebe5; /* Fond orange clair */
+    border: none; 
+    color: #3a3a3a; /* Couleur du texte pour le bouton non sélectionné */
+    font-weight: 400; /* Normal pour le bouton non sélectionné */
+    border-radius: 5px 5px 0 0; 
+}
+
+
 .formNavLabel {
-    font-family: Montserrat;
+    font-family: Inter,sans-serif;
     font-size: 14px;
     font-weight: 700;
     line-height: 17.07px;
     text-align: left;
+
+    padding: 10px 15px; /* Ajout de padding pour une meilleure apparence */
+    border-radius: 5px; /* Coins arrondis */
+    transition: background-color 0.3s ease; /* Transition douce pour le changement de couleur */
+}
+
+.formNavLabel:not(.formTabCurrentEntry) {
+    background-color: #ffebcc; /* Orange clair pour l'état non sélectionné */
+    color: black; /* Couleur du texte pour l'état non sélectionné */
 }
 
 .formNav {
@@ -21,6 +55,7 @@
     margin-left: 470px; */
     gap: 0px;
     opacity: 0px;
+    margin-bottom:50;
 }
 
 .formTabButtons {
@@ -45,12 +80,6 @@
 
 
 
-  /*ajout pour mettre en évidence zones cliquables: attention pour l'instant td firstchild est prioritaire pour la couleur*/
-td.clickable {
-    cursor: pointer; /* Change le curseur pour indiquer que c'est cliquable */
-    color: #007bff !important; /* Change la couleur du texte */
-    text-decoration: underline; /* Ajoute un soulignement */
-}
 
 .clickable:hover {
     background-color: rgba(239, 241, 243, 0.1); /* Change l'arrière-plan au survol */
@@ -67,16 +96,19 @@ td.clickable {
 } */
 
 .table-container {
-    margin-top: 20px;
+    margin-top : 20px;
 }
 
 table {
-    width: 100%;
+    width: 100%;    
     border-collapse: collapse;
+    border-radius: 10px; 
+    overflow: hidden; /*pour s'assurer que le contenu ne déborde pas */
 }
 
 td {
     text-align: center;
+    vertical-align: middle;
     color: #6D6D6D !important;
     font-family: Avenir;
     font-size: 14px;
@@ -105,7 +137,7 @@ th {
 }
 
 .formTabCurrentEntry {  
-    border-bottom-color: #FF5925;
+    /* border-bottom-color: #FF5925;
     background-color: white;
     border-bottom-style: solid;
     border-bottom-width: 0.2em;
@@ -113,6 +145,45 @@ th {
     font-size: 14px;
     font-family: Montserrat;
     line-height: 17.07px;
-    text-align: left;
+    text-align: left; */
+    background-color: white; /* Fond blanc pour l'état sélectionné */
+    color: #FF5925; /* Couleur orange pour le texte sélectionné */
+    text-decoration: underline; /* Souligné pour l'état sélectionné */
   }
 
+/* boutons status */
+.customButton {
+width: 100%;
+height: 28px;
+padding: 10px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size:14px;
+background-color:#FF5925 ;
+border:none;
+}
+
+.customButton:hover {
+    background-color: #FF7A3E; /* Couleur plus claire au survol */
+}
+
+.buttonRed{
+    background-color:#E70000;
+}
+
+.buttonRed:hover {
+    background-color: #FF4C4C; /* Couleur plus claire au survol */
+}
+
+.buttonGray{
+    background-color:#E7E7E7;
+}
+
+.buttonGray:hover {
+    background-color: #D0D0D0; /* Couleur plus claire au survol */
+}
+
+.iconSpacing {
+    margin-right: 0.2rem; 
+  }

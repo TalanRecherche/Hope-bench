@@ -16,6 +16,8 @@ import GeneralTab from "./pages/Form/GeneralTab.tsx";
 import MovementTab from "./pages/Form/MovementTab.tsx";
 import DigitalTab from "./pages/Form/DigitalTab.tsx";
 import OfficeTab from "./pages/Form/OfficeTab.tsx";
+import 'typeface-inter';
+
 
 import { ApiContext } from "./contexts/ApiContext.tsx";
 const RouterContext = () => {

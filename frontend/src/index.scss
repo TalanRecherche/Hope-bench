@@ -1,3 +1,5 @@
+
+
 // import du css de boostrap (format sass)
 // cela permet d'avoir le bon affichage dans l'application
 // et aussi de surcharger des variables (de taille, couleur) pour modifier globalement le rendu
@@ -71,7 +73,7 @@ $primary: #0e76a8;
   border-radius: 2px;
   color: white;
   display: inline-block;
-  font-family: sans-serif;
+  font-family: 'Inter',sans-serif;
   font-size: 13px;
   font-weight: 400;
   //margin-bottom: 5px;

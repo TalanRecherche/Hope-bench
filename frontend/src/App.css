@@ -1,5 +1,5 @@
 body {
-    background: #fafafa;
+    background: #fbfafa;
     color: #33333a;
 }
 
@@ -15,4 +15,11 @@ h6 {
 .strike-through-td {
     text-decoration: line-through;
 }
+
+
+.custom-bg {
+    background-color: #FBFBFB;
+    min-height: 100vh; /* S'assure que le fond prend toute la hauteur */
+}
+
 
