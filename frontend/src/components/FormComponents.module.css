@@ -34,6 +34,14 @@
   justify-content: space-between; 
 }
 
+.divContainer {
+  width: 794px;         /* Définir la largeur de la div */
+  margin: 0 auto;      /* Centrer la div horizontalement */
+  display: flex;       /* Utiliser flexbox pour centrer le contenu à l'intérieur, si nécessaire */
+  justify-content: center; /* Centrer les éléments à l'intérieur de la div */
+} 
+
+
 .marginTopLeft20 {
   margin: 20px 0px 0px 20px;
 }

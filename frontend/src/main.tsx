@@ -8,7 +8,7 @@ import App from "./App";
 import { ApiProvider } from "./contexts/ApiContext";
 import { AuthContext, AuthProvider } from "./contexts/AuthContext";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import './index.scss'
+import './styles/index.scss'
 import BusinessPropositionAnnotationForm from "./pages/BusinessPropositionAnnotationForm.tsx";
 import DashBoard from "./pages/DashBoard";
 import SimulationForm from "./pages/Form/SimulationFormBase.tsx";

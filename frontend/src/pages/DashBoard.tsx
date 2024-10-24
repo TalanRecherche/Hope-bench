@@ -1,18 +1,17 @@
-import { Navbar, Table, Container } from "react-bootstrap";
-import Button from 'react-bootstrap/Button';
-import 'bootstrap-icons/font/bootstrap-icons.css';
-import styles from './Dashboard.module.css';
-import { FormListData, FormStatus } from '../model/simulationDataModel';
-import { useNavigate } from "react-router-dom";
-import "./Dashboard.module.css";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Navbar, Table, Container, Button } from "react-bootstrap";
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import styles from './Dashboard.module.scss';
+import { FormListData, FormStatus } from '../model/simulationDataModel';
 import StartingModal from "../components/genericCustom/StartingModal";
+
 /**
  * Renders the Dashboard page.
  */
 function DashBoard() {
 
-  //ToDo : Get the real list from Backend
+  //TODO : Get the real list from Backend
   const formList: FormListData[] = [
     { name: "MM-14892", format: "PDF", numberOfPages: 20, lastUpdate: new Date(), status: FormStatus.submitted },
     { name: "MM-14892", format: "PDF", numberOfPages: 20, lastUpdate: new Date(), status: FormStatus.toStart },
@@ -65,7 +64,6 @@ function DashBoard() {
 
   const showNonSubmitted = () => {
     setCurrentEntry('toBeSubmitted');
-
     setDisplayList(formList.filter(x => x.status != FormStatus.submitted));
   }
 
@@ -96,17 +94,14 @@ function DashBoard() {
     setDisplayList(sortedList);
   };
 
-
   return (
     <>
       <StartingModal open={showModal} onClose={handleClose} />
 
-      <Navbar bg="#E7E7E7" className={styles.navBar} >
-        <div className={styles.formNav}>
-          <Container>
-
-            {/* <Button variant="underline" className={classNames(styles.formNavLabel, (currentEntry == "toBeSubmitted") ? styles.formTabCurrentEntry : '')} onClick={showNonSubmitted}>À SOUMETTRE</Button>
-            <Button variant="underline" className={classNames(styles.formNavLabel, (currentEntry == "submitted") ? styles.formTabCurrentEntry : '')} onClick={showSubmitted}>SOUMIS</Button> */}
+      <Navbar bg="$color-gray" className={styles.navBar} >
+        <div className={styles.divContainer}>
+          <Container className={styles.container}>
+            <div className={styles.buttonGroup}>
             <Button
               variant="light"
               className={`me-1 ${currentEntry === "toBeSubmitted" ? styles.selectedButton : styles.unselectedButton}`}
@@ -121,13 +116,15 @@ function DashBoard() {
             >
               SOUMIS
             </Button>
+            </div>
+            <span className={styles.label}>Mes formulaires de labellisation</span>
           </Container>
         </div>
       </Navbar>
 
       <form>
         <Table className={styles.table} bordered >
-        <thead>
+          <thead>
             <tr>
               <th onClick={() => handleSort("name")} style={{ cursor: "pointer" }}>
                 <i className="bi bi-sort-alpha-down" style={{ marginRight: '5px' }}></i>
