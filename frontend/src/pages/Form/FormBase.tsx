@@ -79,7 +79,7 @@ function FormBase() {
                     <div className={styles.pdfContainer}>
                         <a href="path/to/your/document.pdf" target="_blank" rel="noopener noreferrer" className={styles.pdfButton}>
                             Document à étudier
-                            <img src={uploadImage} alt="avion" />
+                            <img src={uploadImage} alt="avion" className={styles.pdfButtonImage}/>
                         </a>
                     </div>
 
@@ -110,16 +110,16 @@ function FormBase() {
                         <Button
                             id="movementTab" variant="light"
                             className={classNames(`me-1`, (currentEntry == "movementTab") ? styles.selectedButton : styles.unselectedButton)}
-                            onClick={(e) => redirect("/form/movementTab", e)}> <img src={planeImage} alt="avion" />DÉPLACEMENT
+                            onClick={(e) => redirect("/form/movementTab", e)}> <img src={planeImage} alt="avion" className={styles.imgButton}/>DÉPLACEMENT
                         </Button>
                         <Button
                             id="digitalTab" variant="light"
                             className={classNames(`me-1`, (currentEntry == "digitalTab") ? styles.selectedButton : styles.unselectedButton)}
-                            onClick={(e) => redirect("/form/digitalTab", e)}> <img src={planeImage} alt="avion" />NUMÉRIQUE
+                            onClick={(e) => redirect("/form/digitalTab", e)}> <img src={planeImage} alt="avion" className={styles.imgButton}/>NUMÉRIQUE
                         </Button>
                         <Button id="officeTab" variant="light"
                             className={classNames(`me-1`, (currentEntry == "officeTab") ? styles.selectedButton : styles.unselectedButton)}
-                            onClick={(e) => redirect("/form/officeTab", e)}> <img src={planeImage} alt="avion" />BUREAU
+                            onClick={(e) => redirect("/form/officeTab", e)}> <img src={planeImage} alt="avion" className={styles.imgButton}/>BUREAU
                         </Button>
                     </div>
                     {/* <div className={styles.formTabButtons}>

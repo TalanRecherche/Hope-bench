@@ -219,9 +219,9 @@
   border-radius: 4px;
 }
 
-  img{
-    margin-left:10px;
-  }
+.pdfButtonImg{
+  margin-left:10px;
+}
 
 .infoContainer {
   display: flex;
@@ -249,4 +249,8 @@
 
 .labelSpacer {
   margin-right: 20px; // Espacement supplémentaire si nécessaire
+}
+
+.imgButton{
+  margin-right:10px;
 }

@@ -1,5 +1,5 @@
 import Select from 'react-select';
-import styles from '../FormComponents.module.css';
+import styles from '../FormComponents.module.scss';
 
 interface Props {
     setSelectedItem: (item: any) => void;

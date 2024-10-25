@@ -1,6 +1,6 @@
 import Form from 'react-bootstrap/Form';
 import NumericInput from "react-numeric-input";
-import styles from './FormComponents.module.css';
+import styles from './FormComponents.module.scss';
 import { useEffect, useState } from 'react';
 import CustomStarRating from './genericCustom/CustomStartRating';
 import { InformationSourceData, InformationOriginType } from '../model/simulationDataModel';

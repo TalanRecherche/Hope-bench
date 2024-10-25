@@ -1,6 +1,6 @@
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
-import styles from '../FormComponents.module.css';
+import styles from '../FormComponents.module.scss';
 import NumericInput from 'react-numeric-input';
 import CustomTable from '../genericCustom/CustomTable';
 import Button from 'react-bootstrap/Button';

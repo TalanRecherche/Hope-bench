@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styles from '../FormComponents.module.css';
+import styles from '../FormComponents.module.scss';
 import { CustomSwitchOptions } from '../../model/simulationDataModel';
 
 interface Props {    

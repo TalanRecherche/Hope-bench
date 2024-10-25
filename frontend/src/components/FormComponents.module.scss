@@ -1,3 +1,6 @@
+@import '../styles/variables';
+
+
 .navBarText {
   
   /* height: 22px; */
@@ -245,7 +248,7 @@
 .boxGeneral {
   width: 770px;
   max-height: 662px;
-  padding: 24px 0px 0px 0px;
+  margin: 24px 0px 0px 0px;
   border-radius: 4px 0px 0px 0px;
   background: rgba(255, 255, 255, 1);
 }
@@ -523,3 +526,28 @@
 .selectedListItemLabel {
   color: #3D00F2 !important;
 }
+
+// Important pour forcer valeurs perso par dessus Bootstrap
+.saveButton {
+  background-color: white!important;
+  color: $color-orange!important;
+  border: 1px solid $color-orange!important;
+  margin-right: 0.5rem!important;
+  width: 100px!important;
+  height: 30px!important;
+  padding: 4px 8px!important;
+  border-radius: 4px!important;
+}
+
+.submitButton {
+  background-color: $color-orange!important;
+  color: white!important;
+  border: 1px solid $color-orange!important;
+  margin-right: 0.5rem!important;
+  width: 100px!important;
+  height: 30px!important;
+  padding: 4px 8px!important;
+  border-radius: 4px!important;
+}
+
+

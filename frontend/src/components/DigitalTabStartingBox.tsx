@@ -1,5 +1,5 @@
 import { Card } from "react-bootstrap";
-import styles from './FormComponents.module.css';
+import styles from './FormComponents.module.scss';
 import Form from 'react-bootstrap/Form';
 
 interface Props {
