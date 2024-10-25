@@ -1,5 +1,5 @@
 
-import './SimulationForm.module.css';
+import './SimulationForm.module.scss';
 import FormBase from "./FormBase";
 
 

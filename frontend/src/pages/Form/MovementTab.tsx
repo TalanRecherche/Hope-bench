@@ -1,7 +1,7 @@
 import FormBoxMovement from "../../components/formBox/FormBoxMovement";
 import FormMeansTransport from '../../components/FormMeansTransport';
 import { useState } from "react";
-import styles from './SimulationForm.module.css';
+import styles from './SimulationForm.module.scss';
 import { useOutletContext } from "react-router-dom";
 import { FormStatus, MovementBoxData, InformationType } from "../../model/simulationDataModel";
 import MovementTabStartingBox from "../../components/MovementTabStartingBox";

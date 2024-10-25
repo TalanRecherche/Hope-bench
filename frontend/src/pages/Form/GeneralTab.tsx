@@ -3,7 +3,7 @@ import FormFileUpload from "../../components/FormFileUpload";
 import { useOutletContext } from "react-router-dom";
 import { FormStatus, GeneralBoxData, InformationSourceData } from "../../model/simulationDataModel.ts";
 import React from "react";
-import styles from './SimulationForm.module.css';
+import styles from './SimulationForm.module.scss';
 import classNames from 'classnames';
 import { useLocation } from "react-router-dom";
 
@@ -11,6 +11,8 @@ function GeneralTab() {
 
     const { setDatat } = useOutletContext<{ setDatat: any }>(); // <-- access context value
     const location = useLocation();
+    // console.log("Valeurs reçues:", location.state);
+
     const formStatus = location.state?.status;
 
     const initializeInformationSource = () => {
@@ -46,7 +48,7 @@ function GeneralTab() {
             id: "inputSector",
             informationSource: initializeInformationSource()
         },
-    });   
+    });
 
     /* ToDo - handle Data Receive to be improved*/
     const handleDataReceive = (receivedData: any) => {
@@ -78,12 +80,13 @@ function GeneralTab() {
             case "inputSector":
                 initialData.missionSector.value = receivedData.value;
                 initialData.missionSector.informationSource = receivedData.informationSourceData;
-        };       
+        };
 
         setDatat(initialData);
     };
     return (
         <div className={classNames(styles.generalTab, (formStatus == FormStatus.submitted) ? styles.formTabDisabled : '')}>
+          
             <FormBoxGeneral
                 setValues={handleDataReceive}
                 options={{ name: 'Titre de la mission', type: 'text', id: 'inputTitle', placeholder: 'Description' }} />
@@ -113,5 +116,5 @@ function GeneralTab() {
             {/* <br />
             <FormFileUpload></FormFileUpload> */}
         </div>
-    );   
+    );
 } export default GeneralTab;

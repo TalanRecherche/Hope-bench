@@ -1,6 +1,6 @@
 import FormBoxOffice from "../../components/formBox/FormBoxOffice";
 import { FormStatus, InformationType } from "../../model/simulationDataModel";
-import styles from './SimulationForm.module.css';
+import styles from './SimulationForm.module.scss';
 import { useOutletContext } from "react-router-dom";
 import classNames from 'classnames';
 import { useLocation } from "react-router-dom";

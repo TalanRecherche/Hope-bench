@@ -25,6 +25,11 @@ function DashBoard() {
     { name: "MM-14900", format: "PDF", numberOfPages: 50, lastUpdate: new Date(), status: FormStatus.submitted }
   ];
 
+  // Calcul du nombre de formulaires par status
+  const countToStart = formList.filter(item => item.status === FormStatus.toStart).length;
+  const countStarted = formList.filter(item => item.status === FormStatus.started).length;
+  const countSubmitted = formList.filter(item => item.status === FormStatus.submitted).length;
+
   const [displayList, setDisplayList] = useState(formList.filter(x => x.status != FormStatus.submitted));
   const [currentEntry, setCurrentEntry] = useState('toBeSubmitted');
 
@@ -36,17 +41,42 @@ function DashBoard() {
 
   const navigate = useNavigate();
 
-  const redirect = (link: string, e: any, status: string) => {
+  // const redirect = (link: string, e: any, status: string) => {
+  //   setSelectedFormId(e.target.id);
+
+  //   if (status == FormStatus.toStart) {
+  //     setShowModal(true);
+  //   }
+  //   else {
+  //     navigate(link, {
+  //       state: {
+  //         formName: selectedFormId,
+  //         status: status
+  //       }
+  //     });
+  //   }
+  // };
+
+  const redirect = (link: string, e: any, item: FormListData) => {
     setSelectedFormId(e.target.id);
 
-    if (status == FormStatus.toStart) {
+    // console.log("Redirection vers:", link);
+    // console.log("Nom du formulaire:", item.name);
+    // console.log("Format:", item.format);
+    // console.log("Nombre de pages:", item.numberOfPages);
+    // console.log("Dernière mise à jour:", item.lastUpdate);
+    // console.log("Statut:", item.status);
+
+    if (item.status === FormStatus.toStart) {
       setShowModal(true);
-    }
-    else {
+    } else {
       navigate(link, {
         state: {
-          formName: selectedFormId,
-          status: status
+          formName: item.name,
+          format: item.format,
+          numberOfPages: item.numberOfPages,
+          lastUpdate: item.lastUpdate,
+          status: item.status
         }
       });
     }
@@ -102,22 +132,26 @@ function DashBoard() {
         <div className={styles.divContainer}>
           <Container className={styles.container}>
             <div className={styles.buttonGroup}>
-            <Button
-              variant="light"
-              className={`me-1 ${currentEntry === "toBeSubmitted" ? styles.selectedButton : styles.unselectedButton}`}
-              onClick={showNonSubmitted}
-            >
-              À SOUMETTRE
-            </Button>
-            <Button
-              variant="light"
-              className={`${currentEntry === "submitted" ? styles.selectedButton : styles.unselectedButton}`}
-              onClick={showSubmitted}
-            >
-              SOUMIS
-            </Button>
+              <Button
+                variant="light"
+                className={`me-1 ${currentEntry === "toBeSubmitted" ? styles.selectedButton : styles.unselectedButton}`}
+                onClick={showNonSubmitted}
+              >
+                À SOUMETTRE
+              </Button>
+              <Button
+                variant="light"
+                className={`${currentEntry === "submitted" ? styles.selectedButton : styles.unselectedButton}`}
+                onClick={showSubmitted}
+              >
+                SOUMIS
+              </Button>
             </div>
-            <span className={styles.label}>Mes formulaires de labellisation</span>
+            <span className={styles.label}>
+              À commencer: <span className={`${styles.labelValue} ${styles.labelSpacer}`}>{countToStart}</span>
+              À finaliser: <span className={`${styles.labelValue} ${styles.labelSpacer}`}>{countStarted}</span>
+              Soumis: <span className={`${styles.labelValue} ${styles.labelSpacer}`}>{countSubmitted}</span>
+            </span>
           </Container>
         </div>
       </Navbar>
@@ -143,7 +177,7 @@ function DashBoard() {
                 Dernière MAJ
               </th>
               <th onClick={() => handleSort("status")} style={{ cursor: "pointer" }}>
-                <i className="bi bi-flag" style={{ marginRight: '5px' }}></i>
+                <i className="bi bi-arrow-down" style={{ marginRight: '5px' }}></i>
                 Statut
               </th>
             </tr>
@@ -151,26 +185,29 @@ function DashBoard() {
           <tbody>
             {displayList?.map((item, idx) => (
               <tr key={idx}>
-                <td id={item.name} onClick={(e) => redirect("/form/generalTab", e, item.status)}>{item.name}</td>
+                <td id={item.name} onClick={(e) => redirect("/form/generalTab", e, item)}>{item.name}</td>
                 <td >{item.format}</td>
                 <td>{item.numberOfPages}</td>
                 <td>{item.lastUpdate.toLocaleDateString('fr-FR')}</td>
-                <td onClick={(e) => redirect("/form/generalTab", e, item.status)}>
+                <td onClick={(e) => redirect("/form/generalTab", e, item)}>
                   {item.status === FormStatus.started ? (
                     <Button
                       className={`${styles.customButton} ${styles.buttonRed}`}
                     >
-                      <i className={`bi bi-lightning-fill ${styles.iconSpacing}`}></i>Finaliser
+                      {/* <i className={`bi bi-lightning-fill ${styles.iconSpacing}`}></i> */}
+                      Finaliser
                     </Button> // Rouge pour "started"
                   ) : item.status === FormStatus.toStart ? (
                     <Button
                       className={`${styles.customButton} `}
                     >
-                      <i className={`bi bi-lightning-fill ${styles.iconSpacing}`}></i>Commencer
+                      {/* <i className={`bi bi-lightning-fill ${styles.iconSpacing}`}></i> */}
+                      Commencer
                     </Button>
                   ) : item.status === FormStatus.submitted ? (
                     <Button className={`${styles.customButton} ${styles.buttonGray}`}>
-                      <i className={`bi bi-check-circle ${styles.iconSpacing}`}></i>Soumis
+                      {/* <i className={`bi bi-check-circle ${styles.iconSpacing}`}></i> */}
+                      Soumis
                     </Button> // Statut pour "submitted"
                   ) : (
                     <Button className={`${styles.customButton} ${styles.buttonGray}`}>

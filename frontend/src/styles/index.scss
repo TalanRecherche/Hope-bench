@@ -5,6 +5,10 @@
 // surcharge des variables de bootstrap
 @import './variables';
 
+//import de la police Inter
+@import url('https://fonts.bunny.net/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+
 // import de bootstrap
 @import "../node_modules/bootstrap/scss/bootstrap";
 // surchage de bootstrap qui ne peut être fait par les variables
@@ -17,7 +21,9 @@
   }
 }
 
-// autre code
+body {
+  font-family: 'Inter', sans-serif;
+}
 
 // custom from bootstrap doc
 .bd-callout {
