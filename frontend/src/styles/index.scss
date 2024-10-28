@@ -22,8 +22,9 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: $font-family;
 }
+
 
 // custom from bootstrap doc
 .bd-callout {
@@ -78,7 +79,7 @@ body {
   border-radius: 2px;
   color: white;
   display: inline-block;
-  font-family: 'Inter',sans-serif;
+  font-family: $font-family;
   font-size: 13px;
   font-weight: 400;
   //margin-bottom: 5px;

@@ -25,14 +25,16 @@ function MovementTab() {
     }[] = [];
 
     const [x, setX] = useState(displayList);
+    console.log(displayList);
+
     const handleSelectedListReceive = (data: any) => {
 
         setX(x => {
-            if (data[0].checked) {
-                x = x.concat(data);
+            if (data[0].checked) { //si le 1er élément de data est coché
+                x = x.concat(data); //on ajoute ceté élement à la liste
             }
-            else {
-                let value = x.find(l => l.id == data[0].id);
+            else {//si pas coché, on le retire de x
+                let value = x.find(l => l.id == data[0].id); 
 
                 if (value) {
                     var index = x.indexOf(value);
@@ -46,25 +48,25 @@ function MovementTab() {
     };
 
     const handleBoxDataReceive = (receivedData: any) => {
-
+        // est ce que movementDataValues contient déjà optionName
         var index = movementDataValues.findIndex(m => m.optionName == receivedData.optionName);
         if (index == -1) {
-            movementDataValues.push(receivedData);
+            movementDataValues.push(receivedData); //l'élément n'existe pas donc on l'ajoute à movementDataValues
         }
-        else {
+        else { //si l'élément existe déjà, on le supprime et on le remet à la fin de la liste
             movementDataValues.splice(index, 1);
             movementDataValues.push(receivedData);
         }
-        setDatat(movementDataValues);
+        setDatat(movementDataValues); //mise à jour du contexte avec les données de mouvement mises à jour
     };
 
     const handleDefaultValues = (receivedValue: any) => {
-        if (receivedValue != InformationType.needed)
-            setX(displayList);
-        setMovementInformationBase(receivedValue);
+        if (receivedValue != InformationType.needed) //si aucune information supplémentaire n'est requise
+            setX(displayList); //on réinitialise x à displayList
+        setMovementInformationBase(receivedValue); //on remet à 0 la liste des moyens de transport
     };
 
-    const isItemChecked = () => {
+    const isItemChecked = () => { //si au moins un élément de x est coché
         return x?.filter(c => c.checked).length != 0;
     }
 
@@ -98,4 +100,4 @@ function MovementTab() {
             </div>
         </div>
     );
-} export default MovementTab
+} export default MovementTab;

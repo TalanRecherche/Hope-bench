@@ -39,6 +39,7 @@ function DashBoard() {
   const [sortColumn, setSortColumn] = useState('');
   const [sortOrder, setSortOrder] = useState('asc');
 
+  // Si le statut du formulaire est "toStart", affiche une modale ; sinon, elle navigue vers une autre page avec l'état des données.
   const navigate = useNavigate();
 
   // const redirect = (link: string, e: any, status: string) => {
@@ -82,16 +83,18 @@ function DashBoard() {
     }
   };
 
+  // Fonction pour fermer la modale et redirection vers la page generalTab
   const handleClose = () => {
     setShowModal(false)
     navigate("/form/generalTab", {
       state: {
         formName: selectedFormId,
-        status: FormStatus.toStart //Modal opens only in this state
+        status: FormStatus.toStart 
       }
     });
   }
 
+  //Pour filtrer et afficher selon si on est dans l'onglet à soumettre ou soumis
   const showNonSubmitted = () => {
     setCurrentEntry('toBeSubmitted');
     setDisplayList(formList.filter(x => x.status != FormStatus.submitted));
@@ -102,6 +105,7 @@ function DashBoard() {
     setDisplayList(formList.filter(x => x.status == FormStatus.submitted));
   }
 
+  //Pour trier les colonnes du tableau
   const handleSort = (column: keyof FormListData) => {
     const order = sortColumn === column && sortOrder === 'asc' ? 'desc' : 'asc';
     setSortColumn(column);

@@ -254,3 +254,49 @@
 .imgButton{
   margin-right:10px;
 }
+
+input::placeholder,
+textarea::placeholder {
+    color: lightgray !important; // Couleur gris clair
+    font-style: italic; // Italique
+}
+
+.dropdownToggle {
+  background-color: white!important;
+  border: 1px solid #d3d3d3!important; /* Bord gris clair */
+  color: #999!important; /* Texte gris */
+  width: 100%!important; /* Prend toute la largeur */
+  padding: 10px!important; /* Ajoutez du padding pour l'apparence */
+  display: flex!important;
+  justify-content: space-between!important;
+  align-items: center!important;
+
+  &:focus {
+      outline: none; /* Supprimer le contour */
+      box-shadow: none; /* Supprimer l'ombre */
+  }
+}
+
+.dropdownField {
+  font-size: 14px; /* Ajustez la taille de la police */
+}
+
+/*Bouton suivant*/
+.buttonContainer {
+  display: flex;
+  justify-content: flex-start; /* Aligne à gauche */
+  margin-top: 20px; /* Espace au-dessus du bouton */
+}
+
+.nextButton {
+  background-color: $color-orange; /* Couleur du bouton */
+  color: white; /* Couleur du texte */
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px; /* Espacement à l'intérieur du bouton */
+  cursor: pointer;
+
+  &:hover {
+      background-color: $color-lightorange; /* Couleur au survol */
+  }
+}

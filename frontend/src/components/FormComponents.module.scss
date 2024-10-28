@@ -38,10 +38,12 @@
 }
 
 .divContainer {
-  width: 794px;         /* Définir la largeur de la div */
+  // width: 794px;         /* Définir la largeur de la div */
+  padding:0px 40rem;
   margin: 0 auto;      /* Centrer la div horizontalement */
   display: flex;       /* Utiliser flexbox pour centrer le contenu à l'intérieur, si nécessaire */
   justify-content: center; /* Centrer les éléments à l'intérieur de la div */
+  background-color: white;
 } 
 
 
@@ -549,5 +551,6 @@
   padding: 4px 8px!important;
   border-radius: 4px!important;
 }
+
 
 
