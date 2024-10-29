@@ -64,12 +64,12 @@ function GeneralTab() {
 
     /* ToDo - handle Data Receive to be improved*/
     const handleDataReceive = (receivedData: { id: keyof GeneralBoxData; value: string; informationSourceData?: InformationSourceData }) => {
-       
+
         console.log("ID reçu :", receivedData.id);
         console.log("Valeur reçue :", receivedData.value);
-        
-        
-        console.log("generalData[receivedData.id]",generalData[receivedData.id]);
+
+
+        console.log("generalData[receivedData.id]", generalData[receivedData.id]);
         // setDatat(initialData);
         const updatedData = {
             ...generalData,
@@ -93,7 +93,7 @@ function GeneralTab() {
         // Logique pour passer à l'étape suivante
         console.log("Données à la prochaine étape:", generalData);
 
-         //const handleDataReceive = (receivedData: any) => {
+        //const handleDataReceive = (receivedData: any) => {
         // console.log("data =", formStatus);
 
         // let initialData = generalData;
@@ -140,7 +140,7 @@ function GeneralTab() {
                     value: generalData.missionTitle.value, // Mise à jour de l'état avec le texte saisi
                 }}
             />
-           {showMessage && (
+            {showMessage && (
                 <div >
                     <p>Vous avez saisi : {generalData.missionTitle.value}</p>
                 </div>
@@ -170,24 +170,26 @@ function GeneralTab() {
 
             <FormBoxGeneral
                 setValues={handleDataReceive}
-                isNumericInput={true}
                 options={{
-                    name: 'Nombre de collaborateurs sur la mission',
-                    type: 'number',
-                    id: 'inputNbCollaborators',
-                    placeholder: '3',
-                    value: generalData.nbCollaborators.value
+                    name: 'Durée de la mission',
+                    subtitle:"Si l'information n'est pas présente mais qu'il existe des indices, je fais une supposition.",
+                    type: 'duration',
+                    id: 'inputDuration',
+                    placeholder: '14 mois',
+                    value: generalData.missionDuration.value
                 }}
             />
 
             <FormBoxGeneral
                 setValues={handleDataReceive}
+                isNumericInput={true}
                 options={{
-                    name: 'Durée de la mission',
-                    type: 'duration',
-                    id: 'inputDuration',
-                    placeholder: '14 mois',
-                    value: generalData.missionDuration.value
+                    name: 'Nombre de collaborateurs sur la mission',
+                    subtitle:"Si l'information n'est pas présente mais qu'il existe des indices, j'essaie de faire une estimation.",
+                    type: 'number',
+                    id: 'inputNbCollaborators',
+                    placeholder: '3',
+                    value: generalData.nbCollaborators.value
                 }}
             />
 

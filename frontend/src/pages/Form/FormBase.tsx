@@ -112,7 +112,7 @@ function FormBase() {
                     <div className={styles.pdfContainer}>
                         <a href="path/to/your/document.pdf" target="_blank" rel="noopener noreferrer" className={styles.pdfButton}>
                             Document à étudier
-                            <img src={uploadImage} alt="avion" className={styles.pdfButtonImage} />
+                            <img src={uploadImage} alt="télécharger" className={styles.pdfButtonImage} />
                         </a>
                     </div>
 
@@ -155,11 +155,11 @@ function FormBase() {
                             onClick={(e) => redirect("/form/officeTab", e)}> <img src={planeImage} alt="avion" className={styles.imgButton} />BUREAU
                         </Button>
                     </div>
-                    <div className={styles.formTabButtons}>
+                    {/* <div className={styles.formTabButtons}>
                         <Button className={classNames(styles.saveButton, (formDataValues.formStatus == FormStatus.submitted) ? styles.formTabDisabled : '')} onClick={save}>Enregistrer</Button>
                         <Button className={classNames(styles.submitButton, (formDataValues.formStatus == FormStatus.submitted) ? styles.formTabDisabled : '')} onClick={formSubmit}>Soumettre</Button>
                         <Button id="goToDashboard" className={styles.deleteButton} onClick={(e) => redirect("/dashboard", e)}>X</Button>
-                    </div>
+                    </div> */}
                 </div>
             </Navbar>
             <Outlet context={{ setDatat: receiveFormData }} />

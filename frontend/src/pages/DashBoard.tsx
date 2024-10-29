@@ -154,7 +154,7 @@ function DashBoard() {
             <span className={styles.label}>
               À commencer: <span className={`${styles.labelValue} ${styles.labelSpacer}`}>{countToStart}</span>
               À finaliser: <span className={`${styles.labelValue} ${styles.labelSpacer}`}>{countStarted}</span>
-              Soumis: <span className={`${styles.labelValue} ${styles.labelSpacer}`}>{countSubmitted}</span>
+              Soumis: <span className={`${styles.labelValue} `}>{countSubmitted}</span>
             </span>
           </Container>
         </div>
@@ -180,9 +180,9 @@ function DashBoard() {
                 <i className="bi bi-calendar" style={{ marginRight: '5px' }}></i>
                 Dernière MAJ
               </th>
-              <th onClick={() => handleSort("status")} style={{ cursor: "pointer" }}>
+              <th onClick={() => handleSort("status")} style={{ cursor: "pointer" , textAlign: "left" }}>
                 <i className="bi bi-arrow-down" style={{ marginRight: '5px' }}></i>
-                Statut
+                Action
               </th>
             </tr>
           </thead>

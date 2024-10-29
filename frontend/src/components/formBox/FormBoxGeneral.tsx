@@ -12,6 +12,7 @@ interface Props<T> {
     options: {
         controlId?: T;
         name: T;
+        subtitle?: T;
         type: T;
         id: T;
         placeholder: T;
@@ -28,7 +29,7 @@ function FormBoxGeneral<T extends string>({ isNumericInput = false, options, set
     const [informationSourceBase, setInformationSourceBase] = useState(false);
     const [displayInformationSource, setDisplayInformationSource] = useState<any>(false);
     const [selectedValue, setSelectedValue] = useState<string>(""); // Ajout de l'état selectedValue
-    
+
 
     // const setOptionValue = (value: any) => {
     //     if (selectedValue !== value) {
@@ -52,7 +53,7 @@ function FormBoxGeneral<T extends string>({ isNumericInput = false, options, set
     //         //     options.value = value;
     //         //     setValues(options);
     //         // };
-            
+
     //         // Met à jour la valeur dans options
     //         options.value = value;
     //         console.log("value", value);
@@ -73,14 +74,14 @@ function FormBoxGeneral<T extends string>({ isNumericInput = false, options, set
         //     console.log("Valeur sélectionnée actuelle :", selectedValue);
         //     console.log("Valeur actuelle des options :", options.value);
         // }
-    
+
         console.log("setOptionValue appelé avec la valeur :", value);
-    
+
         // Vérifier que value n'est pas identique à selectedValue
         if (value !== selectedValue) {
             // Met à jour selectedValue
             setSelectedValue(value);
-    
+
             // Gestion de l'affichage de l'information
             if (typeof value === 'number') {
                 setDisplayInformationSource(value > 0);
@@ -89,7 +90,7 @@ function FormBoxGeneral<T extends string>({ isNumericInput = false, options, set
             } else if (value === "") {
                 setDisplayInformationSource(false);
             }
-    
+
             // Utilise setValues pour mettre à jour l'état dans le parent
             setValues((prevValues: any) => {
                 console.log("je rentre dans setValues");
@@ -124,8 +125,9 @@ function FormBoxGeneral<T extends string>({ isNumericInput = false, options, set
     if (isNumericInput) {
         card =
             <Card.Body>
-                <a>{options.name} </a>
-                <div>
+                <a >{options.name} </a>
+                {options.subtitle && <div className={styles.subtitle}>{options.subtitle}</div>} {/* Affichage du subtitle */}
+                <div className="mt-3">
                     <NumericInput min={0} size={1} onChange={(value) => setOptionValue(value)} />
                 </div>
                 <InformationSourceBase label={informationSourceBaseLabel} setSourceBaseValue={setInformationSourceBase}></InformationSourceBase>
@@ -134,20 +136,32 @@ function FormBoxGeneral<T extends string>({ isNumericInput = false, options, set
         card = (
             <Card.Body>
                 <Form.Group controlId={options.controlId}>
-                    <Form.Label className={styles.required}>{options.name}</Form.Label>
-                    <Dropdown>
-                        <Dropdown.Toggle className={`${styles.dropdownToggle} ${styles.dropdownField}`} id={options.id}>
-                            {selectedValue || options.placeholder}
-
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu>
-                            {options.optionsList && options.optionsList.map((option) => (
-                                <Dropdown.Item key={option.value} onClick={() => setOptionValue(option.value)}>
-                                    {option.label}
-                                </Dropdown.Item>
-                            ))}
-                        </Dropdown.Menu>
-                    </Dropdown>
+                    <Form.Label className={`${styles.required} ${styles.nameCard}`}>{options.name}</Form.Label>
+                    {options.subtitle && <div className={styles.subtitle}>{options.subtitle}</div>} {/* Affichage du subtitle */}
+                    <div className={`mt-3 ${styles.dropdownContainer}`}>
+                        <Dropdown>
+                            <Dropdown.Toggle className={`${styles.dropdownToggle} ${styles.dropdownField} ${styles.customDropdown}`} id={options.id}>
+                                <span className={`${styles['dropdown-toggle-label']}`}>
+                                    {selectedValue || options.placeholder}
+                                </span>
+                                <span className={`${styles['dropdown-toggle-arrow']}`}>
+                                    {/* Vous pouvez utiliser une icône ici si nécessaire */}
+                                    <i className="bi bi-chevron-down"></i> {/* Exemple avec Bootstrap Icons */}
+                                </span>
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu>
+                                {options.optionsList && options.optionsList.map((option) => (
+                                    <Dropdown.Item
+                                        key={option.value}
+                                        onClick={() => setOptionValue(option.value)}
+                                        className={styles.dropdownItem}
+                                    >
+                                        {option.label}
+                                    </Dropdown.Item>
+                                ))}
+                            </Dropdown.Menu>
+                        </Dropdown>
+                    </div>
                     <InformationSourceBase label={informationSourceBaseLabel} setSourceBaseValue={setInformationSourceBase}></InformationSourceBase>
                 </Form.Group>
             </Card.Body>
@@ -157,11 +171,13 @@ function FormBoxGeneral<T extends string>({ isNumericInput = false, options, set
             <Card.Body >
                 <Form.Group controlId={options.controlId}>
                     <Form.Label className={styles.required}>{options.name}</Form.Label>
+                    {options.subtitle && <div className={styles.subtitle}>{options.subtitle}</div>} {/* Affichage du subtitle */}
                     <Form.Control
                         type={options.type}
                         id={options.id}
                         placeholder={options.placeholder}
                         onChange={(e) => setOptionValue(e.target.value)}
+                        className="mt-3"
                         onKeyPress={handleKeyPress}
                     />
                     <InformationSourceBase label={informationSourceBaseLabel} setSourceBaseValue={setInformationSourceBase}></InformationSourceBase>

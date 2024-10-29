@@ -28,24 +28,28 @@ function NavBar() {
 
 	return (
 		<div className={styles.divContainer}>
-			<Container fluid="md">
-				<Navbar expand="lg" className="mb-1 ">
+
+			<Navbar expand="lg" className={styles.navbar}>
+				<div style={{ display: 'flex', alignItems: 'center' }}>
 					<Navbar.Brand className={styles.navBarBrand} as={Link} to="/">
 						<img src={hopeImage} alt="Hope" />
 					</Navbar.Brand>
 					<span className="mx-3" style={{ color: 'gray' }}>|</span> {/* Séparateur gris */}
 					<Nav.Link as={Link} to="/" className="mx-2" style={{ color: 'blue' }}>Accueil</Nav.Link> {/* Lien Accueil en bleu */}
-				
-				
-					<Navbar.Toggle aria-controls="basic-navbar-nav" />
+				</div>
 
-
+				<div>
 					{/* Nom du formulaire*/}
 					{formName && (
 						<Navbar.Text className="mx-3">
 							{formName}
 						</Navbar.Text>
 					)}
+				</div>
+
+				<div>
+
+					<Navbar.Toggle aria-controls="basic-navbar-nav" />
 
 					<Navbar.Collapse id="basic-navbar-nav" className="justify-content-between">
 						<Nav className="me-auto">
@@ -83,10 +87,12 @@ function NavBar() {
 
 
 						</div>
+
 					</Navbar.Collapse>
-				</Navbar>
-			</Container>
+				</div >
+			</Navbar >
 		</div>
+
 	);
 }
 

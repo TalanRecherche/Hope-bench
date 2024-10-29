@@ -1,10 +1,21 @@
 @import '../styles/variables';
 
 
+.form-label {
+  margin-bottom: 0!important; 
+}
+
+.navbar {
+  background-color: white;  // Fond blanc pour la navbar
+  width: 770px;              // Prendre toute la largeur
+  display: flex;
+  justify-content:space-between;  // Centrer le contenu
+}
+
 .navBarText {
   
   /* height: 22px; */
-  margin-left: 453px;
+  
   font-family: Montserrat;
   font-size: 16px;
   font-weight: 600;
@@ -37,14 +48,24 @@
   justify-content: space-between; 
 }
 
+// .divContainer {
+//   // width: 794px;         /* Définir la largeur de la div */
+//   padding:0px 40rem;
+//   margin: 0 auto;      /* Centrer la div horizontalement */
+//   display: flex;       /* Utiliser flexbox pour centrer le contenu à l'intérieur, si nécessaire */
+//   justify-content: center; /* Centrer les éléments à l'intérieur de la div */
+//   background-color: white;
+// } 
+
+
 .divContainer {
-  // width: 794px;         /* Définir la largeur de la div */
-  padding:0px 40rem;
-  margin: 0 auto;      /* Centrer la div horizontalement */
-  display: flex;       /* Utiliser flexbox pour centrer le contenu à l'intérieur, si nécessaire */
-  justify-content: center; /* Centrer les éléments à l'intérieur de la div */
+  width:100%;  // Largeur fixe pour le contenu
+  display: flex;
+   // Espace entre les éléments
+  align-items: center;      // Centrer verticalement
+  justify-content: center;  // Centrer les éléments à l'intérieur
   background-color: white;
-} 
+}
 
 
 .marginTopLeft20 {
@@ -552,5 +573,73 @@
   border-radius: 4px!important;
 }
 
+.subtitle {
+  font-size: 0.9em; 
+  color: $color-blackgrey; 
+  font-style:italic;
+}
+
+.nameCard{
+  margin-bottom:0;
+}
+
+// .dropdownContainer {
+//   // Styles pour le conteneur du dropdown, si nécessaire
+// }
+
+.dropdownToggle {
+  background-color: white; // Fond blanc pour le bouton
+  border: 1px solid $color-gray; // Bord gris
+  color: $color-gray;
+  font-style: italic;
+  width:100%;
+  display: flex; // Utiliser flexbox pour aligner le texte et la flèche
+  justify-content: space-between; // Espace entre le texte et la flèche
+  padding: 8px;
+}
 
 
+.dropdownToggle .dropdown-toggle-label {
+  flex-grow: 1; // Prendre tout l'espace disponible
+  text-align: left; // Aligner le texte à gauche
+}
+
+
+.dropdownToggle .dropdown-toggle-arrow {
+  margin-left: 10px; // Espacement à gauche de la flèche
+}
+
+// .dropdownField {
+//   // Ajoutez d'autres styles si besoin
+// }
+
+.dropdownItem {
+  // Styles pour les éléments du menu déroulant
+  &:hover {
+      background-color: #f0f0f0; // Couleur de survol
+  }
+
+}
+
+.dropdown-toggle::after {
+  display: none !important; // Masquer la flèche en haut à droite
+}
+
+.dropdown-toggle {
+  position: relative; // Assurez-vous que le positionnement est correct
+}
+
+.dropdown-toggle:focus::after {
+  display: none !important; // Cacher la flèche quand le dropdown est en focus
+  content:none!important;
+}
+
+.customDropdown {
+  background-color: transparent !important; // Remplacez par la couleur souhaitée
+  color: inherit !important; // Remplacez par la couleur souhaitée
+  border: 1px solid #ced4da !important; // Remplacez par la couleur souhaitée pour la bordure
+}
+
+.customDropdown:focus {
+  box-shadow: none !important; // Enlever l'ombre de focus
+}
