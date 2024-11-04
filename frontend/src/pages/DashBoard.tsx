@@ -61,16 +61,12 @@ function DashBoard() {
   const redirect = (link: string, e: any, item: FormListData) => {
     setSelectedFormId(e.target.id);
 
-    // console.log("Redirection vers:", link);
-    // console.log("Nom du formulaire:", item.name);
-    // console.log("Format:", item.format);
-    // console.log("Nombre de pages:", item.numberOfPages);
-    // console.log("Dernière mise à jour:", item.lastUpdate);
-    // console.log("Statut:", item.status);
-
     if (item.status === FormStatus.toStart) {
+      localStorage.setItem('formData', JSON.stringify(item));
+      console.log("item", item);
       setShowModal(true);
     } else {
+
       navigate(link, {
         state: {
           formName: item.name,
@@ -80,152 +76,187 @@ function DashBoard() {
           status: item.status
         }
       });
-    }
+     }
   };
 
-  // Fonction pour fermer la modale et redirection vers la page generalTab
+  // Fonction pour fermer la modale et redirection vers la page generalTab en passant les données d'information du formulaire
   const handleClose = () => {
-    setShowModal(false)
-    navigate("/form/generalTab", {
-      state: {
-        formName: selectedFormId,
-        status: FormStatus.toStart 
+    setShowModal(false);
+
+    const storedData = localStorage.getItem('formData');
+    const item = storedData ? JSON.parse(storedData) : null;
+
+    if (item) {
+      // Convertir lastUpdate en objet Date si ce n'est pas déjà fait
+      if (item.lastUpdate) {
+        item.lastUpdate = new Date(item.lastUpdate);
       }
-    });
-  }
-
-  //Pour filtrer et afficher selon si on est dans l'onglet à soumettre ou soumis
-  const showNonSubmitted = () => {
-    setCurrentEntry('toBeSubmitted');
-    setDisplayList(formList.filter(x => x.status != FormStatus.submitted));
-  }
-
-  const showSubmitted = () => {
-    setCurrentEntry('submitted');
-    setDisplayList(formList.filter(x => x.status == FormStatus.submitted));
-  }
-
-  //Pour trier les colonnes du tableau
-  const handleSort = (column: keyof FormListData) => {
-    const order = sortColumn === column && sortOrder === 'asc' ? 'desc' : 'asc';
-    setSortColumn(column);
-    setSortOrder(order);
-
-    const sortedList = [...displayList].sort((a: FormListData, b: FormListData) => {
-      const aValue = a[column];
-      const bValue = b[column];
-
-      if (typeof aValue === 'string' && typeof bValue === 'string') {
-        return order === 'asc' ? aValue.localeCompare(bValue) : bValue.localeCompare(aValue);
-      } else if (typeof aValue === 'number' && typeof bValue === 'number') {
-        return order === 'asc' ? aValue - bValue : bValue - aValue;
-      } else if (aValue instanceof Date && bValue instanceof Date) {
-        return order === 'asc' ? aValue.getTime() - bValue.getTime() : bValue.getTime() - aValue.getTime();
+        navigate("/form/generalTab", {
+          state: {
+            formName: item.name,
+            format: item.format,
+            numberOfPages: item.numberOfPages,
+            lastUpdate: item.lastUpdate,
+            status: item.status
+          }
+        });
+      } else {
+        console.error("Pas de données sur le projet");
       }
-      return 0; // Si les types ne correspondent pas
-    });
+    };
 
-    setDisplayList(sortedList);
-  };
 
-  return (
-    <>
-      <StartingModal open={showModal} onClose={handleClose} />
+    // const handleClose = () => {
+    //   setShowModal(false);
+  
+     
+    //     // Convertir lastUpdate en objet Date si ce n'est pas déjà fait
+        
+    //       navigate("/form/generalTab", {
+    //         state: {
+    //           formName: item.name,
+    //           format: item.format,
+    //           numberOfPages: item.numberOfPages,
+    //           lastUpdate: item.lastUpdate,
+    //           status: item.status
+    //         }
+    //       });
+        
+    //   };
+  
 
-      <Navbar bg="$color-gray" className={styles.navBar} >
-        <div className={styles.divContainer}>
-          <Container className={styles.container}>
-            <div className={styles.buttonGroup}>
-              <Button
-                variant="light"
-                className={`me-1 ${currentEntry === "toBeSubmitted" ? styles.selectedButton : styles.unselectedButton}`}
-                onClick={showNonSubmitted}
-              >
-                À SOUMETTRE
-              </Button>
-              <Button
-                variant="light"
-                className={`${currentEntry === "submitted" ? styles.selectedButton : styles.unselectedButton}`}
-                onClick={showSubmitted}
-              >
-                SOUMIS
-              </Button>
-            </div>
-            <span className={styles.label}>
-              À commencer: <span className={`${styles.labelValue} ${styles.labelSpacer}`}>{countToStart}</span>
-              À finaliser: <span className={`${styles.labelValue} ${styles.labelSpacer}`}>{countStarted}</span>
-              Soumis: <span className={`${styles.labelValue} `}>{countSubmitted}</span>
-            </span>
-          </Container>
-        </div>
-      </Navbar>
+    //Pour filtrer et afficher selon si on est dans l'onglet à soumettre ou soumis
+    const showNonSubmitted = () => {
+      setCurrentEntry('toBeSubmitted');
+      setDisplayList(formList.filter(x => x.status != FormStatus.submitted));
+    }
 
-      <form>
-        <Table className={styles.table} bordered >
-          <thead>
-            <tr>
-              <th onClick={() => handleSort("name")} style={{ cursor: "pointer" }}>
-                <i className="bi bi-sort-alpha-down" style={{ marginRight: '5px' }}></i>
-                Nom du projet
-              </th>
-              <th onClick={() => handleSort("format")} style={{ cursor: "pointer" }}>
-                <i className="bi bi-sort-alpha-down" style={{ marginRight: '5px' }}></i>
-                Format
-              </th>
-              <th onClick={() => handleSort("numberOfPages")} style={{ cursor: "pointer" }}>
-                <i className="bi bi-sort-numeric-down" style={{ marginRight: '5px' }}></i>
-                Nbr pages
-              </th>
-              <th onClick={() => handleSort("lastUpdate")} style={{ cursor: "pointer" }}>
-                <i className="bi bi-calendar" style={{ marginRight: '5px' }}></i>
-                Dernière MAJ
-              </th>
-              <th onClick={() => handleSort("status")} style={{ cursor: "pointer" , textAlign: "left" }}>
-                <i className="bi bi-arrow-down" style={{ marginRight: '5px' }}></i>
-                Action
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {displayList?.map((item, idx) => (
-              <tr key={idx}>
-                <td id={item.name} onClick={(e) => redirect("/form/generalTab", e, item)}>{item.name}</td>
-                <td >{item.format}</td>
-                <td>{item.numberOfPages}</td>
-                <td>{item.lastUpdate.toLocaleDateString('fr-FR')}</td>
-                <td onClick={(e) => redirect("/form/generalTab", e, item)}>
-                  {item.status === FormStatus.started ? (
-                    <Button
-                      className={`${styles.customButton} ${styles.buttonRed}`}
-                    >
-                      {/* <i className={`bi bi-lightning-fill ${styles.iconSpacing}`}></i> */}
-                      Finaliser
-                    </Button> // Rouge pour "started"
-                  ) : item.status === FormStatus.toStart ? (
-                    <Button
-                      className={`${styles.customButton} `}
-                    >
-                      {/* <i className={`bi bi-lightning-fill ${styles.iconSpacing}`}></i> */}
-                      Commencer
-                    </Button>
-                  ) : item.status === FormStatus.submitted ? (
-                    <Button className={`${styles.customButton} ${styles.buttonGray}`}>
-                      {/* <i className={`bi bi-check-circle ${styles.iconSpacing}`}></i> */}
-                      Soumis
-                    </Button> // Statut pour "submitted"
-                  ) : (
-                    <Button className={`${styles.customButton} ${styles.buttonGray}`}>
-                      Statut inconnu
-                    </Button> // Autre statut
-                  )}
-                </td>
+    const showSubmitted = () => {
+      setCurrentEntry('submitted');
+      setDisplayList(formList.filter(x => x.status == FormStatus.submitted));
+    }
+
+    //Pour trier les colonnes du tableau
+    const handleSort = (column: keyof FormListData) => {
+      const order = sortColumn === column && sortOrder === 'asc' ? 'desc' : 'asc';
+      setSortColumn(column);
+      setSortOrder(order);
+
+      const sortedList = [...displayList].sort((a: FormListData, b: FormListData) => {
+        const aValue = a[column];
+        const bValue = b[column];
+
+        if (typeof aValue === 'string' && typeof bValue === 'string') {
+          return order === 'asc' ? aValue.localeCompare(bValue) : bValue.localeCompare(aValue);
+        } else if (typeof aValue === 'number' && typeof bValue === 'number') {
+          return order === 'asc' ? aValue - bValue : bValue - aValue;
+        } else if (aValue instanceof Date && bValue instanceof Date) {
+          return order === 'asc' ? aValue.getTime() - bValue.getTime() : bValue.getTime() - aValue.getTime();
+        }
+        return 0; // Si les types ne correspondent pas
+      });
+
+      setDisplayList(sortedList);
+    };
+
+    return (
+      <>
+        <StartingModal open={showModal} onClose={handleClose} />
+
+        <Navbar bg="$color-gray" className={styles.navBar} >
+          <div className={styles.divContainer}>
+            <Container className={styles.container}>
+              <div className={styles.buttonGroup}>
+                <Button
+                  variant="light"
+                  className={`me-1 ${currentEntry === "toBeSubmitted" ? styles.selectedButton : styles.unselectedButton}`}
+                  onClick={showNonSubmitted}
+                >
+                  À SOUMETTRE
+                </Button>
+                <Button
+                  variant="light"
+                  className={`${currentEntry === "submitted" ? styles.selectedButton : styles.unselectedButton}`}
+                  onClick={showSubmitted}
+                >
+                  SOUMIS
+                </Button>
+              </div>
+              <span className={styles.label}>
+                À commencer: <span className={`${styles.labelValue} ${styles.labelSpacer}`}>{countToStart}</span>
+                À finaliser: <span className={`${styles.labelValue} ${styles.labelSpacer}`}>{countStarted}</span>
+                Soumis: <span className={`${styles.labelValue} `}>{countSubmitted}</span>
+              </span>
+            </Container>
+          </div>
+        </Navbar>
+
+        <form>
+          <Table className={styles.table} bordered >
+            <thead>
+              <tr>
+                <th onClick={() => handleSort("name")} style={{ cursor: "pointer" }}>
+                  <i className="bi bi-sort-alpha-down" style={{ marginRight: '5px' }}></i>
+                  Nom du projet
+                </th>
+                <th onClick={() => handleSort("format")} style={{ cursor: "pointer" }}>
+                  <i className="bi bi-sort-alpha-down" style={{ marginRight: '5px' }}></i>
+                  Format
+                </th>
+                <th onClick={() => handleSort("numberOfPages")} style={{ cursor: "pointer" }}>
+                  <i className="bi bi-sort-numeric-down" style={{ marginRight: '5px' }}></i>
+                  Nbr pages
+                </th>
+                <th onClick={() => handleSort("lastUpdate")} style={{ cursor: "pointer" }}>
+                  <i className="bi bi-calendar" style={{ marginRight: '5px' }}></i>
+                  Dernière MAJ
+                </th>
+                <th onClick={() => handleSort("status")} style={{ cursor: "pointer", textAlign: "left" }}>
+                  <i className="bi bi-arrow-down" style={{ marginRight: '5px' }}></i>
+                  Action
+                </th>
               </tr>
-            ))}
-          </tbody>
-        </Table>
-      </form>
-    </>
-  );
-}
+            </thead>
+            <tbody>
+              {displayList?.map((item, idx) => (
+                <tr key={idx}>
+                  <td id={item.name} onClick={(e) => redirect("/form/generalTab", e, item)}>{item.name}</td>
+                  <td >{item.format}</td>
+                  <td>{item.numberOfPages}</td>
+                  <td>{item.lastUpdate.toLocaleDateString('fr-FR')}</td>
+                  <td onClick={(e) => redirect("/form/generalTab", e, item)}>
+                    {item.status === FormStatus.started ? (
+                      <Button
+                        className={`${styles.customButton} ${styles.buttonRed}`}
+                      >
+                        {/* <i className={`bi bi-lightning-fill ${styles.iconSpacing}`}></i> */}
+                        Finaliser
+                      </Button> // Rouge pour "started"
+                    ) : item.status === FormStatus.toStart ? (
+                      <Button
+                        className={`${styles.customButton} `}
+                      >
+                        {/* <i className={`bi bi-lightning-fill ${styles.iconSpacing}`}></i> */}
+                        Commencer
+                      </Button>
+                    ) : item.status === FormStatus.submitted ? (
+                      <Button className={`${styles.customButton} ${styles.buttonGray}`}>
+                        {/* <i className={`bi bi-check-circle ${styles.iconSpacing}`}></i> */}
+                        Soumis
+                      </Button> // Statut pour "submitted"
+                    ) : (
+                      <Button className={`${styles.customButton} ${styles.buttonGray}`}>
+                        Statut inconnu
+                      </Button> // Autre statut
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        </form>
+      </>
+    );
+  }
 
-export default DashBoard;
+  export default DashBoard;

@@ -11,9 +11,10 @@ export type InformationSourceData = {
   enrichedReliabilityRate?: number
 }
 
-export interface FormBoxData {
+export interface FormBoxData<T = string> {
   id: string;
-  value?: string
+  value: T
+  unit?:string
   informationSource?: InformationSourceData
 }
 
@@ -21,8 +22,8 @@ export type GeneralBoxData = {
   missionTitle: FormBoxData
   clientName: FormBoxData
   startDate: FormBoxData
-  nbCollaborators: FormBoxData
-  missionDuration: FormBoxData
+  nbCollaborators: FormBoxData<number>
+  missionDuration: FormBoxData<number>
   missionSector: FormBoxData
 }
 
@@ -57,6 +58,7 @@ export interface FormData {
   movementBoxData?: MovementBoxData;
   digitalBoxData?: DigitalBoxData;
   officeData?: OfficeBoxData;
+  formListData?: FormListData; 
 }
 
 export type CustomSwitchOptions = {

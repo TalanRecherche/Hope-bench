@@ -1,6 +1,8 @@
-import { useContext } from "react";
-import { Button, Container, Nav, Navbar } from "react-bootstrap";
-import { Link, useLocation } from "react-router-dom";
+import { useContext,useState } from "react";
+import { Button, Nav, Navbar } from "react-bootstrap";
+import { Link, useLocation} from "react-router-dom";
+
+import { FormListData} from '../model/simulationDataModel';
 import { AuthContext } from "../contexts/AuthContext";
 import styles from './FormComponents.module.scss';
 import hopeImage from '../assets/hope.svg';
@@ -11,8 +13,33 @@ function NavBar() {
 	const location = useLocation();
 	const { formName } = location.state || {};
 	const formDataValues = location.state || {};
+	// const formNameG=formDataValues.formListData.name|| {};
 
-	console.log(formDataValues);
+	// const formNameComplet = formNameG || formName;
+	// console.log("navbar",formDataValues);
+	
+
+	// const formListDataD: FormListData = {
+    //     name: location.state.formName,
+    //     format: location.state.format,
+    //     numberOfPages: location.state.numberOfPages,
+    //     lastUpdate: new Date(location.state.lastUpdate), // Convertit en objet Date si nécessaire
+    //     status: location.state.status,
+    // };
+
+
+    // const [formDataValues, setFormDataValues] = useState<FormData>
+    //     ({
+    //         formName: location.state?.formName,
+    //         formStatus: location.state?.status,
+    //         generalBoxData: location.state?.generalData || {},
+    //         movementBoxData: location.state?.movementData || {},
+    //         digitalBoxData: location.state?.digitalData || {},
+    //         officeData: location.state?.officeData || {},
+    //         formListData: formListDataD || {},
+
+    //     });
+
 
 	const save = () => {
 		console.log("saving data = ", formDataValues);
@@ -26,6 +53,8 @@ function NavBar() {
 	// Vérifie si l'utilisateur est sur la page Dashboard
 	const isDashboard = location.pathname === '/dashboard';
 
+	// console.log("formNameComplet",formNameComplet);
+
 	return (
 		<div className={styles.divContainer}>
 
@@ -34,8 +63,20 @@ function NavBar() {
 					<Navbar.Brand className={styles.navBarBrand} as={Link} to="/">
 						<img src={hopeImage} alt="Hope" />
 					</Navbar.Brand>
-					<span className="mx-3" style={{ color: 'gray' }}>|</span> {/* Séparateur gris */}
-					<Nav.Link as={Link} to="/" className="mx-2" style={{ color: 'blue' }}>Accueil</Nav.Link> {/* Lien Accueil en bleu */}
+					<span 
+                        className="mx-3" 
+                        style={{ color: isDashboard ? 'darkgray' : 'blue' }}
+                    >
+                        |
+                    </span>
+					<Nav.Link 
+                        as={Link} 
+                        to="/" 
+                        className="mx-2" 
+                        style={{ color: isDashboard ? 'darkgray' : 'blue' }}
+                    >
+                        Accueil
+                    </Nav.Link>
 				</div>
 
 				<div>
@@ -45,6 +86,7 @@ function NavBar() {
 							{formName}
 						</Navbar.Text>
 					)}
+
 				</div>
 
 				<div>

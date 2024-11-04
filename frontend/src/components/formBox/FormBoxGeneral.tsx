@@ -1,34 +1,33 @@
+import { useState} from 'react';
 import { Form, Dropdown } from 'react-bootstrap';
 import InformationSource from "../InformationSource";
-import Card from 'react-bootstrap/Card';
-import styles from '../FormComponents.module.scss';
-import NumericInput from 'react-numeric-input';
-import { InformationSourceData } from '../../model/simulationDataModel';
 import InformationSourceBase from '../InformationSourceBase';
-import { useState } from 'react';
+import Card from 'react-bootstrap/Card';
+import NumericInput from 'react-numeric-input';
+import styles from '../FormComponents.module.scss';
+import { InformationSourceData, FormBoxData } from '../../model/simulationDataModel';
 
 interface Props<T> {
     isNumericInput?: boolean,
     options: {
-        controlId?: T;
-        name: T;
-        subtitle?: T;
-        type: T;
-        id: T;
-        placeholder: T;
-        value?: T;
+        controlId?: string;
+        name: string;
+        subtitle?: string;
+        type: string;
+        id: string;
+        placeholder: string;
+        value: T;
         informationSourceData?: InformationSourceData;
-        optionsList?: Array<{ value: string; label: string }>;
+        optionsList?: Array<{ value: T; label: string }>;
     },
-    setValues?: any
+    setValues?: (data: FormBoxData<T>) => void
 }
 
-function FormBoxGeneral<T extends string>({ isNumericInput = false, options, setValues }: Props<T>) {
-
+function FormBoxGeneral<T>({ isNumericInput = false, options, setValues = () => {} }: Props<T>) {
     const informationSourceBaseLabel = "L’information n’est pas dans le document, je n’ai pas les connaissances ni accès à des sources d’information externes pour répondre."
     const [informationSourceBase, setInformationSourceBase] = useState(false);
     const [displayInformationSource, setDisplayInformationSource] = useState<any>(false);
-    const [selectedValue, setSelectedValue] = useState<string>(""); // Ajout de l'état selectedValue
+    const [selectedValue, setSelectedValue] = useState<T>(options.value); // Ajout de l'état selectedValue
 
 
     // const setOptionValue = (value: any) => {
@@ -70,18 +69,15 @@ function FormBoxGeneral<T extends string>({ isNumericInput = false, options, set
     // };
 
     const setOptionValue = (value: any) => {
-        // if (selectedValue !== value) {
-        //     console.log("Valeur sélectionnée actuelle :", selectedValue);
-        //     console.log("Valeur actuelle des options :", options.value);
-        // }
-
+        
         console.log("setOptionValue appelé avec la valeur :", value);
+        
 
         // Vérifier que value n'est pas identique à selectedValue
         if (value !== selectedValue) {
             // Met à jour selectedValue
             setSelectedValue(value);
-
+            
             // Gestion de l'affichage de l'information
             if (typeof value === 'number') {
                 setDisplayInformationSource(value > 0);
@@ -92,15 +88,8 @@ function FormBoxGeneral<T extends string>({ isNumericInput = false, options, set
             }
 
             // Utilise setValues pour mettre à jour l'état dans le parent
-            setValues((prevValues: any) => {
-                console.log("je rentre dans setValues");
-                console.log("Valeurs avant mise à jour :", prevValues);
-                const updatedValues = {
-                    ...prevValues,
-                    [options.id]: value, // Enregistre la valeur par ID
-                };
-                console.log("Valeurs mises à jour dans setValues :", updatedValues);
-                return updatedValues;
+            setValues({
+                id: options.id, value, informationSource: options.informationSourceData
             });
         }
     };
@@ -114,21 +103,23 @@ function FormBoxGeneral<T extends string>({ isNumericInput = false, options, set
         }
     };
 
-    const setSourceData = (sourceData: any) => {
+    const setSourceData = (sourceData: InformationSourceData) => {
         console.log("source data reçue", sourceData);
-        options.informationSourceData = sourceData;
-        setValues(options);
+        setValues({
+            id: options.id, value: selectedValue, informationSource: sourceData
+        });
         console.log("options après mise à jour :", options);
     }
 
     let card;
     if (isNumericInput) {
         card =
-            <Card.Body>
-                <a >{options.name} </a>
+            <Card.Body >
+                <a className={`${styles.required}`}>{options.name} </a>
                 {options.subtitle && <div className={styles.subtitle}>{options.subtitle}</div>} {/* Affichage du subtitle */}
                 <div className="mt-3">
                     <NumericInput min={0} size={1} onChange={(value) => setOptionValue(value)} />
+                    <Form.Label className={`${styles.nameCard}`}>Jour/semaine/mois</Form.Label>
                 </div>
                 <InformationSourceBase label={informationSourceBaseLabel} setSourceBaseValue={setInformationSourceBase}></InformationSourceBase>
             </Card.Body>;
@@ -137,12 +128,12 @@ function FormBoxGeneral<T extends string>({ isNumericInput = false, options, set
             <Card.Body>
                 <Form.Group controlId={options.controlId}>
                     <Form.Label className={`${styles.required} ${styles.nameCard}`}>{options.name}</Form.Label>
-                    {options.subtitle && <div className={styles.subtitle}>{options.subtitle}</div>} {/* Affichage du subtitle */}
+                    {options.subtitle && <div className={`${styles.subtitle}`}>{options.subtitle}</div>} {/* Affichage du subtitle */}
                     <div className={`mt-3 ${styles.dropdownContainer}`}>
                         <Dropdown>
                             <Dropdown.Toggle className={`${styles.dropdownToggle} ${styles.dropdownField} ${styles.customDropdown}`} id={options.id}>
                                 <span className={`${styles['dropdown-toggle-label']}`}>
-                                    {selectedValue || options.placeholder}
+                                    {selectedValue as string|| options.placeholder}
                                 </span>
                                 <span className={`${styles['dropdown-toggle-arrow']}`}>
                                     {/* Vous pouvez utiliser une icône ici si nécessaire */}
@@ -152,7 +143,7 @@ function FormBoxGeneral<T extends string>({ isNumericInput = false, options, set
                             <Dropdown.Menu>
                                 {options.optionsList && options.optionsList.map((option) => (
                                     <Dropdown.Item
-                                        key={option.value}
+                                        key={option.value as string}
                                         onClick={() => setOptionValue(option.value)}
                                         className={styles.dropdownItem}
                                     >

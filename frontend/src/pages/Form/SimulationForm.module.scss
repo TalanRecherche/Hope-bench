@@ -293,10 +293,42 @@ textarea::placeholder {
   color: white; /* Couleur du texte */
   border: none;
   border-radius: 4px;
-  padding: 6px ; /* Espacement à l'intérieur du bouton */
+  padding: 4px 8px; /* Espacement à l'intérieur du bouton */
   cursor: pointer;
 
   &:hover {
       background-color: $color-lightorange; /* Couleur au survol */
   }
 }
+
+.durationContainer {
+  display: flex;
+  align-items: center; /* Centre verticalement les éléments */
+}
+
+.unitToggle {
+  display: flex;
+  margin-left: 5px; /* Espace entre le sélecteur numérique et les boutons */
+}
+
+.unitToggle button {
+  margin: 0 5px; /* Espace entre les boutons */
+  padding: 5px 10px; /* Ajoutez un peu de rembourrage pour un meilleur aspect */
+  border: 1px solid #007bff; /* Bordure pour un meilleur aspect */
+  background-color: transparent; /* Fond transparent par défaut */
+  color: #007bff; /* Couleur du texte par défaut */
+  cursor: pointer; /* Curseur de pointeur pour l'interaction */
+  border-radius: 4px; /* Coins arrondis */
+  transition: background-color 0.3s, color 0.3s; /* Transition douce */
+}
+
+.unitToggle button.active {
+  background-color: #007bff; /* Exemple de couleur active */
+  color: white; /* Couleur du texte actif */
+}
+
+
+.unitToggle button:hover {
+  background-color: rgba(0, 123, 255, 0.1); /* Légère couleur au survol */
+}
+

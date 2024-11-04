@@ -8,7 +8,7 @@ import iconLabel from "../assets/label.svg";
 import classNames from 'classnames';
 
 interface Props {
-    setSourceValues?: any
+    setSourceValues?: (data: InformationSourceData) => void
 }
 
 function InformationSource({ setSourceValues }: Props) {
@@ -16,7 +16,7 @@ function InformationSource({ setSourceValues }: Props) {
     const [iSourceData, setISourceData] = useState<InformationSourceData>({});
 
     useEffect(() => {
-        setSourceValues(iSourceData);
+        setSourceValues && setSourceValues(iSourceData);
     });
 
     const changeFormData = (e: any) => {
@@ -37,14 +37,14 @@ function InformationSource({ setSourceValues }: Props) {
         });
     };
 
-    function handleSwitch(checked: boolean, name: string) {
+    function handleSwitch(checked: boolean, name: keyof InformationSourceData) {
         setISourceData({
             ...iSourceData,
             [name]: checked
         });
     };
 
-    function handleNumericInput(value: any, name: string) {
+    function handleNumericInput(value: any, name: keyof InformationSourceData) {
         setISourceData({
             ...iSourceData,
             [name]: value

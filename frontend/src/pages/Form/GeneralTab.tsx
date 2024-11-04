@@ -1,19 +1,46 @@
 import FormBoxGeneral from "../../components/formBox/FormBoxGeneral";
-import FormFileUpload from "../../components/FormFileUpload";
-import { useOutletContext } from "react-router-dom";
-import { FormStatus, GeneralBoxData, InformationSourceData } from "../../model/simulationDataModel.ts";
-import React from "react";
+// import FormFileUpload from "../../components/FormFileUpload";
+import { useOutletContext, useLocation, useNavigate } from "react-router-dom";
+import { FormBoxData, FormStatus, GeneralBoxData, InformationSourceData } from "../../model/simulationDataModel.ts";
+import React,{ useEffect }  from "react";
+
 import styles from './SimulationForm.module.scss';
 import classNames from 'classnames';
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
+import { FormDataContext } from "./FormBase.tsx";
 
 function GeneralTab() {
 
-    const { setDatat } = useOutletContext<{ setDatat: any }>(); // <-- access context value
+    //pour récupérer les données venant de Dashboard passé à cette page via navlink
     const location = useLocation();
-    console.log("Valeurs reçues:", location.state);
+    const navigate = useNavigate();
+    const formData = location.state; // Récupère les données passées
+    console.log("formData generalTab",formData);
+    
+    const { datat, setDatat } = useOutletContext<FormDataContext>(); // <-- access context value
 
-    const formStatus = location.state?.status;
+    // useEffect(() => {
+    //     if (formData && !datat.formListData) {
+    //         // Met à jour le contexte avec les données du formulaire
+    //         setDatat((prev: any) => ({
+    //             ...prev,
+    //             formListData: {
+    //                 name: formData.name,
+    //                 format: formData.format,
+    //                 numberOfPages: formData.numberOfPages,
+    //                 lastUpdate: formData.lastUpdate,
+    //                 status: formData.status,
+    //             },
+    //         }));
+    //     }
+    // }, [formData, setDatat]);
+
+   
+
+
+    console.log("Valeurs reçues dans GeneralTab:", datat);
+
+    const formStatus = datat?.formStatus;
 
     const initializeInformationSource = () => {
         const sourceData: InformationSourceData = {
@@ -25,58 +52,41 @@ function GeneralTab() {
     console.log("initializeInformationSource", initializeInformationSource);
 
     const [generalData, setGeneralData] = React.useState<GeneralBoxData>({
-        // missionTitle: {
-        //     id: "inputTitle",
-        //     informationSource: initializeInformationSource()
-        // },
-        // clientName: {
-        //     id: "inputClientName",
-        //     informationSource: initializeInformationSource()
-        // },
-        // startDate: {
-        //     id: "inputStartDate",
-        //     informationSource: initializeInformationSource()
-        // },
-        // nbCollaborators: {
-        //     id: "inputNbCollaborators",
-        //     informationSource: initializeInformationSource()
-        // },
-        // missionDuration: {
-        //     id: "inputDuration",
-        //     informationSource: initializeInformationSource()
-        // },
-        // missionSector: {
-        //     id: "inputSector",
-        //     informationSource: initializeInformationSource()
-        // },
+       
         missionTitle: { id: "inputTitle", value: "", informationSource: initializeInformationSource() },
         clientName: { id: "inputClientName", value: "", informationSource: initializeInformationSource() },
         startDate: { id: "inputStartDate", value: "", informationSource: initializeInformationSource() },
-        nbCollaborators: { id: "inputNbCollaborators", value: "", informationSource: initializeInformationSource() },
-        missionDuration: { id: "inputDuration", value: "", informationSource: initializeInformationSource() },
+        nbCollaborators: { id: "inputNbCollaborators", value: 0, informationSource: initializeInformationSource() },
+        missionDuration: { id: "inputDuration", value: 0, informationSource: initializeInformationSource() },
         missionSector: { id: "inputSector", value: "", informationSource: initializeInformationSource() },
 
     });
 
+
     console.log("Valeurs initiales de generalData:", generalData);
+
+
+    // État pour les valeurs des champs
+    const [formValues, setFormValues] = React.useState({
+        missionTitle: '',
+        clientName: '',
+        startDate: '',
+        nbCollaborators: '',
+        missionDuration: '',
+        missionSector: ''
+    });
+
 
     const [showMessage, setShowMessage] = React.useState(false);
 
     /* ToDo - handle Data Receive to be improved*/
-    const handleDataReceive = (receivedData: { id: keyof GeneralBoxData; value: string; informationSourceData?: InformationSourceData }) => {
-
-        console.log("ID reçu :", receivedData.id);
-        console.log("Valeur reçue :", receivedData.value);
-
-
-        console.log("generalData[receivedData.id]", generalData[receivedData.id]);
+    const handleDataReceive = (key: keyof GeneralBoxData, receivedData: FormBoxData<any>) => {
         // setDatat(initialData);
         const updatedData = {
             ...generalData,
-            [receivedData.id]: {
-                ...generalData[receivedData.id],
-                value: receivedData.value,
-                informationSource: receivedData.informationSourceData,
+            [key]: {
+                ...generalData[key],
+                ...receivedData
             },
         };
 
@@ -84,14 +94,27 @@ function GeneralTab() {
         setGeneralData(updatedData);
         setDatat(updatedData); // Met à jour le contexte avec les nouvelles données donc remonte les infos à FormBase
 
-        if (receivedData.id === "inputTitle" as keyof GeneralBoxData) {
-            setShowMessage(receivedData.value.trim() !== "");
+
+        if (receivedData.id === "inputTitle") {
+            setShowMessage(receivedData.value?.trim() !== "");
         }
     };
 
     const handleNext = () => {
         // Logique pour passer à l'étape suivante
         console.log("Données à la prochaine étape:", generalData);
+        console.log("formData bouton next",formData);
+
+        navigate('/form/movementTab', {
+            state: {
+                name: formData.name,
+                format: formData.format,
+                numberOfPages: formData.numberOfPages,
+                lastUpdate: formData.lastUpdate,
+                status: formData.status,
+                setCurrentEntry:"movementTab"
+            }           
+        });
 
         //const handleDataReceive = (receivedData: any) => {
         // console.log("data =", formStatus);
@@ -130,14 +153,14 @@ function GeneralTab() {
     return (
         <div className={classNames(styles.generalTab, (formStatus == FormStatus.submitted) ? styles.formTabDisabled : '')}>
 
-            <FormBoxGeneral
-                setValues={handleDataReceive}
+            <FormBoxGeneral<string>
+                setValues={data => handleDataReceive('missionTitle', data)}
                 options={{
                     name: 'Titre de la mission',
                     type: 'text',
                     id: 'inputTitle',
                     placeholder: 'Fleet plan',
-                    value: generalData.missionTitle.value, // Mise à jour de l'état avec le texte saisi
+                    value: generalData.missionTitle.value // Mise à jour de l'état avec le texte saisi
                 }}
             />
             {showMessage && (
@@ -147,7 +170,7 @@ function GeneralTab() {
             )}
 
             <FormBoxGeneral
-                setValues={handleDataReceive}
+                setValues={data => handleDataReceive('clientName', data)}
                 options={{
                     name: 'Nom du client',
                     type: 'text',
@@ -158,7 +181,7 @@ function GeneralTab() {
             />
 
             <FormBoxGeneral
-                setValues={handleDataReceive}
+                setValues={data => handleDataReceive('startDate', data)}
                 options={{
                     name: 'Date de début',
                     type: 'date',
@@ -168,24 +191,29 @@ function GeneralTab() {
                 }}
             />
 
-            <FormBoxGeneral
-                setValues={handleDataReceive}
-                options={{
-                    name: 'Durée de la mission',
-                    subtitle:"Si l'information n'est pas présente mais qu'il existe des indices, je fais une supposition.",
-                    type: 'duration',
-                    id: 'inputDuration',
-                    placeholder: '14 mois',
-                    value: generalData.missionDuration.value
-                }}
-            />
+            <div className={styles.durationContainer}>
+                <FormBoxGeneral<number>
+                setValues={data => handleDataReceive('missionDuration', data)}
+                isNumericInput={true}
+                    options={{
+                        name: 'Durée de la mission',
+                        subtitle: "Si l'information n'est pas présente mais qu'il existe des indices, je fais une supposition.",
+                        type: 'number',
+                        id: 'inputDuration',
+                        placeholder: '14',
+                        value: generalData.missionDuration.value,
 
-            <FormBoxGeneral
-                setValues={handleDataReceive}
+                    }}
+                />
+
+            </div>
+
+            <FormBoxGeneral<number>
+                setValues={data => handleDataReceive('nbCollaborators', data)}
                 isNumericInput={true}
                 options={{
                     name: 'Nombre de collaborateurs sur la mission',
-                    subtitle:"Si l'information n'est pas présente mais qu'il existe des indices, j'essaie de faire une estimation.",
+                    subtitle: "Si l'information n'est pas présente mais qu'il existe des indices, j'essaie de faire une estimation.",
                     type: 'number',
                     id: 'inputNbCollaborators',
                     placeholder: '3',
@@ -194,7 +222,7 @@ function GeneralTab() {
             />
 
             <FormBoxGeneral
-                setValues={handleDataReceive}
+                setValues={data => handleDataReceive('missionSector', data)}
                 options={{
                     name: 'Secteur Talan Concerné',
                     type: 'select',
