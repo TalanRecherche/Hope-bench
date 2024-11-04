@@ -1,4 +1,4 @@
-import { useState} from 'react';
+import { useState } from 'react';
 import { Form, Dropdown } from 'react-bootstrap';
 import InformationSource from "../InformationSource";
 import InformationSourceBase from '../InformationSourceBase';
@@ -23,7 +23,7 @@ interface Props<T> {
     setValues?: (data: FormBoxData<T>) => void
 }
 
-function FormBoxGeneral<T>({ isNumericInput = false, options, setValues = () => {} }: Props<T>) {
+function FormBoxGeneral<T>({ isNumericInput = false, options, setValues = () => { } }: Props<T>) {
     const informationSourceBaseLabel = "L’information n’est pas dans le document, je n’ai pas les connaissances ni accès à des sources d’information externes pour répondre."
     const [informationSourceBase, setInformationSourceBase] = useState(false);
     const [displayInformationSource, setDisplayInformationSource] = useState<any>(false);
@@ -69,20 +69,22 @@ function FormBoxGeneral<T>({ isNumericInput = false, options, setValues = () => 
     // };
 
     const setOptionValue = (value: any) => {
-        
+
         console.log("setOptionValue appelé avec la valeur :", value);
-        
+
 
         // Vérifier que value n'est pas identique à selectedValue
         if (value !== selectedValue) {
             // Met à jour selectedValue
             setSelectedValue(value);
-            
+
             // Gestion de l'affichage de l'information
             if (typeof value === 'number') {
                 setDisplayInformationSource(value > 0);
             } else if (Date.parse(value)) {
                 setDisplayInformationSource(value !== "");
+            } else if (typeof value === 'string') {
+                setDisplayInformationSource(value.trim() !== "");
             } else if (value === "") {
                 setDisplayInformationSource(false);
             }
@@ -133,7 +135,7 @@ function FormBoxGeneral<T>({ isNumericInput = false, options, setValues = () => 
                         <Dropdown>
                             <Dropdown.Toggle className={`${styles.dropdownToggle} ${styles.dropdownField} ${styles.customDropdown}`} id={options.id}>
                                 <span className={`${styles['dropdown-toggle-label']}`}>
-                                    {selectedValue as string|| options.placeholder}
+                                    {selectedValue as string || options.placeholder}
                                 </span>
                                 <span className={`${styles['dropdown-toggle-arrow']}`}>
                                     {/* Vous pouvez utiliser une icône ici si nécessaire */}

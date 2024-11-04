@@ -1,4 +1,4 @@
-import { useContext} from "react";
+import { useContext, useState} from "react";
 // import { useState } from "react";
 import { Button, Nav, Navbar } from "react-bootstrap";
 import { Link, useLocation} from "react-router-dom";
@@ -9,11 +9,50 @@ import styles from './FormComponents.module.scss';
 import hopeImage from '../assets/hope.svg';
 import classNames from 'classnames';
 
+import { FormData, FormListData } from '../model/simulationDataModel';
+
 function NavBar() {
 	const { user, logout } = useContext(AuthContext);
-	const location = useLocation();
-	const { formName } = location.state || {};
+	
+	// const navigate = useNavigate();
+    const location = useLocation();
+
+
+	let { formName } = location.state || {};
+	const {name} = location.state || {};
 	const formDataValues = location.state || {};
+
+	// const formListDataD: FormListData = {
+    //     name: location.state.formName,
+    //     format: location.state.format,
+    //     numberOfPages: location.state.numberOfPages,
+    //     lastUpdate: new Date(location.state.lastUpdate), // Convertit en objet Date si nécessaire
+    //     status: location.state.status,
+       
+    // };
+
+	// const [formDataValues, setFormDataValues] = useState<FormData>
+	// ({
+	// 	formName: location.state?.formName,
+	// 	formStatus: location.state?.status,
+	// 	generalBoxData: location.state?.generalData || {},
+	// 	movementBoxData: location.state?.movementData || {},
+	// 	digitalBoxData: location.state?.digitalData || {},
+	// 	officeData: location.state?.officeData || {},
+	// 	formListData: formListDataD || {},
+	// });
+
+
+	console.log("navbar data formName",formName);
+	
+	console.log("navbar data name",name);
+
+	console.log("navbar data formDataValues",formDataValues?.formListData?.name);
+
+	
+	if (formName==undefined){formName=formDataValues?.formListData?.name};
+
+
 	// const formNameG=formDataValues.formListData.name|| {};
 
 	// const formNameComplet = formNameG || formName;
@@ -84,7 +123,7 @@ function NavBar() {
 					{/* Nom du formulaire*/}
 					{formName && (
 						<Navbar.Text className="mx-3">
-							{formName}
+							{formName} 
 						</Navbar.Text>
 					)}
 
