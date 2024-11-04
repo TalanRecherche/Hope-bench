@@ -58,7 +58,7 @@ function FormBoxDigital<T extends string>({ options, digitalData, setValues }: P
                 // Si l'élément existe, mettre à jour la quantité
                 const updatedItemList = [...itemlist];
 
-                updatedItemList[existingItemIndex].count += selectedItemCount; // Ajouter à la quantité existante
+                // updatedItemList[existingItemIndex].count += selectedItemCount; // Ajouter à la quantité existante
            
                 setItemlist(updatedItemList);
                 handleValuesChange(updatedItemList);
