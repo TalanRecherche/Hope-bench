@@ -1,5 +1,5 @@
 import { Button, Card } from 'react-bootstrap';
-import styles from '../FormComponents.module.css';
+import styles from '../FormComponents.module.scss';
 
 interface Props {
     title: string,

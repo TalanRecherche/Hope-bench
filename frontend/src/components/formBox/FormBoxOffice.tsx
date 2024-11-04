@@ -1,4 +1,4 @@
-import styles from '../FormComponents.module.css';
+import styles from '../FormComponents.module.scss';
 import Card from 'react-bootstrap/Card';
 import NumericInput from 'react-numeric-input';
 import CustomSwitch from '../genericCustom/CustomSwitch';
@@ -51,15 +51,39 @@ function FormBoxOffice({ setValues }: Props) {
         setValues(officeBoxValues);
     }
 
+    //Modif pour éviter d'avoir des lignes en doublon, par exemple 2 lignes recto 
     const addItem = () => {
-        if (selectedItemCount != 0) {
-            itemlist.push({ count: selectedItemCount, name: selectedItem });
-            setItemlist(itemlist);
-            handleValuesChange(itemlist);
+        if (selectedItemCount !== 0) {
+            // Vérifie si l'élément existe déjà
+            const itemExists = itemlist.some(item => item.name === selectedItem);
+            
+            if (itemExists) {
+                alert("Cet élément existe déjà."); // Message d'erreur ou autre
+                return; // Ne pas ajouter si c'est un doublon
+            }
+    
+            // Ajoute l'élément à la liste
+            const newItem = { count: selectedItemCount, name: selectedItem };
+            const updatedList = [...itemlist, newItem]; // Utilise une nouvelle référence pour l'état
+    
+            setItemlist(updatedList);
+            handleValuesChange(updatedList);
+        } else {
+            setSelectedItemRequired(true);
         }
+    };
+    
 
-        setSelectedItemRequired(selectedItemCount == 0);
-    }
+
+    // const addItem = () => {
+    //     if (selectedItemCount != 0) {
+    //         itemlist.push({ count: selectedItemCount, name: selectedItem });
+    //         setItemlist(itemlist);
+    //         handleValuesChange(itemlist);
+    //     }
+
+    //     setSelectedItemRequired(selectedItemCount == 0);
+    // }
 
     const removeItem = (index: any) => {
         itemlist.splice(index, 1);

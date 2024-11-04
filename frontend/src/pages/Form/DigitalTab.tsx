@@ -1,7 +1,7 @@
 import FormDigitalEquipments from '../../components/FormDigitalEquipments';
 import FormBoxDigital from '../../components/formBox/FormBoxDigital';
 import { useState } from 'react';
-import styles from './SimulationForm.module.css';
+import styles from './SimulationForm.module.scss';
 import { DigitalBoxData, FormStatus, InformationType } from '../../model/simulationDataModel';
 import { useOutletContext } from 'react-router-dom';
 import classNames from 'classnames';
