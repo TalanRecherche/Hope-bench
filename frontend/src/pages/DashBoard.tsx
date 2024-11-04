@@ -36,6 +36,8 @@ function DashBoard() {
   const [selectedFormId, setSelectedFormId] = useState('');
   const [showModal, setShowModal] = useState(false);
 
+  console.log(selectedFormId);
+
   const [sortColumn, setSortColumn] = useState('');
   const [sortOrder, setSortOrder] = useState('asc');
 

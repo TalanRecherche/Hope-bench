@@ -39,13 +39,13 @@ function FormBase() {
         });
     };
 
-    const save = () => {
-        console.log("Enregistrement des données:", formDataValues.generalBoxData);
-    };
+    // const save = () => {
+    //     console.log("Enregistrement des données:", formDataValues.generalBoxData);
+    // };
 
-    const formSubmit = () => {
-        console.log("Soumission du formulaire avec les données:", formDataValues);
-    };
+    // const formSubmit = () => {
+    //     console.log("Soumission du formulaire avec les données:", formDataValues);
+    // };
 
     // const receiveFormData = (receivedData: any) => {
 

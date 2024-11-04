@@ -2,7 +2,8 @@ import FormBoxGeneral from "../../components/formBox/FormBoxGeneral";
 // import FormFileUpload from "../../components/FormFileUpload";
 import { useOutletContext, useLocation, useNavigate } from "react-router-dom";
 import { FormBoxData, FormStatus, GeneralBoxData, InformationSourceData } from "../../model/simulationDataModel.ts";
-import React,{ useEffect }  from "react";
+import React from "react";
+// import { useEffect }  from "react";
 
 import styles from './SimulationForm.module.scss';
 import classNames from 'classnames';
@@ -67,14 +68,14 @@ function GeneralTab() {
 
 
     // État pour les valeurs des champs
-    const [formValues, setFormValues] = React.useState({
-        missionTitle: '',
-        clientName: '',
-        startDate: '',
-        nbCollaborators: '',
-        missionDuration: '',
-        missionSector: ''
-    });
+    // const [formValues, setFormValues] = React.useState({
+    //     missionTitle: '',
+    //     clientName: '',
+    //     startDate: '',
+    //     nbCollaborators: '',
+    //     missionDuration: '',
+    //     missionSector: ''
+    // });
 
 
     const [showMessage, setShowMessage] = React.useState(false);

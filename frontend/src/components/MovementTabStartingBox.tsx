@@ -18,6 +18,7 @@ const MovementTabStartingBox = ({sendMovementDefaultInformation: sendInformation
 
     const { datat, setDatat } = useOutletContext<FormDataContext>(); // <-- access context value
     console.log("Valeurs reçues dans MovementTab:", datat);
+    console.log("Valeurs reçues dans MovementTab:", setDatat);
 
     //Récupèration des données du contexte
     const {formStatus, formName } = datat || {};
