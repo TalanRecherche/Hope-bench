@@ -175,7 +175,8 @@
 
 .movementTabSelectedListSection {
   margin-top: 24px;
-  margin-left: 250px;
+  // margin-left: 250px;
+  margin-left:60px;
 }
 
 
@@ -281,25 +282,6 @@ textarea::placeholder {
   font-size: 14px; /* Ajustez la taille de la police */
 }
 
-/*Bouton suivant*/
-.buttonContainer {
-  display: flex;
-  justify-content: flex-start; /* Aligne à gauche */
-  margin-top: 20px; /* Espace au-dessus du bouton */
-}
-
-.nextButton {
-  background-color: $color-orange; /* Couleur du bouton */
-  color: white; /* Couleur du texte */
-  border: none;
-  border-radius: 4px;
-  padding: 4px 8px; /* Espacement à l'intérieur du bouton */
-  cursor: pointer;
-
-  &:hover {
-      background-color: $color-lightorange; /* Couleur au survol */
-  }
-}
 
 .durationContainer {
   display: flex;
@@ -332,3 +314,53 @@ textarea::placeholder {
   background-color: rgba(0, 123, 255, 0.1); /* Légère couleur au survol */
 }
 
+.movementTab {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* S'assure que le conteneur prend toute la hauteur disponible */
+}
+
+.movementTab2 {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Même principe ici, assure que la section principale occupe l'espace restant */
+}
+
+.movementTabSelectedListSection {
+  flex: 1; /* Occupe l'espace restant lorsque des éléments sont sélectionnés */
+  padding: 20px; /* Ajuste selon tes besoins */
+}
+
+
+/*Bouton suivant*/
+.buttonContainer {
+  display: flex;
+  justify-content: flex-start; /* Aligne à gauche */
+  
+  gap:10px;
+  width:770px;
+  margin:auto;
+  margin-top: 20px; /* Espace au-dessus du bouton */
+}
+
+.nextButton {
+  background-color: $color-orange; /* Couleur du bouton */
+  color: white; /* Couleur du texte */
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px; /* Espacement à l'intérieur du bouton */
+  cursor: pointer;
+
+  &:hover {
+      background-color: $color-lightorange; /* Couleur au survol */
+  }
+}
+
+/* Conteneur principal qui prend toute la hauteur de la page */
+.pageContainer {
+  display: flex;
+  flex-direction: column;  /* Organise les éléments en colonne */
+  height: 100vh!important;           /* Occupe toute la hauteur de la page */
+  justify-content: space-between;  /* Place les boutons en bas de la page */
+  padding: 20px;           /* Ajoute de l'espace autour de la page */
+}

@@ -34,7 +34,7 @@ function MovementTab() {
                 x = x.concat(data); //on ajoute ceté élement à la liste
             }
             else {//si pas coché, on le retire de x
-                let value = x.find(l => l.id == data[0].id); 
+                let value = x.find(l => l.id == data[0].id);
 
                 if (value) {
                     var index = x.indexOf(value);
@@ -71,32 +71,44 @@ function MovementTab() {
     }
 
     return (
-        <div style={{ display: "flex" }}>
-            {isItemChecked() &&
-                <div className={styles.movementTabSelectedListSection}>
-                    <BoxSelectedList
-                        title="Moyen(s) de transport utilisé(s)"
-                        list={x?.filter(c => c.checked).sort((a, b) => a.order - b.order)} />
-                </div>
-            }
-
-            <div className={classNames(isItemChecked() ? styles.movementTab2 : styles.movementTab, (formStatus == FormStatus.submitted) ? styles.formTabDisabled : '')}>
-
-                <MovementTabStartingBox sendMovementDefaultInformation={handleDefaultValues}></MovementTabStartingBox>
-
-                {movementInformationBase == InformationType.needed &&
-                    <>
-                        <FormMeansTransport onDataSend={handleSelectedListReceive}></FormMeansTransport>
-
-                        {x?.filter(c => c.checked).sort((a, b) => a.order - b.order).map((item, idx) => (
-                            <FormBoxMovement
-                                key={idx}
-                                setBoxValues={handleBoxDataReceive}
-                                options={{ name: item.name, type: 'text', id: item.id, placeholder: 'Description' }} />
-                        ))}
-                    </>
+        <div className="pageContainer">
+            {/* Contenu principal */}
+            <div style={{ display: "flex", flexDirection: "column", flexGrow: 1 }}>
+                {isItemChecked() &&
+                    <div className={styles.movementTabSelectedListSection}>
+                        <BoxSelectedList
+                            title="Moyen(s) de transport utilisé(s)"
+                            list={x?.filter(c => c.checked).sort((a, b) => a.order - b.order)} />
+                    </div>
                 }
 
+                <div className={classNames(isItemChecked() ? styles.movementTab2 : styles.movementTab, (formStatus == FormStatus.submitted) ? styles.formTabDisabled : '')}>
+
+                    <MovementTabStartingBox sendMovementDefaultInformation={handleDefaultValues}></MovementTabStartingBox>
+
+                    {movementInformationBase == InformationType.needed &&
+                        <>
+                            <FormMeansTransport onDataSend={handleSelectedListReceive}></FormMeansTransport>
+
+                            {x?.filter(c => c.checked).sort((a, b) => a.order - b.order).map((item, idx) => (
+                                <FormBoxMovement
+                                    key={idx}
+                                    setBoxValues={handleBoxDataReceive}
+                                    options={{ name: item.name, type: 'text', id: item.id, placeholder: 'Description' }} />
+                            ))}
+                        </>
+                    }
+
+                </div>
+                {/* Conteneur pour les boutons suivant et précédent */}
+                <div className={styles.buttonContainer}>
+                    <button type="button" className={styles.nextButton} >
+                        Précédent
+                    </button>
+                    <button type="button" className={styles.nextButton} >
+                        Suivant
+                    </button>
+                </div>
             </div>
         </div>
     );

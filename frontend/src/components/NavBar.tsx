@@ -1,4 +1,4 @@
-import { useContext, useState} from "react";
+import { useContext} from "react";
 // import { useState } from "react";
 import { Button, Nav, Navbar } from "react-bootstrap";
 import { Link, useLocation} from "react-router-dom";
@@ -9,7 +9,7 @@ import styles from './FormComponents.module.scss';
 import hopeImage from '../assets/hope.svg';
 import classNames from 'classnames';
 
-import { FormData, FormListData } from '../model/simulationDataModel';
+// import { FormData, FormListData } from '../model/simulationDataModel';
 
 function NavBar() {
 	const { user, logout } = useContext(AuthContext);

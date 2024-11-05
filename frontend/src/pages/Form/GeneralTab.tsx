@@ -16,6 +16,7 @@ function GeneralTab() {
     const location = useLocation();
     const navigate = useNavigate();
     const formData = location.state; // Récupère les données passées
+
     console.log("formData generalTab",formData);
     
     const { datat, setDatat } = useOutletContext<FormDataContext>(); // <-- access context value
@@ -36,10 +37,7 @@ function GeneralTab() {
     //     }
     // }, [formData, setDatat]);
 
-   
-
-
-    console.log("Valeurs reçues dans GeneralTab:", datat);
+       // console.log("Valeurs reçues dans GeneralTab:", datat);
 
     const formStatus = datat?.formStatus;
 
@@ -50,7 +48,8 @@ function GeneralTab() {
         }
         return sourceData;
     };
-    console.log("initializeInformationSource", initializeInformationSource);
+
+    // console.log("initializeInformationSource", initializeInformationSource);
 
     const [generalData, setGeneralData] = React.useState<GeneralBoxData>({
        
@@ -63,9 +62,7 @@ function GeneralTab() {
 
     });
 
-
-    console.log("Valeurs initiales de generalData:", generalData);
-
+    // console.log("Valeurs initiales de generalData:", generalData);
 
     // État pour les valeurs des champs
     // const [formValues, setFormValues] = React.useState({
@@ -78,7 +75,7 @@ function GeneralTab() {
     // });
 
 
-    const [showMessage, setShowMessage] = React.useState(false);
+    // const [showMessage, setShowMessage] = React.useState(false);
 
     /* ToDo - handle Data Receive to be improved*/
     const handleDataReceive = (key: keyof GeneralBoxData, receivedData: FormBoxData<any>) => {
@@ -91,20 +88,20 @@ function GeneralTab() {
             },
         };
 
-        console.log("Données mises à jour dans handleDataReceive:", updatedData);
+        // console.log("Données mises à jour dans handleDataReceive:", updatedData);
+
         setGeneralData(updatedData);
         setDatat(updatedData); // Met à jour le contexte avec les nouvelles données donc remonte les infos à FormBase
 
-
-        if (receivedData.id === "inputTitle") {
-            setShowMessage(receivedData.value?.trim() !== "");
-        }
+        // if (receivedData.id === "inputTitle") {
+        //     setShowMessage(receivedData.value?.trim() !== "");
+        // }
     };
 
     const handleNext = () => {
         // Logique pour passer à l'étape suivante
-        console.log("Données à la prochaine étape:", generalData);
-        console.log("formData bouton next",formData);
+        // console.log("Données à la prochaine étape:", generalData);
+        // console.log("formData bouton next",formData);
 
         navigate('/form/movementTab', {
             state: {
@@ -149,8 +146,7 @@ function GeneralTab() {
         // };
     };
 
-
-
+    
     return (
         <div className={classNames(styles.generalTab, (formStatus == FormStatus.submitted) ? styles.formTabDisabled : '')}>
 
@@ -163,12 +159,13 @@ function GeneralTab() {
                     placeholder: 'Fleet plan',
                     value: generalData.missionTitle.value // Mise à jour de l'état avec le texte saisi
                 }}
+                showSwitch={false} 
             />
-            {showMessage && (
+            {/* {showMessage && (
                 <div >
                     <p>Vous avez saisi : {generalData.missionTitle.value}</p>
                 </div>
-            )}
+            )} */}
 
             <FormBoxGeneral
                 setValues={data => handleDataReceive('clientName', data)}
@@ -179,6 +176,7 @@ function GeneralTab() {
                     placeholder: 'CMA CGM',
                     value: generalData.clientName.value
                 }}
+                showSwitch={false} 
             />
 
             <FormBoxGeneral
@@ -190,6 +188,7 @@ function GeneralTab() {
                     placeholder: '09/12/2023',
                     value: generalData.startDate.value
                 }}
+                showSwitch={false} 
             />
 
             <div className={styles.durationContainer}>
@@ -203,8 +202,8 @@ function GeneralTab() {
                         id: 'inputDuration',
                         placeholder: '14',
                         value: generalData.missionDuration.value,
-
                     }}
+                    showSwitch={true} 
                 />
 
             </div>
@@ -220,12 +219,13 @@ function GeneralTab() {
                     placeholder: '3',
                     value: generalData.nbCollaborators.value
                 }}
+                showSwitch={false} 
             />
 
             <FormBoxGeneral
                 setValues={data => handleDataReceive('missionSector', data)}
                 options={{
-                    name: 'Secteur Talan Concerné',
+                    name: 'Secteur Talan concerné',
                     type: 'select',
                     id: 'inputSector',
                     placeholder: 'Sélectionner',
@@ -236,6 +236,7 @@ function GeneralTab() {
                     ],
                     value: generalData.missionSector.value
                 }}
+                showSwitch={false} 
             />
             {/* ToDo - Finalize file upload */}
             {/* <br />

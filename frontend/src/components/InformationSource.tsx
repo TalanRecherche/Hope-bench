@@ -71,7 +71,7 @@ function InformationSource({ setSourceValues }: Props) {
             <Form.Check
                 name="informationOrigin"
                 type="radio"
-                label="n’est pas présente dans le document, j’ai fait appel à mes propres connaissances, celle de mes collaborateurs ou d’autres sources pour répondre."
+                label="n’est pas présente dans le document, j’ai fait appel à mes propres connaissances, celles de mes collaborateurs ou d’autres sources pour répondre."
                 id="deducedFromknowledge"
                 onChange={(e) => radioChangeFormData(e)}
             />

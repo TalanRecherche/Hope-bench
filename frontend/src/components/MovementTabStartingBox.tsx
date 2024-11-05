@@ -65,7 +65,10 @@ const MovementTabStartingBox = ({sendMovementDefaultInformation: sendInformation
                     onChange={(e) => radioChangeFormData(e)}
                 />
             </Card.Body>
+           
         </Card>
+
+         
     )
 }
 export default MovementTabStartingBox;
