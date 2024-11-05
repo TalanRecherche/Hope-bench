@@ -91,8 +91,9 @@ function FormBoxMovement<T extends string>({ options, movementData, setBoxValues
 
 
     const switchOptions: CustomSwitchOptions = [
-        { label: 'Par mois', checked: true },
-        { label: 'Au Global', checked: false }
+        { label: 'Hebdo', checked: true },
+        { label: 'Mensuel', checked: false },
+        { label: 'Global', checked: false }
     ];
 
     // Gérer le changement de l'option sélectionnée dans le switch
