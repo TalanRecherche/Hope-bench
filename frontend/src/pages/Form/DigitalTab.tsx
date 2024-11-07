@@ -1,13 +1,15 @@
+import { useState } from 'react';
+import { useOutletContext, useLocation } from 'react-router-dom';
 import FormDigitalEquipments from '../../components/FormDigitalEquipments';
 import FormBoxDigital from '../../components/formBox/FormBoxDigital';
-import { useState } from 'react';
-import styles from './SimulationForm.module.scss';
-import { DigitalBoxData, FormStatus, InformationType } from '../../model/simulationDataModel';
-import { useOutletContext } from 'react-router-dom';
-import classNames from 'classnames';
-import { useLocation } from "react-router-dom";
 import DigitalTabStartingBox from '../../components/DigitalTabStartingBox';
 import BoxSelectedList from '../../components/genericCustom/BoxSelectedList';
+
+import styles from './SimulationForm.module.scss';
+import { DigitalBoxData, FormStatus, InformationType } from '../../model/simulationDataModel';
+
+import classNames from 'classnames';
+
 
 function DigitalTab() {
 

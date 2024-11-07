@@ -1,6 +1,6 @@
 import { Card, Form } from "react-bootstrap";
 import styles from './FormComponents.module.scss';
-import { useOutletContext,useLocation } from "react-router-dom";
+import { useOutletContext } from "react-router-dom";
 import { FormDataContext } from "../pages/Form/FormBase";
 
 
@@ -10,29 +10,30 @@ interface Props {
 
 const MovementTabStartingBox = ({sendMovementDefaultInformation: sendInformation} : Props) => {
 
-    const location = useLocation();
-    const { currentEntry } = location.state || {}; // Récupère currentEntry
+    // const location = useLocation();
+    // const { currentEntry } = location.state || {}; // Récupère currentEntry
 
     // Vous pouvez utiliser currentEntry ici si nécessaire
-    console.log("Current Entry in MovementTab:", currentEntry);
+    // console.log("Current Entry in MovementTab:", currentEntry);
 
     const { datat, setDatat } = useOutletContext<FormDataContext>(); // <-- access context value
-    console.log("Valeurs reçues dans MovementTab:", datat);
-    console.log("Valeurs reçues dans MovementTab:", setDatat);
+    // console.log("Valeurs reçues dans MovementTab datat:", datat);
+    // console.log("Valeurs reçues dans MovementTab:", setDatat);
 
     //Récupèration des données du contexte
-    const {formStatus, formName } = datat || {};
-    const format=datat?.formListData?.format;
-    const numberOfPages=datat?.formListData?.numberOfPages;
-    const lastUpdate=datat?.formListData?.lastUpdate;
+    // const {formStatus, formName } = datat || {};
+    // const format=datat?.formListData?.format;
+    // const numberOfPages=datat?.formListData?.numberOfPages;
+    // const lastUpdate=datat?.formListData?.lastUpdate;
 
-    console.log(formStatus, formName, format, numberOfPages, lastUpdate);
+    // console.log(formStatus, formName, format, numberOfPages, lastUpdate);
 
 
 
     const radioChangeFormData = (e: any) => {
         const { id } = e.target;        
         sendInformation(id);
+        setDatat(datat);
     };
 
     return (

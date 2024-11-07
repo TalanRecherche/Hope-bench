@@ -25,7 +25,7 @@ function MovementTab() {
     }[] = [];
 
     const [x, setX] = useState(displayList);
-    console.log(displayList);
+    // console.log(displayList);
 
     const handleSelectedListReceive = (data: any) => {
 

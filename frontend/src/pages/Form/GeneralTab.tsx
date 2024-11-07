@@ -17,7 +17,7 @@ function GeneralTab() {
     const navigate = useNavigate();
     const formData = location.state; // Récupère les données passées
 
-    console.log("formData generalTab",formData);
+    // console.log("formData generalTab",formData);
     
     const { datat, setDatat } = useOutletContext<FormDataContext>(); // <-- access context value
 
@@ -103,9 +103,12 @@ function GeneralTab() {
         // console.log("Données à la prochaine étape:", generalData);
         // console.log("formData bouton next",formData);
 
+        console.log("formData before navigate MovementTab", formData);
+        console.log("formData.formListData.name before navigate MovementTab", formData.formListData.name);
+
         navigate('/form/movementTab', {
             state: {
-                name: formData.name,
+                name: formData.formListData.name,
                 format: formData.format,
                 numberOfPages: formData.numberOfPages,
                 lastUpdate: formData.lastUpdate,

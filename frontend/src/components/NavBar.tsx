@@ -47,10 +47,10 @@ function NavBar() {
 	
 	console.log("navbar data name",name);
 
-	console.log("navbar data formDataValues",formDataValues?.formListData?.name);
-
+	// Tjr dans GeneralTab et quand on clique sur l'onglet MovementTab
+	console.log("navbar data formDataValues",formDataValues?.formListData?.name); 
 	
-	if (formName==undefined){formName=formDataValues?.formListData?.name};
+	// if (formName==undefined){formName=formDataValues?.formListData?.name};
 
 
 	// const formNameG=formDataValues.formListData.name|| {};
@@ -121,9 +121,10 @@ function NavBar() {
 
 				<div>
 					{/* Nom du formulaire*/}
-					{formName && (
+					{(formName || formDataValues?.formListData?.name || name) && (
 						<Navbar.Text className="mx-3">
-							{formName} 
+							{formName || formDataValues?.formListData?.name || name}
+							{/* A revoir pourquoi le name est dans 3 variables pas en simultané */}
 						</Navbar.Text>
 					)}
 

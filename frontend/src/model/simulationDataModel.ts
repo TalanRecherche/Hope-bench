@@ -44,6 +44,9 @@ export type BoxItemType = {
 
 export interface DigitalBoxData {
   optionName: string;
+  optionSubTitle?:string;
+  optionText?:string;
+  optionDescription?:string;
   itemList?: BoxItemType[];
   informationSource?: InformationSourceData;
 }
