@@ -70,6 +70,8 @@ function MovementTab() {
         return x?.filter(c => c.checked).length != 0;
     }
 
+    
+
     return (
         <div className="pageContainer">
             {/* Contenu principal */}

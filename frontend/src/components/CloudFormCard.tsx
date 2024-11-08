@@ -1,6 +1,6 @@
 import { Form, Card, Row, Col } from 'react-bootstrap';
 import NumericInput from 'react-numeric-input';
-import DigitalItemDropbox from './genericCustom/DigitalItemDropbox';
+// import DigitalItemDropbox from './genericCustom/DigitalItemDropbox';
 import CustomTable from './genericCustom/CustomTable';
 import styles from './FormComponents.module.scss';
 import { BoxItemType } from '../model/simulationDataModel';
@@ -23,19 +23,19 @@ interface CloudFormCardProps {
 const CloudFormCard = ({
   options,
   itemlist,
-  selectedItem,
-  setSelectedItem,
-  selectedItemCount,
-  setCount,
-  addItem,
+  // selectedItem,
+  // setSelectedItem,
+  // selectedItemCount,
+  // setCount,
+  // addItem,
   removeItem,
   updateItemCount,
-  selectedItemRequired
+  // selectedItemRequired
 }: CloudFormCardProps) => {
-  // State pour la fréquence, l'unité et la checkbox "L'information n'est pas dans le document"
-  const [frequency, setFrequency] = useState<number>(0);
-  const [frequencyUnit, setFrequencyUnit] = useState<string>('jours'); // Par défaut en "jours"
-  const [infoNotInDocument, setInfoNotInDocument] = useState<boolean>(false);
+  // // State pour la fréquence, l'unité et la checkbox "L'information n'est pas dans le document"
+  // const [frequency, setFrequency] = useState<number>(0);
+  // const [frequencyUnit, setFrequencyUnit] = useState<string>('jours'); // Par défaut en "jours"
+  // const [infoNotInDocument, setInfoNotInDocument] = useState<boolean>(false);
 
   const [isCloudStorageRequired, setIsCloudStorageRequired] = useState<'oui' | 'non'>('non');
 
@@ -62,6 +62,7 @@ const CloudFormCard = ({
 
   // Fonction pour gérer le changement de taille (en Go/To)
   const handleSizeChange = (value: number | null, stringValue: string, input: HTMLInputElement) => {
+    console.log(stringValue,input);
     if (value !== null) {
       setSize(value);
     }

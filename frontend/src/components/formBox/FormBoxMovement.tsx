@@ -111,7 +111,7 @@ function FormBoxMovement<T extends string>({ options, movementData, setBoxValues
     //     }
     // };
 
-    const [displayInformationSource, ] = useState<any>(false);
+    const [displayInformationSource,] = useState<any>(false);
     // const [kmInformationSourceBase, setKmInformationSourceBase] = useState(false);
 
     const [, setNbInformationSourceBase] = useState(false);
@@ -191,7 +191,7 @@ function FormBoxMovement<T extends string>({ options, movementData, setBoxValues
     // };
 
     // Gérer la navigation
-    
+
 
     return (
         <div className={styles.boxMovement}>
@@ -238,20 +238,21 @@ function FormBoxMovement<T extends string>({ options, movementData, setBoxValues
                     {/* Sous-Card pour la section "Nombre de personnes" */}
                     <Card style={{ marginTop: '20px' }} className={styles.subCard}>
                         <Card.Body>
-                            <div className={styles.titleCard}>
+                            <div className={styles.titleCard } >
                                 Nombre de personnes ayant pris ce moyen de transport
                             </div>
                             <div className={styles.boxSubTitle}>
                                 Si l'information n'est pas présente mais qu'il existe des indices, je fais une supposition.
                             </div>
-
-                            <NumericInput
-                                style={{ input: { textAlign: 'center' } }}
-                                min={0}
-                                size={1}
-                                value={movementBoxValues.numberOfMovement}
-                                onChange={(value) => handleChange(value, 'numberOfMovement')}
-                            />
+                            <div className="mt-3">
+                                <NumericInput
+                                    style={{ input: { textAlign: 'center' } }}
+                                    min={0}
+                                    size={1}
+                                    value={movementBoxValues.numberOfMovement}
+                                    onChange={(value) => handleChange(value, 'numberOfMovement')}
+                                />
+                            </div>
 
                             <InformationSourceBase label={nbInformationSourceBaseLabel} setSourceBaseValue={setNbInformationSourceBase}></InformationSourceBase>
                         </Card.Body>
@@ -259,7 +260,7 @@ function FormBoxMovement<T extends string>({ options, movementData, setBoxValues
 
                     {/* Question sur les variations */}
                     <div className={styles.variationQuestion}>
-                        <div className={styles.titleCard}>Existe-t-il des variations significatives de déplacement d'un consultant à l'autre ?</div>
+                        <div className={styles.titleCard} style={{ marginTop: '20px' }}>Existe-t-il des variations significatives de déplacement d'un consultant à l'autre ?</div>
                         <Form.Check
                             type="radio"
                             label="Oui"
@@ -277,13 +278,13 @@ function FormBoxMovement<T extends string>({ options, movementData, setBoxValues
                             onChange={() => setVariations('non')}
                         />
                     </div>
-                    <div className={styles.titleCard}>Quels sont les profils de consultants par typologie de déplacement?</div>
+                    <div className={styles.titleCard} style={{ marginTop: '20px' }}>Quels sont les profils de consultants par typologie de déplacement?</div>
 
 
                     {/* Affichage dynamique des profils */}
                     {profiles.map((profile, index) => (
                         <div key={profile.id} className={styles.subCardsContainer}>
-                            <div className={styles.titleCard}>
+                            <div className={styles.titleCard} style={{ marginTop: '20px' }}>
                                 <i className="bi bi-person"></i> Profil Consultant - Typologie de déplacement {profile.id}
                             </div>
 
@@ -291,6 +292,7 @@ function FormBoxMovement<T extends string>({ options, movementData, setBoxValues
                             <Card style={{ marginTop: '20px' }} className={styles.subCard}>
                                 <Card.Body>
                                     <div className={styles.titleCard}>Combien de consultant(s) pour cette typologie de déplacement ?</div>
+                                    <div className="mt-3">
                                     <NumericInput
                                         style={{ input: { textAlign: 'center' } }}
                                         min={0}
@@ -298,6 +300,7 @@ function FormBoxMovement<T extends string>({ options, movementData, setBoxValues
                                         value={profile.consultantProfiles}
                                         onChange={(value) => handleProfileChange(value, 'consultantProfiles', index)}
                                     />
+                                    </div>
                                 </Card.Body>
                             </Card>
 
@@ -306,6 +309,7 @@ function FormBoxMovement<T extends string>({ options, movementData, setBoxValues
                                 <Card.Body>
                                     <div className={styles.titleCard}>Nombre de voyages aller pour un consultant type ?</div>
                                     <div className={styles.boxSubTitle}>Si l'information n'est pas présente mais qu'il existe des indices, je fais une supposition.</div>
+                                    <div className="mt-3">
                                     <NumericInput
                                         style={{ input: { textAlign: 'center' } }}
                                         min={0}
@@ -313,6 +317,7 @@ function FormBoxMovement<T extends string>({ options, movementData, setBoxValues
                                         value={profile.averageKmPerTrip}
                                         onChange={(value) => handleProfileChange(value, 'averageKmPerTrip', index)}
                                     />
+                                    
                                     {(
                                         //pour gérer l'affichage du toggle 
                                         <CustomSwitch
@@ -321,6 +326,7 @@ function FormBoxMovement<T extends string>({ options, movementData, setBoxValues
                                             floatingContainer={false}
                                         />
                                     )}
+                                    </div>
 
                                 </Card.Body>
                             </Card>
@@ -350,7 +356,7 @@ function FormBoxMovement<T extends string>({ options, movementData, setBoxValues
 
                     {/* Bouton pour ajouter un profil seulement si oui est coché*/}
                     {variations === 'oui' && (
-                        <Button onClick={handleAddProfile}>
+                        <Button className={styles.addItemButton} onClick={handleAddProfile}>
                             Ajouter type +
                         </Button>
                     )}

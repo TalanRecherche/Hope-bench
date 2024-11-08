@@ -224,8 +224,8 @@
 .buttonSecondary,
 .addItemButton {
   border-color: #3D00F2 !important;
-  color: #3D00F2 !important;
-  background-color: aliceblue !important;
+  color:#3D00F2 !important;
+  background-color: white!important;
   text-align: center !important;
 }
 
@@ -278,21 +278,21 @@
 
 .boxMovement {
   width: 770px;
-  min-height: 370px;
+  // min-height: 370px;
   padding: 24px 0px 0px 0px;
   border-radius: 4px 0px 0px 0px;
-  background: rgba(255, 255, 255, 1);
+  
 }
 
 .boxDigital {
   width: 770px;
-  min-height: 370px;
+  // min-height: 370px;
   padding: 24px 0px 0px 0px;
   gap: 24px;
   border-radius: 4px 0px 0px 0px;
   border: 1px 0px 0px 0px;
   opacity: 0px;
-  background: rgba(255, 255, 255, 1);
+
   top: 42px;
   left: 366px;
 }
@@ -414,14 +414,14 @@
 
 .boxDigitalHeadTitle {
   // width: 659px;
-  height: 34px;
+  // height: 34px;
   gap: 4px;
   opacity: 0px;
 }
 
 .boxDigitalFieldTitle {
   // width: 659px;
-  height: 60px;
+  // height: 60px;
   gap: 4px;
   opacity: 0px;
   text-align: justify;
@@ -744,7 +744,7 @@
   // background-color: #f9f9f9;
   border: 1px solid #ddd;
   border-radius: 5px;
-  padding: 15px;
+  // padding: 15px;
   
 }
 

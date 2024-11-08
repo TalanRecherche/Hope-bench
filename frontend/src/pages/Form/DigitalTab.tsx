@@ -73,32 +73,55 @@ function DigitalTab() {
     }
 
     return (
-        <div style={{ display: "flex" }}>
-            {isItemChecked() &&
-                <div className={styles.movementTabSelectedListSection}>
-                    <BoxSelectedList
-                        title="Equipements numérique(s) utilisé(s)"
-                        list={x?.filter(c => c.checked).sort((a, b) => a.order - b.order)} />
-                </div>
-            }
-
-            <div className={classNames(isItemChecked() ? styles.movementTab2 : styles.movementTab, (formStatus == FormStatus.submitted) ? styles.formTabDisabled : '')}>
-                <DigitalTabStartingBox sendDigitalDefaultInformation={handleDefaultValues}></DigitalTabStartingBox>
-
-                {digitalInformationBase == InformationType.needed &&
-                    <>
-                        <FormDigitalEquipments onDataSend={handleDataReceive}></FormDigitalEquipments>
-
-                        {x?.filter(c => c.checked).sort((a, b) => a.order - b.order).map((item, idx) => (
-                            <FormBoxDigital
-                                key={idx}
-                                setValues={handleBoxDataReceive}
-                                options={{ name: item.name, type: 'text', id: item.id, placeholder: 'Description' }} />
-                        ))}
-
-                    </>
+        <>
+         {/* <div className={styles.digitalTabWrapper}> */}
+            <div className={styles.leftColumn}>
+                {/* Affichage conditionnel de BoxSelectedList : PC, email, cloud,... à gauche*/}
+                {isItemChecked() &&
+                    <div className={styles.movementTabSelectedListSection}>
+                        <BoxSelectedList
+                            title="Equipements numérique(s) utilisé(s)"
+                            list={x?.filter(c => c.checked).sort((a, b) => a.order - b.order)} />
+                    </div>
                 }
             </div>
-        </div>
+
+            
+            <div className={classNames(styles.rightColumn, {
+                [styles.movementTab2]: isItemChecked(), // Applique un style conditionnel
+                [styles.movementTab]: !isItemChecked(),
+                [styles.formTabDisabled]: formStatus === FormStatus.submitted
+            })}>
+                {/* Contenu centré */}
+                <div className={styles.centeredContent}>
+                    <DigitalTabStartingBox sendDigitalDefaultInformation={handleDefaultValues}></DigitalTabStartingBox>
+
+                    {digitalInformationBase == InformationType.needed && (
+                        <>
+                            <FormDigitalEquipments onDataSend={handleDataReceive}></FormDigitalEquipments>
+
+                            {x?.filter(c => c.checked).sort((a, b) => a.order - b.order).map((item, idx) => (
+                                <FormBoxDigital
+                                    key={idx}
+                                    setValues={handleBoxDataReceive}
+                                    options={{ name: item.name, type: 'text', id: item.id, placeholder: 'Description' }} />
+                            ))}
+
+                        </>
+                    )}
+                </div>
+                {/* Conteneur pour les boutons suivant et précédent */}
+                <div className={styles.buttonContainer}>
+                    <button type="button" className={styles.nextButton} >
+                        Précédent
+                    </button>
+                    <button type="button" className={styles.nextButton} >
+                        Suivant
+                    </button>
+                </div>
+            </div>
+        {/* </div> */}
+        </>  
     );
+    
 } export default DigitalTab

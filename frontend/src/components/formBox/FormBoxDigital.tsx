@@ -2,17 +2,16 @@ import { useState } from 'react';
 import LaptopFormCard from '../LaptopFormCard';
 import EmailFormCard from '../EmailFormCard';
 import CloudFormCard from '../CloudFormCard';
-import { Form, Card, Button } from 'react-bootstrap';
-import NumericInput from 'react-numeric-input';
+import { Card} from 'react-bootstrap';
+
 
 import styles from '../FormComponents.module.scss';
 
-import CustomTable from '../genericCustom/CustomTable';
+
 
 import { DigitalBoxData, BoxItemType, InformationSourceData } from '../../model/simulationDataModel';
 
-import classNames from 'classnames';
-import DigitalItemDropbox from '../genericCustom/DigitalItemDropbox';
+
 import InformationSource from '../InformationSource';
 
 interface Props<T> {

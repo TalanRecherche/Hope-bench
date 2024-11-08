@@ -40,6 +40,14 @@ function OfficeTab() {
             {officeInformationBase == InformationType.needed &&
                 <FormBoxOffice setValues={handleBoxDataReceive}></FormBoxOffice>
             }
+
+            {/* Conteneur pour les boutons suivant et précédent */}
+            <div className={styles.buttonContainer}>
+                    <button type="button" className={styles.nextButton} >
+                        Précédent
+                    </button>
+                   
+                </div>
         </div>
     );
 }
