@@ -24,7 +24,7 @@ const LaptopFormCard = ({
   itemlist,
   selectedItem,
   setSelectedItem,
-  selectedItemCount,
+  // selectedItemCount,
   setCount,
   addItem,
   removeItem,
