@@ -1,0 +1,420 @@
+@import '../../styles/variables';
+
+.saveButton {
+  background-color: white;
+  border-color: $color-orange;
+  color: $color-orange;
+  border: 1px solid;
+  margin-right: 0.5rem;
+  width: Hug (96px)px;
+  height: Hug (25px)px;
+  padding: 4px 8px 4px 8px;
+  gap: 8px;
+  border-radius: 3px 0px 0px 0px;
+  opacity: 0px;
+  border: 1px solid $color-orange;
+}
+
+.submitButton {
+  background-color: $color-orange;
+  border-color: $color-orange;
+  margin-right: 0.5rem;
+
+  width: Hug (93px)px;
+  height: Hug (25px)px;
+  padding: 4px 8px 4px 8px;
+  gap: 8px;
+  border-radius: 3px 0px 0px 0px;
+  opacity: 0px;
+}
+
+.deleteButton {
+  background-color: $color-orange;
+  border-color: $color-orange;
+  width: Hug (26px)px;
+  height: Hug (25px)px;
+  padding: 4px 8px 4px 8px;
+  gap: 8px;
+  border-radius: 3px 0px 0px 0px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+}
+
+.submissionButtonTypography,
+.submitButton,
+.saveButton,
+.deleteButton,
+.formTabButtons {
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17.07px;
+  text-align: left;
+}
+
+.formButtons {
+  background-color: whitesmoke;
+  display: table-cell;
+  vertical-align: bottom !important;
+}
+
+.marginLeftRight10 {
+  margin: 0px 10px 0px 10px;
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+}
+
+.formTabButtons {
+  /* width: 466px; */
+  height: 41px;
+  gap: 0px;
+  opacity: 0px;
+}
+
+.formTabCurrentEntry {
+  border-bottom-color: $color-orange;
+  border-bottom-style: solid;
+  border-bottom-width: 0.2em;
+  font-weight: 700;
+  font-size: 14px;
+  font-family: Montserrat;
+  line-height: 17.07px;
+  text-align: left;
+}
+
+.formTabSingleButton:hover {
+  font-weight: 700;
+}
+
+.title2Reg,
+.formTabSingleButton {
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17.07px;
+  text-align: left;
+}
+
+.formSubmissionButtons {
+  float: left !important;
+  width: 231px;
+  height: 41px;
+  gap: 8px;
+  opacity: 0px;
+}
+
+.formNav {
+  margin: auto;
+  width: 770px;
+  display: flex;
+  height: 41px;
+  gap: 0px;
+  justify-content: space-between;
+  opacity: 0px;
+}
+
+.navBar {
+  background: $color-bluegrey;
+  display:flex;
+  flex-direction: column;
+  // align-items:'flex-end';
+  padding-top:10px;
+  padding-right:10px;
+  padding-left:10px;
+  padding-bottom: 0; /* Suppression du padding par défaut */
+  // height: auto; 
+}
+
+.generalTab {
+  margin: auto;
+  width: 770px;
+  height: 41px;
+  gap: 0px;
+  justify-content: space-between;
+  opacity: 0px;
+}
+
+.movementTab {
+  margin: auto;
+  width: 770px;
+  height: 41px;
+  gap: 0px;
+  justify-content: space-between;
+  opacity: 0px;
+}
+
+.movementTab2 {
+  margin-left: 90px;
+}
+
+.officeTab {
+  margin: auto;
+  width: 770px;
+  height: 41px;
+  gap: 0px;
+  justify-content: space-between;
+  opacity: 0px;
+}
+
+.formBoxSection {
+  margin: auto;
+  width: 770px;
+  height: 41px;
+  gap: 0px;
+  justify-content: space-between;
+  opacity: 0px;
+}
+
+.formTabDisabled {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.movementTabSelectedListSection {
+  margin-top: 24px;
+  // margin-left: 250px;
+  margin-left:60px;
+}
+
+
+
+//Pour l'onglet sélectionné parmi A soumettre et Soumis
+.selectedButton {
+  border-top:0.1px solid $color-gray;
+  border-left:0.1px solid $color-gray;
+  border-right:0.1px solid $color-gray;
+  border-bottom: 2px solid $color-orange; 
+  font-size:16px;
+  font-weight: 700; 
+  color: $color-orange; 
+  background-color: white;
+  color:$color-blackgrey;
+  border-radius: 5px 5px 0 0;     
+}
+
+//Pour l'onglet non sélectionné parmi A soumettre et Soumis
+.unselectedButton {
+  background-color: $color-lightorange; 
+  border: none; 
+  color: $color-blackgrey; 
+  font-weight: 400; 
+  border-radius: 5px 5px 0 0; 
+}
+
+/*Mise en forme des informations au-dessus de GENERAL, DEPLACEMENT*/
+.pdfContainer{
+  margin: 10px 0; /* Espacement en-dessous et au-dessus du bouton PDF */
+  
+}
+
+.pdfButton{
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 2px 8px;
+  color: $color-orange;
+  border:1px solid $color-orange;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.pdfButtonImage{
+  margin-left:8px;
+}
+
+.infoContainer {
+  display: flex;
+  gap:20px;  
+  margin-bottom: 10px;
+}
+
+.leftContainer {
+  display: flex;
+  margin:auto;
+  width:770px;
+  flex-direction: column; /* Aligne le PDF et les infos verticalement */
+  // margin-right: auto; /* Pousse le conteneur de droite (les boutons) vers la droite */
+}
+
+.label {
+  color: black; // Texte en noir
+  margin-right: 10px; // Espacement entre les lignes
+}
+
+.labelValue {
+  margin-right: 10px;
+  color: $color-orange; // Valeurs en orange
+}
+
+.labelSpacer {
+  margin-right: 20px; // Espacement supplémentaire si nécessaire
+}
+
+.imgButton{
+  margin-right:10px;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: lightgray !important; // Couleur gris clair
+    font-style: italic; // Italique
+}
+
+.dropdownToggle {
+  background-color: white!important;
+  border: 1px solid #d3d3d3!important; /* Bord gris clair */
+  color: #999!important; /* Texte gris */
+  width: 100%!important; /* Prend toute la largeur */
+  padding: 10px!important; /* Ajoutez du padding pour l'apparence */
+  display: flex!important;
+  justify-content: space-between!important;
+  align-items: center!important;
+
+  &:focus {
+      outline: none; /* Supprimer le contour */
+      box-shadow: none; /* Supprimer l'ombre */
+  }
+}
+
+.dropdownField {
+  font-size: 14px; /* Ajustez la taille de la police */
+}
+
+
+.durationContainer {
+  display: flex;
+  align-items: center; /* Centre verticalement les éléments */
+}
+
+.unitToggle {
+  display: flex;
+  margin-left: 5px; /* Espace entre le sélecteur numérique et les boutons */
+}
+
+.unitToggle button {
+  margin: 0 5px; /* Espace entre les boutons */
+  padding: 5px 10px; /* Ajoutez un peu de rembourrage pour un meilleur aspect */
+  border: 1px solid #007bff; /* Bordure pour un meilleur aspect */
+  background-color: transparent; /* Fond transparent par défaut */
+  color: #007bff; /* Couleur du texte par défaut */
+  cursor: pointer; /* Curseur de pointeur pour l'interaction */
+  border-radius: 4px; /* Coins arrondis */
+  transition: background-color 0.3s, color 0.3s; /* Transition douce */
+}
+
+.unitToggle button.active {
+  background-color: #007bff; /* Exemple de couleur active */
+  color: white; /* Couleur du texte actif */
+}
+
+
+.unitToggle button:hover {
+  background-color: rgba(0, 123, 255, 0.1); /* Légère couleur au survol */
+}
+
+.movementTab {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* S'assure que le conteneur prend toute la hauteur disponible */
+}
+
+.movementTab2 {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Même principe ici, assure que la section principale occupe l'espace restant */
+}
+
+.movementTabSelectedListSection {
+  flex: 1; /* Occupe l'espace restant lorsque des éléments sont sélectionnés */
+  // padding: 20px; 
+}
+
+
+/*Bouton suivant*/
+.buttonContainer {
+  display: flex;
+  justify-content: flex-start; /* Aligne à gauche */
+  
+  gap:10px;
+  width:770px;
+  margin:auto;
+  margin-top: 20px; /* Espace au-dessus du bouton */
+}
+
+.nextButton {
+  background-color: $color-orange; /* Couleur du bouton */
+  color: white; /* Couleur du texte */
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px; /* Espacement à l'intérieur du bouton */
+  cursor: pointer;
+
+  &:hover {
+      background-color: $color-lightorange; /* Couleur au survol */
+  }
+}
+
+/* Conteneur principal qui prend toute la hauteur de la page */
+.pageContainer {
+  display: flex;
+  flex-direction: column;  /* Organise les éléments en colonne */
+  height: 100vh!important;           /* Occupe toute la hauteur de la page */
+  justify-content: space-between;  /* Place les boutons en bas de la page */
+  padding: 20px;           /* Ajoute de l'espace autour de la page */
+}
+.digitalTabWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Espace entre les deux colonnes */
+  width: 100%;
+  position: relative; /* Nécessaire pour le sticky */
+}
+
+.leftColumn {
+  // position: -webkit-sticky; /* Pour la compatibilité avec Safari */
+  // position: sticky;
+  top: 0; /* Colle la colonne de gauche en haut de la page quand on défile */
+  // width: 240px; /* Largeur fixe de la colonne gauche */
+  // height: 100%; /* Prend toute la hauteur du conteneur */
+  // overflow-y: auto; /* Permet de défiler si le contenu dépasse la hauteur de la colonne */
+  // flex-shrink: 0; /* Empêche la colonne de rétrécir */
+  // padding: 20px; /* Espacement interne */
+  // background-color: #f4f4f4; 
+}
+
+.rightColumn {
+  width: 770px; /* Largeur fixe de la colonne droite */
+  margin: auto; /* Centrer horizontalement */
+  display: flex;
+  justify-content: space-between; /* Espacement entre les éléments si nécessaire */
+  gap: 0px; /* Pas de gap entre les éléments de la colonne */
+  opacity: 1; /* Visible, ajustez selon les besoins */
+  flex-direction: column; /* Empile les éléments verticalement */
+  // padding: 20px;
+   
+}
+
+.centeredContent {
+  width: 100%;
+  max-width: 770px; /* Fixe la largeur maximale à 770px */
+  // padding: 20px;
+  box-sizing: border-box; /* Inclut le padding dans la largeur totale */
+}
+
+.movementTabSelectedListSection {
+  width: 100%; /* Occupe toute la largeur de la colonne de gauche */
+  max-width: 270px; /* Ajuste la largeur selon le besoin */
+}
+
+.movementTab {
+  // background-color: #f4f4f4;
+  // padding: 20px;
+  border-radius: 8px;
+}
+
+.formTabDisabled {
+  opacity: 0.5; /* Applique un effet visuel de désactivation */
+  pointer-events: none; /* Désactive l'interaction */
+}

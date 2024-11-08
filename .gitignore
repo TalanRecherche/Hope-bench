@@ -13,3 +13,5 @@ docker/*
 !docker/keycloak
 docker/keycloak/*
 !docker/keycloak/import
+
+Dockerfile

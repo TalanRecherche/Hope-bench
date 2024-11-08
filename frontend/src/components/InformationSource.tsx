@@ -1,6 +1,6 @@
 import Form from 'react-bootstrap/Form';
 import NumericInput from "react-numeric-input";
-import styles from './FormComponents.module.css';
+import styles from './FormComponents.module.scss';
 import { useEffect, useState } from 'react';
 import CustomStarRating from './genericCustom/CustomStartRating';
 import { InformationSourceData, InformationOriginType } from '../model/simulationDataModel';
@@ -8,7 +8,7 @@ import iconLabel from "../assets/label.svg";
 import classNames from 'classnames';
 
 interface Props {
-    setSourceValues?: any
+    setSourceValues?: (data: InformationSourceData) => void
 }
 
 function InformationSource({ setSourceValues }: Props) {
@@ -16,7 +16,7 @@ function InformationSource({ setSourceValues }: Props) {
     const [iSourceData, setISourceData] = useState<InformationSourceData>({});
 
     useEffect(() => {
-        setSourceValues(iSourceData);
+        setSourceValues && setSourceValues(iSourceData);
     });
 
     const changeFormData = (e: any) => {
@@ -37,14 +37,14 @@ function InformationSource({ setSourceValues }: Props) {
         });
     };
 
-    function handleSwitch(checked: boolean, name: string) {
+    function handleSwitch(checked: boolean, name: keyof InformationSourceData) {
         setISourceData({
             ...iSourceData,
             [name]: checked
         });
     };
 
-    function handleNumericInput(value: any, name: string) {
+    function handleNumericInput(value: any, name: keyof InformationSourceData) {
         setISourceData({
             ...iSourceData,
             [name]: value
@@ -59,7 +59,7 @@ function InformationSource({ setSourceValues }: Props) {
         <>
             <Form.Group className={styles.labelSemiBold}>
                 <img src={iconLabel} className={styles.iconLabel} />
-                <Form.Label> L’information que j’ai saisi : </Form.Label>
+                <Form.Label> L’information que j’ai saisie : </Form.Label>
             </Form.Group>
             <Form.Check
                 name="informationOrigin"
@@ -71,7 +71,7 @@ function InformationSource({ setSourceValues }: Props) {
             <Form.Check
                 name="informationOrigin"
                 type="radio"
-                label="n’est pas présente dans le document, j’ai fait appel à mes propres connaissances, celle de mes collaborateurs ou d’autres sources pour répondre."
+                label="n’est pas présente dans le document, j’ai fait appel à mes propres connaissances, celles de mes collaborateurs ou d’autres sources pour répondre."
                 id="deducedFromknowledge"
                 onChange={(e) => radioChangeFormData(e)}
             />
@@ -102,7 +102,7 @@ function InformationSource({ setSourceValues }: Props) {
                     </Form.Group >
                     <Form.Group className={styles.labelSemiBold}>
                         <img src={iconLabel} className={styles.iconLabel} />
-                        <Form.Label> j’ai enrichi ma saisie par des informations non présentes dans le document ? </Form.Label>
+                        <Form.Label> J’ai enrichi ma saisie par des informations non présentes dans le document ? </Form.Label>
                     </Form.Group>
                     <Form.Check
                         name="isInformationEnriched"

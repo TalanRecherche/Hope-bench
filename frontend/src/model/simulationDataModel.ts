@@ -11,9 +11,10 @@ export type InformationSourceData = {
   enrichedReliabilityRate?: number
 }
 
-export interface FormBoxData {
+export interface FormBoxData<T = string> {
   id: string;
-  value?: string
+  value: T
+  unit?:string
   informationSource?: InformationSourceData
 }
 
@@ -21,8 +22,8 @@ export type GeneralBoxData = {
   missionTitle: FormBoxData
   clientName: FormBoxData
   startDate: FormBoxData
-  nbCollaborators: FormBoxData
-  missionDuration: FormBoxData
+  nbCollaborators: FormBoxData<number>
+  missionDuration: FormBoxData<number>
   missionSector: FormBoxData
 }
 
@@ -32,6 +33,8 @@ export interface MovementBoxData {
   numberOfMovement?: number;
   averageKmPerTrip?: number;
   informationSource?: InformationSourceData;
+  consultantProfiles?:string;
+  sourceData?:null;
 }
 
 export type BoxItemType = {
@@ -41,6 +44,9 @@ export type BoxItemType = {
 
 export interface DigitalBoxData {
   optionName: string;
+  optionSubTitle?:string;
+  optionText?:string;
+  optionDescription?:string;
   itemList?: BoxItemType[];
   informationSource?: InformationSourceData;
 }
@@ -57,18 +63,27 @@ export interface FormData {
   movementBoxData?: MovementBoxData;
   digitalBoxData?: DigitalBoxData;
   officeData?: OfficeBoxData;
+  formListData?: FormListData; 
 }
 
-export type CustomSwitchOptions = {
-  option1: {
-    label: string, 
-    checked: boolean
-  }, 
-  option2: {
-    label: string, 
-    checked: boolean
-  }
-}
+
+export type CustomSwitchOption = {
+  label: string;
+  checked: boolean;
+};
+
+export type CustomSwitchOptions = CustomSwitchOption[];
+
+// export type CustomSwitchOptions = {
+//   option1: {
+//     label: string, 
+//     checked: boolean
+//   }, 
+//   option2: {
+//     label: string, 
+//     checked: boolean
+//   }
+// }
 
 export type FormListData = {
   name : string; 

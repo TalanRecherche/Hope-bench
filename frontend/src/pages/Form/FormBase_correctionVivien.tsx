@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Navbar, Button } from "react-bootstrap";
 import { Outlet, useNavigate, useLocation } from "react-router-dom";
 import styles from './SimulationForm.module.scss';
 import classNames from 'classnames';
-import { FormData, FormListData } from '../../model/simulationDataModel';
+import { FormData} from '../../model/simulationDataModel';
 import uploadImage from '../../assets/upload.svg';
 import planeImage from '../../assets/avion.svg';
 
@@ -12,23 +12,7 @@ function FormBase() {
 
     const navigate = useNavigate();
     const location = useLocation();
-
-    
-    //pour bien arriver en haut de la page
-    useEffect(() => {
-        // console.log("Valeurs reçues dans state generalTab:", location.state);
-        window.scrollTo(0, 0);
-    }, [location.pathname]);
-
-    const formListDataD: FormListData = {
-        name: location.state.formName,
-        format: location.state.format,
-        numberOfPages: location.state.numberOfPages,
-        lastUpdate: new Date(location.state.lastUpdate), // Convertit en objet Date si nécessaire
-        status: location.state.status,
-       
-    };
-
+    // console.log("Valeurs reçues:", location.state);
 
     const [formDataValues, setFormDataValues] = useState<FormData>
         ({
@@ -38,10 +22,9 @@ function FormBase() {
             movementBoxData: location.state?.movementData || {},
             digitalBoxData: location.state?.digitalData || {},
             officeData: location.state?.officeData || {},
-            formListData: formListDataD || {},
         });
 
-    // console.log("Valeurs initiales dans FormBase:", formDataValues);
+    console.log("Valeurs initiales dans FormBase:", formDataValues);
 
     const redirect = (link: string, e: any) => {
         setCurrentEntry(e.target.id);
@@ -52,7 +35,6 @@ function FormBase() {
                 movementData: formDataValues.movementBoxData,
                 digitalData: formDataValues.digitalBoxData,
                 officeData: formDataValues.officeData,
-                formListData: formDataValues.formListData,
             }
         });
     };
@@ -111,22 +93,15 @@ function FormBase() {
     const getInitialEntry = () => {
 
         let pathNameSplited = location.pathname.split("/");
-        // console.log("Chemin d'accès analysé pour getInitialEntry:", pathNameSplited);
-
+        console.log("Chemin d'accès analysé pour getInitialEntry:", pathNameSplited);
+       
         if (pathNameSplited.length > 0) {
             return pathNameSplited[2];
         }
-         return "generalTab";
+        return "generalTab";
     }
 
     const [currentEntry, setCurrentEntry] = useState(getInitialEntry());
-    // console.log("vérif current entry",currentEntry);
-
-    //ajout de useEffect pour qu'avec le bouton suivant, ce soit bien le bon onglet actif
-    useEffect(() => {
-        setCurrentEntry(getInitialEntry());
-    }, [location.pathname]);
-    
 
     return (
         <form>
@@ -145,13 +120,13 @@ function FormBase() {
                     {/* Informations supplémentaires */}
                     <div className={styles.infoContainer}>
                         <span className={styles.label}>
-                            Dernière mise à jour: <span className={styles.labelValue}>{formDataValues?.formListData?.lastUpdate?.toLocaleDateString()}</span>
+                            Dernière mise à jour: <span className={styles.labelValue}>{location.state?.lastUpdate?.toLocaleDateString()}</span>
                         </span>
                         <span className={styles.label}>
-                            Format: <span className={styles.labelValue}>{formDataValues?.formListData?.format}</span>
+                            Format: <span className={styles.labelValue}>{location.state?.format}</span>
                         </span>
                         <span className={styles.label}>
-                            Nombre de pages: <span className={styles.labelValue}>{formDataValues?.formListData?.numberOfPages ?? 'Non spécifié'}</span>
+                            Nombre de pages: <span className={styles.labelValue}>{location.state?.numberOfPages}</span>
                         </span>
                     </div>
                 </div>
@@ -194,4 +169,4 @@ function FormBase() {
 }
 export default FormBase;
 
-export type FormDataContext = { datat: FormData, setDatat: (data: any) => void };
+export type FormDataContext = { datat: FormData, setDatat: (data: any)=>void };

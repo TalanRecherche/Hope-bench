@@ -1,23 +1,28 @@
 import * as React from "react";
 import { useContext, useState, useEffect } from "react";
 import * as ReactDOM from 'react-dom/client'
-import { ReactNotifications } from 'react-notifications-component'
-import 'react-notifications-component/dist/theme.css'
+
 import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
-import App from "./App";
-import { ApiProvider } from "./contexts/ApiContext";
+import { ReactNotifications } from 'react-notifications-component'
+
+import { ApiProvider, ApiContext } from "./contexts/ApiContext";
 import { AuthContext, AuthProvider } from "./contexts/AuthContext";
+
+import 'react-notifications-component/dist/theme.css'
 import "bootstrap-icons/font/bootstrap-icons.css";
-import './index.scss'
-import BusinessPropositionAnnotationForm from "./pages/BusinessPropositionAnnotationForm.tsx";
+import './styles/index.scss'
+// import BusinessPropositionAnnotationForm from "././pages/BusinessPropositionAnnotationForm.tsx";
+
+import App from "./App";
 import DashBoard from "./pages/DashBoard";
-import SimulationForm from "./pages/Form/SimulationFormBase.tsx";
+import SimulationForm from "./pages/Form/SimulationForm.tsx";
 import GeneralTab from "./pages/Form/GeneralTab.tsx";
 import MovementTab from "./pages/Form/MovementTab.tsx";
 import DigitalTab from "./pages/Form/DigitalTab.tsx";
 import OfficeTab from "./pages/Form/OfficeTab.tsx";
 
-import { ApiContext } from "./contexts/ApiContext.tsx";
+
+
 const RouterContext = () => {
     const { user } = useContext(AuthContext)
 
@@ -51,7 +56,7 @@ const RouterContext = () => {
         children: [
             { index: true, element: <Navigate to="/dashboard" replace /> },
             { path: "dashboard", element: <DashBoard /> },
-            { path: "business-proposition-annotation/:businessPropositionAnnotationId", element: <BusinessPropositionAnnotationForm /> },
+            // { path: "business-proposition-annotation/:businessPropositionAnnotationId", element: <BusinessPropositionAnnotationForm /> },
             {
                 path: "form", element: <SimulationForm />,
                 children: [

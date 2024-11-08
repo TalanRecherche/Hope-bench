@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { IoMdStar } from "react-icons/io";
-import styles from '../FormComponents.module.css';
+import styles from '../FormComponents.module.scss';
 
 interface Props {
     sendRatingValue: any

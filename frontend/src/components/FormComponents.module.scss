@@ -1,0 +1,770 @@
+@import '../styles/variables';
+
+
+.form-label {
+  margin-bottom: 0!important; 
+}
+
+.navbar {
+  background-color: white;  // Fond blanc pour la navbar
+  width: 770px;              // Prendre toute la largeur
+  display: flex;
+  justify-content:space-between;  // Centrer le contenu
+}
+
+.navBarText {
+  
+  /* height: 22px; */
+  
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19.5px;
+  text-align: left;
+}
+
+.navBarBrand {
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24.38px;
+  text-align: left;
+  color: #3D00F2 !important;
+}
+
+.navLink {
+  margin-left: 200px;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19.5px;
+  text-align: left;
+}
+
+/* Ajout pour aligner les éléments de la barre de nav */
+.navbar-container {
+  display: flex;
+  align-items: center; 
+  justify-content: space-between; 
+}
+
+// .divContainer {
+//   // width: 794px;         /* Définir la largeur de la div */
+//   padding:0px 40rem;
+//   margin: 0 auto;      /* Centrer la div horizontalement */
+//   display: flex;       /* Utiliser flexbox pour centrer le contenu à l'intérieur, si nécessaire */
+//   justify-content: center; /* Centrer les éléments à l'intérieur de la div */
+//   background-color: white;
+// } 
+
+
+.divContainer {
+  width:100%;  // Largeur fixe pour le contenu
+  display: flex;
+   // Espace entre les éléments
+  align-items: center;      // Centrer verticalement
+  justify-content: center;  // Centrer les éléments à l'intérieur
+  background-color: white;
+}
+
+
+.marginTopLeft20 {
+  margin: 20px 0px 0px 20px;
+}
+
+.marginLeft20 {
+  margin: 0px 0px 0px 20px;
+}
+
+.marginLeftRight20 {
+  margin: 0px 20px 0px 20px;
+}
+
+.marginTopLeftRight20 {
+  margin: 20px 20px 0px 20px;
+}
+
+.marginBottom20 {
+  margin: 0px 0px 20px 0px;
+}
+
+.movementFieldLabel {
+  padding: 15px 0 0 15px;
+}
+
+.TextBold,
+.movementFieldLabel {
+  font-weight: bold;
+}
+
+.required:after {
+  content: " *";
+  color: red;
+}
+
+/* FormMeansTransport  */
+.marginRight10 {
+  margin: 0px 10px 0px 0px;
+}
+
+/* CustomSwitch */
+.switchContainer {
+  margin-left: 10px;
+  display: inline-flex;
+  width: max-content;
+  height: max-content;
+  border: 1px solid #A5A5A5;
+  border-radius: 5px;
+}
+
+.switchContainerFloat {
+  display: inline-flex;
+  width: max-content;
+  height: max-content;
+  border: 1px solid blue;
+  border-radius: 5px;
+  float: right;
+}
+
+.sourceSwitchContainerFloat {
+  display: inline-flex;
+  width: 88px;
+  height: max-content;
+  border: 1px solid blue;
+  border-radius: 5px;
+  float: right;
+}
+
+.toggleItem {
+  height: 25px;
+  width: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.sourceToggleItem {
+  height: 25px;
+  width: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.customSwitchText {
+  font-size: 14px;
+}
+
+.tableItem {
+  width: 770px;
+  height: 32px;
+  padding: 0px 24px 0px 24px;
+  gap: 24px;
+  opacity: 0px;
+}
+
+.tdItemName {
+  width: 120px;
+  max-width: max-content;
+  height: 24px;
+  padding: 10px 0px 0px 0px;
+  gap: 10px;
+  border-radius: 3px 0px 0px 0px;
+  opacity: 0px;
+  text-align: left;
+}
+
+.tdNumericImput {
+  width: 20px;
+  max-width: 20px;
+  height: 24px;
+  padding: 10px 0px 0px 0px;
+  gap: 10px;
+  border-radius: 3px 0px 0px 0px;
+  opacity: 0px;
+}
+
+.tdNumericImputContent {
+  text-align: center;
+  font-family: 'Montserrat';
+  float: 'right';
+  opacity: 0px;
+}
+
+.tdDelete {
+  width: 27.44px;
+  height: 24px;
+  padding: 5px 8px 5px 8px;
+  gap: 4px;
+  border-radius: 3px 0px 0px 0px;
+  border: 1px;
+  opacity: 0px;
+}
+
+.tdDeleteButton {
+  border-color: #3D00F2 !important;
+  color: #3D00F2 !important;
+  background-color: aliceblue !important;
+  text-align: center !important;
+}
+
+.addItem {
+  width: 100px;
+  height: 24px;
+  border-radius: 3px 0px 0px 0px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+  margin: 20px 0px 20px 0px;
+}
+
+.buttonSecondary,
+.addItemButton {
+  border-color: #3D00F2 !important;
+  color:#3D00F2 !important;
+  background-color: white!important;
+  text-align: center !important;
+}
+
+.textRegular,
+.addItem,
+.modalNext,
+.modalText,
+.modalPrevious {
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17.07px;
+}
+
+.informationSource {
+  width: 770px;
+  min-height: 188px;
+  height: fit-content;
+  border-radius: 0px 0px 4px 4px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+  background-color: rgba(249, 248, 252, 1) !important;
+  padding-top: 24px;
+  gap: 8px;
+}
+
+.informationSourceBis {
+  width: 747px;
+  min-height: 188px;
+  height: fit-content;
+  border-radius: 0px 0px 4px 4px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+  background-color: rgba(249, 248, 252, 1);
+  padding-top: 24px;
+  gap: 8px;
+}
+
+.sourcePageInputs {
+  margin: 15px 50px 15px 0px;
+}
+
+.boxGeneral {
+  width: 770px;
+  max-height: 662px;
+  margin: 24px 0px 0px 0px;
+  border-radius: 4px 0px 0px 0px;
+  background: rgba(255, 255, 255, 1);
+}
+
+.boxMovement {
+  width: 770px;
+  // min-height: 370px;
+  padding: 24px 0px 0px 0px;
+  border-radius: 4px 0px 0px 0px;
+  
+}
+
+.boxDigital {
+  width: 770px;
+  // min-height: 370px;
+  padding: 24px 0px 0px 0px;
+  gap: 24px;
+  border-radius: 4px 0px 0px 0px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+
+  top: 42px;
+  left: 366px;
+}
+
+.boxOffice {
+  margin-top: 24px;
+  width: 770px;
+  max-height: 370px;
+  padding: 24px 0px 0px 0px;
+  border-radius: 4px 0px 0px 0px;
+  background: rgba(255, 255, 255, 1);
+}
+
+.boxOfficeInputs {
+  margin-top: 15px;
+  display: inline-flex;
+}
+
+.boxItem {
+  width: 770px;
+  min-height: 77px;
+  border-radius: 0px 4px 0px 0px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+}
+
+.onPageNumericeInput {
+  text-align: center;
+  font-family: 'Montserrat';
+  opacity: 0px;
+}
+
+.checkboxListSection {
+  width: 771px;
+  min-height: 180px;
+  top: 48px;
+  padding: 24px 10px 0px 10px;
+  gap: 8px;
+  margin-bottom: 48px;
+}
+
+.checkboxListItemSection {
+  width: 751px;
+  min-height: 63px;
+  opacity: 0px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.checkboxListItem {
+  width: 229px;
+  height: fit-content;
+}
+
+.checkboxListFieldTitleSection {
+  // width: 427px;
+  height: 36px;
+  opacity: 0px;
+}
+
+.labelSemiBold,
+.checkboxListFieldTitle,
+.boxDigitalHeadTitle .selectedListFieldTitle {
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 17.07px;
+  text-align: left;
+  color: #737373;
+}
+
+.checkboxListFieldSubTitle{
+  padding-top:4px;
+}
+
+.required{
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  color:$color-blackgrey;
+  margin-bottom:0;
+  text-decoration:none!important;
+}
+
+.titleCard{
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  color:$color-blackgrey;
+  margin-bottom:0;
+  text-decoration:none!important;
+}
+
+.checkboxListFieldSubTitle,
+.boxDigitalFieldTitle,
+.boxSubTitle,
+.textRequired {
+  font-family: Montserrat;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 14.63px;
+  text-align: left;
+}
+
+
+
+
+.textRequired {
+  color: red;
+  padding-top: 10px;
+}
+
+.boxSubTitle {
+  color: #737373;
+}
+
+.boxDigitalHeadTitle {
+  // width: 659px;
+  // height: 34px;
+  gap: 4px;
+  opacity: 0px;
+}
+
+.boxDigitalFieldTitle {
+  // width: 659px;
+  // height: 60px;
+  gap: 4px;
+  opacity: 0px;
+  text-align: justify;
+}
+
+.boxDigitalInput {
+  display: inline-flex;
+  width: 637px;
+  height: 33px;
+  gap: 8px;
+  opacity: 0px;
+}
+
+.boxDigitalDropbox {
+  width: 516px;
+  height: 33px;
+  gap: 10px;
+  border-radius: 4px 0px 0px 0px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+}
+
+.defaultBox {
+  width: 770px;
+  // height: 190px;
+  // max-height: 190px;
+  top: 24px;
+  gap: 24px;
+  border-radius: 4px 0px 0px 0px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+}
+
+.defaultBoxText {
+  margin-top: 30px;
+  margin-left: 182px;
+}
+
+.textItalic,
+.defaultBoxText {
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 17.07px;
+  color: #A5A5A5;
+  justify-content: center;
+  align-items: center;
+}
+
+.defaultBoxImg {
+  width: 161px;
+  height: 161px;
+  gap: 0px;
+  opacity: 0px;
+  margin-top: 40px;
+  margin-left: 304px;
+}
+
+
+/* Modal */
+
+.modalTitle {
+  width: 127px;
+  height: 24px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24.38px;
+  text-align: left;
+}
+
+.modalText {
+  text-align: left;
+}
+
+.modalButtons {
+  width: 168px;
+  height: 25px;
+  gap: 8px;
+  opacity: 0px;
+}
+
+.modalNext {
+  width: 70px;
+  height: 25px;
+  padding: 4px 8px 4px 8px;
+  text-align: center !important;
+  border-radius: 3px;
+  background: rgba(255, 89, 37, 1);
+  border-color: rgba(255, 89, 37, 1);
+  color: rgba(255, 255, 255, 1);
+}
+
+.modalPrevious {
+  width: 70px;
+  height: 25px;
+  padding: 4px 8px 4px 8px;
+  text-align: center !important;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 1);
+  border-color: rgba(255, 89, 37, 1);
+  color: rgba(255, 89, 37, 1);
+}
+
+.modalPageNumber {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19.5px;
+  color: rgba(255, 89, 37, 1);
+}
+
+.informationSourceBase {
+  width: 722px;
+  height: 34px;
+  gap: 8px;
+  opacity: 0px;
+  margin-top: 25px;
+}
+
+.iconLabel {
+  margin-right: 5px;
+}
+
+.marginTop15 {
+  margin: 15px 0px 0px 0px;
+}
+
+.SelectedListSection {
+  position: sticky !important;
+  width: 228px;
+  height: 114px;
+  max-height: fit-content;
+  top: 24px;
+  padding: 16px;
+  border-radius: 4px 0px 0px 0px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+}
+
+.selectedListFieldTitle,
+.selectedListItemLabel {
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 17.07px;
+  text-align: left;
+}
+
+.selectedListItemLabel {
+  color: #3D00F2 !important;
+}
+
+// Important pour forcer valeurs perso par dessus Bootstrap
+.saveButton {
+  background-color: white!important;
+  color: $color-orange!important;
+  border: 1px solid $color-orange!important;
+  margin-right: 0.5rem!important;
+  width: 100px!important;
+  height: 30px!important;
+  padding: 4px 8px!important;
+  border-radius: 4px!important;
+}
+
+.submitButton {
+  background-color: $color-orange!important;
+  color: white!important;
+  border: 1px solid $color-orange!important;
+  margin-right: 0.5rem!important;
+  width: 100px!important;
+  height: 30px!important;
+  padding: 4px 8px!important;
+  border-radius: 4px!important;
+}
+
+.subtitle {
+  font-family: Montserrat;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 14.63px;
+  text-align: left;
+  color: $color-blackgrey;
+  padding-top:4px;
+}
+
+.nameCard{
+  margin-bottom:0;
+}
+
+// .dropdownContainer {
+//   // Styles pour le conteneur du dropdown, si nécessaire
+// }
+
+.dropdownToggle {
+  background-color: white; // Fond blanc pour le bouton
+  border: 1px solid $color-gray; // Bord gris
+  color: $color-gray;
+  font-style: italic;
+  width:100%;
+  display: flex; // Utiliser flexbox pour aligner le texte et la flèche
+  justify-content: space-between; // Espace entre le texte et la flèche
+  padding: 8px;
+}
+
+
+.dropdownToggle .dropdown-toggle-label {
+  flex-grow: 1; // Prendre tout l'espace disponible
+  text-align: left; // Aligner le texte à gauche
+}
+
+
+.dropdownToggle .dropdown-toggle-arrow {
+  margin-left: 10px; // Espacement à gauche de la flèche
+}
+
+// .dropdownField {
+//   // Ajoutez d'autres styles si besoin
+// }
+
+.dropdownItem {
+  // Styles pour les éléments du menu déroulant
+  &:hover {
+      background-color: #f0f0f0; // Couleur de survol
+  }
+
+}
+
+.dropdown-toggle::after {
+  display: none !important; // Masquer la flèche en haut à droite
+}
+
+.dropdown-toggle {
+  position: relative; // Assurez-vous que le positionnement est correct
+}
+
+.dropdown-toggle:focus::after {
+  display: none !important; // Cacher la flèche quand le dropdown est en focus
+  content:none!important;
+}
+
+.customDropdown {
+  background-color: transparent !important; // Remplacez par la couleur souhaitée
+  color: inherit !important; // Remplacez par la couleur souhaitée
+  border: 1px solid #ced4da !important; // Remplacez par la couleur souhaitée pour la bordure
+}
+
+.customDropdown:focus {
+  box-shadow: none !important; // Enlever l'ombre de focus
+}
+
+
+/* Applique les styles personnalisés aux flèches du champ numérique */
+/* Conteneur flex pour positionner les éléments */
+.customNumericInput {
+  /* Personnaliser l'ensemble du champ de saisie */
+  .react-numeric-input {
+    background-color: #f0f0f0;  /* Couleur de fond du champ de saisie */
+    border: 2px solid #3D00F2;  /* Bordure personnalisée */
+    border-radius: 4px;
+    color: #333333;  /* Couleur du texte dans l'input */
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  /* Personnaliser les flèches */
+  .react-numeric-input-up, 
+  .react-numeric-input-down {
+    background-color: #3D00F2!important;  /* Couleur d'arrière-plan des flèches */
+    border: none;
+    color: white;  /* Couleur des flèches */
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Style de la flèche pour l'incrémentation (up) */
+  .react-numeric-input-up {
+    background-color: #3D00F2;  /* Bleu pour la flèche haut */
+  }
+
+  /* Style de la flèche pour la décrémentation (down) */
+  .react-numeric-input-down {
+    background-color: #FF6347;  /* Rouge pour la flèche bas */
+  }
+
+  /* Placer les flèches sur le côté */
+  .react-numeric-input-up {
+    order: -1;  /* Placer la flèche haut avant la valeur */
+  }
+  .react-numeric-input-down {
+    order: 1;  /* Placer la flèche bas après la valeur */
+  }
+
+  /* Assurer que l'input reste centré et les flèches bien disposées */
+  .react-numeric-input input {
+    text-align: center;
+  }
+}
+
+
+.subCardsContainer {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px; /* Décalage des sous-cartes vers la droite */
+  
+  /* Trait vertical à gauche */
+  border-left: 1px solid #E7E7E7;  /* Ajoutez un trait vert à gauche */
+  // margin-top: 20px;  /* Espacement entre la carte principale et le trait */
+}
+
+.subCard {
+  // background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  // padding: 15px;
+  
+}
+
+.nextButton {
+  background-color: $color-orange; /* Couleur du bouton */
+  color: white; /* Couleur du texte */
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px; /* Espacement à l'intérieur du bouton */
+  cursor: pointer;
+
+  &:hover {
+      background-color: $color-lightorange; /* Couleur au survol */
+  }
+}
+
+/*Bouton suivant*/
+.buttonContainer {
+  display: flex;
+  justify-content: flex-start; /* Aligne à gauche */
+  margin-top: 20px; /* Espace au-dessus du bouton */
+  gap:16px;
+}
