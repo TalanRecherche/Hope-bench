@@ -1,5 +1,5 @@
 import Form from 'react-bootstrap/Form';
-import styles from './FormComponents.module.css';
+import styles from './FormComponents.module.scss';
 
 interface Props {
     label: string;

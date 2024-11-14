@@ -1,4 +1,4 @@
-import styles from '../FormComponents.module.css';
+import styles from '../FormComponents.module.scss';
 import Modal from 'react-bootstrap/Modal';
 import { useState } from 'react';
 import StartingModalStage from "./StartingModalStage";

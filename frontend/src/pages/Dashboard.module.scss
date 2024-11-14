@@ -1,0 +1,224 @@
+@import '../styles/variables';
+
+.navBar {
+    background: $color-bluegrey;
+    display:flex;
+    align-items:'flex-end';
+    padding-bottom: 0; /* Suppression du padding par défaut */
+    padding-top:24px;
+    // height: auto; 
+}
+
+.divContainer {
+    width: 794px;         /* Définir la largeur de la div */
+    margin: 0 auto;      /* Centrer la div horizontalement */
+    display: flex;       /* Utiliser flexbox pour centrer le contenu à l'intérieur, si nécessaire */
+    justify-content: center; /* Centrer les éléments à l'intérieur de la div */
+  } 
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .buttonGroup {
+    display: flex;
+  }
+  
+  
+
+
+//Pour l'onglet sélectionné parmi A soumettre et Soumis
+.selectedButton {
+    border-top:0.1px solid $color-gray;
+    border-left:0.1px solid $color-gray;
+    border-right:0.1px solid $color-gray;
+    border-bottom: 2px solid $color-orange; 
+    font-size:16px;
+    font-weight: 700; 
+    color: $color-orange; 
+    background-color: white;
+    color:$color-blackgrey;
+    border-radius: 5px 5px 0 0;     
+}
+
+//Pour l'onglet non sélectionné parmi A soumettre et Soumis
+.unselectedButton {
+    background-color: $color-lightorange; 
+    border: none; 
+    color: $color-blackgrey; 
+    font-weight: 400; 
+    border-radius: 5px 5px 0 0; 
+}
+
+.formNavLabel {
+    font-family: Inter,sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17.07px;
+    text-align: left;
+    padding: 10px 15px; 
+    border-radius: 5px; 
+    transition: background-color 0.3s ease; 
+}
+
+.formNavLabel:not(.formTabCurrentEntry) {
+    background-color: $color-lightorange; 
+    color: black; 
+}
+
+// .formNav {
+//     /* margin: auto; */
+//     /* width: 770px; */
+//     // display: flex;
+    
+//     // // justify-content: center; 
+//     //  width:100%;
+//     // /*height: 41px;
+//     // margin-left: 470px; */
+//     // gap: 0px;
+//     // opacity: 0px;
+//     // margin-bottom:50;
+// }
+
+/*pour l'affichage du nombre de formulaire par statut*/
+.labelValue {
+margin-right: 10px;
+color:$color-orange;
+}
+
+.labelSpacer {
+margin-right: 20px;
+}
+  
+
+
+.formTabButtons {
+    height: 41px;
+    gap: 0px;
+    opacity: 0px;
+}
+
+.table {
+    width: 770px;
+    height: 247px;
+    gap: 0px;
+    opacity: 0px;
+    margin: auto;
+    
+    margin-top: 24px;
+}
+
+ 
+.tableHead {
+    background-color: $color-orange;
+}
+
+.clickable:hover {
+    background-color: rgba(239, 241, 243, 0.1); 
+}
+
+/* 
+.textSemi,
+.tableItemName {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 17.07px;
+    color: $color-orange !important;
+} */
+
+.table-container {
+    margin-top : 20px;
+}
+
+table {
+    width: 100%;    
+    border-collapse: collapse;
+    border-radius: 10px; 
+    overflow: hidden; /*pour s'assurer que le contenu ne déborde pas */
+}
+
+td {
+    text-align: center;
+    vertical-align: middle;
+    color: #6D6D6D !important;
+    font-family: Avenir;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 19.12px;
+}
+
+td:first-child {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 17.07px;
+    color: $color-orange !important;
+    text-align: left;
+}
+
+th {
+    background-color: $color-orange !important;
+    border-color: $color-orange !important;
+    font-family: Avenir;
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 21.86px;
+    text-align: center;
+    color: white !important;
+}
+
+.formTabCurrentEntry {  
+    /* border-bottom-color: $color-orange;
+    background-color: white;
+    border-bottom-style: solid;
+    border-bottom-width: 0.2em;
+    font-weight: 700;
+    font-size: 14px;
+    font-family: Montserrat;
+    line-height: 17.07px;
+    text-align: left; */
+    background-color: white; /* Fond blanc pour l'état sélectionné */
+    color: $color-orange; /* Couleur orange pour le texte sélectionné */
+    text-decoration: underline; /* Souligné pour l'état sélectionné */
+  }
+
+/* boutons status */
+.customButton {
+
+height: 28px;
+padding: 6px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size:14px;
+background-color:$color-orange ;
+border:none;
+border-radius:0.4;
+}
+
+.customButton:hover {
+    background-color: #FF7A3E; /* Couleur plus claire au survol */
+}
+
+.buttonRed{
+    background-color:$color-red;
+}
+
+.buttonRed:hover {
+    background-color: $color-lightred; 
+}
+
+.buttonGray{
+    background-color:$color-gray;
+}
+
+.buttonGray:hover {
+    background-color: $color-lightgray; 
+}
+
+.iconSpacing {
+    margin-right: 0.2rem; 
+  }

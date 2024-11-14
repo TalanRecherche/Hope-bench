@@ -1,6 +1,6 @@
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
-import styles from '../FormComponents.module.css';
+import styles from '../FormComponents.module.scss';
 import NumericInput from 'react-numeric-input';
 import CustomTable from '../genericCustom/CustomTable';
 import Button from 'react-bootstrap/Button';
@@ -48,15 +48,46 @@ function FormBoxDigital<T extends string>({ options, digitalData, setValues }: P
         setSelectedItemCount(value);
     };
 
+    //Modif pour réinitialiser le placeholder Description à vide après avoir choisi une valeur
     const addItem = () => {
-        if (selectedItem.label != "") {
-            itemlist.push({ count: selectedItemCount, name: selectedItem.label });
-            setItemlist(itemlist);
-            handleValuesChange(itemlist);
-        }
+        if (selectedItem.label !== "") {
+            // Vérifier si l'élément existe déjà dans itemlist
+            const existingItemIndex = itemlist.findIndex(item => item.name === selectedItem.label);
+    
+            if (existingItemIndex !== -1) {
+                // Si l'élément existe, mettre à jour la quantité
+                const updatedItemList = [...itemlist];
 
-        setSelectedItemRequired(selectedItem.label == "");
-    }
+                // updatedItemList[existingItemIndex].count += selectedItemCount; // Ajouter à la quantité existante
+           
+                setItemlist(updatedItemList);
+                handleValuesChange(updatedItemList);
+            } else {
+                // Si l'élément n'existe pas, l'ajouter à la liste
+                const newItem = { count: selectedItemCount, name: selectedItem.label };
+                const newItemList = [...itemlist, newItem];
+                setItemlist(newItemList);
+                handleValuesChange(newItemList);
+            }
+    
+            // Réinitialiser selectedItem et le compteur
+            setSelectedItem({ value: '', label: '' });
+            setSelectedItemCount(0);
+            setSelectedItemRequired(false);
+        } else {
+            setSelectedItemRequired(true);
+        }
+    };
+
+    // const addItem = () => {
+    //     if (selectedItem.label != "") {
+    //         itemlist.push({ count: selectedItemCount, name: selectedItem.label });
+    //         setItemlist(itemlist);
+    //         handleValuesChange(itemlist);
+    //     }
+
+    //     setSelectedItemRequired(selectedItem.label == "");
+    // }
 
     const removeItem = (index: any) => {
         itemlist.splice(index, 1);
@@ -89,7 +120,7 @@ function FormBoxDigital<T extends string>({ options, digitalData, setValues }: P
                             <p className={styles.boxDigitalFieldTitle}> Par exemple, si trois collaborateurs reçoivent un Dell Latitude 5430, sélectionnez le modèle "Dell Latitude 5430" puis rentrez "3" en nombre d'exemplaire, enfin cliquez sur "Ajouter 3 exemplaires".
                                 Si des appareils à renseigner sont des ordinateurs Talan ou bien des ordinateurs reconditionnés, sélectionnez l'option appropriée, sinon sélectionnez le modèle approprié ou un modèle équivalent.</p>
                             <div className={styles.boxDigitalInput}>
-                                <DigitalItemDropbox setSelectedItem={setSelectedItem}></DigitalItemDropbox>
+                                <DigitalItemDropbox setSelectedItem={setSelectedItem} selectedItem={selectedItem}></DigitalItemDropbox>
                                 <span style={{ float: 'right' }}><NumericInput style={{ input: { height: 38, textAlign: 'center' } }} min={0} size={1} onChange={(e) => setCount(e)} />
                                 </span>
                             </div>
