@@ -175,7 +175,8 @@
 
 .movementTabSelectedListSection {
   margin-top: 24px;
-  margin-left: 250px;
+  // margin-left: 250px;
+  margin-left:60px;
 }
 
 
@@ -281,25 +282,6 @@ textarea::placeholder {
   font-size: 14px; /* Ajustez la taille de la police */
 }
 
-/*Bouton suivant*/
-.buttonContainer {
-  display: flex;
-  justify-content: flex-start; /* Aligne à gauche */
-  margin-top: 20px; /* Espace au-dessus du bouton */
-}
-
-.nextButton {
-  background-color: $color-orange; /* Couleur du bouton */
-  color: white; /* Couleur du texte */
-  border: none;
-  border-radius: 4px;
-  padding: 4px 8px; /* Espacement à l'intérieur du bouton */
-  cursor: pointer;
-
-  &:hover {
-      background-color: $color-lightorange; /* Couleur au survol */
-  }
-}
 
 .durationContainer {
   display: flex;
@@ -332,3 +314,107 @@ textarea::placeholder {
   background-color: rgba(0, 123, 255, 0.1); /* Légère couleur au survol */
 }
 
+.movementTab {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* S'assure que le conteneur prend toute la hauteur disponible */
+}
+
+.movementTab2 {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Même principe ici, assure que la section principale occupe l'espace restant */
+}
+
+.movementTabSelectedListSection {
+  flex: 1; /* Occupe l'espace restant lorsque des éléments sont sélectionnés */
+  // padding: 20px; 
+}
+
+
+/*Bouton suivant*/
+.buttonContainer {
+  display: flex;
+  justify-content: flex-start; /* Aligne à gauche */
+  
+  gap:10px;
+  width:770px;
+  margin:auto;
+  margin-top: 20px; /* Espace au-dessus du bouton */
+}
+
+.nextButton {
+  background-color: $color-orange; /* Couleur du bouton */
+  color: white; /* Couleur du texte */
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px; /* Espacement à l'intérieur du bouton */
+  cursor: pointer;
+
+  &:hover {
+      background-color: $color-lightorange; /* Couleur au survol */
+  }
+}
+
+/* Conteneur principal qui prend toute la hauteur de la page */
+.pageContainer {
+  display: flex;
+  flex-direction: column;  /* Organise les éléments en colonne */
+  height: 100vh!important;           /* Occupe toute la hauteur de la page */
+  justify-content: space-between;  /* Place les boutons en bas de la page */
+  padding: 20px;           /* Ajoute de l'espace autour de la page */
+}
+.digitalTabWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Espace entre les deux colonnes */
+  width: 100%;
+  position: relative; /* Nécessaire pour le sticky */
+}
+
+.leftColumn {
+  // position: -webkit-sticky; /* Pour la compatibilité avec Safari */
+  // position: sticky;
+  top: 0; /* Colle la colonne de gauche en haut de la page quand on défile */
+  // width: 240px; /* Largeur fixe de la colonne gauche */
+  // height: 100%; /* Prend toute la hauteur du conteneur */
+  // overflow-y: auto; /* Permet de défiler si le contenu dépasse la hauteur de la colonne */
+  // flex-shrink: 0; /* Empêche la colonne de rétrécir */
+  // padding: 20px; /* Espacement interne */
+  // background-color: #f4f4f4; 
+}
+
+.rightColumn {
+  width: 770px; /* Largeur fixe de la colonne droite */
+  margin: auto; /* Centrer horizontalement */
+  display: flex;
+  justify-content: space-between; /* Espacement entre les éléments si nécessaire */
+  gap: 0px; /* Pas de gap entre les éléments de la colonne */
+  opacity: 1; /* Visible, ajustez selon les besoins */
+  flex-direction: column; /* Empile les éléments verticalement */
+  // padding: 20px;
+   
+}
+
+.centeredContent {
+  width: 100%;
+  max-width: 770px; /* Fixe la largeur maximale à 770px */
+  // padding: 20px;
+  box-sizing: border-box; /* Inclut le padding dans la largeur totale */
+}
+
+.movementTabSelectedListSection {
+  width: 100%; /* Occupe toute la largeur de la colonne de gauche */
+  max-width: 270px; /* Ajuste la largeur selon le besoin */
+}
+
+.movementTab {
+  // background-color: #f4f4f4;
+  // padding: 20px;
+  border-radius: 8px;
+}
+
+.formTabDisabled {
+  opacity: 0.5; /* Applique un effet visuel de désactivation */
+  pointer-events: none; /* Désactive l'interaction */
+}

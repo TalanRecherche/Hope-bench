@@ -224,8 +224,8 @@
 .buttonSecondary,
 .addItemButton {
   border-color: #3D00F2 !important;
-  color: #3D00F2 !important;
-  background-color: aliceblue !important;
+  color:#3D00F2 !important;
+  background-color: white!important;
   text-align: center !important;
 }
 
@@ -278,21 +278,21 @@
 
 .boxMovement {
   width: 770px;
-  min-height: 370px;
+  // min-height: 370px;
   padding: 24px 0px 0px 0px;
   border-radius: 4px 0px 0px 0px;
-  background: rgba(255, 255, 255, 1);
+  
 }
 
 .boxDigital {
   width: 770px;
-  min-height: 370px;
+  // min-height: 370px;
   padding: 24px 0px 0px 0px;
   gap: 24px;
   border-radius: 4px 0px 0px 0px;
   border: 1px 0px 0px 0px;
   opacity: 0px;
-  background: rgba(255, 255, 255, 1);
+
   top: 42px;
   left: 366px;
 }
@@ -348,7 +348,7 @@
 }
 
 .checkboxListFieldTitleSection {
-  width: 427px;
+  // width: 427px;
   height: 36px;
   opacity: 0px;
 }
@@ -364,6 +364,10 @@
   color: #737373;
 }
 
+.checkboxListFieldSubTitle{
+  padding-top:4px;
+}
+
 .required{
   font-family: Montserrat;
   font-size: 14px;
@@ -371,7 +375,17 @@
   text-align: left;
   color:$color-blackgrey;
   margin-bottom:0;
+  text-decoration:none!important;
+}
 
+.titleCard{
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  color:$color-blackgrey;
+  margin-bottom:0;
+  text-decoration:none!important;
 }
 
 .checkboxListFieldSubTitle,
@@ -386,6 +400,9 @@
   text-align: left;
 }
 
+
+
+
 .textRequired {
   color: red;
   padding-top: 10px;
@@ -396,17 +413,18 @@
 }
 
 .boxDigitalHeadTitle {
-  width: 659px;
-  height: 34px;
+  // width: 659px;
+  // height: 34px;
   gap: 4px;
   opacity: 0px;
 }
 
 .boxDigitalFieldTitle {
-  width: 659px;
-  height: 60px;
+  // width: 659px;
+  // height: 60px;
   gap: 4px;
   opacity: 0px;
+  text-align: justify;
 }
 
 .boxDigitalInput {
@@ -428,8 +446,8 @@
 
 .defaultBox {
   width: 770px;
-  height: 190px;
-  max-height: 190px;
+  // height: 190px;
+  // max-height: 190px;
   top: 24px;
   gap: 24px;
   border-radius: 4px 0px 0px 0px;
@@ -591,6 +609,7 @@
   line-height: 14.63px;
   text-align: left;
   color: $color-blackgrey;
+  padding-top:4px;
 }
 
 .nameCard{
@@ -656,4 +675,96 @@
 
 .customDropdown:focus {
   box-shadow: none !important; // Enlever l'ombre de focus
+}
+
+
+/* Applique les styles personnalisés aux flèches du champ numérique */
+/* Conteneur flex pour positionner les éléments */
+.customNumericInput {
+  /* Personnaliser l'ensemble du champ de saisie */
+  .react-numeric-input {
+    background-color: #f0f0f0;  /* Couleur de fond du champ de saisie */
+    border: 2px solid #3D00F2;  /* Bordure personnalisée */
+    border-radius: 4px;
+    color: #333333;  /* Couleur du texte dans l'input */
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  /* Personnaliser les flèches */
+  .react-numeric-input-up, 
+  .react-numeric-input-down {
+    background-color: #3D00F2!important;  /* Couleur d'arrière-plan des flèches */
+    border: none;
+    color: white;  /* Couleur des flèches */
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Style de la flèche pour l'incrémentation (up) */
+  .react-numeric-input-up {
+    background-color: #3D00F2;  /* Bleu pour la flèche haut */
+  }
+
+  /* Style de la flèche pour la décrémentation (down) */
+  .react-numeric-input-down {
+    background-color: #FF6347;  /* Rouge pour la flèche bas */
+  }
+
+  /* Placer les flèches sur le côté */
+  .react-numeric-input-up {
+    order: -1;  /* Placer la flèche haut avant la valeur */
+  }
+  .react-numeric-input-down {
+    order: 1;  /* Placer la flèche bas après la valeur */
+  }
+
+  /* Assurer que l'input reste centré et les flèches bien disposées */
+  .react-numeric-input input {
+    text-align: center;
+  }
+}
+
+
+.subCardsContainer {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px; /* Décalage des sous-cartes vers la droite */
+  
+  /* Trait vertical à gauche */
+  border-left: 1px solid #E7E7E7;  /* Ajoutez un trait vert à gauche */
+  // margin-top: 20px;  /* Espacement entre la carte principale et le trait */
+}
+
+.subCard {
+  // background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  // padding: 15px;
+  
+}
+
+.nextButton {
+  background-color: $color-orange; /* Couleur du bouton */
+  color: white; /* Couleur du texte */
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px; /* Espacement à l'intérieur du bouton */
+  cursor: pointer;
+
+  &:hover {
+      background-color: $color-lightorange; /* Couleur au survol */
+  }
+}
+
+/*Bouton suivant*/
+.buttonContainer {
+  display: flex;
+  justify-content: flex-start; /* Aligne à gauche */
+  margin-top: 20px; /* Espace au-dessus du bouton */
+  gap:16px;
 }

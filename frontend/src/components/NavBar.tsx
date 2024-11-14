@@ -9,11 +9,50 @@ import styles from './FormComponents.module.scss';
 import hopeImage from '../assets/hope.svg';
 import classNames from 'classnames';
 
+// import { FormData, FormListData } from '../model/simulationDataModel';
+
 function NavBar() {
 	const { user, logout } = useContext(AuthContext);
-	const location = useLocation();
-	const { formName } = location.state || {};
+	
+	// const navigate = useNavigate();
+    const location = useLocation();
+
+
+	let { formName } = location.state || {};
+	const {name} = location.state || {};
 	const formDataValues = location.state || {};
+
+	// const formListDataD: FormListData = {
+    //     name: location.state.formName,
+    //     format: location.state.format,
+    //     numberOfPages: location.state.numberOfPages,
+    //     lastUpdate: new Date(location.state.lastUpdate), // Convertit en objet Date si nécessaire
+    //     status: location.state.status,
+       
+    // };
+
+	// const [formDataValues, setFormDataValues] = useState<FormData>
+	// ({
+	// 	formName: location.state?.formName,
+	// 	formStatus: location.state?.status,
+	// 	generalBoxData: location.state?.generalData || {},
+	// 	movementBoxData: location.state?.movementData || {},
+	// 	digitalBoxData: location.state?.digitalData || {},
+	// 	officeData: location.state?.officeData || {},
+	// 	formListData: formListDataD || {},
+	// });
+
+
+	console.log("navbar data formName",formName);
+	
+	console.log("navbar data name",name);
+
+	// Tjr dans GeneralTab et quand on clique sur l'onglet MovementTab
+	console.log("navbar data formDataValues",formDataValues?.formListData?.name); 
+	
+	// if (formName==undefined){formName=formDataValues?.formListData?.name};
+
+
 	// const formNameG=formDataValues.formListData.name|| {};
 
 	// const formNameComplet = formNameG || formName;
@@ -82,9 +121,10 @@ function NavBar() {
 
 				<div>
 					{/* Nom du formulaire*/}
-					{formName && (
+					{(formName || formDataValues?.formListData?.name || name) && (
 						<Navbar.Text className="mx-3">
-							{formName}
+							{formName || formDataValues?.formListData?.name || name}
+							{/* A revoir pourquoi le name est dans 3 variables pas en simultané */}
 						</Navbar.Text>
 					)}
 

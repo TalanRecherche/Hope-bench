@@ -19,19 +19,14 @@ function FormBoxOffice({ setValues }: Props) {
     const [officeBoxValues, setOfficeBoxValues] = useState<OfficeBoxData>({ itemList: [] });
     const [itemlist, setItemlist] = useState<BoxItemType[]>([]);
 
-    const switchOptions: CustomSwitchOptions = {
-        option1: {
-            label: 'Recto',
-            checked: true
-        },
-        option2: {
-            label: 'Recto-Verso',
-            checked: false
-        }
-    };
+      
+    const switchOptions: CustomSwitchOptions = [
+        { label: 'Recto', checked: true },
+        { label: 'Recto-Verso', checked: false }
+    ];
 
     const [selectedItemCount, setSelectedItemCount] = useState<number>(0);
-    const [selectedItem, setSelectedItem] = useState<string>(switchOptions.option1.label);
+    const [selectedItem, setSelectedItem] = useState<string>(switchOptions[0].label);
     const [selectedItemRequired, setSelectedItemRequired] = useState(false);
 
     const setCount = (value: any) => {
