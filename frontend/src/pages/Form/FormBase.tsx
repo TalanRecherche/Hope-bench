@@ -13,10 +13,10 @@ function FormBase() {
     const navigate = useNavigate();
     const location = useLocation();
 
-    console.log("Valeurs reçues dans state generalTab:", location.state);
     
     //pour bien arriver en haut de la page
     useEffect(() => {
+        // console.log("Valeurs reçues dans state generalTab:", location.state);
         window.scrollTo(0, 0);
     }, [location.pathname]);
 
@@ -41,7 +41,7 @@ function FormBase() {
             formListData: formListDataD || {},
         });
 
-    console.log("Valeurs initiales dans FormBase:", formDataValues);
+    // console.log("Valeurs initiales dans FormBase:", formDataValues);
 
     const redirect = (link: string, e: any) => {
         setCurrentEntry(e.target.id);
@@ -111,7 +111,7 @@ function FormBase() {
     const getInitialEntry = () => {
 
         let pathNameSplited = location.pathname.split("/");
-        console.log("Chemin d'accès analysé pour getInitialEntry:", pathNameSplited);
+        // console.log("Chemin d'accès analysé pour getInitialEntry:", pathNameSplited);
 
         if (pathNameSplited.length > 0) {
             return pathNameSplited[2];
@@ -120,7 +120,7 @@ function FormBase() {
     }
 
     const [currentEntry, setCurrentEntry] = useState(getInitialEntry());
-    console.log("vérif current entry",currentEntry);
+    // console.log("vérif current entry",currentEntry);
 
     //ajout de useEffect pour qu'avec le bouton suivant, ce soit bien le bon onglet actif
     useEffect(() => {

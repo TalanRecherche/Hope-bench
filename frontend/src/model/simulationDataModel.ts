@@ -33,6 +33,8 @@ export interface MovementBoxData {
   numberOfMovement?: number;
   averageKmPerTrip?: number;
   informationSource?: InformationSourceData;
+  consultantProfiles?:string;
+  sourceData?:null;
 }
 
 export type BoxItemType = {
@@ -42,6 +44,9 @@ export type BoxItemType = {
 
 export interface DigitalBoxData {
   optionName: string;
+  optionSubTitle?:string;
+  optionText?:string;
+  optionDescription?:string;
   itemList?: BoxItemType[];
   informationSource?: InformationSourceData;
 }
@@ -61,16 +66,24 @@ export interface FormData {
   formListData?: FormListData; 
 }
 
-export type CustomSwitchOptions = {
-  option1: {
-    label: string, 
-    checked: boolean
-  }, 
-  option2: {
-    label: string, 
-    checked: boolean
-  }
-}
+
+export type CustomSwitchOption = {
+  label: string;
+  checked: boolean;
+};
+
+export type CustomSwitchOptions = CustomSwitchOption[];
+
+// export type CustomSwitchOptions = {
+//   option1: {
+//     label: string, 
+//     checked: boolean
+//   }, 
+//   option2: {
+//     label: string, 
+//     checked: boolean
+//   }
+// }
 
 export type FormListData = {
   name : string; 
